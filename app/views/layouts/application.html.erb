@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KohrVid</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>kohrVid</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application' %>
+	  <%= javascript_include_tag 'vendor/modernizr' %>
+	  <%= csrf_meta_tags %>
+	  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id = "feathers">
+			<%= render 'layouts/header' %>
+			<svg>
+				<defs>
+					<pattern id="textpattern" patternUnits="userSpaceOnUse" width="1413" height="795" >
+						<image xlink:href="assets/magpie.jpg" width=1413px height  = 795px x="0" y="0"/>
+					</pattern>
+				</defs>
+				<text id = "logo" y= "400x" x= "400px" style="word-wrap: break-word; font-weight: bold; width: 100%">kohrVid</text>
+			</svg>
+			<img src = "assets/magpie.jpg" />
+		</div>
 
-<%= yield %>
+		<div class = "container">
+			<%= yield %>
+		</div>
 
-</body>
+
+	</body>
 </html>

@@ -1,0 +1,2 @@
+class NestController < ApplicationController
+end
