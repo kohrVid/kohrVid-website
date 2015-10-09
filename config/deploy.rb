@@ -1,28 +1,27 @@
-lock '3.4.0'
+chef_gem "aws-sdk" do
+  compile_time false
+  action :install
+end
 
-set :application, 'contactbook'
-set :repo_url, 'git@github.com:devdatta/contactbook.git' # Edit this to match your repository
-set :branch, :master
-set :deploy_to, '/home/deploy/contactbook'
-set :pty, true
-set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
-set :keep_releases, 5
-set :rvm_type, :user
-set :rvm_ruby_version, 'jruby-1.7.19' # Edit this if you are using MRI Ruby
+ruby_block "download-object" do
+  block do
+    require 'aws-sdk'
 
-set :puma_rackup, -> { File.join(current_path, 'config.ru') }
-set :puma_state, "#{shared_path}/tmp/pids/puma.state"
-set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
-set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
-set :puma_conf, "#{shared_path}/puma.rb"
-set :puma_access_log, "#{shared_path}/log/puma_error.log"
-set :puma_error_log, "#{shared_path}/log/puma_access.log"
-set :puma_role, :app
-set :puma_env, fetch(:rack_env, fetch(:rails_env, 'production'))
-set :puma_threads, [0, 8]
-set :puma_workers, 0
-set :puma_worker_timeout, nil
-set :puma_init_active_record, true
-set :puma_preload_app, false
+    #1
+    Aws.config[:ssl_ca_bundle] = 'C:\ProgramData\Git\bin\curl-ca-bundle.crt'
 
+    #2
+    query = Chef::Search::Query.new
+    app = query.search(:aws_opsworks_app, "type:other").first
+    s3region = app[0][:environment][:S3REGION]
+    s3bucket = app[0][:environment][:BUCKET]
+    s3filename = app[0][:environment][:FILENAME]
+
+    #3
+    s3_client = Aws::S3::Client.new(region: s3region)
+    s3_client.get_object(bucket: s3bucket,
+                         key: s3filename,
+                         response_target: 'C:\inetpub\wwwroot\default.htm')
+  end
+  action :run
+end
