@@ -22,9 +22,6 @@ body{
 		color: inherit;
 		
 	}
-	a:hover, a:active {
-		//font-weight: bold;
-	}
 
 	#feathers {
 		position:absolute;
@@ -42,15 +39,13 @@ body{
 			background-clip: content-box; 
 			padding:0;
 			float: right;
-			text {
-				font-size: 13em;
+			#logo {
+				font-size: 13rem;
 				font-family: rieslingregular;
 				font-weight: bold !important;
 				letter-spacing: -10px !important;
-				//display: block;
-				fill:url(/#textpattern) !important;
-				stroke: rgba(255, 255, 255, 0.7);
-				border:solid;
+			       	width: 100%;
+				stroke: #f3f3f3;
 			}
 		}
 	}
@@ -65,7 +60,7 @@ body{
 		padding: 0;
 		background-color: #070715;
 		color: #f3f3f3;
-		font-size: 2em;
+		font-size: 2rem;
 		font-family: rieslingregular;
 		z-index: 100;
 		overflow: hidden;
@@ -89,6 +84,11 @@ body{
 		.title-area {
 			position: absolute;
 			top: -31px;
+			.name {
+				font-size: 2.9rem; 
+				letter-spacing: -2px; 
+				font-weight: bold;
+			}
 		}
 		.top-bar-section{
 				position: absolute;
@@ -99,6 +99,7 @@ body{
 
 		
 	}
+
 	.container{
 		position: absolute;
 		float: left;
@@ -112,8 +113,8 @@ body{
 		border: 10px double #070705;
 		border-radius: 15px;
 		color: #070715;
-		line-height: 1.2em;
-		letter-spacing: 0.05em;
+		line-height: 1.2rem;
+		letter-spacing: 0.05rem;
 		z-index: 99;
 		overflow-y: scroll;
 		::-webkit-scrollbar {
@@ -133,7 +134,7 @@ body{
 
 		}
 		a:hover{
-			font-size: 1.1em;
+			font-size: 1.1rem;
 		}
 		h1 {
 			font-family: rieslingregular;
@@ -151,7 +152,7 @@ body{
 		left: 50%;
 		color: #f3f3f3;
 		font-family: Arial, Helvetica;
-		z-index: 99;
+		z-index: 25;
 	}
 
 
