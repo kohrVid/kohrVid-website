@@ -1,18 +1,28 @@
 <nav id = "top-bar" role = "navigation" >
 	<ul class = "title-area">
-		 <li class = "name" style = "font-size: 2em!important; letter-spacing: -1px; font-weight: bold;">
-			kohrVid
+		 <li class = "name" style = "font-size: 1.4em!important; letter-spacing: -2px; font-weight: bold;">
+			 <%= link_to "kohrVid", root_path %>
 		</li>
 	</ul>
 
 	<section class = "top-bar-section">
 		<ul class = "right">
 			<li>
-					<%= link_to image_tag( "github.png", width: "35px"), "http://github.com/kohrVid", target: "_blank"  %>
+					<%= link_to image_tag( "github.png", width: "35px"), "http://github.com/kohrVid", target: "_blank", class: "icon" %>
 			</li>
 			<li>
-				<%= link_to image_tag( "twitter.png", width: "35px"), "http://twitter.com/intent/follow?screen_name=kohrVid&tw_p=followbutton"  %>
+				<%= link_to image_tag( "twitter.png", width: "35px"), "http://twitter.com/intent/follow?screen_name=kohrVid&tw_p=followbutton", target: "_blank", class: "icon"  %>
+			</li>
+			<li>
+				<%= link_to "About", about_path%>	|	
+			</li>
+			<li>
+				<%=link_to "Clients", clients_path %>	|	
+			</li>
+			<li>
+				Contact
 			</li>
 		</ul>
+
 	</section>
 </nav>

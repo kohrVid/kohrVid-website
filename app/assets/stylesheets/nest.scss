@@ -17,6 +17,15 @@
 
 body{
 	overflow: hidden;
+	a:link, a:visited, a:hover, a:active{
+		text-decoration: none;
+		color: inherit;
+		
+	}
+	a:hover, a:active {
+		//font-weight: bold;
+	}
+
 	#feathers {
 		position:absolute;
 		top: 0;
@@ -34,12 +43,12 @@ body{
 			padding:0;
 			float: right;
 			text {
-				font-size: 12em;
+				font-size: 13em;
 				font-family: rieslingregular;
-				font-weight: bold;
-				letter-spacing: -10px;
-				display: block;
-				fill:url(/#textpattern);
+				font-weight: bold !important;
+				letter-spacing: -10px !important;
+				//display: block;
+				fill:url(/#textpattern) !important;
 				stroke: rgba(255, 255, 255, 0.7);
 				border:solid;
 			}
@@ -52,10 +61,11 @@ body{
 		top: 0px;
 		left: 0px;
 		width: 100%;
+		height: 50px;
 		padding: 0;
 		background-color: #070715;
 		color: #f3f3f3;
-		font-size: 1.2em;
+		font-size: 2em;
 		font-family: rieslingregular;
 		z-index: 100;
 		overflow: hidden;
@@ -63,40 +73,87 @@ body{
 			line-height: auto;
 			float: left;
 			list-style-type: none;
+			margin-right: 10px;
 		}
-		ul .title-area {
-			li .name{
-			}
+		#topbar .icon a img:active, img:hover{
+			height: 42px;
+			width: 42px;
+			background-color: #f3f3f3;
+			border-radius: 40px;
+			padding: 0;
+			-webkit-filter: contrast(1);
+			filter: contrast(1);
+			margin-top: -3px;
+		}
+		
+		.title-area {
+			position: absolute;
+			top: -31px;
 		}
 		.top-bar-section{
 				position: absolute;
 				margin: auto;
-				top: 0;
+				top: -24px;
 				right: 10px;
-			.right li{
-				line-height: auto;
-		/*		a:hover{
-					stroke: white;
-				}*/
-			}
 		}
 
 		
 	}
-
 	.container{
 		position: absolute;
 		float: left;
-		padding: 3px;
+		padding: 7px;
 		margin: 10px;
 		top: 80px;
 		left: 50px;
-		width: 300px;
-		height: 45%;
-		background-color: rgba(243, 243, 243, 0.7);
+		width: 350px; 
+		height: 55%;
+		background-color: rgba(243, 243, 243, 0.6);
 		border: 10px double #070705;
 		border-radius: 15px;
+		color: #070715;
+		line-height: 1.2em;
+		letter-spacing: 0.05em;
+		z-index: 99;
+		overflow-y: scroll;
+		::-webkit-scrollbar {
+			    width: 12px;
+		    }
+		::-webkit-scrollbar-track {
+			        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6); 
+				    border-radius: 10px;
+			    }
+			     
+		::-webkit-scrollbar-thumb {
+				        border-radius: 10px;
+					    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6); 
+				    }
+		a:link, a:visited, a:hover, a:active{
+			color: #262690;
+
+		}
+		a:hover{
+			font-size: 1.1em;
+		}
+		h1 {
+			font-family: rieslingregular;
+			font-weight: bold;
+		}
+		p{
+			font-family: Arial, Helvetica;
+		}
+	}
+	.footer{
+		position: absolute;
+		float: right;
+		padding: 0;
+		bottom: 10px;
+		left: 50%;
+		color: #f3f3f3;
+		font-family: Arial, Helvetica;
 		z-index: 99;
 	}
+
+
 
 }

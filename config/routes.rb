@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 	root "nest#index"
+	get "about" 		=> "nest#about"
+	get "clients" 		=> "nest#clients"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
