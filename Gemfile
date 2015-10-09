@@ -25,9 +25,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-#
-
-gem 'foundation-rails'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -36,7 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+  
+  gem 'mail_form', '~> 1.5'
+  gem 'simple_form', '~> 3'
 
 group :development, :test do
  
