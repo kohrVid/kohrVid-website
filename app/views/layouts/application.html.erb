@@ -14,13 +14,13 @@
 			<svg>
 				<defs>
 					<pattern id="textpattern" patternUnits="userSpaceOnUse" width="1413" height="795" >
-						<image xlink:href="assets/magpie.jpg" width=1413px height  = 795px x="0" y="0"/>
+					<image xlink:href = "<%= image_path("magpie.jpg")%>"  width=1413px height  = 795px x="0" y="0"/>
 					</pattern>
 				</defs>
 				<text id = "logo" y= "400px" x= "400px" fill="url(#textpattern)">kohrVid</text>
 			       	
 			</svg>
-			<img src = "assets/magpie.jpg" />
+			<img src = <%= image_path("magpie.jpg")%> />
 		</div>
 
 		<div class = "container">
