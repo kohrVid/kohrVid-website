@@ -11,7 +11,7 @@ $(window).load ->
     $("#logo").attr "y", yp
     $(".container").css
        left: "3px"
-       width: "320px"
+       width: "280px"
   else if window.innerWidth < 750
     xp = (window.innerWidth - 370) + "px"
     $("#logo").attr "x", xp
@@ -32,6 +32,7 @@ $(window).resize ->
     $("#logo").attr "y", yp
     $(".container").css
        left: "3px"
+       width: "280px"
   else if window.innerWidth < 750
     xp = (window.innerWidth - 370) + "px"
     $("#logo").attr "x", xp
