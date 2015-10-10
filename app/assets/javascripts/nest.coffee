@@ -4,7 +4,7 @@
 
 
 $(window).load ->
-  $(window).outerWidth($(window).innerWidth)
+#  $(window).outerWidth($(window).innerWidth)
   $("#dropdown").hide()
   if window.innerWidth < 450
     $("#logo").attr "x", "0px"
