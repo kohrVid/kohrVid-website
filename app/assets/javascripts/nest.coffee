@@ -51,8 +51,8 @@ $(window).resize ->
        left: "50px"
        width: "350px"
 
-$(window).on('orientationchange', -> $(window).resize)
-
+$(window).bind 'orientationchange', ->
+  $(window).resize
   
 $(document).ready ->
   $("#menu").click ->
