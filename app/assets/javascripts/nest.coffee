@@ -4,7 +4,6 @@
 
 
 $(window).load ->
-#  $(window).outerWidth($(window).innerWidth)
   $("#dropdown").hide()
   if window.innerWidth < 450
     $("#logo").attr "x", "0px"
@@ -24,8 +23,6 @@ $(window).load ->
     $("#logo").attr "x", xp
     yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
     $("#logo").attr "y", yp
-    
-  
 
 $(window).resize ->
   if window.innerWidth < 450
