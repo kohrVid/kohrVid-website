@@ -2,17 +2,19 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+small = () ->
+  $("#logo").attr "x", "0px"
+  yp = (window.innerHeight - 35) + "px"
+  $("#logo").attr "y", yp
+  cw = (window.innerWidth - 125) + "px"
+  $(".container").css
+     left: "3px"
+     width: cw
 
 $(window).load ->
   $("#dropdown").hide()
   if window.innerWidth < 450
-    $("#logo").attr "x", "0px"
-    yp = (window.innerHeight - 35) + "px"
-    $("#logo").attr "y", yp
-    cw = (window.innerWidth - 125) + "px"
-    $(".container").css
-       left: "3px"
-       width: cw
+    small()
   else if window.innerWidth < 750
     xp = (window.innerWidth - 370) + "px"
     $("#logo").attr "x", xp
@@ -26,13 +28,7 @@ $(window).load ->
 
 adaptive = () ->
   if window.innerWidth < 450
-    $("#logo").attr "x", "0px"
-    yp = (window.innerHeight - 35) + "px"
-    $("#logo").attr "y", yp
-    cw = (window.innerWidth - 125) + "px"
-    $(".container").css
-       left: "3px"
-       width: cw
+    small()  
   else if window.innerWidth < 750
     xp = (window.innerWidth - 370) + "px"
     $("#logo").attr "x", xp
@@ -54,8 +50,7 @@ adaptive = () ->
 $(window).resize ->
   adaptive()
 
-$(window).bind 'orientationchange', ->
-  adaptive()
+$(window).bind('orientationchange', -> adaptive())
   
 $(document).ready ->
   $("#menu").click ->
