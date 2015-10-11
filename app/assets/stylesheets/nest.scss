@@ -61,7 +61,7 @@ body{
 	}
 	
 	#top-bar {
-		position: absolute;
+		position: fixed;
 		//margin: 0;
 		top: 0px;
 		left: 0px;
@@ -92,7 +92,7 @@ body{
 		}
 		
 		.title-area {
-			position: absolute;
+			position: fixed;
 			top: -29px;
 			left: -30px;
 			margin-right: 1px;
@@ -104,7 +104,7 @@ body{
 			}
 		}
 		.right{
-			position: absolute;
+			position: fixed;
 			margin: auto;
 			top: 7px;
 			right: -7px;
@@ -120,7 +120,7 @@ body{
 	}
 
 	#dropdown{
-		position: absolute;
+		position: fixed;
 		font-size: 1.6rem;
 		font-family: rieslingregular, Arial, Helvetica;
 		margin: auto;
@@ -157,7 +157,7 @@ body{
 	}
 
 	.container{
-		position: absolute;
+		position: fixed;
 		float: left;
 		padding: 7px;
 		margin-top: 50px;
