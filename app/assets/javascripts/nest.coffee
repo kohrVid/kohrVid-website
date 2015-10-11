@@ -24,7 +24,7 @@ $(window).load ->
     yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
     $("#logo").attr "y", yp
 
-$(window).resize ->
+adaptive = () ->
   if window.innerWidth < 450
     $("#logo").attr "x", "0px"
     yp = (window.innerHeight - 35) + "px"
@@ -51,15 +51,11 @@ $(window).resize ->
        left: "50px"
        width: "350px"
 
+$(window).resize ->
+  adaptive()
+
 $(window).bind 'orientationchange', ->
-  if window.innerWidth < 450
-    $("#logo").attr "x", "0px"
-    yp = (window.innerHeight - 35) + "px"
-    $("#logo").attr "y", yp
-    cw = (window.innerWidth - 125) + "px"
-    $(".container").css
-       left: "3px"
-       width: cw
+  adaptive()
   
 $(document).ready ->
   $("#menu").click ->
