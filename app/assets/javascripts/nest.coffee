@@ -52,7 +52,14 @@ $(window).resize ->
        width: "350px"
 
 $(window).bind 'orientationchange', ->
-  $(window).resize
+  if window.innerWidth < 450
+    $("#logo").attr "x", "0px"
+    yp = (window.innerHeight - 35) + "px"
+    $("#logo").attr "y", yp
+    cw = (window.innerWidth - 125) + "px"
+    $(".container").css
+       left: "3px"
+       width: cw
   
 $(document).ready ->
   $("#menu").click ->
