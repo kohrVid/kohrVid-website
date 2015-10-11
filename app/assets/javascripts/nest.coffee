@@ -50,7 +50,6 @@ adaptive = () ->
 $(window).resize ->
   adaptive()
 
-$(window).bind('orientationchange', -> adaptive())
   
 $(document).ready ->
   $("#menu").click ->

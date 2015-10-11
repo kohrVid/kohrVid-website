@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require nest.js
+//= require nest_jq.js
 //= require_tree .
