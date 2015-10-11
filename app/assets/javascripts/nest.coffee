@@ -51,7 +51,7 @@ $(window).resize ->
        left: "50px"
        width: "350px"
 
-$(window).bind('orientationchange', $(window).resize)
+$(window).on('orientationchange', -> $(window).resize)
 
   
 $(document).ready ->
