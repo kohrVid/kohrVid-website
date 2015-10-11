@@ -50,6 +50,9 @@ $(window).resize ->
     $(".container").css
        left: "50px"
        width: "350px"
+
+$(window).bind('orientationchange', $(window).resize)
+
   
 $(document).ready ->
   $("#menu").click ->
