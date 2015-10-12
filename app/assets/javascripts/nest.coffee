@@ -10,52 +10,45 @@ small = () ->
   $(".container").css
      left: "3px"
      width: cw
+  $(".contact input, .contact textarea").css
+     width: "95%"
+
+medium = () ->
+  xp = (window.innerWidth - 370) + "px"
+  $("#logo").attr "x", xp
+  yp = (window.innerHeight - 35) + "px"
+  $("#logo").attr "y", yp
+  $(".contact input, .contact textarea").css
+     width: "150%"
+
 
 big = () ->
-  $("#logo").attr "x", "400px"
-  $("#logo").attr "y", "400px"
+  xp = (window.innerWidth * 0.5) + "px"
+  $("#logo").attr "x", xp
+  yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
+  $("#logo").attr "y", yp
   $(".container").css
      left: "50px"
      width: "400px"
+  $(".contact input, .contact textarea").css
+     width: "180%"
 
 $(window).load ->
   $("#dropdown").hide()
-  if window.innerWidth < 450
+  if window.innerWidth < 500
     small()
   else if window.innerWidth < 750
-    xp = (window.innerWidth - 370) + "px"
-    $("#logo").attr "x", xp
-    yp = (window.innerHeight - 35) + "px"
-    $("#logo").attr "y", yp
+    medium()
   else
-    xp = (window.innerWidth * 0.5) + "px"
-    $("#logo").attr "x", xp
-    yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
-    $("#logo").attr "y", yp
-    $(".container").css
-       left: "50px"
-       width: "400px"
+    big()
 
 adaptive = () ->
-  if window.innerWidth < 450
+  if window.innerWidth < 500
     small()  
   else if window.innerWidth < 750
-    xp = (window.innerWidth - 370) + "px"
-    $("#logo").attr "x", xp
-    yp = (window.innerHeight - 35) + "px"
-    $("#logo").attr "y", yp
-    $(".container").css
-       left: "50px"
-       width: "400px"
+    medium()
   else
-    xp = (window.innerWidth * 0.5) + "px"
-    $("#logo").attr "x", xp
-    yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
-    $("#logo").attr "y", yp
-    return
-    $(".container").css
-       left: "50px"
-       width: "400px"
+    big()
 
 $(window).resize ->
   adaptive()
