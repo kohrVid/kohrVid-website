@@ -1,0 +1,32 @@
+<div align = "center">
+<h1>Contact</h1>
+
+<p>I am available via <%= mail_to "kohrVid@zoho.com", "email" %> and <%= link_to "Twitter", 'https://twitter.com/intent/tweet?screen_name="kohrVid"' %>. If you prefer, you can send me a message via the contact form below.</p>
+<%= form_for @contact do |f| %>
+	<table class = "contact">
+	<tr>
+		<td><%=f.label :name%>:</td>
+		<td><%= f.text_field :name %></td>
+	</tr>
+	<tr></tr>
+	<tr>
+		<td><%=f.label :email %>:</td>
+		<td><%= f.email_field :email %></td>
+	</tr>
+	<tr></tr>
+	<tr>
+		<td><%=f.label :message %>:</td>
+		<td><%= f.text_area :message, cols: 25.5, rows: 10 %></td>
+	</tr>
+	<tr></tr>
+	<tr style = "display: none;">
+		<td><%= f.label :nickname %></td>
+		<td><%= f.text_field :nickname %></td>
+	</tr>
+	</table>
+	<div>
+		<br />
+		<%= f.button "Send", class: "button" %>
+	</div>
+<%end%>
+</div>

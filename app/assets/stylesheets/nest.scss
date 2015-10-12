@@ -216,6 +216,13 @@ body{
 		z-index: 25;
 	}
 
-
+	.contact{
+		text-align: top-left;
+		font-family: Arial, Helvetica;
+		.button{
+			background-color: #070715;
+			color: #f3f3f3;
+		}
+	}
 
 }
