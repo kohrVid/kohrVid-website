@@ -163,8 +163,8 @@ body{
 		margin-top: 50px;
 		margin-right: 95px;
 		top: 3%;
-		left: 50px;
-		width: 350px; 
+		left: 3px;
+		width: 280px; 
 		height: 55%;
 		background-color: rgba(243, 243, 243, 0.6);
 		border: 10px double #070705;
@@ -217,11 +217,14 @@ body{
 	}
 
 	.contact{
-		text-align: top-left;
+		text-align: left;
 		font-family: Arial, Helvetica;
 		.button{
 			background-color: #070715;
 			color: #f3f3f3;
+		}
+		input, textarea{
+			width: 100%;
 		}
 	}
 

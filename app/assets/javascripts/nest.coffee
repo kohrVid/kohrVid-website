@@ -11,6 +11,13 @@ small = () ->
      left: "3px"
      width: cw
 
+big = () ->
+  $("#logo").attr "x", "400px"
+  $("#logo").attr "y", "400px"
+  $(".container").css
+     left: "50px"
+     width: "400px"
+
 $(window).load ->
   $("#dropdown").hide()
   if window.innerWidth < 450
@@ -25,6 +32,9 @@ $(window).load ->
     $("#logo").attr "x", xp
     yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
     $("#logo").attr "y", yp
+    $(".container").css
+       left: "50px"
+       width: "400px"
 
 adaptive = () ->
   if window.innerWidth < 450
@@ -36,7 +46,7 @@ adaptive = () ->
     $("#logo").attr "y", yp
     $(".container").css
        left: "50px"
-       width: "350px"
+       width: "400px"
   else
     xp = (window.innerWidth * 0.5) + "px"
     $("#logo").attr "x", xp
@@ -45,7 +55,7 @@ adaptive = () ->
     return
     $(".container").css
        left: "50px"
-       width: "350px"
+       width: "400px"
 
 $(window).resize ->
   adaptive()

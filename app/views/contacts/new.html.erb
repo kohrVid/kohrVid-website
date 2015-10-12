@@ -6,17 +6,24 @@
 	<table class = "contact">
 	<tr>
 		<td><%=f.label :name%>:</td>
+	</tr>
+	<tr>
 		<td><%= f.text_field :name %></td>
 	</tr>
 	<tr></tr>
 	<tr>
 		<td><%=f.label :email %>:</td>
+	</tr>
+	<tr></tr>
+	<tr>
 		<td><%= f.email_field :email %></td>
 	</tr>
 	<tr></tr>
 	<tr>
 		<td><%=f.label :message %>:</td>
-		<td><%= f.text_area :message, cols: 25.5, rows: 10 %></td>
+	</tr>
+	<tr>
+		<td><%= f.text_area :message, rows: 10 %></td>
 	</tr>
 	<tr></tr>
 	<tr style = "display: none;">
