@@ -18,6 +18,9 @@ medium = () ->
   $("#logo").attr "x", xp
   yp = (window.innerHeight - 35) + "px"
   $("#logo").attr "y", yp
+  $(".container").css
+     left: "50px"
+     width: "350px"
   $(".contact input, .contact textarea").css
      width: "150%"
 
