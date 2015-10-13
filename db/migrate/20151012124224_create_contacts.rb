@@ -3,7 +3,7 @@ class CreateContacts < ActiveRecord::Migration
     create_table :contacts do |t|
 	    t.string :name
 	    t.string :email
-	    t.string :message
+	    t.text :message
 	    t.string :nickname
 
       t.timestamps null: false
