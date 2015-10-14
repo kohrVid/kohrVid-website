@@ -12,8 +12,8 @@
 !/log/.keep
 /tmp
 /config/initializers/dev_environment.rb
-#/config/database.yml
-#/config/secrets.yml
+/config/database.yml
+/config/secrets.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
