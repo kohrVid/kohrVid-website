@@ -21,8 +21,15 @@
 noscript{
 	color: #9F0000;
 	font-weight: bold;
+	font-size: 1rem;
 
 }
+button {
+	background-color: #070715;
+	color: #f3f3f3;
+	border-radius: 10px;
+}
+
 body{
 	background-color: #070715;
 	a:link, a:visited, a:hover, a:active{
@@ -80,17 +87,31 @@ body{
 			list-style-type: none;
 			margin-left: 10px;
 		}
-		#topbar .icon a img:active, img:hover{
-			height: 42px;
-			width: 42px;
-			background-color: #f3f3f3;
-			border-radius: 40px;
-			padding: 0;
-			-webkit-filter: contrast(1);
-			filter: contrast(1);
-			margin-top: -3px;
+		.right{
+			position: fixed;
+			margin: auto;
+			top: 7px;
+			right: 9px;
+			#topbar .icon a img:active, img:hover{
+				height: 42px;
+				width: 42px;
+				background-color: #f3f3f3;
+				border-radius: 40px;
+				padding: 0;
+				-webkit-filter: contrast(1);
+				filter: contrast(1);
+				margin-top: -3px;
+			}
+			#menu a{
+				padding: 9px 27px 9px 27px;
+				text-align: center;
+				&:hover{
+					background-color: #f3f3f3 !important;
+					color: #070715 !important;
+				}
+			}
 		}
-		
+	
 		.title-area {
 			position: fixed;
 			top: -29px;
@@ -103,20 +124,6 @@ body{
 				font-weight: bold;
 			}
 		}
-		.right{
-			position: fixed;
-			margin: auto;
-			top: 7px;
-			right: -7px;
-		}
-	}
-	#menu{
-		padding: 9px 27px 9px 27px;
-		text-align: center;
-	}
-	#menu li a:active, #menu li a:hover{
-		background-color: #f3f3f3 !important;
-		color: #070715 !important;
 	}
 
 	#dropdown{
@@ -165,7 +172,7 @@ body{
 		top: 3%;
 		left: 3px;
 		width: 280px; 
-		height: 55%;
+		height: 53%;
 		background-color: rgba(243, 243, 243, 0.6);
 		border: 10px double #070705;
 		border-radius: 15px;
@@ -200,7 +207,7 @@ body{
 			font-weight: bold;
 			line-height: 1.8rem
 		}
-		p{
+		p, ul{
 			font-family: Arial, Helvetica;
 		}
 	}
@@ -219,13 +226,36 @@ body{
 	.contact{
 		text-align: left;
 		font-family: Arial, Helvetica;
-		.button{
-			background-color: #070715;
-			color: #f3f3f3;
-		}
 		input, textarea{
 			width: 95%;
 		}
+	}
+
+	.alerts{
+		position: relative;
+		font-family: Arial, Helvetica;
+		color: #f3f3f3;
+			.close{
+				display: block;
+				position: absolute;
+				top: 7px;
+				right: 10px;
+				text-align: right;
+			}
+		.notice, .success{
+			padding: 7px;
+			background-color: rgba(38, 38, 144, 0.6);
+		}
+		.error{
+			padding: 7px;
+			background-color: rgba(159, 0, 0, 0.6);
+			.close{
+				color: #9F0000 !important;
+			}
+
+		}
+
+
 	}
 
 }

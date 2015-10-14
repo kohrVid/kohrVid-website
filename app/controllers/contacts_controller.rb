@@ -6,19 +6,19 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(params[:contact])
 		@contact.request = request
+			@object = @contact
+
 		if @contact.deliver
-			flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
+			flash.now[:notice] = 'Thank you for your message! I try to respond within 24hrs so you should hear from me soon.'
+			render 'thanks'
 		else
-			flash.now[:error] = 'Cannot send message.'
-		end
+			flash.now[:error] = 'Unable to send message.'
 			render 'new'
+		end
+	end
+
+	def thanks
 	end
 
 
-	private
-=begin
-		def contact_params
-			params.require(:contact).permit(:name, :email, :message)
-		end
-=end
 end

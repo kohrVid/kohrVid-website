@@ -4,18 +4,9 @@ class Contact < MailForm::Base
 				:length   => {maximum:50}
 	attribute :email, 	:validate => VALID_EMAIL_REGEX,
 				:length   => {maximum:255}
-	attribute :message
+	attribute :message, 	:validate => true
 	attribute :nickname, 	:captcha  => true
 
-=begin
-	validates :name, 	presence: true,
-				length: {maximum: 50}
-	validates :email,	presence: true,
-				length: {maximum: 255},
-				format: {with: VALID_EMAIL_REGEX}
-	validates :message, 	presence: true
-	validates :nickname,	length: {minimum: 0}
-=end
 	def headers
 		{
 			:subject => "kohrVid Contact Form",

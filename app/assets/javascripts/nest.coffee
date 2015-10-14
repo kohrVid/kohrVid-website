@@ -2,6 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+		#Nest.Café#
+
 small = () ->
   $("#logo").attr "x", "0px"
   yp = (window.innerHeight - 35) + "px"
@@ -61,5 +63,8 @@ $(document).ready ->
   $("#menu").click ->
     $("#dropdown").toggle()
 
+$(document).ready ->
+  $(".close").click ->
+    $(".alerts").hide()
 
 
