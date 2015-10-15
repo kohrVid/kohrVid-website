@@ -1,0 +1,50 @@
+<%= form_for(@client) do |f| %>
+	<table class = "client_form">
+		<tr>
+			<td><%= f.label :client_name, "Client Name:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :client_name %></td>
+		</tr>
+		<tr>
+		</tr>
+
+		<tr>
+			<td><%= f.label :client_url, "Client URL:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :client_url %></td>
+		</tr>
+		<tr>
+		</tr>
+		
+		<tr>
+			<td><%= f.label :logo, "Client Logo:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.file_field :logo_url, accept: 'image/jpeg,image/gif,image/png' %></td>
+		</tr>
+		<tr>
+		</tr>
+
+		<tr>
+			<td><%= f.label :image_url, "Screenshot:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.file_field :image_url, accept: 'image/jpeg,image/gif,image/png' %></td>
+		</tr>
+		<tr>
+		</tr>
+
+		<tr>
+			<td><%= f.label :description, "Description:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.text_area :description %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Save" %></td>
+		</tr>
+	</table>
+<%end%>
+

@@ -4,6 +4,7 @@
 
 		#Nest.Café#
 
+#Define Dimensions#
 small = () ->
   $("#logo").attr "x", "0px"
   yp = (window.innerHeight - 35) + "px"
@@ -26,7 +27,6 @@ medium = () ->
   $(".contact input, .contact textarea").css
      width: "150%"
 
-
 big = () ->
   xp = (window.innerWidth * 0.5) + "px"
   $("#logo").attr "x", xp
@@ -38,8 +38,11 @@ big = () ->
   $(".contact input, .contact textarea").css
      width: "180%"
 
+
+#Adaptive Layout#
 $(window).load ->
   $("#dropdown").hide()
+#  $(".screenshot").hide()
   if window.innerWidth < 500
     small()
   else if window.innerWidth < 750
@@ -57,14 +60,20 @@ adaptive = () ->
 
 $(window).resize ->
   adaptive()
+ # if $('.screenshot').is(":visible")
+  #  screenshotLarge()
 
-  
+#Navigation Bar#  
 $(document).ready ->
   $("#menu").click ->
     $("#dropdown").toggle()
 
+#Close buttons#
 $(document).ready ->
   $(".close").click ->
     $(".alerts").hide()
-
+    $(".description").hide()
+  $(".close_image").click ->
+    $(".screenshot").hide()
+    
 

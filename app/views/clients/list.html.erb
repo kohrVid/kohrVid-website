@@ -1,0 +1,38 @@
+<% provide(:title, "Clients")%>
+<h1>Clients</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Client Logo</th>
+				<th>Client</th>
+				<th>Website</th>
+				<th>Screenshot</th>
+				<th>Description</th>
+				<th colspan="3"></th>
+				<th>Date Created</th>
+				<th>Date Last Modified</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @clients.each do |client| %>
+				<tr>
+					<td><%= client.id %></td>
+					<td><%= client.logo_url %></td>
+					<td><%= client.client_name %></td>
+					<td><%= client.client_url %></td>
+					<td><%= image_tag client.image_url, width: "100" %></td>
+					<td><%= client.description %></td>
+					<td><%= link_to 'Show', client %></td>
+					<td><%= link_to 'Edit', edit_client_path(client) %></td>
+					<td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+					<td><%= client.created_at %></td>
+					<td><%= client.updated_at %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<p><%= link_to 'New Client', new_client_path %></p>
+</div>

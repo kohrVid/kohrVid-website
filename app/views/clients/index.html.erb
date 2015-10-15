@@ -1,0 +1,35 @@
+<% provide(:title, "Clients")%>
+<h1>Clients</h1>
+
+<% @clients.each do |client| %>
+	<div class = "clients">
+		<%= link_to "#", id: "client_image" do%>
+			<%= image_tag(client.logo_url, width: "200") %>
+			<br /><%= client.client_name %>
+		<%end%>
+		<br/><%= link_to "#{client.description.truncate(35)}", client %>
+			<%#if current_user && current_user.admin%>					<div>
+					<%= link_to 'Show', client %>
+					<%= link_to 'Edit', edit_client_path(client) %>
+					<%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+	</div>
+				<%#end%>
+			
+			<%# client.client_url %>
+			<%# image_path(client.image_url) %>
+			<%# client.description %>
+
+			<div class = "screenshot">
+			
+				<b><%= link_to "Close image ×", "#", class: "close_image"%></b>
+				<%= image_tag(client.image_url)%>
+				<div class = "description">
+				<a href = "#" class = "close">&times;</a>
+				<p><strong><u><%= link_to "#{client.client_name} - #{client.client_url}", client.client_url %></u></strong></p>
+				<%= client.description %>
+			</div>
+	</div>
+<% end %>
+<br>
+	<% #link_to_if(current_user && current_user.admin? 'New Client', new_client_path){} %>

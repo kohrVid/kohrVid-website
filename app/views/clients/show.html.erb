@@ -1,0 +1,68 @@
+<% provide(:title, 'Clients: ' + @client.client_name.capitalize) %>
+<h1><%=@client.client_name%></h1>
+
+
+<table>
+	<tr>
+		<td><strong>Client ID:</strong></td>
+		<td><%= @client.id %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Client Name:</strong></td>
+		<td><%= @client.client_name %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Client Website:</strong></td>
+		<td><%= @client.client_url %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Logo URL:</strong></td>
+		<td><%= @client.logo_url %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Screenshot URL:</strong></td>
+		<td><%= @client.image_url %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Description:</strong></td>
+		<td><%= @client.description %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Date Created:</strong></td>
+		<td><%= @client.created_at %></td>
+	</tr>
+	<tr>
+	</tr>
+
+	<tr>
+		<td><strong>Date Last Modified:</strong></td>
+		<td><%= @client.updated_at %></td>
+	</tr>
+</table>
+
+<br />
+
+<%# if current_user && current_user.admin? %>
+	<%= link_to 'Edit', edit_client_path(@client) %> |
+	<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+
+<%#end%>
+	<%= link_to 'Back', clients_path %>

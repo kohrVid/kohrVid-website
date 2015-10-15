@@ -29,13 +29,16 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
   
   gem 'mail_form' #, '~> 1.5'
 #  gem 'simple_form'#, '~> 3'
+  gem 'carrierwave', '0.10.0'
+  gem 'mini_magick', '~> 3.8.0'
+  gem 'fog', '~> 1.34.0'
 
 group :development, :test do
  

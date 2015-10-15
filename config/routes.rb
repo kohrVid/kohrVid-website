@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
 
 	root "nest#index"
-	get "about" 		=>  "nest#about"
-	get "clients" 		=>  "nest#clients"
-	get "contacts"	 	=>  "contacts#new"
+	get 	"about" 		=>  "nest#about"
+	get 	"clientsINdex" 		=>  "nest#clients"
+	get 	"contacts"	 	=>  "contacts#new"
 	resources "contacts", 	only: [:new, :create]
+	get 	"clients" 	   	=>  "clients#index"
+	get 	"clients/list" 	=>  "clients#list"
+	resources "clients"
+	get 	"password_resets/new"
+	get 	"password_resets/edit"
+	get 	"login"  		=>  "sessions#new"
+	post	"login"  		=>  "sessions#create"
+	get 	"login"  		=>  "sessions#new"
+	delete 	"logout"  		=>  "sessions#destroy"
+	get 	"signup" 		=>  "users#new"
+	resources :users
+	get 	"password_resets/new"
+	resources :account_activation, only: [:edit]
+	resources :password_resets, only: [:new, :create, :edit, :update]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
