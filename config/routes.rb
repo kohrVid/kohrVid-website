@@ -8,16 +8,15 @@ Rails.application.routes.draw do
 	get 	"clients" 	   	=>  "clients#index"
 	get 	"clients/list" 	=>  "clients#list"
 	resources "clients"
-	get 	"password_resets/new"
-	get 	"password_resets/edit"
 	get 	"login"  		=>  "sessions#new"
 	post	"login"  		=>  "sessions#create"
 	get 	"login"  		=>  "sessions#new"
 	delete 	"logout"  		=>  "sessions#destroy"
 	get 	"signup" 		=>  "users#new"
 	resources :users
-	get 	"password_resets/new"
 	resources :account_activation, only: [:edit]
+	get 	"password_resets/new"
+	get 	"password_resets/edit"
 	resources :password_resets, only: [:new, :create, :edit, :update]
 
 

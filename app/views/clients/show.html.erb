@@ -60,9 +60,9 @@
 
 <br />
 
-<%# if current_user && current_user.admin? %>
+<% if current_user && current_user.admin? %>
 	<%= link_to 'Edit', edit_client_path(@client) %> |
 	<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 
-<%#end%>
+<%end%>
 	<%= link_to 'Back', clients_path %>

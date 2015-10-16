@@ -18,14 +18,14 @@ $(document).ready ->
 */
 
 function screenshotLarge() {
-	var $h = window.innerHeight + "px";
-	var $w = window.innerWidth + "px";
-	var $hi = (window.innerHeight - 100) + "px";
-	var $wi = (window.innerWidth - 100) + "px";
+	var $w = $(".screenshot img").attr("width");
+	var $h = $(".screenshot img").attr("height");
+	var $hi = (($h/($h / window.innerHeight)) - 350) + "px";
+	var $wi = (($w/($w / window.innerWidth)) - 350) + "px";
 	if ($(".screenshot").is(":hidden")){
 		$(".screenshot").show();
-		$(".screenshot img").css("height", $hi); 
-		$(".screenshot img").css("width", $wi);
+		$(".screenshot img").height($hi); 
+		$(".screenshot img").width($wi);
 	}
 }
 
