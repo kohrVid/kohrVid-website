@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(params[:contact])
 		@contact.request = request
-			@object = @contact
+		@object = @contact
 
 		if @contact.deliver
 			flash.now[:notice] = 'Thank you for your message! I try to respond within 24hrs so you should hear from me soon.'

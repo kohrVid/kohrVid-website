@@ -12,13 +12,13 @@ class ClientsController < ApplicationController
 	end
 
 	def new
-		#if current_user && current_user.admin?
+		if current_user && current_user.admin?
 			@client = Client.new
 			@object = @client
 			render 'new'
-		#else
-			#render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
-		#end
+		else
+			render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+		end
 	end
 
 	def create
@@ -36,11 +36,11 @@ class ClientsController < ApplicationController
 
 	def edit
 		@client = Client.find(params[:id])
-		#if surrent_user && current_user.admin?
+		if current_user && current_user.admin?
 			render 'edit'
-		#else
-			#render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
-		#end
+		else
+			render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+		end
 	end
 
 	def update

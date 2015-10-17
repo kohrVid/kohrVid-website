@@ -13,6 +13,7 @@ small = () ->
   $(".container").css
      left: "3px"
      width: cw
+     height: "52%"
   $(".contact input, .contact textarea").css
      width: "95%"
 
@@ -24,6 +25,19 @@ medium = () ->
   $(".container").css
      left: "50px"
      width: "350px"
+     height: "52%"
+  $(".contact input, .contact textarea").css
+     width: "150%"
+
+mediumLarge = () ->
+  xp = (window.innerWidth * 0.5) + "px"
+  $("#logo").attr "x", xp
+  yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
+  $("#logo").attr "y", yp
+  $(".container").css
+     left: "50px"
+     width: "350px"
+     height: "60%"
   $(".contact input, .contact textarea").css
      width: "150%"
 
@@ -35,6 +49,7 @@ big = () ->
   $(".container").css
      left: "50px"
      width: "400px"
+     height: "60%"
   $(".contact input, .contact textarea").css
      width: "180%"
 
@@ -45,16 +60,20 @@ $(window).load ->
 #  $(".screenshot").hide()
   if window.innerWidth < 500
     small()
-  else if window.innerWidth < 750
+  else if window.innerWidth <750
     medium()
+  else if window.innerWidth < 950
+    mediumLarge()
   else
     big()
 
 adaptive = () ->
   if window.innerWidth < 500
     small()  
-  else if window.innerWidth < 750
+  else if window.innerWidth <750
     medium()
+  else if window.innerWidth < 950
+    mediumLarge()
   else
     big()
 

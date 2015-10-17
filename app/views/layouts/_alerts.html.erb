@@ -4,7 +4,7 @@
 			<div class = "<%= key %>">
 				<h3><%= value %></h3>
 				<a href = "#" class = "close">&times;</a>
-				<% if @object.errors.any? %>
+				<% if @object.present? && @object.errors.any? %>
 					The contact form contains <%= pluralize(@object.errors.count, "error")%>.
 					<ul>
 						<% @object.errors.full_messages.each do |msg|%>
