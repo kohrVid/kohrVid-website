@@ -28,7 +28,6 @@
 				<div class = "screenshot">
 			
 				<b><%= link_to "Close image ×", "#", class: "close_image"%></b>
-				<% image_tag(client.image_url, class: "screenshot_image")%>
 				<div class = "description">
 				<a href = "#" class = "close">&times;</a>
 				<p><strong><u><%= link_to "#{client.client_name} - #{client.client_url}", client.client_url %></u></strong></p>
@@ -37,4 +36,5 @@
 	</div>
 <% end %>
 <br />
-<%= link_to_if(current_user && current_user.admin?, 'New Client', new_client_path){} %>
+<% if current_user && current_user.admin?%>
+	<%= link_to 'New Client', new_client_path %><%end%>
