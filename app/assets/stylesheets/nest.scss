@@ -246,12 +246,10 @@ body{
 	}
 
 		.screenshot{
-			position: fixed;
-			top:0;
-			left:0;
-			bottom: 0;
-			right:0;
-			padding: 50px;
+			position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+		//	bottom: 0;
+		//	right:0;
+//			padding: 50px;
 			background-color: #070715;
 			display: none;
 			color: #f3f3f3;
@@ -264,8 +262,9 @@ body{
 			a:link, a:visited, a:hover, a:active{
 				color: #f3f3f3 !important;
 			}
-			img{
-				text-align: center;
+			.screenshot_image img{
+				float: center;
+				margin: 0px 10px 10px 10px;
 			}
 			.description{
 				position: fixed;
@@ -289,7 +288,7 @@ body{
 
 
 	.footer{
-		position: absolute;
+		position: fixed;
 		float: right;
 		padding: 0;
 		bottom: 3px;

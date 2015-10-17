@@ -66,14 +66,14 @@ $(window).resize ->
 #Navigation Bar#  
 $(document).ready ->
   $("#menu").click ->
-    $("#dropdown").toggle()
+    $("#dropdown").slideToggle()
 
 #Close buttons#
 $(document).ready ->
   $(".close").click ->
     $(".alerts").hide()
-    $(".description").hide()
+    $(".description").fadeOut()
   $(".close_image").click ->
-    $(".screenshot").hide()
+    $(".screenshot").fadeOut("slow")
     
 
