@@ -22,7 +22,6 @@ noscript{
 	color: #9F0000;
 	font-weight: bold;
 	font-size: 1rem;
-
 }
 button, .button {
 	background-color: #070715;
@@ -119,7 +118,7 @@ body{
 	
 		.title-area {
 			position: fixed;
-			top: -35px;
+			top: -37px;
 			left: -30px;
 			margin-right: 1px;
 			.name {
@@ -237,7 +236,7 @@ body{
 				padding: 7px;
 				background-color: rgba(38, 38, 144, 0.6);
 			}
-			.error{
+			.error, .danger{
 				padding: 7px;
 				background-color: rgba(159, 0, 0, 0.6);
 				.close{
@@ -258,6 +257,19 @@ body{
 			text-align: left;
 			input, textarea{
 				width: 95%;
+			}
+		}
+		.clients{
+			overflow: hidden;
+			margin: auto;
+			display: block;
+			width: 100%;
+			padding: 0;
+			li{
+				float: left;
+				padding:0 5% 5%;
+				width: 23%;
+				list-style-type: none;
 			}
 		}
 	}
@@ -290,7 +302,7 @@ body{
 				width: 28%;
 				border-radius: 20px;
 				resize: both;
-				overflow: auto;
+				overflow-y: auto;
 				cursor: move;
 				background-color: rgba(38, 38, 144, 0.6);
 				border: 10px double #f3f3f3;

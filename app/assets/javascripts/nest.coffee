@@ -16,6 +16,8 @@ small = () ->
      height: "52%"
   $(".contact input, .contact textarea").css
      width: "95%"
+  $(".clients li").css
+     width: "70%"
 
 medium = () ->
   xp = (window.innerWidth - 370) + "px"
@@ -28,6 +30,8 @@ medium = () ->
      height: "52%"
   $(".contact input, .contact textarea").css
      width: "150%"
+  $(".clients li").css
+     width: "40%"
 
 mediumLarge = () ->
   xp = (window.innerWidth * 0.5) + "px"
@@ -40,6 +44,8 @@ mediumLarge = () ->
      height: "60%"
   $(".contact input, .contact textarea").css
      width: "150%"
+  $(".clients li").css
+     width: "23%"
 
 big = () ->
   xp = (window.innerWidth * 0.5) + "px"
@@ -52,6 +58,8 @@ big = () ->
      height: "60%"
   $(".contact input, .contact textarea").css
      width: "180%"
+  $(".clients li").css
+     width: "23%"
 
 
 #Adaptive Layout#

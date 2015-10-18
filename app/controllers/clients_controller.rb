@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-#	before_action :set_client, only [:show, :edit, :update, :destroy]
+	before_action :set_client, only: [:show, :edit, :update, :destroy]
 	def index
 		@clients = Client.all
 	end
@@ -8,7 +8,11 @@ class ClientsController < ApplicationController
 	end
 
 	def show
-		@client = Client.find(params[:id])
+		if current_user && current_user.admin?
+			@client = Client.find(params[:id])
+		else
+			render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+		end
 	end
 
 	def new
@@ -27,10 +31,8 @@ class ClientsController < ApplicationController
 		if @client.save
 			redirect_to @client
 			flash.now[:success] = "Client has been succesfully added"
-		#		format.json {render :show, status: Lcreated, location: @client}
 		else
 			render :new
-	#		format.json { render json: @client.errors, status :unprocessable_entity}
 		end
 	end
 
@@ -48,19 +50,18 @@ class ClientsController < ApplicationController
 		if @client.update(client_params)
 			redirect_to @client
 			flash.now[:success] = "Client was successfully updated."
-		#		format.json { render :show, status: :ok, location: @client}
 		else
 			render :edit
-		#		format.json { render json: @client.errors, status: :unprocessable_entity}
 		end
 	end
 
 	def destroy
-		@client = Client.find(params[:id])
-		@client.destroy
-		redirect_to clients_path
-		flash.now[:notice] = 'Client was successfull destroyed.'
-		#	fromat.json { head :no_content }
+		if @client.update(client_params)
+			@client = Client.find(params[:id])
+			@client.destroy
+			redirect_to clients_path
+			flash.now[:notice] = 'Client was successfull destroyed.'
+		end
 	end
 
 
