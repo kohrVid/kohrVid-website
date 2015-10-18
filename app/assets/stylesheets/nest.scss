@@ -75,7 +75,7 @@ body{
 		height: 50px;
 		background-color: rgba(07, 07,15, 0.99);
 		color: #f3f3f3;
-		font-size: 2rem;
+		font-size: 2.4rem;
 		font-family: rieslingregular, Helvetica, Arial;
 		z-index: 900;
 		overflow: hidden;
@@ -110,7 +110,7 @@ body{
 			}
 
 			#menu{
-				padding: 9px 30px 8px 22px;
+				padding: 9px 38px 2px 24px;
 				margin-right: -19px;
 				margin-left: -6px !important;
 				text-align: center;
@@ -119,11 +119,11 @@ body{
 	
 		.title-area {
 			position: fixed;
-			top: -29px;
+			top: -35px;
 			left: -30px;
 			margin-right: 1px;
 			.name {
-				font-size: 2.9rem; 
+				font-size: 3.1rem; 
 				letter-spacing: -2px;
 				font-weight: bold;
 			}
@@ -132,12 +132,12 @@ body{
 
 	#dropdown{
 		position: fixed;
-		font-size: 1.6rem;
+		font-size: 2.4rem;
 		font-family: rieslingregular, Arial, Helvetica;
 		margin: auto;
 		right: 0px;
 		top: 40px;
-		width: 83px;
+		width: 100px;
 		display: block;
 		padding: 10px 0 0 0;
 		background-color: rgba(07, 07, 15, 0.99);
@@ -146,7 +146,7 @@ body{
 		border-radius: 10px !important;
 		li{
 			list-style-type: none;
-			width: 83px;
+			width: 100px;
 			display: block;
 			float: left;
 			text-align: center;
@@ -156,7 +156,7 @@ body{
 		ul #dropdown li:not(:last-child) a:active, li:not(:last-child) a:hover{
 			background-color: #f3f3f3;
 			color: #070715;
-			width: 83px;
+			width: 100px;
 			display: block;
 			margin: 0;
 			overflow: hidden; 
@@ -167,7 +167,7 @@ body{
 		ul #dropdown li:last-child a:active, li:last-child a:hover{
 			background-color: #f3f3f3;
 			color: #070715;
-			width: 83px;
+			width: 100px;
 			display: block;
 			margin: 0;
 			overflow: hidden; 
@@ -193,7 +193,7 @@ body{
 		margin-right: 95px;
 		top: 3%;
 		left: 3px;
-		width: 280px; 
+		width: 228px; 
 		height: 52%;
 		background-color: rgba(243, 243, 243, 0.6);
 		border: 10px double #070705;
@@ -286,16 +286,22 @@ body{
 				bottom: 3px;
 				right: 3px;
 				font-family: Arial, Helvetica;
-				height: 200px;
-				width: 200px;
+				height: 35%;
+				width: 28%;
 				border-radius: 20px;
+				resize: both;
+				overflow: auto;
+				cursor: move;
 				background-color: rgba(38, 38, 144, 0.6);
+				border: 10px double #f3f3f3;
+				border-radius: 15px;
 				.close{
 					//display: block;
 					position: absolute;
 					top: 7px;
 					right: 10px;
 					text-align: right;
+					font-weight: bold;
 				}
 			}
 		}

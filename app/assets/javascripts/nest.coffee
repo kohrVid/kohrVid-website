@@ -9,7 +9,7 @@ small = () ->
   $("#logo").attr "x", "0px"
   yp = (window.innerHeight - 35) + "px"
   $("#logo").attr "y", yp
-  cw = (window.innerWidth - 125) + "px"
+  cw = (window.innerWidth - 142) + "px"
   $(".container").css
      left: "3px"
      width: cw
@@ -57,7 +57,6 @@ big = () ->
 #Adaptive Layout#
 $(window).load ->
   $("#dropdown").hide()
-#  $(".screenshot").hide()
   if window.innerWidth < 500
     small()
   else if window.innerWidth <750
@@ -79,8 +78,6 @@ adaptive = () ->
 
 $(window).resize ->
   adaptive()
- # if $('.screenshot').is(":visible")
-  #  screenshotLarge()
 
 #Navigation Bar#  
 $(document).ready ->

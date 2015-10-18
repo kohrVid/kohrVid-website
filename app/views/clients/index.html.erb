@@ -28,7 +28,7 @@
 				<div class = "screenshot">
 			
 				<b><%= link_to "Close image ×", "#", class: "close_image"%></b>
-				<div class = "description">
+				<div class = "description" draggable= "true">
 				<a href = "#" class = "close">&times;</a>
 				<p><strong><u><%= link_to "#{client.client_name} - #{client.client_url}", client.client_url %></u></strong></p>
 				<%= client.description %>
