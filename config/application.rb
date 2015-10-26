@@ -25,6 +25,6 @@ module KohrVid
     config.assets.enabled = true
     config.assets.initialized_on_precompile = true
     config.action_view.embed_authenticity_token_in_remote_forms = true
-
+    config.filter_parameters << :password
   end
 end

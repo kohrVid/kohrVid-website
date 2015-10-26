@@ -3,22 +3,26 @@
 
 <ul class = "clients">
 	<% @clients.each do |client| %>
-		<li>
-			<style>
-				.screenshot{
-					background-image: url('<%=client.image_url.to_s %>');
-						background-repeat: no-repeat;
-						background-position: center;
-						background-size: 60%;
-					}
-			</style>
+		<style>
+			.screenshot-<%=client.id%>{
+				background-image: url('<%=client.image_url %>');
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: 60%;
+				}
+		</style>
 
-			<%= link_to "#", id: "client_image" do%>
+		<li>
+			<%= link_to "#", id: "client_image-#{client.id}" do%>
 				<%= image_tag(client.logo_url, width: "100%") %>
-				<br /><%= client.client_name %>
+				<br />
+				<div>
+					<%= client.client_name %>
+				</div>
 			<%end%>
-			<br/>
-			<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(42)}", client) %>
+			<div>
+				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(42)}", client) %>
+			</div>
 			<%if current_user && current_user.admin%>
 				<div>
 					<%= link_to 'Show', client %>	|
@@ -27,7 +31,8 @@
 				</div>
 			<%end%>
 			
-			<div class = "screenshot">
+					<br />
+			<div class = "screenshot screenshot-<%=client.id%>">
 		
 				<b><%= link_to "Close image ×", "#", class: "close_image"%></b>
 				<div class = "description">
@@ -37,6 +42,21 @@
 				</div>
 			</div>
 		</li>
+		<script>
+			function screenshotLarge<%=client.id%>() {
+				if ($(".screenshot-<%=client.id%>").is(":hidden")){
+					$(".screenshot-<%=client.id%>").fadeIn("slow");
+				}
+			}
+				$( "#client_image-<%=client.id%>" ).click(function() {
+					screenshotLarge<%=client.id%>();
+				});
+				$(window).bind('orientationchange', function(){
+					if ($(".screenshot").is(":visible")){
+					screenshotLarge<%=client.id%>();
+					}
+				});
+		</script>
 	<% end %>
 </ul>
 <br />

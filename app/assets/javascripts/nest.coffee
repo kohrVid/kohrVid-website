@@ -18,6 +18,7 @@ small = () ->
      width: "95%"
   $(".clients li").css
      width: "70%"
+     height: "70%"
 
 medium = () ->
   xp = (window.innerWidth - 370) + "px"
@@ -32,6 +33,7 @@ medium = () ->
      width: "150%"
   $(".clients li").css
      width: "40%"
+     height: "58%"
 
 mediumLarge = () ->
   xp = (window.innerWidth * 0.5) + "px"
@@ -46,6 +48,7 @@ mediumLarge = () ->
      width: "150%"
   $(".clients li").css
      width: "23%"
+     height: "154px"
 
 big = () ->
   xp = (window.innerWidth * 0.5) + "px"
@@ -60,14 +63,14 @@ big = () ->
      width: "180%"
   $(".clients li").css
      width: "23%"
-
+     height: "154px"
 
 #Adaptive Layout#
 $(window).load ->
   $("#dropdown").hide()
   if window.innerWidth < 500
     small()
-  else if window.innerWidth <750
+  else if window.innerWidth <840
     medium()
   else if window.innerWidth < 950
     mediumLarge()
@@ -77,7 +80,7 @@ $(window).load ->
 adaptive = () ->
   if window.innerWidth < 500
     small()  
-  else if window.innerWidth <750
+  else if window.innerWidth <840
     medium()
   else if window.innerWidth < 950
     mediumLarge()

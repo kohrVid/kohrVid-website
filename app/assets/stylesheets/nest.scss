@@ -61,7 +61,7 @@ body{
 				font-weight: bold !important;
 				letter-spacing: -10px !important;
 			       	width: 100%;
-				stroke: #f3f3f3;
+				stroke: #f3f3f3; 
 			}
 		}
 	}
@@ -252,6 +252,17 @@ body{
 		}
 		table, a, p, ul{
 			font-family: Arial, Helvetica;
+			list-style-type: none;
+		}
+		ul li:before{
+			content: "\2666 \0020";
+			left: -10px;
+			position: relative;
+		}
+		.list{
+			position: relative;
+			top: -19px;
+			padding: 0 0 0 10px;
 		}
 		form table .contact, .client_form{
 			text-align: left;
@@ -267,9 +278,16 @@ body{
 			padding: 0;
 			li{
 				float: left;
-				padding:0 5% 5%;
+				position: relative;
+				padding:0 5%;
 				width: 23%;
+				height: 127px;
+				margin: 0;
 				list-style-type: none;
+				word-wrap: break-word;
+			}
+			li:before{
+				content: "" !important;
 			}
 		}
 	}

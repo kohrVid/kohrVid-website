@@ -4,7 +4,11 @@ class ClientsController < ApplicationController
 		@clients = Client.all
 	end
 	def list
-		@clients = Client.all
+		if current_user && current_user.admin?
+			@clients = Client.all
+		else
+			render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+		end
 	end
 
 	def show
@@ -28,10 +32,14 @@ class ClientsController < ApplicationController
 	def create
 		@client = Client.new(client_params)
 		@object = @client
-		if @client.save
-			redirect_to @client
+		if @client.save && remotipart_submitted?
+			render 'index'
 			flash.now[:success] = "Client has been succesfully added"
+		elsif !remotipart_submitted?
+			flash.now[:error] = "Client has been created but remotipart has not been submitted"
+			render 'new'
 		else
+			flash.now[:error] = "An error has prevented this client from being created."
 			render :new
 		end
 	end
@@ -47,16 +55,21 @@ class ClientsController < ApplicationController
 
 	def update
 		@client = Client.find(params[:id])
-		if @client.update(client_params)
-			redirect_to @client
+		@object = @client
+		if @client.update(client_params) && remotipart_submitted?
 			flash.now[:success] = "Client was successfully updated."
+			render 'show'
+		elsif !remotipart_submitted?
+			flash.now[:error] = "Client has been created but remotipart has not been submitted"
+			render 'show'
 		else
-			render :edit
+			flash.now[:error] = "An error has prevented this client from being updated."
+			render 'edit'
 		end
 	end
 
 	def destroy
-		if @client.update(client_params)
+		if current_user && current_user.admin?
 			@client = Client.find(params[:id])
 			@client.destroy
 			redirect_to clients_path
