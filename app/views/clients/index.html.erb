@@ -9,6 +9,9 @@
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: 60%;
+				position: fixed;
+				z-index: 100000;
+
 				}
 		</style>
 
@@ -18,6 +21,10 @@
 				<br />
 				<div>
 					<%= client.client_name %>
+					<noscript>
+						<%=link_to "Site", client.client_url %>|
+						<%=link_to "Screenshot",image_path(client.image_url) %>|
+					</noscript>
 				</div>
 			<%end%>
 			<div>
@@ -52,7 +59,7 @@
 					screenshotLarge<%=client.id%>();
 				});
 				$(window).bind('orientationchange', function(){
-					if ($(".screenshot").is(":visible")){
+					if ($(".screenshot-<%=client.id%>").is(":visible")){
 					screenshotLarge<%=client.id%>();
 					}
 				});
