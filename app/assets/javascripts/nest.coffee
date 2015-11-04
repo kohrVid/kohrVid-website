@@ -101,6 +101,6 @@ $(document).ready ->
     $(".alerts").hide()
     $(".description").fadeOut()
   $(".close_image").click ->
+    $(".container").css
+       "overflow-y": "scroll"
     $(".screenshot").fadeOut("slow")
-    
-

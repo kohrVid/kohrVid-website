@@ -30,7 +30,7 @@
 				</div>
 			<%end%>
 			<div>
-				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(42)}", client) %>
+				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(45)}", client) %>
 			</div>
 			<%if current_user && current_user.admin%>
 				<div>
@@ -49,7 +49,7 @@
 					<p><strong><u><%= link_to "#{client.client_name} - #{client.client_url}", client.client_url %></u></strong></p>
 					<%= client.description %>
 					<% if client.pdf.present? %>
-						<%= link_to "[PDF]", (client.pdf.to_s) %>
+						<strong><%= link_to "[PDF]", (client.pdf.to_s) %></strong>
 					<%end%>
 				</div>
 			</div>
@@ -60,6 +60,7 @@
 			function screenshotLarge<%=client.id%>() {
 				if ($(".screenshot-<%=client.id%>").is(":hidden")){
 					$(".screenshot-<%=client.id%>").fadeIn("slow");
+					$(".container").css("overflow-y", "hidden");
 				}
 				if ($(".screenshot-<%=client.id%> .description").is(":hidden")){
 					$(".screenshot-<%=client.id%> .description").fadeIn("slow");
