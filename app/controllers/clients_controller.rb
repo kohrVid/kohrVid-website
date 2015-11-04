@@ -37,10 +37,10 @@ class ClientsController < ApplicationController
 			flash.now[:success] = "Client has been succesfully added"
 		elsif !remotipart_submitted?
 			flash.now[:error] = "Client has been created but remotipart has not been submitted"
-			render 'new'
+			render 'index'
 		else
 			flash.now[:error] = "An error has prevented this client from being created."
-			render :new
+			render 'new'
 		end
 	end
 
@@ -86,6 +86,6 @@ class ClientsController < ApplicationController
 		end
 
 		def client_params
-			params.require(:client).permit(:client_name, :client_url, :image_url, :logo_url, :description)
+			params.require(:client).permit(:client_name, :client_url, :image_url, :logo_url, :description, :pdf)
 		end
 end

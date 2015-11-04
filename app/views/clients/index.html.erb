@@ -15,6 +15,7 @@
 				}
 		</style>
 
+
 		<li>
 			<%= link_to "#", id: "client_image-#{client.id}" do%>
 				<%= image_tag(client.logo_url, width: "100%") %>
@@ -24,6 +25,7 @@
 					<noscript>
 						<%=link_to "Site", client.client_url %>|
 						<%=link_to "Screenshot",image_path(client.image_url) %>|
+						<%= link_to "PDF", (client.pdf.to_s) %>|
 					</noscript>
 				</div>
 			<%end%>
@@ -46,13 +48,21 @@
 					<a href = "#" class = "close">&times;</a>
 					<p><strong><u><%= link_to "#{client.client_name} - #{client.client_url}", client.client_url %></u></strong></p>
 					<%= client.description %>
+					<% if client.pdf.present? %>
+						<%= link_to "[PDF]", (client.pdf.to_s) %>
+					<%end%>
 				</div>
 			</div>
 		</li>
+
+
 		<script>
 			function screenshotLarge<%=client.id%>() {
 				if ($(".screenshot-<%=client.id%>").is(":hidden")){
 					$(".screenshot-<%=client.id%>").fadeIn("slow");
+				}
+				if ($(".screenshot-<%=client.id%> .description").is(":hidden")){
+					$(".screenshot-<%=client.id%> .description").fadeIn("slow");
 				}
 			}
 				$( "#client_image-<%=client.id%>" ).click(function() {

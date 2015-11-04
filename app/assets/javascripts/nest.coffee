@@ -18,7 +18,7 @@ small = () ->
      width: "95%"
   $(".clients li").css
      width: "70%"
-     height: "70%"
+     height: "71%"
 
 medium = () ->
   xp = (window.innerWidth - 370) + "px"
@@ -33,7 +33,7 @@ medium = () ->
      width: "150%"
   $(".clients li").css
      width: "40%"
-     height: "58%"
+     height: "59%"
 
 mediumLarge = () ->
   xp = (window.innerWidth * 0.5) + "px"
@@ -48,7 +48,7 @@ mediumLarge = () ->
      width: "150%"
   $(".clients li").css
      width: "23%"
-     height: "154px"
+     height: "155px"
 
 big = () ->
   xp = (window.innerWidth * 0.5) + "px"
@@ -63,7 +63,7 @@ big = () ->
      width: "180%"
   $(".clients li").css
      width: "23%"
-     height: "154px"
+     height: "155px"
 
 #Adaptive Layout#
 $(window).load ->

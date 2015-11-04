@@ -9,6 +9,7 @@
 				<th>Client</th>
 				<th>Website</th>
 				<th>Screenshot</th>
+				<th>PDF</th>
 				<th>Description</th>
 				<th colspan="3"></th>
 				<th>Date Created</th>
@@ -23,6 +24,7 @@
 					<td><%= client.client_name %></td>
 					<td><%= client.client_url %></td>
 					<td><%= image_tag client.image_url, width: "100" %></td>
+					<td><%= link_to_if(client.pdf.present?, "PDF", client.pdf.to_s) %></td>
 					<td><%= client.description %></td>
 					<td><%= link_to 'Show', client %></td>
 					<td><%= link_to 'Edit', edit_client_path(client) %></td>
