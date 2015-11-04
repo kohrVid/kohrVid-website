@@ -35,7 +35,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
   
   gem 'mail_form' #, '~> 1.5'
-#  gem 'simple_form'#, '~> 3'
   gem 'carrierwave', '0.10.0'
   gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
   gem 'mini_magick', '~> 3.8.0'
