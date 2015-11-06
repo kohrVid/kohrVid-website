@@ -5,8 +5,4 @@ $(document).ready(function(){
 	});
 });
 
-//#Remotipart#
-$(form).on("ajax:remotipartComplete", function(e, data){
-  console.log(e, data)
-});
 
