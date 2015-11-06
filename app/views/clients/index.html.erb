@@ -29,8 +29,8 @@
 					</noscript>
 				</div>
 			<%end%>
-			<div>
-				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(45)}", client) %>
+			<div class = "desc">
+				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(26)}", client) %>
 			</div>
 			<%if current_user && current_user.admin%>
 				<div>

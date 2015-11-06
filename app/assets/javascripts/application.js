@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.remotipart
+//= require jquery.iframe-transport
 //= require nest_jq.js
 //= require_tree .
