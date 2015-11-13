@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 	delete 	"logout"  		=>  "sessions#destroy"
 	get 	"signup" 		=>  "users#new"
 	resources :users
+	get 	"users" 		=>  "users#index"
 	resources :account_activation, only: [:edit]
 	get 	"password_resets/new"
 	get 	"password_resets/edit"
