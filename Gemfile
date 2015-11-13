@@ -43,7 +43,6 @@ source 'https://rubygems.org'
   group :production do
 	  gem 'dotenv'
 	  gem 'puma', '~> 2.11.1'
-	  gem 'rubypython'
 	  gem 'aws-sdk'
   end
 
