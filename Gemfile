@@ -32,7 +32,7 @@ source 'https://rubygems.org'
 	  gem 'byebug'
 	  gem "guard-rspec"
 	  gem "capybara"
-	  gem "factory_girl"
+	  gem "factory_girl_rails"
   end
 
   group :development do
