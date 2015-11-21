@@ -12,11 +12,11 @@
 !/log/.keep
 /tmp
 /public/uploads/*
-#/config/initializers/dev_environment.rb
-#/config/database.yml
-#/config/secrets.yml
-#/db/seed_data/*
-#/db/seeds.rb
+/config/initializers/dev_environment.rb
+/config/database.yml
+/config/secrets.yml
+/db/seed_data/*
+/db/seeds.rb
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
