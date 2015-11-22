@@ -8,11 +8,15 @@
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 		<%= favicon_link_tag 'favicon.ico' %>
 		<!--[if lte IE 8 ]>
-	  <style>
-		body{
-			background-color: #f3f3f3 !important;
-		}
-	  </style>
+			<style>
+				body{
+					background-color: #f3f3f3 !important;
+				}
+				#top-bar{
+					backgroud-color: #070715 !important;
+						color: #f3f3f3 !important;
+					}
+			</style>
 		<![endif]-->
 	</head>
 	<body>
@@ -32,6 +36,9 @@
 			</div>
 
 			<div class = "container">
+				<!--[if lte IE 8 ]>
+	    				Sorry, this site doesn't support IE8. Please upgrade your browser or try switching to Firefox/Chrome/Opera
+				<![endif]-->
 				<noscript>
 					This site looks much nicer with JavaScript enabled so please make sure it's switched on in your browser settings if possible.
 				</noscript>
