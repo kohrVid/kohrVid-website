@@ -106,6 +106,7 @@ RSpec.describe User, type: :model do
 		it "must be at least six characters long" do
 			u = FactoryGirl.build(:user) 
 			u.password = "five5"
+			u.password_confirmation = u.password
 			expect(u).to_not be_valid
 		end
 	end
