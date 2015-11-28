@@ -32,7 +32,7 @@ source 'https://rubygems.org'
   gem 'brakeman', '~> 3.1', '>= 3.1.2'
   gem 'secure_headers', '~> 2.4', '>= 2.4.3'
   gem 'dawnscanner', '~> 1.4', '>= 1.4.2'
-  gem 'activerecord-session_store'  
+#  gem 'activerecord-session_store'  
 
   group :development, :test do
 	  gem 'byebug'

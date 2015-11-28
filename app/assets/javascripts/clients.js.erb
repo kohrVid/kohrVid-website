@@ -1,0 +1,19 @@
+<% Client.all.each do |client| %>
+	function screenshotLarge<%=client.id%>() {
+		if ($(".screenshot-<%=client.id%>").is(":hidden")) {
+			$(".screenshot-<%=client.id%>").fadeIn("slow");
+			$(".container").css("overflow-y", "hidden");
+		}
+		if ($(".screenshot-<%=client.id%> .description").is(":hidden")) {
+			$(".screenshot-<%=client.id%> .description").fadeIn("slow");
+		}
+	}
+		$("#client_image-<%=client.id%>").click(function() {
+			screenshotLarge<%=client.id%>();
+		});
+		$(window).bind('orientationchange', function(){
+			if ($(".screenshot-<%=client.id%>").is(":visible")){
+				screenshotLarge<%=client.id%>();
+			}
+		});
+<%end%>

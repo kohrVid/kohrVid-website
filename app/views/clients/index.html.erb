@@ -3,19 +3,7 @@
 
 <ul class = "clients">
 	<% @clients.each do |client| %>
-		<style>
-			.screenshot-<%=client.id%>{
-				background-image: url('<%=client.image_url %>');
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: 90%;
-				position: fixed;
-				z-index: 100000;
-
-				}
-		</style>
-
-
+		<link rel="stylesheet" media="screen" href="/assets/clients.css.erb" />
 		<li>
 			<%= link_to "#", id: "client_image-#{client.id}" do%>
 				<%= image_tag(client.logo_url, width: "100%") %>
@@ -56,27 +44,10 @@
 		</li>
 
 
-		<script>
-			function screenshotLarge<%=client.id%>() {
-				if ($(".screenshot-<%=client.id%>").is(":hidden")){
-					$(".screenshot-<%=client.id%>").fadeIn("slow");
-					$(".container").css("overflow-y", "hidden");
-				}
-				if ($(".screenshot-<%=client.id%> .description").is(":hidden")){
-					$(".screenshot-<%=client.id%> .description").fadeIn("slow");
-				}
-			}
-				$( "#client_image-<%=client.id%>" ).click(function() {
-					screenshotLarge<%=client.id%>();
-				});
-				$(window).bind('orientationchange', function(){
-					if ($(".screenshot-<%=client.id%>").is(":visible")){
-					screenshotLarge<%=client.id%>();
-					}
-				});
-		</script>
+		<script src = "/assets/clients.js.erb"></script>
 	<% end %>
 </ul>
 <br />
 <% if current_user && current_user.admin?%>
 	<%= link_to 'New Client', new_client_path %><%end%>
+

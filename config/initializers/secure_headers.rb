@@ -8,11 +8,12 @@
   config.csp = {
     :default_src => "https: self",
     :script_src => "https: self",
-    :img_src => "self",
+    :img_src => ["self", "kohrvid-website.s3.amazonaws.com"],
     :tag_report_uri => true,
     :enforce => true,
     :app_name => 'secure_headers_test',
-    :report_uri => '/csp_reports'
+    :report_uri => '/csp_reports',
+    :form_action => "'self' github.com",
   }
   config.hpkp = {
     :max_age => 60.days.to_i,

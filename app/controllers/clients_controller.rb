@@ -22,18 +22,20 @@ class ClientsController < ApplicationController
 	def create
 		@client = Client.new(client_params)
 		@object = @client
+		respond_to do |format|
 		if @client.save# && remotipart_submitted?
-			format.html { redirect_to clients_path, notice: "Client has been succesfully added" }
-			format.js
-			format.json { render :show, status: :created, location: @client}
+				format.html { redirect_to clients_path, notice: "Client has been succesfully added" }
+				format.js
+				format.json { render status: 200, location: @client}
 
-#		elsif @client.save && !remotipart_submitted?
-#			format.js
-#			flash.now[:error] = "Client has been created but remotipart has not been submitted"
-#			render 'index'
-		else
-			format.html { render :new, error:  "An error has prevented this client from being created."}
-			format.json {render json: @client.errors, status: :unprocessable_entity}
+	#		elsif @client.save && !remotipart_submitted?
+	#			format.js
+	#			flash.now[:error] = "Client has been created but remotipart has not been submitted"
+	#			render 'index'
+			else
+				format.html { render :new, error:  "An error has prevented this client from being created."}
+				format.json {render json: @client.errors, status: :unprocessable_entity}
+			end
 		end
 	end
 
@@ -45,19 +47,21 @@ class ClientsController < ApplicationController
 	def update
 		@client = Client.find(params[:id])
 		@object = @client
-		if @client.update(client_params)# && remotipart_submitted?
-			format.html { redirect_to clients_path, notice: "Client was successfully updated." }
-			format.js
-			format.json { render :show, status: :updated, location: @client}
+		respond_to do |format|
+			if @client.update(client_params)# && remotipart_submitted?
+				format.html { redirect_to clients_path, notice: "Client was successfully updated." }
+				format.js
+				format.js { render status: 200, location: @client}
 =begin
-		elsif @client.update(client_params) && !remotipart_submitted?
-			format.js
-			flash.now[:error] = "Client has been created but remotipart has not been submitted"
-			render 'show'
+			elsif @client.update(client_params) && !remotipart_submitted?
+				format.js
+				flash.now[:error] = "Client has been created but remotipart has not been submitted"
+				render 'show'
 =end
-		else
-			format.html { render :edit, error:  "An error has prevented this client from being created."}
-			format.json {render json: @client.errors, status: :unprocessable_entity}
+			else
+				format.html { render :edit, error:  "An error has prevented this client from being created."}
+				format.json {render json: @client.errors, status: :unprocessable_entity}
+			end
 		end
 	end
 
