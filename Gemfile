@@ -25,9 +25,10 @@ source 'https://rubygems.org'
   gem 'mini_magick', '~> 3.8.0'
   gem 'fog', '~> 1.34.0'
   gem "will_paginate", "~> 3.0.7"
+  gem "fancybox2-rails"
+  
   gem "rspec-rails"
   gem "rspec-its"
-
   gem 'rack-attack', '~> 4.3'
   gem 'brakeman', '~> 3.1', '>= 3.1.2'
   gem 'secure_headers', '~> 2.4', '>= 2.4.3'

@@ -293,46 +293,25 @@ body{
 	}
 
 		.screenshot{
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
 			background-color: #070715;
 			display: none;
 			color: #f3f3f3;
-			.close_image{
-				position: fixed;
-				top: 35px;
-				right: 50px;
-
-			}
 			a:link, a:visited, a:hover, a:active{
 				color: #f3f3f3 !important;
 			}
+			
+			img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 90%;
+			}
 			.description{
-				position: fixed;
-				padding: 10px;
-				bottom: 3px;
-				right: 3px;
+				margin-top: 20px;
+				margin-left: 5%;
+				padding-bottom: 20px;
+				text-align: left;
 				font-family: Arial, Helvetica;
-				height: 27%;
-				width: 28%;
-				border-radius: 20px;
-				resize: both;
-				overflow-y: auto;
-				cursor: move;
-				background-color: rgba(38, 38, 144, 0.6);
-				border: 10px double #f3f3f3;
-				border-radius: 15px;
-				.close{
-					//display: block;
-					position: absolute;
-					top: 7px;
-					right: 10px;
-					text-align: right;
-					font-weight: bold;
-				}
 			}
 		}
 

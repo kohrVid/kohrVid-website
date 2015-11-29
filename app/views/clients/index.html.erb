@@ -3,10 +3,9 @@
 
 <ul class = "clients">
 	<% @clients.each do |client| %>
-		<link rel="stylesheet" media="screen" href="/assets/clients.css.erb" />
+		
 		<li>
-			<%= link_to "#", id: "client_image-#{client.id}" do%>
-				<%= image_tag(client.logo_url, width: "100%") %>
+			<%= link_to image_tag(client.logo_url, width: "100%"), "#client-#{client.id}", class: "fancybox" %>
 				<br />
 				<div>
 					<%= client.client_name %>
@@ -16,7 +15,6 @@
 						<%= link_to "PDF", (client.pdf.to_s) %>|
 					</noscript>
 				</div>
-			<%end%>
 			<div class = "desc">
 				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(26)}", client) %>
 			</div>
@@ -28,23 +26,18 @@
 				</div>
 			<%end%>
 			
-					<br />
-			<div class = "screenshot screenshot-<%=client.id%>">
-		
-				<b><%= link_to "Close image ×", "#", class: "close_image"%></b>
+			<br />
+			<div class = "screenshot" id = "client-<%=client.id%>">
+				<%= image_tag(client.image_url) %>		
 				<div class = "description">
-					<a href = "#" class = "close">&times;</a>
-					<p><strong><u><%= link_to "#{client.client_name} - #{client.client_url.gsub(/((https?)\:\/+(w+\.)?)/i, "")}", client.client_url %></u></strong></p>
-					<%= client.description %>
+					<strong><u><%= link_to "#{client.client_name} - #{client.client_url.gsub(/((https?)\:\/+(w+\.)?)/i, "")}", client.client_url %></u></strong>
+					<p><%= client.description %>
 					<% if client.pdf.present? %>
 						<strong><%= link_to "[PDF]", (client.pdf.to_s) %></strong>
-					<%end%>
+					<%end%></p>
 				</div>
 			</div>
 		</li>
-
-
-		<script src = "/assets/clients.js.erb"></script>
 	<% end %>
 </ul>
 <br />
