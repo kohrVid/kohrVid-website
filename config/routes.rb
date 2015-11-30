@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 	root "nest#index"
 	get 	"about" 		=>  "nest#about"
-	get 	"contacts"	 	=>  "contacts#new"
+	get 	"contact"	 	=>  "contacts#new"
 	resources "contacts", 	only: [:new, :create]
 	get 	"clients" 	   	=>  "clients#index"
 	get 	"clients/list" 	=>  "clients#list"
