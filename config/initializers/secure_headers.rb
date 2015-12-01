@@ -7,8 +7,8 @@
   config.x_permitted_cross_domain_policies = 'none'
   config.csp = {
     :default_src => "https: self",
-    :script_src => "https: self",
-    :img_src => ["self", "kohrvid.com", "www.kohrvid.com", "kohrvid-website.s3.amazonaws.com"],
+    :script_src => ["self", "http://kohrvid.com", "http://www.kohrvid.com"],
+    :img_src => ["self", "http://kohrvid.com", "http://www.kohrvid.com", "kohrvid-website.s3.amazonaws.com"],
     :tag_report_uri => true,
     :enforce => true,
     :app_name => 'secure_headers_test',
