@@ -5,87 +5,128 @@
 		#Nest.Café#
 
 #Define Dimensions#
-small = () ->
+
+smallSVG = () ->
   $("#logo").attr "x", "0px"
-  yp = (window.innerHeight - 35) + "px"
-  $("#logo").attr "y", yp
+  svgTop = (window.innerHeight - 35) + "px"
+  $("#logo").attr "y", svgTop
   cw = (window.innerWidth - 142) + "px"
+
+smallContainer = () ->
   $(".container").css
      left: "3px"
      width: cw
      height: "52%"
+
+smallContact = () ->
   $(".contact input, .contact textarea").css
      width: "95%"
+
+smallClient =() ->
   $(".clients li").css
      width: "70%"
      height: "75%"
 
-medium = () ->
-  xp = (window.innerWidth - 370) + "px"
-  $("#logo").attr "x", xp
-  yp = (window.innerHeight - 35) + "px"
-  $("#logo").attr "y", yp
+smallScreen = () ->
+  smallSVG()
+  smallContainer()
+  smallContact()
+  smallClient()
+
+mediumSVG = () ->
+  svgLeft = (window.innerWidth - 370) + "px"
+  $("#logo").attr "x", svgLeft
+  svgTop = (window.innerHeight - 35) + "px"
+  $("#logo").attr "y", svgTop
+
+mediumContainer = () ->
   $(".container").css
      left: "50px"
      width: "350px"
      height: "52%"
+mediumContact = () ->
   $(".contact input, .contact textarea").css
      width: "150%"
+
+mediumContact = () ->
   $(".clients li").css
      width: "40%"
      height: "240px"
 
-mediumLarge = () ->
-  xp = (window.innerWidth * 0.5) + "px"
-  $("#logo").attr "x", xp
-  yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
-  $("#logo").attr "y", yp
+mediumScreen = () ->
+  mediumSVG()
+  mediumContainer()
+  mediumContact()
+  mediumClient()
+
+mediumLargeSVG = () ->
+  svgLeft = (window.innerWidth * 0.5) + "px"
+  $("#logo").attr "x", svgLeft
+  svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
+  $("#logo").attr "y", svgTop
+
+mediumLargeContainer = () ->
   $(".container").css
      left: "50px"
      width: "350px"
      height: "60%"
-  $(".contact input, .contact textarea").css
-     width: "150%"
+
+mediumLargeClient = () ->
   $(".clients li").css
      width: "23%"
      height: "189px"
 
-big = () ->
-  xp = (window.innerWidth * 0.5) + "px"
-  $("#logo").attr "x", xp
-  yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
-  $("#logo").attr "y", yp
+mediumLargeScreen = () ->
+  mediumLargeSVG()
+  mediumLargeContainer()
+  mediumContact()
+  mediumLargeClient()
+
+
+largeSVG = () ->
+  svgLeft = (window.innerWidth * 0.5) + "px"
+  $("#logo").attr "x", svgLeft
+  svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
+  $("#logo").attr "y", svgTop
+
+largeContainer = () ->
   $(".container").css
      left: "50px"
      width: "400px"
      height: "60%"
+
+largeContact = () ->
   $(".contact input, .contact textarea").css
      width: "180%"
   $(".clients li").css
      width: "23%"
      height: "189px"
 
-#Adaptive Layout#
-$(window).load ->
-  $("#dropdown").hide()
-  if window.innerWidth < 500
-    small()
-  else if window.innerWidth <840
-    medium()
-  else if window.innerWidth < 950
-    mediumLarge()
-  else
-    big()
+largeClient = () ->
+  $(".clients li").css
+     width: "23%"
+     height: "189px"
 
+largeScreen = () ->
+  largeSVG()
+  largeContainer()
+  largeContact()
+  largeClient()
+
+#Adaptive Layout#
 adaptive = () ->
   if window.innerWidth < 500
-    small()  
+    smallScreen()
   else if window.innerWidth <840
-    medium()
+    mediumScreen()
   else if window.innerWidth < 950
-    mediumLarge()
+    mediumLargeScreen()
   else
-    big()
+    largeScreen()
+
+$(window).load ->
+  $("#dropdown").hide()
+  adaptive()
 
 $(window).resize ->
   adaptive()
