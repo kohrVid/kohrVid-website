@@ -10,12 +10,12 @@ smallSVG = () ->
   $("#logo").attr "x", "0px"
   svgTop = (window.innerHeight - 35) + "px"
   $("#logo").attr "y", svgTop
-  cw = (window.innerWidth - 142) + "px"
 
 smallContainer = () ->
+  containerWidth = (window.innerWidth - 142) + "px"
   $(".container").css
      left: "3px"
-     width: cw
+     width: containerWidth
      height: "52%"
 
 smallContact = () ->
@@ -44,11 +44,12 @@ mediumContainer = () ->
      left: "50px"
      width: "350px"
      height: "52%"
+
 mediumContact = () ->
   $(".contact input, .contact textarea").css
      width: "150%"
 
-mediumContact = () ->
+mediumClient = () ->
   $(".clients li").css
      width: "40%"
      height: "240px"
