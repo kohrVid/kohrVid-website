@@ -14,10 +14,10 @@
 /public/uploads/*
 
 
-#/config/database.yml
-#/config/secrets.yml
-#/db/seed_data/*
-#/db/seeds.rb
+/config/database.yml
+/config/secrets.yml
+/db/seed_data/*
+/db/seeds.rb
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
