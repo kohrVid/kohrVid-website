@@ -15,13 +15,11 @@ class ClientsController < ApplicationController
 
 	def new
 		@client = Client.new
-		@object = @client
 		render 'new'
 	end
 
 	def create
 		@client = Client.new(client_params)
-		@object = @client
 		respond_to do |format|
 		if @client.save# && remotipart_submitted?
 				format.html { redirect_to clients_path, notice: "Client has been succesfully added" }
@@ -46,7 +44,6 @@ class ClientsController < ApplicationController
 
 	def update
 		@client = Client.find(params[:id])
-		@object = @client
 		respond_to do |format|
 			if @client.update(client_params)# && remotipart_submitted?
 				format.html { redirect_to clients_path, notice: "Client was successfully updated." }

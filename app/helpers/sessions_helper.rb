@@ -27,6 +27,10 @@ module SessionsHelper
 		end
 	end
 
+	def admin_is_logged_in
+		@admin_is_logged_in = current_user && current_user.admin?
+	end
+
 	def logged_in?
 		!current_user.nil?
 	end

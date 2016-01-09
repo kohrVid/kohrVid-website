@@ -1,5 +1,6 @@
 <% provide(:title, "Clients")%>
 <h1>Clients</h1>
+<p>Many of the informal projects I've worked on can be found on my <%= link_to "GitHub", "https://github.com/kohrVid" %> page (which contains links to the apps that I've deployed to Heroku). The folllowing is a list of clients whose websites I've developed.</p>
 
 <ul class = "clients">
 	<% @clients.each do |client| %>
@@ -16,9 +17,9 @@
 					</noscript>
 				</div>
 			<div class = "desc">
-				<%= link_to_if(current_user && current_user.admin?, "#{client.description.truncate(26)}", client) %>
+				<%= link_to_if(admin_is_logged_in, "#{client.description.truncate(26)}", client) %>
 			</div>
-			<%if current_user && current_user.admin%>
+			<%if admin_is_logged_in %>
 				<div>
 					<%= link_to 'Show', client %>	|
 					<%= link_to 'Edit', edit_client_path(client) %>	|
@@ -41,6 +42,6 @@
 	<% end %>
 </ul>
 <br />
-<% if current_user && current_user.admin?%>
+<% if admin_is_logged_in %>
 	<%= link_to 'New Client', new_client_path %><%end%>
 

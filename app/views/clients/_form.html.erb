@@ -1,4 +1,4 @@
-<%= form_for(@client, :remote => true) do |f| %>
+<%= form_for(@client, html: { multipart: true }, :remote => true) do |f| %>
 	<table class = "client_form">
 		<tr>
 			<td><%= f.label :client_name, "Client Name:"%></td>
@@ -51,7 +51,7 @@
 			<td><%= f.text_area :description %></td>
 		</tr>
 		<tr>
-			<td><%= f.submit "Save" %></td>
+			<td><%= f.submit "Save", class: "button" %></td>
 		</tr>
 	</table>
 <%end%>

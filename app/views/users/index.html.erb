@@ -14,7 +14,7 @@
 				<td><%= link_to user.name, user %></td>
 				<td><%=user.email%></td>
 				<td>
-					<% if current_user.admin? && !current_user?(user)%>
+					<% if admin_is_logged_in && !current_user?(user)%>
 					| <%= link_to "delete", user, method: :delete, data: { cofirm: "Are you sure?"}%>
 					<%end%>
 				</td>

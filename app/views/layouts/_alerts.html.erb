@@ -4,10 +4,19 @@
 			<div class = "<%= key %>">
 				<h3><%= value %></h3>
 				<a href = "#" class = "close">&times;</a>
-				<% if @object.present? && @object.errors.any? %>
-					The contact form contains <%= pluralize(@object.errors.count, "error")%>.
+				<% if @user.present? %>
+					<% object = @user %>
+				<% elsif user.present? %>
+					<% object = user %>
+				<% elsif @contact.present? %>
+					<% object = @contact %>
+				<% elsif @client.present? %>
+					<% object = @client %>
+				<%end%>
+				<% if object.present? && object.errors.any? %>
+					The form contains <%= pluralize(object.errors.count, "error")%>.
 					<ul>
-						<% @object.errors.full_messages.each do |msg|%>
+						<% object.errors.full_messages.each do |msg|%>
 							<li><%=msg%></li>
 						<%end%>
 					</ul>
