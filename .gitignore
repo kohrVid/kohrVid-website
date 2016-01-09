@@ -13,15 +13,18 @@
 /tmp
 /public/uploads/*
 
-/config/initializers/dev_environment.rb
-/config/database.yml
-/config/secrets.yml
-/db/seed_data/*
-/db/seeds.rb
-/config/initializers/secret_token.rb
-/db/development.sqlite3     
+
+#/config/database.yml
+#/config/secrets.yml
+#/db/seed_data/*
+#/db/seeds.rb
+#/config/initializers/secret_token.rb
+#/db/development.sqlite3     
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Ignore application configuration
+/config/application.yml
