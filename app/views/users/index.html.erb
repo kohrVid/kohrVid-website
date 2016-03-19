@@ -1,22 +1,25 @@
 <% provide(:title, 'All Users')%>
 <h1>All Users</h1>
+<div class = "right-align">
+	<%= link_to "Log Out", destroy_user_session_path, method: "delete" unless !user_signed_in? %>
+</div>
 <%= will_paginate%>
 <table>
 	<tr>
 		<th>ID</th>
 		<th>Name</th>
-		<th>Email Address</th>
+		<th>Bio</th>
 	</tr>
 	<% @users.each do |user|%>
-		<% unless !user.activated? %>
+		<% unless user.locked? %>
 			<tr>
-				<td><%=user.id%></td>
+				<td><%= user.id %></td>
 				<td><%= link_to user.name, user %></td>
-				<td><%=user.email%></td>
+				<td><%= user.bio.to_s.truncate(15) %></td>
 				<td>
-					<% if admin_is_logged_in && !current_user?(user)%>
-					| <%= link_to "delete", user, method: :delete, data: { cofirm: "Are you sure?"}%>
-					<%end%>
+					<% if admin_is_logged_in && !current_user?(user) %>
+						| <%= link_to "Delete", user, method: :delete, data: { cofirm: "Are you sure?"} %>
+				<%end%>
 				</td>
 			</tr>
 		<%end%>
@@ -24,4 +27,3 @@
 
 </table>
 <%= will_paginate%>
-<p><%= link_to "Log Out", logout_path, method: "delete" %></p>

@@ -66,7 +66,7 @@ class ClientsController < ApplicationController
 		@client = Client.find(params[:id])
 		@client.destroy
 		redirect_to clients_path
-		flash.now[:notice] = 'Client was successfull destroyed.'
+		flash.now[:notice] = 'Client was successfully destroyed.'
 	end
 
 

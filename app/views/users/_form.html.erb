@@ -31,6 +31,12 @@
 			<td><%= f.password_field :password_confirmation %></td>
 		</tr>
 		<tr>
+			<td><%= f.label :bio, "Bio:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.text_area :bio, rows: 10 %></td>
+		</tr>
+		<tr>
 			<td><%= f.submit "Submit", class: "button" %></td>
 		</tr>
 	</table>

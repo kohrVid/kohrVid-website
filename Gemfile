@@ -26,21 +26,25 @@ source "https://rubygems.org"
   gem "fog", "~> 1.34.0"
   gem "will_paginate", "~> 3.0.7"
   gem "fancybox2-rails"
+  gem "devise"
   
   gem "rspec-rails"
-  gem "rspec-its"
+#  gem "rspec-its"
+  gem "factory_girl_rails", "~> 4.0"
   gem "rack-attack", "~> 4.3"
   gem "brakeman", "~> 3.1", ">= 3.1.2"
   gem "secure_headers", "~> 2.4", ">= 2.4.3"
-  gem "dawnscanner", "~> 1.4", ">= 1.4.2"
-  gem "figaro"
-#  gem "activerecord-session_store"  
+  gem "dawnscanner", ">= 1.4.2" #run "dawn -r ./" to use 
+  gem "figaro", "0.7.0"
+  gem "activerecord-session_store"  
 
   group :development, :test do
 	  gem "byebug"
 	  gem "guard-rspec"
+	  gem "rspec-html-matchers", "0.7.0"
 	  gem "capybara"
-	  gem "factory_girl_rails"
+	  gem "database_cleaner"
+	  gem "simplecov", :require => false, :group => :test
   end
 
   group :development do
