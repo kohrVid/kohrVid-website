@@ -257,14 +257,16 @@ body{
 		}
 		h3 {
 			font-size: 2.1rem;
-			line-height: 2rem !important;
+			line-height: 1.8rem !important;
 			a:hover{
 				font-size: 2.3rem !important;
 			}
 		}
 		.right-align{
 			float: right;
+			position: relative;
 			right: 0;
+			top: -28px
 		}
 		table, label, a, p, ul{
 			font-family: Arial, Helvetica;
@@ -280,10 +282,10 @@ body{
 			top: -19px;
 			padding: 0 0 0 10px;
 		}
-		form table .contact, .client_form{
+		form .general_form {
 			text-align: left;
-			input, textarea{
-				width: 95%;
+			textarea, input{
+				width: 120%;
 			}
 		}
 		.field {

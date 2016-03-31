@@ -15,7 +15,7 @@ smallContainer = () ->
      height: "52%"
 
 smallContact = () ->
-  $(".contact input, .contact textarea").css
+  $(".general_form input, .general_form textarea").css
      width: "95%"
 
 smallClient =() ->
@@ -42,7 +42,7 @@ mediumContainer = () ->
      height: "52%"
 
 mediumContact = () ->
-  $(".contact input, .contact textarea").css
+  $(".general_form input, .general_form textarea").css
      width: "150%"
 
 mediumClient = () ->
@@ -93,7 +93,7 @@ largeContainer = () ->
      height: "60%"
 
 largeContact = () ->
-  $(".contact input, .contact textarea").css
+  $(".general_form input, .general_form textarea").css
      width: "180%"
   $(".clients li").css
      width: "23%"

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	before_action :admin_user_404, except: [:index, :show]
 
 	def index
-		@posts = Post.all.order("published_at DESC").paginate(page: params[:page])
+		@posts = Post.all.where(draft: false).order("published_at DESC").paginate(page: params[:page])
 	end
 
 	def show
