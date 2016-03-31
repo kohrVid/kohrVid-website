@@ -1,0 +1,26 @@
+<%= form_for(@post) do |f| %>
+	<table>
+		<tr>
+			<td><%= f.label :title, "Title:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :title%></td>
+		</tr>
+		<tr>
+			<td><%= f.label :body, "Body:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.text_area :body, rows: 25 %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :draft, "Draft?:"%></td>
+		</tr>
+		<tr>
+			<td><%= f.check_box :draft %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Submit", class: "button" %></td>
+		</tr>
+	</table>
+
+<%end%>

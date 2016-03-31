@@ -2,7 +2,7 @@
 	<div class = "alerts">
 		<% flash.each do |key, value| %>
 			<div class = "<%= key %>">
-				<h3><%= value %></h3>
+				<h4><%= value %></h4>
 				<a href = "#" class = "close">&times;</a>
 				<% if @user.present? %>
 					<% object = @user %>

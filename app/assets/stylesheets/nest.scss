@@ -247,16 +247,20 @@ body{
 				}
 			}
 		}
-		h1 {
+		h1, h2, h5, h6 {
 			font-family: rieslingregular, Helvetica, Arial;
-			font-size: 2.7rem;
 			font-weight: bold;
+		}
+		h1 {
+			font-size: 2.7rem;
 			line-height: 1.8rem
 		}
 		h3 {
-			font-family: rieslingregular, Helvetica, Arial;
 			font-size: 2.1rem;
-			font-weight: bold;
+			line-height: 2rem !important;
+			a:hover{
+				font-size: 2.3rem !important;
+			}
 		}
 		.right-align{
 			float: right;
@@ -313,29 +317,29 @@ body{
 		}
 	}
 
-		.screenshot{
-			background-color: #070715;
-			display: none;
-			color: #f3f3f3;
-			a:link, a:visited, a:hover, a:active{
-				color: #f3f3f3 !important;
-			}
-			
-			img {
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-				width: 90%;
-			}
-			.description{
-				margin-top: 20px;
-				margin-left: 5%;
-				margin-right: 5%;
-				padding-bottom: 20px;
-				text-align: left;
-				font-family: Arial, Helvetica;
-			}
+	.screenshot{
+		background-color: #070715;
+		display: none;
+		color: #f3f3f3;
+		a:link, a:visited, a:hover, a:active{
+			color: #f3f3f3 !important;
 		}
+		
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 90%;
+		}
+		.description{
+			margin-top: 20px;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding-bottom: 20px;
+			text-align: left;
+			font-family: Arial, Helvetica;
+		}
+	}
 
 
 	.footer{
@@ -349,7 +353,5 @@ body{
 		font-size: 0.7rem;
 		z-index: 25;
 	}
-
-	
 
 }

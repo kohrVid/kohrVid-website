@@ -5,7 +5,7 @@ class Contact < MailForm::Base
 	attribute :message 
 	attribute :nickname, 	captcha: true
 	
-	validates :name, presence: true, length: { maximum: 50 }
+	validates :name, presence: true, length: { minimum: 2, maximum: 50 }
 	validates :email,	presence: true, format: { with: VALID_EMAIL_REGEX }, length: { maximum: 255 }
 	validates :message, 	presence: true
 

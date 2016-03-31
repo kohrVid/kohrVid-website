@@ -1,0 +1,29 @@
+<% provide(:title, @post.title) %>
+<h1><%= @post.title%></h1>
+<table>
+	<tr>
+		<td><strong>ID:</strong></td>
+		<td><%= @post.id %></td>
+	</tr>
+	<tr>
+		<td><strong>Title:</strong></td>
+		<td><%= @post.title %></td>
+	</tr>
+	<tr>
+		<td><strong>Body:</strong></td>
+		<td><%= @post.body %></td>
+	</tr>
+</table>
+
+<%= link_to "Back to All Users", posts_path %>
+<% unless !user_signed_in? %>
+	<% if admin_is_logged_in && current_user %>
+		 | <%= link_to "Update Account", edit_post_path(@post) %>
+	<%else%>
+		 | <%= link_to "Update Account", edit_post_registration_path %>
+	<%end%>
+	<% if current_user || admin_is_logged_in %>
+		 | <%= link_to "Delete Account", @post, method: :delete, data: { confirm: 'Are you sure?' } %> 
+	<%end%>
+<%end%>
+
