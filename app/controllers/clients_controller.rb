@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
-	before_action :set_client, only: [:show, :edit, :update, :destroy]
-	before_action :admin_user, only: [:list, :show, :new, :create, :edit, :update, :destroy]
+	#before_action :set_client, only: [:show, :edit, :update, :destroy]
+	before_action :admin_user_404, only: [:list, :show, :new, :create, :edit, :update, :destroy]
 
 	def index
 		@clients = Client.all.order(:id)
@@ -73,18 +73,12 @@ class ClientsController < ApplicationController
 
 	private
 
-		def set_client
-			@client = Client.find(params[:id])
-		end
+#		def set_client
+#			@client = Client.find(params[:id])
+#		end
 
 		def client_params
 			params.require(:client).permit(:client_name, :client_url, :image_url, :logo_url, :description, :pdf)
-		end
-
-		def admin_user
-			unless current_user && current_user.admin?
-				render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
-			end
 		end
 
 end
