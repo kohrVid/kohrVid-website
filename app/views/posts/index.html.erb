@@ -1,8 +1,6 @@
 <% provide(:title, 'Blog')%>
 <h1>Blog</h1>
-<div class = "right-align">
-	<%= link_to "New Post", new_post_path unless !admin_is_logged_in %> 
-</div>
+<%= render 'layouts/blog_login_logout' %>
 <%= will_paginate%>
 	<% @posts.each do |post|%>
 		<h3><%= link_to post.title, post %></h3>

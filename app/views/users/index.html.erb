@@ -1,9 +1,6 @@
 <% provide(:title, 'All Users')%>
 <h1>All Users</h1>
-<div class = "right-align">
-	<%= link_to "New User", new_user_path %> | 
-	<%= link_to "Log Out", destroy_user_session_path, method: "delete" unless !user_signed_in? %>
-</div>
+<%= render 'layouts/blog_login_logout' %>
 <%= will_paginate%>
 <table>
 	<tr>
@@ -12,7 +9,7 @@
 		<th>Bio</th>
 	</tr>
 	<% @users.each do |user|%>
-		<% unless user.locked? %>
+		<% unless user.locked? && !admin_is_logged_in %>
 			<tr>
 				<td><%= user.id %></td>
 				<td><%= link_to user.name, user %></td>
