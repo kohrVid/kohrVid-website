@@ -25,7 +25,6 @@
 	<body>
 		<div class = wrapper>
 			<div id = "feathers">
-				<%= render 'layouts/header' %>
 				<svg>
 					<defs>
 						<pattern id="textpattern" patternUnits="userSpaceOnUse" width="1413" height="795" >
@@ -37,6 +36,7 @@
 				</svg>
 				<img class = "bg" src = <%= image_path("magpie.jpg")%> />
 			</div>
+			<%= render 'layouts/header' %>
 
 			<div class = "container">
 				<!--[if lte IE 8 ]>
@@ -48,9 +48,14 @@
 				<%= render 'layouts/alerts'%>
 				<%= yield %>
 			</div>
+			<% unless !(@post||@posts).present? %>
+				<div class = "blog_archives">
+					<%= render "posts/blog_archives" %>
+				</div>
+			<%end%>
 
 			<div class = "footer" >
-				© 2015 kohrVid
+				© 2016 kohrVid
 			</div>
 
 		

@@ -95,7 +95,6 @@ RSpec.describe UsersController, type: :controller do
 
 	describe "GET #edit" do
 		before(:each) do
-			#allow(controller).to receive(:current_user).and_return(admin)
 			sign_in :user, admin
 			@user = user
 		end
@@ -114,7 +113,6 @@ RSpec.describe UsersController, type: :controller do
 	describe "PUT update" do
 		before(:each) do
 			sign_in :user, admin
-			#allow(controller).to receive(:current_user).and_return(admin)
 			@user = user
 		end
 
@@ -165,7 +163,6 @@ RSpec.describe UsersController, type: :controller do
 	describe "DELETE destroy" do
 		before(:each) do
 			sign_in :user, admin
-			#allow(controller).to receive(:current_user).and_return(admin)
 			@user = user
 		end
 

@@ -9,10 +9,14 @@ smallSVG = () ->
 
 smallContainer = () ->
   containerWidth = (window.innerWidth - 142) + "px"
+  blogArchiveWidth = (window.innerWidth - 107) + "px"
   $(".container").css
      left: "3px"
      width: containerWidth
      height: "52%"
+  $(".blog_archives").css
+     left: blogArchiveWidth
+     height: "58%"
 
 smallContact = () ->
   $(".general_form input, .general_form textarea").css
@@ -40,6 +44,9 @@ mediumContainer = () ->
      left: "50px"
      width: "350px"
      height: "52%"
+  $(".blog_archives").css
+     left: "437px"
+     height: "58%"
 
 mediumContact = () ->
   $(".general_form input, .general_form textarea").css
@@ -67,6 +74,9 @@ mediumLargeContainer = () ->
      left: "50px"
      width: "350px"
      height: "60%"
+  $(".blog_archives").css
+     left: "437px"
+     height: "60%"
 
 mediumLargeClient = () ->
   $(".clients li").css
@@ -91,6 +101,9 @@ largeContainer = () ->
      left: "50px"
      width: "400px"
      height: "60%"
+  $(".blog_archives").css
+     left: "487px"
+     height: "66%"
 
 largeContact = () ->
   $(".general_form input, .general_form textarea").css

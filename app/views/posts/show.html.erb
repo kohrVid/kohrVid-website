@@ -1,8 +1,8 @@
 <% provide(:title, @post.title) %>
-<h1><%= @post.title%></h1>
-<%= render 'layouts/blog_login_logout' %>
+<%= render "layouts/blog_login_logout" %>
+<h1><%= @post.title %></h1>
 <p>
-	<%= @post.published_at.strftime("Published %d#{@post.published_at.day.ordinal} %B %Y at %H:%M") if @post.published_at.present? %>
+	<em><%= @post.published_at.strftime("Published %d#{@post.published_at.day.ordinal} %B %Y at %H:%M") if @post.published_at.present? %></em>
 </p>
 <%unless !@post.draft? %>
 	This is a draft
