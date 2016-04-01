@@ -1,7 +1,7 @@
 <div class = "right-align">
 	<% if current_user && admin_is_logged_in %>
-		<%= link_to "New User", new_user_path unless !(@user||@users).present? %>
-		<%= link_to "New Post", new_post_path unless !(@post||@posts).present? %> | 
+		<%= link_to "New User", new_user_path unless !(@user||@users).present? || (yield(:title) == "New User") %>
+		<%= link_to "New Post", new_post_path unless !(@post||@posts).present? || (yield(:title) == "New Post") %> | 
 	<%end%>
 	<%= link_to "Log Out", destroy_user_session_path, method: "delete" unless !user_signed_in? %>
 </div>
