@@ -386,9 +386,10 @@ body{
 					}
 					.blog_archive_month_list{
 						height: 200%;
-						width: 100%;
+						width: 99%;
 						left: -15px;
 						background-color: rgba(0,0,0,0) !important;
+						word-wrap: break-word;
 						position: relative;
 						a:link, a:visited, a:hover, a:active{
 							color: #262690 !important;

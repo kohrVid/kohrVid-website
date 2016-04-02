@@ -1,4 +1,4 @@
-<% BlogArchive.post_date.each do |year, month_hash|  %>
+<% BlogArchive.new.post_date.each do |year, month_hash|  %>
 	<div class = "blog_archive_year">
 		<%= link_to year, "#", id: "accordion" %>
 		<div class = "blog_archive_year_list accordion-inner">
