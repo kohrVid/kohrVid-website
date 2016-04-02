@@ -1,5 +1,5 @@
 class BlogArchive
-	attr_reader :post_date
+	attr_accessor :post_date
 
 	def post_date
 		date = {}
