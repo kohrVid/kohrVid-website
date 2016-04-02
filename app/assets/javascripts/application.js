@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/accordion
 //= require fancybox
-//= require jquery_ujs
 //= require jquery.remotipart
 //= require jquery.iframe-transport
 //= require_tree .

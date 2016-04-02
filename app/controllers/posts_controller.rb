@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
 	before_action :admin_user_404, except: [:index, :show]
+	before_action :friendly_finder, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@posts = Post.all.where(draft: false).order("published_at DESC").paginate(page: params[:page])
 	end
 
 	def show
-		@post = Post.find(params[:id])
 		if @post.draft == true
 			admin_user_404
 		end
@@ -28,11 +28,9 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.find(params[:id])
 	end
 
 	def update
-		@post = Post.find(params[:id])
 		if @post.update_attributes(post_params)
 			flash[:success] = "Post updated."
 			redirect_to @post
@@ -43,7 +41,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		Post.find(params[:id]).destroy
+		@post.destroy
 		flash[:success] = "Post deleted."
 		redirect_to posts_url
 	end
@@ -51,6 +49,10 @@ class PostsController < ApplicationController
 	private
 		def post_params
 			params.require(:post).permit(:title, :body, :draft, :published_at)
+		end
+
+		def friendly_finder
+			@post = Post.friendly.find(params[:id])
 		end
 	
 end

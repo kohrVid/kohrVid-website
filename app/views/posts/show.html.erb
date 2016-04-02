@@ -2,7 +2,8 @@
 <%= render "layouts/blog_login_logout" %>
 <h1><%= @post.title %></h1>
 <p>
-	<em><%= @post.published_at.strftime("Published %d#{@post.published_at.day.ordinal} %B %Y at %H:%M") if @post.published_at.present? %></em>
+	<em><%= @post.published_at.strftime("Published %e#{@post.published_at.day.ordinal} %B %Y at %H:%M") if @post.published_at.present? %></em><br />
+	<em class = "smaller_text"><%= @post.updated_at.strftime("(Last Updated %e#{@post.updated_at.day.ordinal} %B %Y at %H:%M)") if @post.published_at.present? && (@post.published_at.to_date != @post.updated_at.to_date) %></em>
 </p>
 <%unless !@post.draft? %>
 	This is a draft
