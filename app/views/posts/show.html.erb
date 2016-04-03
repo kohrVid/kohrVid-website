@@ -8,9 +8,8 @@
 <%unless !@post.draft? %>
 	This is a draft
 <%end%>
-<p>
-	<%= markdown(@post.body) %>
-</p>
+<%= markdown(@post.body) %>
+<br />
 
 
 <%= link_to "Back to All Posts", posts_path %>
