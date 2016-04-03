@@ -71,36 +71,6 @@ RSpec.describe Post, type: :model do
 		end
 	end
 
-	context "@published" do
-		context "Unticked once" do
-			let(:draft_post) { FactoryGirl.create(:post, draft: true, published_at: nil) }
-			it "should set the published_at date once draft is first unticked" do
-				Timecop.freeze(Time.local(2016, 03, 21, 14, 10, 38))
-				draft_post.draft = false
-				draft_post.save
-				expect(draft_post.published_at).to eq(Time.new(2016, 03, 21, 14, 10, 38))
-			end
-		end
-
-		context "Unticked multiple times" do
-			let(:draft_post) { FactoryGirl.create(:post, draft: true, published_at: nil) }
-
-			it "should not change the published_at date if draft is ticked once and unticked again" do
-				Timecop.travel(Time.local(2016, 03, 21, 14, 10, 38))
-				draft_post.draft = false
-				draft_post.save
-				original_time = Time.now
-				draft_post.draft = true
-				draft_post.save
-				draft_post.draft = false
-				draft_post.save
-				new_time = Time.now
-				expect(draft_post.published_at).to_not eq(new_time)
-				expect(draft_post.published_at).to eq(original_time)
-			end
-		end
-	end
-
 	context "Tags" do
 		it "can have tags" do
 			expect(Post.new).to respond_to(:tags)
