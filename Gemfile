@@ -31,6 +31,7 @@ gem "friendly_id", "~> 5.1", :require => "friendly_id"
 gem "jquery-ui-rails"
 gem "redcarpet"
 gem "coderay"
+gem "closure_tree"
 
 gem "rspec-rails"
 gem "factory_girl_rails", "~> 4.0"
@@ -53,7 +54,7 @@ end
 
 group :development do
   gem "web-console", "~> 2.0"
-  gem "spring"
+#  gem "spring"
 end
 
 group :production do

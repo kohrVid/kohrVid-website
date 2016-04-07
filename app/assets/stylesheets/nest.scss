@@ -322,6 +322,20 @@ body{
 				content: "" !important;
 			}
 		}
+		.replies {
+			border-left: 2px solid rgba(38,38,144,0.7);
+			border-top: 1px solid rgba(168,168,230,0.7);
+			margin-left: 5%;
+			padding-left: 15px;
+			padding-bottom: 1px;
+			.comment:not(:first-child) {
+				border-top: 1px solid rgba(168,168,230,0.7);
+				margin-top: 15px;
+			}
+		}
+		.replies .replies .replies .replies .replies { 
+			margin-left: 0;
+		}
 	}
 
 	.screenshot{

@@ -18,6 +18,11 @@ Rails.application.routes.draw do
 	get 	"clients/list" =>  "clients#list"
 	get	"blog"			=>  "posts#index"
 	scope "/blog" do
-		resources :posts
+		resources :posts do
+			resources :comments, only: [:index, :create]
+			get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
+		end
 	end
+	resources :comments, only: [:index, :create]
+	get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
 end

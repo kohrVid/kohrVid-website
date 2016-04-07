@@ -10,6 +10,10 @@
 					<% object = @contact %>
 				<% elsif @client.present? %>
 					<% object = @client %>
+				<% elsif @comment.present? %>
+					<% object = @comment %>
+				<% elsif @post.present? %>
+					<% object = @post %>
 				<%end%>
 				<% if object.present? && object.errors.any? %>
 					The form contains <%= pluralize(object.errors.count, "error")%>.

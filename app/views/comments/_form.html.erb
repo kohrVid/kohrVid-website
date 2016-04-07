@@ -1,0 +1,17 @@
+<%= form_for [@post, @comment] do |f| %>
+	<table>
+		<%= f.hidden_field :parent_id %>
+		<tr>
+			<td><%= f.label :author %></td>
+			<td><%= f.text_field :author %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :body %></td>
+			<td><%= f.text_area :body %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Submit", class: "button" %></td>
+		</tr>
+	</table>
+	
+<%end%>
