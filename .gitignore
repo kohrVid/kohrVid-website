@@ -13,6 +13,7 @@
 /tmp
 /public/uploads/*
 
+/coverage/*
 
 /config/database.yml
 /config/secrets.yml

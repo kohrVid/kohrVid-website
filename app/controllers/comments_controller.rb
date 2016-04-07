@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :friendly_id
+	before_action :correct_user, only: [:edit, :update]
 	
 	def index
 		@comments = Comment.hash_tree
@@ -24,7 +25,21 @@ class CommentsController < ApplicationController
 			flash[:success] =  "Your comment was added successfully!"
 			redirect_to post_path(@post)
 		else
+			flash[:error] = "Unable to post comment."
 			render :new
+		end
+	end
+
+	def edit
+	end
+
+	def update
+		if @comment.update_attributes(comment_params)
+			flash[:success] =  "Your comment was updated successfully!"
+			redirect_to post_path(@post)
+		else
+			flash[:error] = "Unable to edit comment."
+			render :edit
 		end
 	end
 
@@ -36,5 +51,13 @@ class CommentsController < ApplicationController
 
 		def friendly_id
 			@post = Post.friendly.find(params[:post_id])
+		end
+		
+		def correct_user
+			@comment = Comment.find(params[:id])
+			unless current_user.id == @comment.user_id
+				flash[:error] = "Sorry, you do not have access to that part of the site."
+				redirect_to(root_url)
+			end
 		end
 end

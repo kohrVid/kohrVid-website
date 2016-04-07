@@ -1,0 +1,9 @@
+<h1>Edit Comment</h1>
+
+<% if @comment.parent %>
+	<%= render "comment", comment: @comment.parent, from_reply_form: true %>
+<%end%>
+
+<%= render "form" %>
+<br />
+<%= link_to "Back To Blog Post", post_path(@post) %>
