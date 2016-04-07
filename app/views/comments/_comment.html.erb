@@ -1,10 +1,11 @@
 <div class = "comment">
+	<a id = "<%= comment.id %>"></a>
 	<p class = "smaller_text">
-		Added by <strong><%= comment.author %></strong> on <%= comment.created_at.strftime("%d %B %Y, %H:%M:%S")%>
-	<p>
+	Posted by <strong><%= link_to_if(!comment.user_id.nil?, comment.author, {controller: "users", action: "show", id: comment.user_id}) %></strong> on <%= comment.created_at.strftime("%e#{comment.created_at.day.ordinal} %B %Y at %H:%M:%S") %>
+	</p>
 
 	<blockquote>
-		<%= comment.body %>
+		<%= markdown(comment.body) %>
 	</blockquote>
 
 	<% from_reply_form ||= nil %>

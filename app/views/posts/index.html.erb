@@ -3,7 +3,8 @@
 <h1>Blog</h1>
 <%= will_paginate%>
 	<% @posts.each do |post|%>
-		<h3><%= link_to post.title, post %></h3>
+		<h3><%= link_to post.title, post %>
+		<small class = "smaller_text"><em>(<%= pluralize(post.comments.count, "comment")%>)</em></small></h3>
 		<%= markdown(post.body.to_s.truncate(500) ) %>
 		<%= link_to "[Read more...]", post %>
 		<br />

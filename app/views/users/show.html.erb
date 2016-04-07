@@ -18,19 +18,31 @@
 	<%end%>
 	<tr>
 		<td><strong>Bio:</strong></td>
-		<td><%= @user.bio %></td>
+		<td><%= markdown(@user.bio) if @user.bio.present? %></td>
 	</tr>
+	<tr></tr>
+	<tr>
+		<td colspan = "2"><strong>Previous Comments</strong></td>
+	</tr>
+	<tr>
+		<td><strong>Post Title</strong></td>
+		<td><strong>Summary</strong></td>
+	</tr>
+	<% @user.comments.each do |comment| %>
+		<tr>
+			<td><%=Post.friendly.find(comment.post_id).title %></td>
+			<td><%= link_to comment.body.truncate(25), { controller: "posts", action: "show", id: comment.post_id, anchor: comment.id } %></td>
+		</tr>
+	<%end%>
 </table>
-
+<br />
 <%= link_to "Back to All Users", users_path %>
 <% unless !user_signed_in? %>
-	<% if admin_is_logged_in && current_user %>
+	<% if admin_is_logged_in && current_user != @user %>
 		 | <%= link_to "Update Account", edit_user_path(@user) %>
-	<%else%>
+		 | <%= link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%elsif @user == current_user %>
 		 | <%= link_to "Update Account", edit_user_registration_path %>
-	<%end%>
-	<% if current_user || admin_is_logged_in %>
-		 | <%= link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' } %> 
 	<%end%>
 <%end%>
 
