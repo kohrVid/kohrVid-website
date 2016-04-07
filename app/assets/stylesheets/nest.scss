@@ -248,6 +248,9 @@ body{
 				.close{
 					color: #9F0000 !important;
 				}
+				ul li:before{
+					content: none !important;
+				}
 			}
 		}
 		h1, h2, h5, h6 {
@@ -264,6 +267,10 @@ body{
 			a:hover{
 				font-size: 2.3rem !important;
 			}
+		}
+		small{
+			color: #262690;
+			font-family: Arial,Helvetica,Tahoma,sans-serif;
 		}
 		.smaller_text{
 			font-size: 0.8rem;

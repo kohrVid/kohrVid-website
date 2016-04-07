@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 			@comment = Comment.new(comment_params)
 		end
 
-		@comment.user_id = current_user.id
+		@comment.user_id = current_user.id unless !current_user
 		@comment.post_id = @post.id
 
 		if @comment.save

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 				  unlocks: "devise/unlocks"
 				        }
 
+	devise_scope :user do
+		get "sign_up"		=> "devise/registrations#new"
+		get "login"			=> "devise/sessions#new"
+	end
 	resources :users
 	get 	"about" 			=>  "nest#about"
 	get 	"contact"	 	=>  "contacts#new"
