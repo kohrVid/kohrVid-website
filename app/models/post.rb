@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
 	friendly_id :slug_candidates, use: [:slugged]
 	has_many :tags, through: :post_tags
 	has_many :post_tags
+	has_many :comments, dependent: :destroy
 	validates :title, presence: true, length: { maximum: 50 }, uniqueness: true
 	validates :body, presence: true, length: { minimum: 4, maximum: 20000 }, uniqueness: true
 #	validates :post_tags, presence: true, associated: true

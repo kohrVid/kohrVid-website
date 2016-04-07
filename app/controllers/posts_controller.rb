@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 		if @post.draft == true
 			admin_user_404
 		end
+		@comments = @post.comments.hash_tree
 	end
 
 	def new

@@ -1,0 +1,14 @@
+<div class = "comment">
+	<p class = "smaller_text">
+		Added by <strong><%= comment.author %></strong> on <%= comment.created_at.strftime("%d %B %Y, %H:%M:%S")%>
+	<p>
+
+	<blockquote>
+		<%= comment.body %>
+	</blockquote>
+
+	<% from_reply_form ||= nil %>
+	<% unless from_reply_form %>
+		<p><%= link_to "reply", post_new_comment_path(@post, comment.id) %></p>
+	<%end%>
+</div>

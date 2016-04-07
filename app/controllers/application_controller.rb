@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
 	ensure_security_headers
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
-  include ApplicationHelper
+  include CommentsHelper
   include NestHelper
+  include PostsHelper
 =begin
   	def authenticate
 	        authenticate_or_request_with_http_basic do |username, password|
