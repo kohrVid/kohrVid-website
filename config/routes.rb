@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
 	devise_scope :user do
 		get "sign_up"		=> "devise/registrations#new"
-		get "login"			=> "devise/sessions#new"
+		get "log_in"			=> "devise/sessions#new"
+		get "log_out", :to => "devise/sessions#destroy"
 	end
 	resources :users
 	get 	"about" 			=>  "nest#about"
@@ -23,10 +24,10 @@ Rails.application.routes.draw do
 	get	"blog"			=>  "posts#index"
 	scope "/blog" do
 		resources :posts do
-			resources :comments, only: [:index, :create]
+			resources :comments, only: [:index, :create, :edit, :update]
 			get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
 		end
 	end
-	resources :comments, only: [:index, :create]
+	resources :comments, only: [:index, :create, :edit, :update]
 	get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
 end

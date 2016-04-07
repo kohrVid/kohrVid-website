@@ -55,8 +55,9 @@ class UsersController < ApplicationController
 		end
 
 		def correct_user
-			@user = User.find(params[:id])
-			flash[:error] = "Sorry, you do not have access to that part of the site."
-			redirect_to(root_url) unless current_user.admin?
+			unless current_user.admin?
+				flash[:error] = "Sorry, you do not have access to that part of the site."
+				redirect_to(root_url)
+			end
 		end
 end
