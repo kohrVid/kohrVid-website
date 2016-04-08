@@ -1,0 +1,7 @@
+<% provide(:title, 'All Tags')%>
+<%= render "layouts/blog_login_logout" %>
+<h1>All Tags</h1>
+
+<% @tags.each do |tag| %>
+	<span class = "tag"><%= link_to tag.name, tag %></span>
+<%end%>

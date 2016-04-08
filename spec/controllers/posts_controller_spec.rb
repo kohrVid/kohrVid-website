@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
 	let(:valid_post) { FactoryGirl.create(:post) }
 	let(:draft_post) { Post.create(title: "Rough", body: "copy", draft: true, published_at: nil) }
-	let(:admin) { FactoryGirl.create(:user, name: "Princess", email: "princess@premiergaou.ci", admin: true) }
+	let(:admin) { FactoryGirl.create(:admin) }
 	let(:user) { FactoryGirl.create(:user) }
 
 	describe "GET #index" do

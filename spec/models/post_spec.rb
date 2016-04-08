@@ -72,17 +72,21 @@ RSpec.describe Post, type: :model do
 	end
 
 	context "Tags" do
+		let(:post) { FactoryGirl.create(:post) }
 		it "can have tags" do
 			expect(Post.new).to respond_to(:tags)
 		end
-=begin
+		
 		it "can have many tags" do
 			tag = FactoryGirl.create(:tag)
 			tag2 = FactoryGirl.create(:tag, name: "Cats")
-			p = FactoryGirl.build(:post, tag: [tag, tag2])
+			p = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag.id)
+			p2 = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag2.id)
 			expect(p).to be_valid
+			expect(p2).to be_valid
 		end
 
+=begin
 		it "must have at least one tag" do
 			p = Post.new
 			expect(p).to_not be_valid

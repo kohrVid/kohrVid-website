@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(version: 20160406182200) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "post_tags", ["post_id"], name: "index_post_tags_on_post_id", using: :btree
+  add_index "post_tags", ["tag_id"], name: "index_post_tags_on_tag_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
@@ -120,4 +123,6 @@ ActiveRecord::Schema.define(version: 20160406182200) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "post_tags", "posts"
+  add_foreign_key "post_tags", "tags"
 end

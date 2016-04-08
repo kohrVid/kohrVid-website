@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 	let(:user) { FactoryGirl.create(:user) }
-	let(:admin) { FactoryGirl.create(:user, name: "Princess", email: "princess@premiergaou.ci", admin: true) }
+	let(:admin) { FactoryGirl.create(:admin) }
 
 	describe "GET #index" do
 		before(:each) do
