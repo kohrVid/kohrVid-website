@@ -1,0 +1,16 @@
+<% provide(:title, @tag.name) %>
+<%= render "layouts/blog_login_logout" %>
+<h1><%= @tag.name %></h1>
+<ul class = "no-bullet">
+	<% @tag.post_tags.each do |post| %>
+		<li><strong><%= link_to Post.friendly.find(post.post_id).title, Post.friendly.find(post.post_id) %></strong>, published <%= time_ago_in_words(Post.friendly.find(post.post_id).published_at) %> ago</li>
+	<%end%>
+</ul>
+<br />
+
+
+<%= link_to "Back to All Tags", tags_path %>
+<% if current_user || admin_is_logged_in %>
+	 | <%= link_to "Update Tag", edit_tag_path(@tag) %>
+	 | <%= link_to "Delete Tag", @tag, method: :delete, data: { confirm: "Are you sure? This cannot be undone but saving this as a draft will hide the tag instead." } %>
+<%end%>

@@ -289,6 +289,9 @@ body{
 			left: -10px;
 			position: relative;
 		}
+		.no-bullet li:before{
+			content: none !important;
+		}
 		.list{
 			position: relative;
 			top: -19px;
@@ -342,6 +345,15 @@ body{
 		}
 		.replies .replies .replies .replies .replies { 
 			margin-left: 0;
+		}
+		.tag {
+			padding: 4px;
+			border-radius: 10px;
+			background-color: #262690 !important;
+			a {
+				color: #f3f3f3 !important;
+				font-weight: bold;
+			}
 		}
 	}
 
