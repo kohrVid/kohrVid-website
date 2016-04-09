@@ -24,5 +24,9 @@ coverage
 #!.elasticbeanstalk/*.cfg.yml
 #!.elasticbeanstalk/*.global.yml
 
+#puma & nginx
+#/lib/nginx
+#/lib/puma
+
 # Ignore application configuration
 /config/application.yml
