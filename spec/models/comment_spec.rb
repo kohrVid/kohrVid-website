@@ -38,16 +38,10 @@ RSpec.describe Comment, type: :model do
 		end
 	end
 
-	context ".user_id" do
-		it "must be present" do
-			expect{
-				Comment.create(FactoryGirl.attributes_for(:comment, user_id: ""))
-			}.to_not change(Comment, :count)
-		end
-
-		it "must produce an error if no user ID is given" do
-			c = Comment.new
-			expect(c.errors[:user_id]).to_not be_nil
+	context "@author" do
+		it "to be set to Anonymous if no user_id is set" do
+			c = FactoryGirl.create(:comment, author: "", user_id: "")
+			expect(c.author).to eq("Anonymous")
 		end
 	end
 end

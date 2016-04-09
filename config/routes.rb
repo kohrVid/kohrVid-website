@@ -12,8 +12,12 @@ Rails.application.routes.draw do
 
 	devise_scope :user do
 		get "sign_up"		=> "devise/registrations#new"
-		get "log_in"			=> "devise/sessions#new"
-		get "log_out", :to => "devise/sessions#destroy"
+		get "log_in"		=> "devise/sessions#new"
+		get "log_out"		=> "devise/sessions#destroy"
+		get  "users/admin_new"		=> "users#admin_new"
+		get  "users/admin_edit"		=> "users#admin_edit"
+		post "users/admin_create"	=> "users#admin_create"
+		put "users/admin_update"	=> "users#admin_update"
 	end
 	resources :users
 	get 	"about" 			=>  "nest#about"

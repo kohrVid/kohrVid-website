@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 	#before_action :set_client, only: [:show, :edit, :update, :destroy]
-	before_action :admin_user_404, only: [:list, :show, :new, :create, :edit, :update, :destroy]
+	before_action :admin_user_404, except: :index
 
 	def index
 		@clients = Client.all.order(:id)

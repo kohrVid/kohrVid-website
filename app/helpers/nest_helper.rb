@@ -7,10 +7,14 @@ module NestHelper
 		user == current_user
 	end
 	
+	def current_user_id?(user_id)
+		user_id == current_user.id
+	end
+	
 	def redirect_to_login
 		unless user_signed_in?
 			flash[:error] = "Please log in"
-			redirect_to(new_user_session_url)
+			redirect_to log_in_path
 		end
 	end
 

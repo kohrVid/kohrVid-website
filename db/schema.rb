@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406182200) do
+ActiveRecord::Schema.define(version: 20160408131946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160406182200) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "post_tags", id: false, force: :cascade do |t|
+  create_table "post_tags", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "tag_id"
     t.datetime "created_at", null: false
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160406182200) do
     t.datetime "updated_at",                  null: false
     t.datetime "published_at"
     t.string   "slug"
+    t.string   "tag_list"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -11,6 +11,20 @@ RSpec.describe PostTag, type: :model do
 			PostTag.create(FactoryGirl.attributes_for(:post_tag))
 		}.to change(PostTag, :count).by(1)
 	end
+
+	context "unique records" do
+		let(:valid_post) { FactoryGirl.create(:post) }
+		let(:valid_tag) { FactoryGirl.create(:tag) }
+
+		it "must be unique" do
+			expect{
+				PostTag.create(FactoryGirl.attributes_for(:post_tag, post_id: valid_post.id, tag_id: valid_tag.id))
+			}.to change(PostTag, :count).by(1)
+			expect{
+				PostTag.create(FactoryGirl.attributes_for(:post_tag, post_id: valid_post.id, tag_id: valid_tag.id))
+			}.to_not change(PostTag, :count)
+		end
+	end
 	
 	context "post_id" do
 		it "must be present" do

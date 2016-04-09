@@ -8,6 +8,7 @@
 						<% post_record.each do |post| %>
 							<%=link_to "#{post.published_at.strftime("%d/%m/%y")} - #{post.title}", post_path(post) %><br />
 						<%end%>
+						<br />
 					</div>
 				</div>
 			<%end%>
@@ -21,6 +22,7 @@
 			<% Post.all.where(draft: true).order("published_at DESC").each do |draft_post|%>
 				<%= link_to "#{draft_post.created_at.strftime("%d/%m/%y")} - #{draft_post.title}", post_path(draft_post) %><br />
 			<%end%>
+			<br />
 		</div>
 	</div>
 <%end%>

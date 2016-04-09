@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
 	def new
 		@comment = Comment.new(parent_id: params[:parent_id], post_id: @post.id)
+		@comment.user_id = current_user.id unless !user_signed_in?
 	end
 
 	def create
@@ -18,14 +19,14 @@ class CommentsController < ApplicationController
 			@comment = Comment.new(comment_params)
 		end
 
-		@comment.user_id = current_user.id unless !current_user
+		@comment.user_id = current_user.id unless !user_signed_in?
 		@comment.post_id = @post.id
 
 		if @comment.save
 			flash[:success] =  "Your comment was added successfully!"
 			redirect_to post_path(@post)
 		else
-			flash[:error] = "Unable to post comment."
+			flash.now[:error] = "Unable to post comment."
 			render :new
 		end
 	end
@@ -38,7 +39,7 @@ class CommentsController < ApplicationController
 			flash[:success] =  "Your comment was updated successfully!"
 			redirect_to post_path(@post)
 		else
-			flash[:error] = "Unable to edit comment."
+			flash.now[:error] = "Unable to edit comment."
 			render :edit
 		end
 	end
@@ -46,7 +47,7 @@ class CommentsController < ApplicationController
 
 	private
 		def comment_params
-			params.require(:comment).permit(:author, :body, :user_id, :post_id)
+			params.require(:comment).permit(:author, :body, :user_id, :post_id, :parent_id)
 		end
 
 		def friendly_id

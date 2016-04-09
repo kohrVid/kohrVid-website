@@ -347,10 +347,13 @@ body{
 			margin-left: 0;
 		}
 		.tag {
-			padding: 4px;
-			border-radius: 10px;
-			background-color: #262690 !important;
+		   float: left;
 			a {
+				padding: 6px;
+				margin: 10px;
+				border-radius: 10px;
+				background-color: #262690 !important;
+				line-height: 37px !important;
 				color: #f3f3f3 !important;
 				font-weight: bold;
 			}

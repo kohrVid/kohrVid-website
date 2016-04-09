@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require jquery-ui/accordion
 //= require fancybox
 //= require jquery.remotipart

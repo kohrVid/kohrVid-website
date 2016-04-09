@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 	ensure_security_headers
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
+  include Devise::Controllers::Helpers
   include CommentsHelper
   include NestHelper
   include PostsHelper
