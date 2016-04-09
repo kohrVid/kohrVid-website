@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 	before_action :admin_user_404, except: [:index, :show]
 
 	def index
-		@tags = Tag.all
+		@tags = Tag.all.order(:name)
 	end
 
 	def show
@@ -19,7 +19,7 @@ class TagsController < ApplicationController
 			flash[:success] = "Tag was created successfully."
 			redirect_to @tag
 		else
-			flash[:error] = "An error has prevented this tag from being saved"
+			flash.now[:error] = "An error has prevented this tag from being saved"
 			render :new
 		end
 	end
@@ -34,14 +34,13 @@ class TagsController < ApplicationController
 			flash[:success] = "Tag updated."
 			redirect_to @tag
 		else
-			flash[:error] = "Unable to update tag."
+			flash.now[:error] = "Unable to update tag."
 			render :edit
 		end
 	end
 
 	def destroy
-		@tag = Tag.find(params[:id])
-		@tag.destroy
+		Tag.find(params[:id]).destroy
 		flash[:success] = "Tag deleted."
 		redirect_to tags_url
 	end

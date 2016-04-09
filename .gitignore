@@ -13,10 +13,7 @@
 /tmp
 /public/uploads/*
 
-/coverage/*
-/coverage/.last_run.json
-/coverage/.resultset.json.lock
-/coverage/.resultset.json
+coverage
 
 /config/database.yml
 /config/secrets.yml
@@ -29,3 +26,4 @@
 
 # Ignore application configuration
 /config/application.yml
+coverage

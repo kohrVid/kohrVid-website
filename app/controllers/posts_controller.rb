@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.tag_relationship(@post, @post.tag_list)
 		if @post.save
 			flash[:success] = "Post was created successfully."
 			redirect_to @post
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		@post.tag_relationship(@post, @post.tag_list)
 		if @post.update_attributes(post_params)
 			flash[:success] = "Post updated."
 			redirect_to @post
@@ -49,7 +51,7 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.require(:post).permit(:title, :body, :draft, :published_at)
+			params.require(:post).permit(:title, :body, :draft, :published_at, :tag_list)
 		end
 
 		def friendly_finder

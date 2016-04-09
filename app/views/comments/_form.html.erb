@@ -5,7 +5,7 @@
 			<td><strong><%= f.label :author, "Posting as:" %></strong>
 				<%= @comment.author %>
 				<%unless current_user %>
-					(<%= link_to "Log In", login_path, class: "smaller_text" unless current_user %> | 
+					(<%= link_to "Log In", log_in_path, class: "smaller_text" unless current_user %> | 
 					<%= link_to "Sign Up", sign_up_path, class: "smaller_text" %>)
 				<%end%>
 			</td>

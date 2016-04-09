@@ -10,6 +10,11 @@
 <%end%>
 <%= markdown(@post.body) %>
 <br />
+<% PostTag.where(post_id: @post.id).each do |tag| %>
+	<span class = "tag"><%= link_to Tag.find(tag.tag_id).name, Tag.find(tag.tag_id) %></span>
+<%end%>
+<div class = "clear"></div>
+<br />
 
 
 <%= link_to "Back to All Posts", posts_path %>

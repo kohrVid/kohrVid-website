@@ -13,6 +13,12 @@
 			<td><%= f.text_area :body, rows: 25 %></td>
 		</tr>
 		<tr>
+			<td><%= f.label :tag_list, "Tags:" %></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :tag_list %></td>
+		</tr>
+		<tr>
 			<td><%= f.label :draft, "Draft?:"%></td>
 			<td><%= f.check_box :draft %></td>
 		</tr>

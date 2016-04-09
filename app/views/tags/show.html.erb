@@ -12,5 +12,5 @@
 <%= link_to "Back to All Tags", tags_path %>
 <% if current_user || admin_is_logged_in %>
 	 | <%= link_to "Update Tag", edit_tag_path(@tag) %>
-	 | <%= link_to "Delete Tag", @tag, method: :delete, data: { confirm: "Are you sure? This cannot be undone but saving this as a draft will hide the tag instead." } %>
+	 | <%= link_to "Delete Tag", @tag, method: :delete, data: { confirm: "Are you sure? This cannot be undone" } %>
 <%end%>
