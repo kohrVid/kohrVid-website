@@ -15,9 +15,9 @@
 
 coverage
 
-/config/database.yml
-/config/secrets.yml
-/db/seed_data/*
+#/config/database.yml
+#/config/secrets.yml
+#/db/seed_data/*
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
