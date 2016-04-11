@@ -19,8 +19,8 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		@post.tag_relationship(@post, @post.tag_list)
 		if @post.save
+			@post.tag_relationship(@post, @post.tag_list)
 			flash[:success] = "Post was created successfully."
 			redirect_to @post
 		else
@@ -33,8 +33,8 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		@post.tag_relationship(@post, @post.tag_list)
-		if @post.update_attributes(post_params)
+		if @post.update(post_params)
+			@post.tag_relationship(@post, @post.tag_list)
 			flash[:success] = "Post updated."
 			redirect_to @post
 		else
