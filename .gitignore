@@ -5,28 +5,27 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-#/.bundle
+/.bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
-!/log/.keep
+#!/log/.keep
 /tmp/*
 /public/uploads/*
-########Remember to remove the logfiles and eb files from git when uploading again###
 coverage
 
-#/config/database.yml
-#/config/secrets.yml
-#/db/seed_data/*
+/config/database.yml
+/config/secrets.yml
+/db/seed_data/*
 
 # Elastic Beanstalk Files
-#.elasticbeanstalk/*
-#!.elasticbeanstalk/*.cfg.yml
-#!.elasticbeanstalk/*.global.yml
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
 
 #puma & nginx
-#/lib/nginx
-#/lib/puma
+/lib/nginx
+/lib/puma
 
 # Ignore application configuration
 /config/application.yml
