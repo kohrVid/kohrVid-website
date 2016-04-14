@@ -72,6 +72,84 @@ body{
 		}
 	}
 	
+	@media screen and	(min-width: 0px) and (max-width: 500px){
+		.container {
+			left: 3px;
+			width: 70%; /*This may need to change*/
+			height: 52%;
+		}
+		.blog_archives {
+			right: -110px;
+			height: 58%;
+			width: 105px;
+		}
+		.general_form input, textarea {
+			width: 95%;
+		}
+		.clients li {
+			width: 70%;
+			height: 75%;
+		}
+	}
+	@media screen and (min-width: 501px) and	(max-width: 840px){
+		.container {
+			left: 20px;
+			width: 350px;
+			height: 52%;
+		}
+		.blog_archives {
+			left: 397px;
+			height: 58%;
+			width: 103px;
+		}
+		.general_form input, textarea {
+			width: 150%;
+		}
+		.clients li {
+			width: 40%;
+			height: 240px;
+		}
+	}
+	@media screen and (min-width: 841px) and	(max-width: 950px){
+		.container {
+			left: 50px;
+			width: 350px;
+			height: 60%;
+		}
+		.blog_archives {
+			left: 442px;
+			height: 60%;
+			width: 185px;
+		}
+		.general_form input, textarea {
+			width: 150%;
+		}
+		.clients li {
+			width: 23%;
+			height: 189px;
+		}
+	}
+	@media screen and	(min-width: 951px){
+		.container {
+			left: 50px;
+			width: 400px;
+			height: 60%;
+		}
+		.blog_archives {
+			left: 487px;
+			height: 66%;
+			width: 185px;
+		}
+		.general_form input, textarea {
+			width: 180%;
+		}
+		.clients li {
+			width: 23%;
+			height: 189px;
+		}
+	}
+
+
 	#top-bar {
 		position: fixed;
 		top: 0px;
@@ -197,9 +275,6 @@ body{
 		margin-top: 50px;
 		margin-right: 95px;
 		top: 3%;
-		left: 3px;
-		width: 228px; 
-		height: 52%;
 		background-color: rgba(243, 243, 243, 0.6);
 		border: 10px double #070705;
 		border-radius: 15px;
@@ -299,9 +374,6 @@ body{
 		}
 		form .general_form {
 			text-align: left;
-			textarea, input{
-				width: 120%;
-			}
 		}
 		.field {
 			margin: 16px 0;
@@ -322,8 +394,6 @@ body{
 				float: left;
 				position: relative;
 				padding:0 5%;
-				width: 23%;
-				height: 128px;
 				margin: 0;
 				list-style-type: none;
 				word-wrap: break-word;
@@ -331,6 +401,9 @@ body{
 			li:before{
 				content: "" !important;
 			}
+		}
+		code {
+			background-color:rgba(225,225,225,0.4);// #d1d1d1;
 		}
 		.replies {
 			border-left: 2px solid rgba(38,38,144,0.7);
@@ -391,9 +464,8 @@ body{
 		margin-top: 50px;
 		margin-right: 95px;
 		top: 3%;
-		left: 265px;
-		width: 185px;
-		height: 52%;
+	/*	left: 265px;*/
+		/*height: 52%;*/
 		z-index: -28 !important;
 		flex-direction: column;
 		> * {
