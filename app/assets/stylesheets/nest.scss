@@ -75,13 +75,13 @@ body{
 	@media screen and	(min-width: 0px) and (max-width: 500px){
 		.container {
 			left: 3px;
-			width: 70%; /*This may need to change*/
+			width: 65%;
 			height: 52%;
 		}
 		.blog_archives {
-			right: -110px;
+			right: -104px;
 			height: 58%;
-			width: 105px;
+			width: 25%;
 		}
 		.general_form input, textarea {
 			width: 95%;
@@ -98,7 +98,7 @@ body{
 			height: 52%;
 		}
 		.blog_archives {
-			left: 397px;
+			left: 400px;
 			height: 58%;
 			width: 103px;
 		}
@@ -223,7 +223,7 @@ body{
 		width: 100px;
 		display: block;
 		padding: 10px 0 0 0;
-		background-color: rgba(07, 07, 15, 0.99);
+		background-color: #070715; //rgba(07, 07, 15, 0.99);
 		color: #f3f3f3 !important;
 		z-index: 999;
 		border-radius: 10px !important;
@@ -464,8 +464,6 @@ body{
 		margin-top: 50px;
 		margin-right: 95px;
 		top: 3%;
-	/*	left: 265px;*/
-		/*height: 52%;*/
 		z-index: -28 !important;
 		flex-direction: column;
 		> * {
@@ -495,7 +493,7 @@ body{
 					.blog_archive_month_list{
 						height: 200%;
 						width: 99%;
-						left: -15px;
+						left: -19px;
 						background-color: rgba(0,0,0,0) !important;
 						word-wrap: break-word;
 						position: relative;
