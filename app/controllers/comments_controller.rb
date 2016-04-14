@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
 
 		if @comment.save
 			flash[:success] =  "Your comment was added successfully!"
+			Notification.new_comment_notification(@comment).deliver
 			redirect_to post_path(@post)
 		else
 			flash.now[:error] = "Unable to post comment."
