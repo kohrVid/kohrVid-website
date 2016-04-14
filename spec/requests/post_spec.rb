@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Post", :type => :request do
 	let(:draft_post) { FactoryGirl.create(:post, draft: true, published_at: nil) }
-	let(:admin) { FactoryGirl.create(:user, name: "Princess", email: "princess@premiergaou.ci", admin: true) }
+	let(:admin) { FactoryGirl.create(:admin) }
 
 	def sign_in(a_user)
 		visit new_user_session_url
