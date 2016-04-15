@@ -1,0 +1,19 @@
+I"d(function() {
+  $(window).load(function() {
+    return $("#dropdown").hide();
+  });
+
+  $(document).ready(function() {
+    return $("#menu").click(function() {
+      return $("#dropdown").slideToggle();
+    });
+  });
+
+  $(document).ready(function() {
+    return $(".close").click(function() {
+      return $(".alerts").hide();
+    });
+  });
+
+}).call(this);
+:ET

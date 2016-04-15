@@ -1,0 +1,69 @@
+I"•(function() {
+  var adaptive, largeSVG, mediumLargeSVG, mediumSVG, smallSVG;
+
+  smallSVG = function() {
+    var svgTop;
+    $("#logo").attr("x", "0px");
+    svgTop = (window.innerHeight - 35) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  mediumSVG = function() {
+    var svgLeft, svgTop;
+    svgLeft = (window.innerWidth - 370) + "px";
+    $("#logo").attr("x", svgLeft);
+    svgTop = (window.innerHeight - 35) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  mediumLargeSVG = function() {
+    var svgLeft, svgTop;
+    svgLeft = (window.innerWidth * 0.55) + "px";
+    $("#logo").attr("x", svgLeft);
+    svgTop = (window.outerHeight - (window.innerHeight * 0.45)) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  largeSVG = function() {
+    var svgLeft, svgTop;
+    svgLeft = (window.innerWidth * 0.5) + "px";
+    $("#logo").attr("x", svgLeft);
+    svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  adaptive = function() {
+    if (window.innerWidth < 500) {
+      return smallSVG();
+    } else if (window.innerWidth < 840) {
+      return mediumSVG();
+    } else if (window.innerWidth < 950) {
+      return mediumLargeSVG();
+    } else {
+      return largeSVG();
+    }
+  };
+
+  $(window).load(function() {
+    $("#dropdown").hide();
+    return adaptive();
+  });
+
+  $(window).resize(function() {
+    return adaptive();
+  });
+
+  $(document).ready(function() {
+    return $("#menu").click(function() {
+      return $("#dropdown").slideToggle();
+    });
+  });
+
+  $(document).ready(function() {
+    return $(".close").click(function() {
+      return $(".alerts").hide();
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: kohrVid-env
+global:
+  application_name: kohrVid
+  default_ec2_keyname: kohrVid
+  default_platform: 64bit Amazon Linux 2015.09 v2.0.4 running Ruby 2.2 (Puma)
+  default_region: eu-central-1
+  profile: eb-cli
+  sc: git
