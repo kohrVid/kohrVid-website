@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :admin_user_404, except: [:index, :show]
 	before_action :friendly_finder, only: [:show, :edit, :update, :destroy]
+	before_action :redirect_if_draft, only: [:show]
 
 	def index
 		@posts = Post.all.where(draft: false).order("published_at DESC").paginate(page: params[:page])
@@ -56,6 +57,13 @@ class PostsController < ApplicationController
 
 		def friendly_finder
 			@post = Post.friendly.find(params[:id])
+		end
+
+		def redirect_if_draft
+			friendly_finder
+			unless @post.draft == false || (current_user && current_user.admin?) 
+				raise ActionController::RoutingError.new('Not Found')
+			end
 		end
 	
 end
