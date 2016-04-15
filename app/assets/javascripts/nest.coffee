@@ -14,14 +14,14 @@ mediumSVG = () ->
   $("#logo").attr "y", svgTop
 
 mediumLargeSVG = () ->
-  svgLeft = (window.innerWidth * 0.5) + "px"
+  svgLeft = (window.innerWidth * 0.55) + "px"
   $("#logo").attr "x", svgLeft
-  svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
+  svgTop = (window.outerHeight - (window.innerHeight * 0.30)) + "px"
   $("#logo").attr "y", svgTop
 
 
 largeSVG = () ->
-  svgLeft = (window.innerWidth * 0.5) + "px"
+  svgLeft = (window.innerWidth * 0.55) + "px"
   $("#logo").attr "x", svgLeft
   svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
   $("#logo").attr "y", svgTop
