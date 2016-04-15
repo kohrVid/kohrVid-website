@@ -91,14 +91,15 @@ body{
 			height: 75%;
 		}
 	}
+	
 	@media screen and (min-width: 501px) and	(max-width: 840px){
 		.container {
 			left: 20px;
-			width: 350px;
+			width: 63%; /*350px;70%*/
 			height: 52%;
 		}
 		.blog_archives {
-			left: 400px;
+			left: 72%; /* 500px;*/ /*400px;79%*/
 			height: 58%;
 			width: 103px;
 		}
@@ -113,11 +114,11 @@ body{
 	@media screen and (min-width: 841px) and	(max-width: 950px){
 		.container {
 			left: 50px;
-			width: 350px;
+			width: 450px; /*350px;70%*/
 			height: 60%;
 		}
 		.blog_archives {
-			left: 442px;
+			left: 530px;/*442px;*/
 			height: 60%;
 			width: 185px;
 		}
@@ -132,11 +133,11 @@ body{
 	@media screen and	(min-width: 951px){
 		.container {
 			left: 50px;
-			width: 400px;
+			width: 450px; /*400px;*/
 			height: 60%;
 		}
 		.blog_archives {
-			left: 487px;
+			left: 530px; /*487px;*/
 			height: 66%;
 			width: 185px;
 		}
@@ -494,9 +495,9 @@ body{
 						transition: flex-basis 0.3s linear;
 					}
 					.blog_archive_month_list{
-						height: 200%;
+						height: 250%;
 						width: 99%;
-						left: -19px;
+						left: -23px;
 						background-color: rgba(0,0,0,0) !important;
 						word-wrap: break-word;
 						position: relative;
@@ -510,24 +511,37 @@ body{
 				}
 			}
 		}
-		.blog_archive_draft_list {
-			a {
+		
+		.blog_archive_draft {
+			width: 100%;
+			overflow: hidden !important;
+			.blog_archive_draft_list {
+				height: 30%;
+				width: 99%;
+				left: -13px;
+				word-wrap: break-word;
 				position: relative;
-				left: -10px;
-			}
-			a:link, a:visited, a:hover, a:active{
-				color: #262690 !important;
-			}
-			a:hover{
-				font-size: 1.1rem !important;
-			}
-			flex-direction: column;
-			> * {
-				flex: 0 0 25px;
-				outline: 0;
-				transition: flex-basis 0.3s linear;
+				a {
+					position: relative;
+					left: -10px;
+				}
+				a:link, a:visited, a:hover, a:active{
+					color: #262690 !important;
+				}
+				a:hover{
+					font-size: 1.1rem !important;
+				}
+				flex-direction: column;
+				> * {
+					flex: 0 0 25px;
+					outline: 0;
+					transition: flex-basis 0.3s linear;
+				}
 			}
 		}
+	}
+	.ui-accordion{
+		border-radius: 15px !important;
 	}
 	.ui-accordion-content {
 		background-color: rgba(0,0,0,0) !important;
