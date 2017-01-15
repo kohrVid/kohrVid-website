@@ -38,7 +38,7 @@ gem "factory_girl_rails", "~> 4.0"
 gem "rack-attack", "~> 4.3"
 gem "brakeman", "~> 3.1", ">= 3.1.2"
 gem "secure_headers", "~> 2.4", ">= 2.4.3"
-gem "dawnscanner", ">= 1.4.2" #run "dawn -r ./" to use 
+#gem "dawnscanner", ">= 1.4.2" #run "dawn -r ./" to use 
 gem "figaro", "0.7.0"
 gem "activerecord-session_store"  
 
