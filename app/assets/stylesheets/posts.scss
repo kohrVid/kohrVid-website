@@ -1,197 +1,208 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-		.clients{
-			overflow: hidden;
-			margin: auto;
-			display: block;
-			width: 100%;
-			padding: 0;
-			li{
-				float: left;
-				position: relative;
-				padding:0 5%;
-				margin: 0;
-				list-style-type: none;
-				word-wrap: break-word;
-			}
-			li:before{
-				content: "" !important;
-			}
-		}
-		code {
-			background-color:rgba(225,225,225,0.4);// #d1d1d1;
-		}
-		.replies {
-			border-left: 2px solid rgba(38,38,144,0.7);
-			border-top: 1px solid rgba(168,168,230,0.7);
-			margin-left: 5%;
-			padding-left: 15px;
-			padding-bottom: 1px;
-			.comment:not(:first-child) {
-				border-top: 1px solid rgba(168,168,230,0.7);
-				margin-top: 15px;
-			}
-		}
-		.replies .replies .replies .replies .replies { 
-			margin-left: 0;
-		}
-		.tag {
-		   float: left;
-			a {
-				padding: 6px;
-				margin: 10px;
-				border-radius: 10px;
-				background-color: #262690 !important;
-				line-height: 37px !important;
-				color: $light-grey !important;
-				font-weight: bold;
-			}
-		}
-	@media screen and (min-width: 0px) and (max-width: 500px){
-		.blog_archives {
-			right: -104px;
-			height: 58%;
-			width: 25%;
-		}
-		.general_form input, textarea {
-			width: 95%;
-		}
-		.clients li {
-			width: 70%;
-			height: 75%;
-		}
-	}
-	
-	@media screen and (min-width: 501px) and	(max-width: 840px){
-		.blog_archives {
-			left: 72%; /* 500px;*/ /*400px;79%*/
-			height: 58%;
-			width: 103px;
-		}
-		.general_form input, textarea {
-			width: 150%;
-		}
-		.clients li {
-			width: 40%;
-			height: 240px;
-		}
-	}
-	@media screen and (min-width: 841px) and	(max-width: 950px){
-		.blog_archives {
-			left: 530px;/*442px;*/
-			height: 60%;
-			width: 185px;
-		}
-		.general_form input, textarea {
-			width: 150%;
-		}
-		.clients li {
-			width: 23%;
-			height: 189px;
-		}
-	}
-	@media screen and	(min-width: 951px){
-		.blog_archives {
-			left: 530px; /*487px;*/
-			height: 66%;
-			width: 185px;
-		}
-		.general_form input, textarea {
-			width: 180%;
-		}
-		.clients li {
-			width: 23%;
-			height: 189px;
-		}
-	}
+.clients {
+  overflow: hidden;
+  margin: auto;
+  display: block;
+  width: 100%;
+  padding: 0;
+  li {
+    float: left;
+    position: relative;
+    padding:0 5%;
+    margin: 0;
+    list-style-type: none;
+    word-wrap: break-word;
+  }
+  li:before {
+    content: "" !important;
+  }
+}
 
-	.blog_archives{
-		position: fixed;
-		float: left;
-		padding: 7px;
-		margin-top: 50px;
-		margin-right: 95px;
-		top: 3%;
-		z-index: -28 !important;
-		flex-direction: column;
-		> * {
-			flex: 0 0 25px;
-			outline: 0;
-			transition: flex-basis 0.3s linear;
-		}
-		.blog_archive_year {
-			width: 100%;
-			overflow: hidden !important;
-			.blog_archive_year_list{
-					width: 100%;
-				.blog_archive_month {
-					width: 100%;
-					position: relative;
-					top: -19px;
-					left: -35px;
-					a {
-						width: 78%;
-					}
-					flex-direction: column;
-					> * {
-						flex: 0 0 50px;
-						outline: 0;
-						transition: flex-basis 0.3s linear;
-					}
-					.blog_archive_month_list{
-						height: 250%;
-						width: 98%;
-						left: -23px;
-						background-color: rgba(0,0,0,0) !important;
-						word-wrap: break-word;
-						position: relative;
-						a:link, a:visited, a:hover, a:active{
-							color: #262690 !important;
-						}
-						a:hover{
-							font-size: 1.1rem !important;
-						}
-					}
-				}
-			}
-		}
-		
-		.blog_archive_draft {
-			width: 100%;
-			overflow: hidden !important;
-			.blog_archive_draft_list {
-				height: 30%;
-				width: 99%;
-				left: -13px;
-				word-wrap: break-word;
-				position: relative;
-				a {
-					position: relative;
-					left: -10px;
-				}
-				a:link, a:visited, a:hover, a:active{
-					color: #262690 !important;
-				}
-				a:hover{
-					font-size: 1.1rem !important;
-				}
-				flex-direction: column;
-				> * {
-					flex: 0 0 25px;
-					outline: 0;
-					transition: flex-basis 0.3s linear;
-				}
-			}
-		}
-	}
-	.ui-accordion{
-		border-radius: 15px !important;
-	}
-	.ui-accordion-content {
-		background-color: rgba(0,0,0,0) !important;
-	}
-	.ui-widget-content {
-		background-image:none;
-	background-color: rgba(252,252,252,0.7) !important;
-	}
+code {
+  background-color:rgba(225,225,225,0.4);
+}
+
+.replies {
+  border-left: 2px solid rgba(38,38,144,0.7);
+  border-top: 1px solid rgba($black, 0.7);
+  margin-left: 5%;
+  padding-left: 15px;
+  padding-bottom: 1px;
+  .comment:not(:first-child) {
+      border-top: 1px solid rgba($black, 0.7);
+      margin-top: 15px;
+  }
+}
+
+.replies .replies .replies .replies .replies { 
+        margin-left: 0;
+}
+
+.tags {
+  display: block;
+  li {
+    padding: 6px;
+    margin: 3px;
+    border-radius: 10px;
+    background-color: $dusky-blue !important;
+    //background-color: #262690 !important;
+    line-height: 37px !important;
+    color: $light-grey !important;
+    border: $light-grey 1px solid;
+    font-weight: bold;
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px){
+  .blog_archives {
+    right: -104px;
+    height: 58%;
+    width: 25%;
+  }
+  .general_form input, textarea {
+    width: 95%;
+  }
+  .clients li {
+    width: 70%;
+    height: 75%;
+  }
+}
+
+@media screen and (min-width: 501px) and	(max-width: 840px){
+  .blog_archives {
+    left: 72%; /* 500px;*/ /*400px;79%*/
+    height: 58%;
+    width: 103px;
+  }
+  .general_form input, textarea {
+    width: 150%;
+  }
+  .clients li {
+    width: 40%;
+    height: 240px;
+  }
+}
+
+@media screen and (min-width: 841px) and	(max-width: 950px){
+  .blog_archives {
+    left: 530px;/*442px;*/
+    height: 60%;
+    width: 185px;
+  }
+  .general_form input, textarea {
+    width: 150%;
+  }
+  .clients li {
+    width: 23%;
+    height: 189px;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .blog_archives {
+    left: 530px; /*487px;*/
+    height: 66%;
+    width: 185px;
+  }
+  .general_form input, textarea {
+    width: 180%;
+  }
+  .clients li {
+    width: 23%;
+    height: 189px;
+  }
+}
+
+.blog_archives {
+  position: fixed;
+  float: left;
+  padding: 7px;
+  margin-top: 50px;
+  margin-right: 95px;
+  top: 3%;
+  z-index: -28 !important;
+  flex-direction: column;
+  > * {
+    flex: 0 0 25px;
+    outline: 0;
+    transition: flex-basis 0.3s linear;
+  }
+}
+
+.blog_archive_year {
+  width: 100%;
+  overflow: hidden !important;
+  .blog_archive_year_list {
+    width: 100%;
+    .blog_archive_month {
+      width: 100%;
+      position: relative;
+      top: -19px;
+      left: -35px;
+      a {
+        width: 78%;
+      }
+      flex-direction: column;
+      > * {
+        flex: 0 0 50px;
+        outline: 0;
+        transition: flex-basis 0.3s linear;
+      }
+      .blog_archive_month_list {
+        height: 250%;
+        width: 98%;
+        left: -23px;
+        background-color: rgba(0,0,0,0) !important;
+        word-wrap: break-word;
+        position: relative;
+        a:link, a:visited, a:hover, a:active {
+          color: #262690 !important;
+        }
+        a:hover{
+          font-size: 1.1rem !important;
+        }
+      }
+    }
+  }
+}
+
+.blog_archive_draft {
+  width: 100%;
+  overflow: hidden !important;
+  .blog_archive_draft_list {
+    height: 30%;
+    width: 99%;
+    left: -13px;
+    word-wrap: break-word;
+    position: relative;
+    a {
+      position: relative;
+      left: -10px;
+    }
+    a:link, a:visited, a:hover, a:active{
+      color: #262690 !important;
+    }
+    a:hover {
+      font-size: 1.1rem !important;
+    }
+    flex-direction: column;
+    > * {
+      flex: 0 0 25px;
+      outline: 0;
+      transition: flex-basis 0.3s linear;
+    }
+  }
+}
+
+.ui-accordion {
+  border-radius: 15px !important;
+}
+
+.ui-accordion-content {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.ui-widget-content {
+  background-image:none;
+  background-color: rgba(252,252,252,0.7) !important;
+}
