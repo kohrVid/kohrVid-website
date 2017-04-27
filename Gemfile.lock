@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/kohrVid/mail_form
+  revision: 78a096e51c4c7f06f42bd265f0a18b63792a8a3b
+  branch: fixing-captcha-issue
+  specs:
+    mail_form (1.6.0)
+      actionmailer (>= 3.2, < 5.1)
+      activemodel (>= 3.2, < 5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -159,9 +168,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
-    mail_form (1.6.0)
-      actionmailer (>= 3.2, < 5.1)
-      activemodel (>= 3.2, < 5.1)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -344,7 +350,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   launchy
-  mail_form
+  mail_form!
   mini_magick (~> 3.8.0)
   ngannotate-rails
   pg (~> 0.18)
