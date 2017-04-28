@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources 'clients'
   get 'clients/list' =>  'clients#list'
   get 'blog' =>  'posts#index'
+  post 'csp_reports' =>  'nest#csp_reports'
   
   scope '/blog' do
     resources :posts do

@@ -5,7 +5,6 @@ gem 'bcrypt', '~> 3.1.7'
 #gem "brakeman", "~> 3.1", ">= 3.1.2"
 gem "carrierwave", "0.10.0"
 gem "closure_tree"
-gem "coderay"
 gem "coffee-rails", "~> 4.1.0" #TODO
 #gem "dawnscanner", ">= 1.4.2" #run "dawn -r ./" to use 
 gem "devise"
@@ -16,6 +15,7 @@ gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'kramdown'
 gem 'mail_form', git: 'https://github.com/kohrVid/mail_form', branch: 'fixing-captcha-issue'
 gem "mini_magick", "~> 3.8.0"
 gem 'pg', '~> 0.18'
@@ -25,7 +25,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem "remotipart" #Allows for asynchronous file uploads in CarrierWave
 gem "redcarpet", '3.3.0'
 gem 'sass', '~>3.2.19'
-gem "secure_headers", "~> 2.4", ">= 2.4.3"
+gem "secure_headers", git: 'https://github.com/twitter/secureheaders'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -53,7 +53,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console", "~> 2.0"
+  gem 'web-console', '~> 3.0'
 #  gem "spring"
 end
 
