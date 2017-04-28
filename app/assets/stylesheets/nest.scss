@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $dusky-blue: #afafff;
-$light-grey: #e1e1e1;
+$light-grey: #f9f9f9;//#e1e1e1;
 $black: #010101;
 $code-bg: #d1d1d1;
 
@@ -14,10 +14,11 @@ $code-bg: #d1d1d1;
 
 
 @import "clients.scss";
-@import "coderay.scss";
+//@import "coderay.scss";
 @import "dividers.scss";
 @import "form.scss";
 @import "navigation.scss";
+@import "size.scss";
 @import "position.scss";
 @import "posts.scss";
 @import "utils.scss";
