@@ -1,5 +1,5 @@
 = form_for @post do |f|
-  .general_form
+  .general-form.container-fluid
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :title, "Title"
@@ -9,7 +9,10 @@
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :body, "Body:"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
-        = f.text_area :body, rows: 10
+        - @body = @post.body.split("\r\n")
+        = f.text_area :body, value: @body.map{|i| (i.empty? && i == "\r\n") ? "\r\n" : "#{i}\r\n" }.join.strip.html_safe, rows: 10
+        -#= f.text_area :body, value: sanitize(@post.body), rows: 10
+
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :tag_list, "Tags"
@@ -21,5 +24,6 @@
       .col-md-4.col-sm-7.col-xs-7
         = f.check_box :draft
     %fieldset.row
-      .col-lg-8.col-md-9.col-md-offset-2.col-sm-12.col-xs-12
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.button "Submit", class: "button"

@@ -4,21 +4,36 @@
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+  <div class="general-form container-fluid">
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+        <%= f.label :password, "New password" %>
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+        <% end %>
+        <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="general-form container-fluid">
+      <fieldset class="row">
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+          <%= f.label :password_confirmation, "Confirm new password" %>
+        </div>
+        <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </fieldset>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Change My Password", class: "button" %>
+    <fieldset class="row actions">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.submit "Change My Password", class: "button" %>
+    </div>
   </div>
 <% end %>
 
