@@ -86,3 +86,8 @@ footer {
   color: $light-grey;
   padding-top: 1rem;
 }
+
+#small-footer {
+  background-color: $black;
+  border-top: 0.3rem $dusky-blue solid;
+}

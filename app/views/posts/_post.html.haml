@@ -1,6 +1,7 @@
 %article
   %h2
     = link_to post.title, post
+    &nbsp;
     %small.smaller_text
       %em
         (#{ pluralize(post.comments.count, "comment") })
