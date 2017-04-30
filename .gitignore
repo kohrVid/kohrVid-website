@@ -9,8 +9,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-
-#!/log/.keep
+!/log/.keep
 /tmp/*
 /public/uploads/*
 coverage
@@ -25,8 +24,8 @@ coverage
 #!.elasticbeanstalk/*.global.yml
 
 #puma & nginx
-#/lib/nginx
-#/lib/puma
+/lib/nginx
+/lib/puma
 
 #puma & nginx
 /lib/nginx
