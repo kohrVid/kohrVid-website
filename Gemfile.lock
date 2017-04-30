@@ -336,7 +336,7 @@ DEPENDENCIES
   carrierwave (= 0.10.0)
   closure_tree
   coderay
-  coffee-rails (~> 4.1.0)
+  coffee-rails
   cucumber-rails
   database_cleaner
   devise

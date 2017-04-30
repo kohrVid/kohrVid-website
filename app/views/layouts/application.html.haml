@@ -9,7 +9,8 @@
           <!--[if lte IE 8 ]>
           Sorry, this site doesn't support IE8 or lower. Please upgrade your browser or try switching to Firefox/Chrome/Opera
           <![endif]-->
-
+          %noscript
+            This site looks much nicer with JavaScript enabled so please make sure it's switched on in your browser settings if possible.
           = render partial: "layouts/alerts"
           = yield
           - unless !(@post||@posts).present?
