@@ -5,9 +5,9 @@
     New Comment
 
 - if @comment.parent
-  = render "comment", comment: @comment.parent, from_reply_form: true
+  = render partial: "comment", locals: { comment: @comment.parent }, from_reply_form: true
 
-= render "form"
+= render partial: "comments/form"
 
 %ul.divider-list.p-l-0
   %li

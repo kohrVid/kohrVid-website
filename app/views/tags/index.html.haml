@@ -2,7 +2,7 @@
 = render partial: "layouts/blog_login_logout"
 %h1
   All Tags
-.tags
+%ul.tags.p-l-0
   - @tags.each do |tag|
     %li
       = link_to tag.name, tag

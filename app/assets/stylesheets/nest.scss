@@ -5,7 +5,6 @@
 $dusky-blue: #afafff;
 $light-grey: #f9f9f9;//#e1e1e1;
 $black: #010101;
-$code-bg: #d1d1d1;
 
 
 @import "normalize.css";
@@ -14,11 +13,10 @@ $code-bg: #d1d1d1;
 
 
 @import "clients.scss";
-//@import "coderay.scss";
+@import "coderay.scss";
 @import "dividers.scss";
 @import "form.scss";
 @import "navigation.scss";
-@import "size.scss";
 @import "position.scss";
 @import "posts.scss";
 @import "utils.scss";

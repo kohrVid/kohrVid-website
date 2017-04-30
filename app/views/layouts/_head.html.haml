@@ -6,8 +6,7 @@
   %meta{ name: "google-site-verification",
     content: "" }
   %title
-    kohrVid
-    = content_for?(:title) ? " | #{yield(:title)}" : ""
+    = content_for?(:title) ? "kohrVid | #{yield(:title)}" : "kohrVid"
   = csrf_meta_tags
   = stylesheet_link_tag 'application', media: 'all'
   = javascript_include_tag 'application'

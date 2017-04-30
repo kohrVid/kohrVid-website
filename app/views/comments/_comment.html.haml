@@ -2,8 +2,7 @@
   %a{ id: comment.id }
   %p.smaller_text
     Posted by 
-    %strong= link_to_if(!comment.user_id.nil?, comment.author, { controller: "users", action: "show", id: comment.user_id })
-    on
+    <strong>#{ link_to_if(!comment.user_id.nil?, comment.author, { controller: "users", action: "show", id: comment.user_id }) }</strong> on&nbsp;
     = comment.created_at.strftime("%e#{comment.created_at.day.ordinal} %B %Y at %H:%M:%S")
     - unless comment.created_at == comment.updated_at
       %em
@@ -16,5 +15,6 @@
     %ul.divider-list.p-l-0
       %li
         = link_to "reply", post_new_comment_path(@post, comment.id)
-      %li
-        = link_to "update", edit_post_comment_path(@post, comment) unless !user_signed_in? || !current_user_id?(comment.user_id)
+      - unless !user_signed_in? || !current_user_id?(comment.user_id)
+        %li
+          = link_to "edit", edit_post_comment_path(@post, comment)

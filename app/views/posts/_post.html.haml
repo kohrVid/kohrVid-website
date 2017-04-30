@@ -1,0 +1,15 @@
+%article
+  %h2
+    = link_to post.title, post
+    %small.smaller_text
+      %em
+        (#{ pluralize(post.comments.count, "comment") })
+  = markdown(post.body.to_s.truncate(500) )
+  = link_to "[Read more...]", post
+  %br
+  - if admin_is_logged_in
+    %ul.divider-list.p-l-0
+      %li
+        = link_to "Edit Post", edit_post_path(post)
+      %li
+        = link_to "Delete Post", post, method: :delete, data: { cofirm: "Are you sure? This cannot be undone!"}
