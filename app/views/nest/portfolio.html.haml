@@ -1,9 +1,11 @@
 %h1
   Portfolio
 
-%h2
-  = link_to "Previous Projects", projects_path
-
-%h2
-  = link_to "Clients", clients_path
+%ul.diamond-list
+  %li
+    .padded-li
+      = link_to "Previous Projects", projects_path
+  %li
+    .padded-li
+      = link_to "Clients", clients_path
 

@@ -24,21 +24,15 @@
   }
 }
 
-#logo a {
-  @include header-font();
-  font-size: 4rem; 
-  letter-spacing: -2px;
-  @include menu-hover();
-}
-
 @media screen and (max-width: 767px) {
   #navbar {
     text-align: center;
     z-index: 999;
+    background-size:100%;
   }
   #menu {
     li {
-      display: inline;
+      display: inline-block;
       &:after {
         content: "|";
         color: $light-grey;
@@ -52,6 +46,13 @@
       }
     }
   }
+}
+
+#logo a {
+  @include header-font();
+  font-size: 4rem; 
+  letter-spacing: -2px;
+  @include menu-hover();
 }
 
 #menu {
@@ -91,4 +92,5 @@ footer {
   bottom: 0px;
   background-color: $black;
   border-top: 0.3rem $dusky-blue solid;
+  padding-bottom: 16px;
 }
