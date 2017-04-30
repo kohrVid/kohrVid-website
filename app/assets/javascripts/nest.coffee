@@ -1,4 +1,4 @@
-#Nest.Café##☕#☕#☕#☕#
+##Nest.Café##☕#☕#☕#☕#
 
 $(document).ready ->
   $(".close").click ->
@@ -17,15 +17,15 @@ navigation = () ->
       navbar.removeClass("position-relative")
       navbar.addClass("position-fixed")
       menu.addClass("hidden")
-    else if $(this).scrollTop().valueOf() == 0 || window.innerWidth >= 768
-      navUnfix(navbar)
+    else if $(this).scrollTop().valueOf() <= 3
+      navUnfix(navbar, menu)
   else if  window.innerWidth >= 768
-    navUnfix(navbar)
-    menu.removeClass("hidden")
+    navUnfix(navbar, menu)
 
-navUnfix = (navbar) ->
+navUnfix = (navbar, menu) ->
   navbar.removeClass("position-fixed")
   navbar.addClass("position-relative")
+  menu.removeClass("hidden")
 
 #$(document).ready(function(){
   #$(window).bind('orientationchange', function(){
