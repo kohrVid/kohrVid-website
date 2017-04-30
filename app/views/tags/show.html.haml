@@ -1,7 +1,7 @@
 - provide(:title, @tag.name)
 = render "layouts/blog_login_logout"
 %h1
-= @tag.name
+  = @tag.name
 
 %ul.no-bullet
   - @tag.posts.each do |post|
