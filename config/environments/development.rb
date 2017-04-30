@@ -36,7 +36,7 @@ Rails.application.configure do
   }
 
   # config.action_view.raise_on_missing_translations = true
-  config.serve_static_files = true
+  config.public_file_server.enabled = true
 #  config.action_mailer.default_url_options = { host: 'localhost', port: 587, address: "smtp.gmail.com" }
 
 end
