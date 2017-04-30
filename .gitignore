@@ -8,15 +8,16 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-#/log/*
+/log/*
+
 #!/log/.keep
 /tmp/*
 /public/uploads/*
 coverage
 
-#/config/database.yml
-#/config/secrets.yml
-#/db/seed_data/*
+/config/database.yml
+/config/secrets.yml
+/db/seed_data/*
 
 # Elastic Beanstalk Files
 #.elasticbeanstalk/*
@@ -26,6 +27,10 @@ coverage
 #puma & nginx
 #/lib/nginx
 #/lib/puma
+
+#puma & nginx
+/lib/nginx
+/lib/puma
 
 # Ignore application configuration
 /config/application.yml
