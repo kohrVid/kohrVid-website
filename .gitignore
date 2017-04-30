@@ -14,8 +14,6 @@
 /public/uploads/*
 coverage
 
-/config/database.yml
-/config/secrets.yml
 /db/seed_data/*
 
 #puma & nginx
