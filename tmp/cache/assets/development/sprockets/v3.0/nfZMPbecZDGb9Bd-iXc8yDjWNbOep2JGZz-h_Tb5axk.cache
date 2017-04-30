@@ -1,0 +1,133 @@
+I"±(function() {
+  var adaptive, big, medium, mediumLarge, small;
+
+  small = function() {
+    var cw, yp;
+    $("#logo").attr("x", "0px");
+    yp = (window.innerHeight - 35) + "px";
+    $("#logo").attr("y", yp);
+    cw = (window.innerWidth - 142) + "px";
+    $(".container").css({
+      left: "3px",
+      width: cw,
+      height: "52%"
+    });
+    $(".contact input, .contact textarea").css({
+      width: "95%"
+    });
+    return $(".clients li").css({
+      width: "70%",
+      height: "75%"
+    });
+  };
+
+  medium = function() {
+    var xp, yp;
+    xp = (window.innerWidth - 370) + "px";
+    $("#logo").attr("x", xp);
+    yp = (window.innerHeight - 35) + "px";
+    $("#logo").attr("y", yp);
+    $(".container").css({
+      left: "50px",
+      width: "350px",
+      height: "52%"
+    });
+    $(".contact input, .contact textarea").css({
+      width: "150%"
+    });
+    return $(".clients li").css({
+      width: "40%",
+      height: "100%"
+    });
+  };
+
+  mediumLarge = function() {
+    var xp, yp;
+    xp = (window.innerWidth * 0.5) + "px";
+    $("#logo").attr("x", xp);
+    yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px";
+    $("#logo").attr("y", yp);
+    $(".container").css({
+      left: "50px",
+      width: "350px",
+      height: "60%"
+    });
+    $(".contact input, .contact textarea").css({
+      width: "150%"
+    });
+    return $(".clients li").css({
+      width: "23%",
+      height: "189px"
+    });
+  };
+
+  big = function() {
+    var xp, yp;
+    xp = (window.innerWidth * 0.5) + "px";
+    $("#logo").attr("x", xp);
+    yp = (window.outerHeight - (window.innerHeight * 0.4)) + "px";
+    $("#logo").attr("y", yp);
+    $(".container").css({
+      left: "50px",
+      width: "400px",
+      height: "60%"
+    });
+    $(".contact input, .contact textarea").css({
+      width: "180%"
+    });
+    return $(".clients li").css({
+      width: "23%",
+      height: "189px"
+    });
+  };
+
+  $(window).load(function() {
+    $("#dropdown").hide();
+    if (window.innerWidth < 500) {
+      return small();
+    } else if (window.innerWidth < 840) {
+      return medium();
+    } else if (window.innerWidth < 950) {
+      return mediumLarge();
+    } else {
+      return big();
+    }
+  });
+
+  adaptive = function() {
+    if (window.innerWidth < 500) {
+      return small();
+    } else if (window.innerWidth < 840) {
+      return medium();
+    } else if (window.innerWidth < 950) {
+      return mediumLarge();
+    } else {
+      return big();
+    }
+  };
+
+  $(window).resize(function() {
+    return adaptive();
+  });
+
+  $(document).ready(function() {
+    return $("#menu").click(function() {
+      return $("#dropdown").slideToggle();
+    });
+  });
+
+  $(document).ready(function() {
+    $(".close").click(function() {
+      $(".alerts").hide();
+      return $(".description").fadeOut();
+    });
+    return $(".close_image").click(function() {
+      $(".container").css({
+        "overflow-y": "scroll"
+      });
+      return $(".screenshot").fadeOut("slow");
+    });
+  });
+
+}).call(this);
+:ET

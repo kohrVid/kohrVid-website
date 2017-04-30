@@ -18,25 +18,8 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   
   config.action_mailer.default_url_options = {
- 	  host: 'localhost:3000',
-	  from: "no-reply@kohrVid.com",
+    host: 'localhost:3000'
   }
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
-
-  config.action_mailer.smtp_settings = {
-	  address: "smtp.gmail.com",
-	  port: 587,
-	  domain: ENV["GMAIL_DOMAIN"],
-	  authentication: :plain,
-	  enable_starttls_auto: true,
-	  user_name: ENV["GMAIL_USERNAME"],
-	  password: ENV["GMAIL_PASSWORD"]
-  }
-
-  # config.action_view.raise_on_missing_translations = true
-  config.serve_static_files = true
-#  config.action_mailer.default_url_options = { host: 'localhost', port: 587, address: "smtp.gmail.com" }
-
+  config.action_mailer.raise_delivery_errors = false
+  config.public_file_server.enabled = true
 end

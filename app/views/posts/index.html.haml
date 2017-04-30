@@ -1,0 +1,9 @@
+- provide(:title, 'Blog')
+= render partial: 'layouts/blog_login_logout'
+%h1
+  Blog
+
+= will_paginate
+- @posts.each do |post|
+  = render partial: 'posts/post', locals: { post: post }
+= will_paginate

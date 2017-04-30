@@ -1,55 +1,37 @@
-		#Nest.Café#
+##Nest.Café##☕#☕#☕#☕#
 
-#Define Dimensions#
-
-smallSVG = () ->
-  $("#logo").attr "x", "0px"
-  svgTop = (window.innerHeight - 35) + "px"
-  $("#logo").attr "y", svgTop
-
-mediumSVG = () ->
-  svgLeft = (window.innerWidth - 370) + "px"
-  $("#logo").attr "x", svgLeft
-  svgTop = (window.innerHeight - 35) + "px"
-  $("#logo").attr "y", svgTop
-
-mediumLargeSVG = () ->
-  svgLeft = (window.innerWidth * 0.55) + "px"
-  $("#logo").attr "x", svgLeft
-  svgTop = (window.outerHeight - (window.innerHeight * 0.30)) + "px"
-  $("#logo").attr "y", svgTop
-
-
-largeSVG = () ->
-  svgLeft = (window.innerWidth * 0.55) + "px"
-  $("#logo").attr "x", svgLeft
-  svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px"
-  $("#logo").attr "y", svgTop
-
-#Adaptive Layout#
-adaptive = () ->
-  if window.innerWidth < 500
-    smallSVG()
-  else if window.innerWidth <840
-    mediumSVG()
-  else if window.innerWidth < 950
-    mediumLargeSVG()
-  else
-    largeSVG()
-
-$(window).load ->
-  $("#dropdown").hide()
-  adaptive()
-
-$(window).resize ->
-  adaptive()
-
-#Navigation Bar#  
-$(document).ready ->
-  $("#menu").click ->
-    $("#dropdown").slideToggle()
-
-#Close buttons#
 $(document).ready ->
   $(".close").click ->
     $(".alerts").hide()
+
+$(window).resize ->
+  navigation()
+$(window).scroll ->
+  navigation()
+
+navigation = () ->
+  menu = $('#hide-on-scroll')
+  navbar = $('#navbar')
+  if window.innerWidth < 768
+    if $(this).scrollTop().valueOf() >= navbar.height()
+      navbar.removeClass("position-relative")
+      navbar.addClass("position-fixed")
+      menu.addClass("hidden")
+    else if $(this).scrollTop().valueOf() <= 3
+      navUnfix(navbar, menu)
+  else if  window.innerWidth >= 768
+    navUnfix(navbar, menu)
+
+navUnfix = (navbar, menu) ->
+  navbar.removeClass("position-fixed")
+  navbar.addClass("position-relative")
+  menu.removeClass("hidden")
+
+#$(document).ready(function(){
+  #$(window).bind('orientationchange', function(){
+    #adaptive();
+  #});
+  #$(".blog_archive_year").accordion({ active: $(".blog_archive_year div:first-child"), collapsible: true});
+  #$(".blog_archive_month").accordion({ active: $(".blog_archive_month div"), collapsible: true});
+  #$(".blog_archive_draft").accordion({ active: $(".blog_archive_draft div"), collapsible: true});
+#});

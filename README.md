@@ -1,3 +1,3 @@
 # kohrVid.com
 
-March-April 2016: I'm in the process of adding a blog to the [kohrVid site]("https://www.kohrVid.com"). Hopefully this should be live very soon.
+April 2017: I'm in the process of writing version 2 of the [kohrVid site](https://www.kohrVid.com). This is still a work in progress so stay tuned!

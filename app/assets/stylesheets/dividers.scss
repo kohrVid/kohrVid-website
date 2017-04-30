@@ -1,0 +1,77 @@
+body {
+  background-color: $light-grey;
+  height: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0px;
+  a {
+    &:link, &:visited, &:hover, &:active {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+#wrapper {
+  min-height: 100vh;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -54px;
+}
+
+noscript {
+  color: #9F0000;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  //min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.alerts {
+  position: relative;
+  @include main-font();
+  color: $light-grey;
+  .close {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    text-align: right;
+  }
+  .notice, .success, .alert {
+    padding: 7px;
+    background-color: rgba(38, 38, 144, 0.6);
+  }
+  .error, .danger {
+    padding: 7px;
+    background-color: rgba(159, 0, 0, 0.6);
+    .close {
+      color: #9F0000 !important;
+    }
+    ul li:before {
+      content: none !important;
+    }
+  }
+}
+.actions {
+  margin: 16px 0;
+}

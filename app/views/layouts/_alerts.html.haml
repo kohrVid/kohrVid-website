@@ -1,0 +1,17 @@
+- if flash.present?
+  .alerts
+    - flash.each do |key, value|
+      %div{ class: key }
+        %h4
+          = value
+        %a.close{ href: "#" }
+          &times;
+        - [ @user, @contact, @client, @comment, @post, @tag ].each do |model|
+          - if model.present?
+            - @object = model
+        - if @object.present? && @object.errors.any?
+          The form contains #{ pluralize(@object.errors.count, "error") }.
+          %ul
+            - @object.errors.full_messages.each do |msg|
+              %li
+                = msg

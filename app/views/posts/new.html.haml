@@ -1,0 +1,11 @@
+- provide(:title, "New Post")
+= render partial: "layouts/blog_login_logout"
+%h1
+  New Post
+
+= render partial: "posts/form"
+
+%ul.divider-list
+  %li
+    = link_to "Back to All Posts", posts_path
+

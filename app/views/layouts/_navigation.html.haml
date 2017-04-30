@@ -1,0 +1,21 @@
+#navbar.col-lg-4.col-md-3.col-sm-4.col-xs-12.position-relative
+  %nav{ role: "navigation" }
+    .row
+      #logo.col-lg-7.col-md-7.col-sm-7.col-xs-12
+        = link_to "kohrVid", root_path, title: "back to the nest"
+      .p-l-1r.hidden-xs.pull-right.col-lg-pull-0.col-md-pull-0.col-sm-pull-0
+        = render partial: "layouts/social_media_buttons"
+    #hide-on-scroll
+      %ul#menu
+        %li
+          = link_to "About", about_path
+        %li
+          =link_to "Portfolio", portfolio_path
+        %li
+          = link_to "Contact", contact_path
+        %li
+          = link_to "Blog", blog_path
+      .small-centre.hidden-lg.hidden-md.hidden-sm
+        = render partial: "layouts/social_media_buttons"
+      %footer.hidden-xs
+        © 2017 kohrVid

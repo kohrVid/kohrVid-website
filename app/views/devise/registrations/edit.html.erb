@@ -2,48 +2,87 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="general-form container-fluid">
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+        <%= f.label :name %>
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+        <%= f.label :email %>
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.email_field :email %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+    <fieldset class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+        <%= f.label :bio %>
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.text_area :bio, rows: 10 %>
+      </div>
+    </fieldset>
 
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio, rows: 10 %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update", class: "button" %>
+    <fieldset class="row actions">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+      </div>
+      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+        <%= f.submit "Update", class: "button" %>
+      </div>
+    </fieldset>
   </div>
 <% end %>
 
 <h4>Cancel my account</h4>
+<div class="row">
+  <div class="col-lg-3 col-md-2 col-sm-3 col-xs-2">
+    Unhappy?
+  </div>
+  <div class="col-lg-5 col-md-5 col-sm-8 col-xs-8">
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %>
+  </div>
+</div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %></p>
-
-<%= link_to "Back", :back %>
+<ul class="divider-list p-l-0">
+  <li>
+    <%= link_to "Back", :back %>
+  </li>
+</ul>

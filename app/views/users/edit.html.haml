@@ -1,0 +1,13 @@
+- provide(:title, "Update User")
+= render partial: "layouts/blog_login_logout"
+%h1
+  Update User
+
+= render partial: "users/edit_form"
+
+%ul.divider-list.p-l-0
+  %li
+    = link_to "Back to All Users", users_path
+  - if current_user || admin_is_logged_in
+    %li
+      = link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' }

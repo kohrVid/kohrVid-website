@@ -1,0 +1,181 @@
+I"Å(function() {
+  var adaptive, largeClient, largeContact, largeContainer, largeSVG, largeScreen, mediumClient, mediumContact, mediumContainer, mediumLargeClient, mediumLargeContainer, mediumLargeSVG, mediumLargeScreen, mediumSVG, mediumScreen, smallClient, smallContact, smallContainer, smallSVG, smallScreen;
+
+  smallSVG = function() {
+    var svgTop;
+    $("#logo").attr("x", "0px");
+    svgTop = (window.innerHeight - 35) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  smallContainer = function() {
+    var containerWidth;
+    containerWidth = (window.innerWidth - 142) + "px";
+    return $(".container").css({
+      left: "3px",
+      width: containerWidth,
+      height: "52%"
+    });
+  };
+
+  smallContact = function() {
+    return $(".general_form input, .general_form textarea").css({
+      width: "95%"
+    });
+  };
+
+  smallClient = function() {
+    return $(".clients li").css({
+      width: "70%",
+      height: "75%"
+    });
+  };
+
+  smallScreen = function() {
+    smallSVG();
+    smallContainer();
+    smallContact();
+    return smallClient();
+  };
+
+  mediumSVG = function() {
+    var svgLeft, svgTop;
+    svgLeft = (window.innerWidth - 370) + "px";
+    $("#logo").attr("x", svgLeft);
+    svgTop = (window.innerHeight - 35) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  mediumContainer = function() {
+    return $(".container").css({
+      left: "50px",
+      width: "350px",
+      height: "52%"
+    });
+  };
+
+  mediumContact = function() {
+    return $(".general_form input, .general_form textarea").css({
+      width: "150%"
+    });
+  };
+
+  mediumClient = function() {
+    return $(".clients li").css({
+      width: "40%",
+      height: "240px"
+    });
+  };
+
+  mediumScreen = function() {
+    mediumSVG();
+    mediumContainer();
+    mediumContact();
+    return mediumClient();
+  };
+
+  mediumLargeSVG = function() {
+    var svgLeft, svgTop;
+    svgLeft = (window.innerWidth * 0.5) + "px";
+    $("#logo").attr("x", svgLeft);
+    svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  mediumLargeContainer = function() {
+    return $(".container").css({
+      left: "50px",
+      width: "350px",
+      height: "60%"
+    });
+  };
+
+  mediumLargeClient = function() {
+    return $(".clients li").css({
+      width: "23%",
+      height: "189px"
+    });
+  };
+
+  mediumLargeScreen = function() {
+    mediumLargeSVG();
+    mediumLargeContainer();
+    mediumContact();
+    return mediumLargeClient();
+  };
+
+  largeSVG = function() {
+    var svgLeft, svgTop;
+    svgLeft = (window.innerWidth * 0.5) + "px";
+    $("#logo").attr("x", svgLeft);
+    svgTop = (window.outerHeight - (window.innerHeight * 0.4)) + "px";
+    return $("#logo").attr("y", svgTop);
+  };
+
+  largeContainer = function() {
+    return $(".container").css({
+      left: "50px",
+      width: "400px",
+      height: "60%"
+    });
+  };
+
+  largeContact = function() {
+    $(".general_form input, .general_form textarea").css({
+      width: "180%"
+    });
+    return $(".clients li").css({
+      width: "23%",
+      height: "189px"
+    });
+  };
+
+  largeClient = function() {
+    return $(".clients li").css({
+      width: "23%",
+      height: "189px"
+    });
+  };
+
+  largeScreen = function() {
+    largeSVG();
+    largeContainer();
+    largeContact();
+    return largeClient();
+  };
+
+  adaptive = function() {
+    if (window.innerWidth < 500) {
+      return smallScreen();
+    } else if (window.innerWidth < 840) {
+      return mediumScreen();
+    } else if (window.innerWidth < 950) {
+      return mediumLargeScreen();
+    } else {
+      return largeScreen();
+    }
+  };
+
+  $(window).load(function() {
+    $("#dropdown").hide();
+    return adaptive();
+  });
+
+  $(window).resize(function() {
+    return adaptive();
+  });
+
+  $(document).ready(function() {
+    return $("#menu").click(function() {
+      return $("#dropdown").slideToggle();
+    });
+  });
+
+  $(document).ready(function() {
+    return $(".close").click(function() {
+      return $(".alerts").hide();
+    });
+  });
+
+}).call(this);
+:ET

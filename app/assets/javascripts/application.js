@@ -12,12 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/accordion
 //= require fancybox
 //= require jquery.remotipart
 //= require jquery.iframe-transport
-//= require_tree .
+//= require nest
 
 $(document).ready(function(){
-	$("a.fancybox").fancybox();
+  $("a.fancybox").fancybox();
 });

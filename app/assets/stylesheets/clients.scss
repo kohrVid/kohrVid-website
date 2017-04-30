@@ -1,0 +1,42 @@
+.clients {
+  overflow: hidden;
+  margin: auto;
+  display: block;
+  width: 100%;
+  padding: 0;
+  li {
+    float: left;
+    position: relative;
+    padding:0 5%;
+    margin: 0;
+    list-style-type: none;
+    word-wrap: break-word;
+  }
+  li:before {
+    content: "" !important;
+  }
+}
+
+.screenshot {
+  background-color: $dusky-blue;
+  display: none;
+  color: $light-grey;
+  a:link, a:visited, a:hover, a:active {
+    color: $light-grey !important;
+  }
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .description {
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 20px;
+    text-align: left;
+    font-family: Arial, Helvetica, Tahoma, sans-serif;
+  }
+}

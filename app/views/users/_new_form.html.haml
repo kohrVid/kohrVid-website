@@ -1,0 +1,31 @@
+= form_for(@user) do |f|
+  .general-form.container-fluid
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :name, "Name:"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.text_field :name
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :email, "Email Address:"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.email_field :email
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :password, "Password:"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.password_field :password
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :password_confirmation, "Confirm Password:"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.password_field :password_confirmation
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :bio, "Bio:"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.text_area :bio, rows: 10
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.button "Submit", class: "button"

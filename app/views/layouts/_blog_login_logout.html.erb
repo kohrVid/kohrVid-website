@@ -1,9 +1,0 @@
-<div class = "right-align">
-	<% if current_user && admin_is_logged_in %>
-		<%= link_to "New User", users_admin_new_path if (params[:controller] == "users" && params[:action] != "new") %>
-		<%= link_to "New Post", new_post_path if (params[:controller] == "posts" && params[:action] != "new") %>
-		<%= link_to "New Tag", new_tag_path if (params[:controller] == "tags" && params[:action] != "new") %> | 
-	<%end%>
-	<%= link_to "Log In", log_in_path unless user_signed_in? %>
-	<%= link_to "Log Out", log_out_path unless !user_signed_in? %>
-</div>

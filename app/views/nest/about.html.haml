@@ -1,0 +1,39 @@
+- provide(:title, 'About')
+%h1
+  About
+
+%p
+  I'm twenty-four, born and raised in London. Languages, frameworks and tools I've worked with in the past include:
+
+= render partial: "nest/skills_list"
+
+%h2
+  Employment History
+%ul.no-bullet.p-l-0
+  = render partial: "nest/job"
+%p
+  I'm actually on 
+  #{ link_to "LinkedIn", "https://uk.linkedin.com/pub/jessica-ete/61/21b/323", title: "¯\_(ツ)_/¯" } 
+  but I still haven't really worked out what I'm supposed to use it for. I worked in IT for a few years after sixth-form but, like, I don't anymore.
+
+%p
+  You may or may not be interested to know that:
+%ul.diamond-list
+  %li
+    .padded-li
+      I'm not #{ link_to "French", "https://en.wiktionary.org/wiki/%C3%A9t%C3%A9" } (sorry)
+  %li
+    .padded-li
+      I <i>am</i> an INTP (which I'm actually rather #{ link_to "proud", "http://www.celebritytypes.com/intp.php" } of but of course YMMV)
+  %li
+    .padded-li
+      I listen to music sometimes - mostly just alternative or whatever passed for #{ link_to "punk", "https://en.wikipedia.org/wiki/Emo#Mainstream_popularity:_2000s" } back when I was thirteen
+  %li
+    .padded-li
+      I occasionally follow #{ link_to "corvids", image_path("corvid.jpg") } and take pictures of them #{ link_to "running away", image_path("running.jpg") } on my smartphone
+  %li
+    .padded-li
+      I have a #{ link_to "Twitter account", "https://twitter.com/kohrVid" } if you'd like to follow/tweet.
+  %li
+    .padded-li
+      I have a laptop at home named #{ link_to "kandiStryp", image_path("meAndkandiStryp.jpg") }. kandi's seen better days.
