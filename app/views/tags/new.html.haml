@@ -1,0 +1,10 @@
+- provide(:title, "New Tag")
+= render partial: "layouts/blog_login_logout"
+%h1
+  New Tag
+
+= render partial: "tags/form"
+
+%ul.divider-list
+  %li
+    = link_to "Back to All Tags", tags_path

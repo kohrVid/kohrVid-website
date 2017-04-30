@@ -1,0 +1,24 @@
+- provide(:title, @tag.name)
+= render "layouts/blog_login_logout"
+%h1
+= @tag.name
+
+%ul.no-bullet
+  - @tag.post_tags.each do |post|
+    %li
+      %strong
+        #{ link_to Post.friendly.find(post.post_id).title, Post.friendly.find(post.post_id) },
+        published
+        = time_ago_in_words(Post.friendly.find(post.post_id).published_at)
+        ago
+%br
+
+
+%ul.divider-list
+  %li
+    = link_to "Back to All Tags", tags_path
+  - if current_user || admin_is_logged_in
+    %li
+      = link_to "Update Tag", edit_tag_path(@tag)
+    %li
+      = link_to "Delete Tag", @tag, method: :delete, data: { confirm: "Are you sure? This cannot be undone" }

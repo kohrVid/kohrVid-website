@@ -1,0 +1,54 @@
+- provide(:title, @user.name)
+= render "layouts/blog_login_logout"
+%h1
+  = @user.name
+.row
+  .col-lg-2.col-md-2.col-sm-12.col-xs-12
+    %strong
+      ID:
+  .col-lg-8.col-md-9.col-sm-12.col-xs-12
+    = @user.id
+.row
+  .col-lg-2.col-md-2.col-sm-12.col-xs-12
+    %strong
+      Name:
+  .col-lg-8.col-md-9.col-sm-12.col-xs-12
+    = @user.name
+.row
+  .col-lg-2.col-md-2.col-sm-12.col-xs-12
+    %strong
+      Email Address:
+  .col-lg-8.col-md-9.col-sm-12.col-xs-12
+    = @user.email
+.row
+  .col-lg-2.col-md-2.col-sm-12.col-xs-12
+    %strong
+      Bio:
+  .col-lg-8.col-md-9.col-sm-12.col-xs-12
+    = markdown(@user.bio) if @user.bio.present?
+.row
+  .col-lg-2.col-md-2.col-sm-12.col-xs-12
+    %strong
+      Previous comments:
+  .col-lg-8.col-md-9.col-sm-12.col-xs-12
+    %ul
+      - @user.comments.each do |comment|
+        %li
+          %strong
+            = link_to Post.friendly.find(comment.post_id).title, { controller: "posts", action: "show", id: comment.post_id, anchor: comment.id }
+          %p
+            comment.body.truncate(25)
+            = link_to comment.body.truncate(25), { controller: "posts", action: "show", id: comment.post_id, anchor: comment.id }
+
+%ul.divider-list.p-l-0
+  %li
+    = link_to "Back to All Users", users_path
+  - unless !user_signed_in?
+    - if admin_is_logged_in && current_user != @user
+      %li
+        = link_to "Update Account", edit_user_path(@user)
+      %li
+        = link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' }
+    - elsif @user == current_user
+      %li
+        = link_to "Update Account", edit_user_registration_path

@@ -7,25 +7,25 @@
 = form_for @contact do |f|
   .general_form
     %fieldset.row
-      .col-md-2.col-sm-12
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :name, "Name:"
-      .col-md-4.col-sm-7.col-xs-7
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.text_field :name
     %fieldset.row
-      .col-md-2
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :email, "Email address:"
-      .col-md-4.col-sm-7.col-xs-7
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.email_field :email
     %fieldset.row
-      .col-md-2.col-sm-12
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :message, "Message:"
-      .col-md-4.col-sm-7.col-xs-7
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.text_area :message, rows: 10
     %fieldset.row.hidden
-      .col-md-2
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :nickname
-      .col-md-4
+      .col-lg-8.col-md-9.col-sm-12.col-xs-10
         = f.text_field :nickname
     %fieldset.row
-      .col-lg-7.col-md-6.col-md-offset-2.col-sm-11.col-xs-10
+      .col-lg-8.col-md-9.col-md-offset-2.col-sm-12.col-xs-12
         = f.button "Send", class: "button"

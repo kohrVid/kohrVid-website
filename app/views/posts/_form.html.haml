@@ -1,0 +1,25 @@
+= form_for @post do |f|
+  .general_form
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :title, "Title"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.text_field :title
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :body, "Body:"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.text_area :body, rows: 10
+    %fieldset.row
+      .col-lg-2.col-md-2.col-sm-12.col-xs-12
+        = f.label :tag_list, "Tags"
+      .col-lg-8.col-md-9.col-sm-12.col-xs-12
+        = f.text_field :tag_list
+    %fieldset.row
+      .col-md-2.col-sm-2.col-xs-2
+        = f.label :draft, "Draft?"
+      .col-md-4.col-sm-7.col-xs-7
+        = f.check_box :draft
+    %fieldset.row
+      .col-lg-8.col-md-9.col-md-offset-2.col-sm-12.col-xs-12
+        = f.button "Submit", class: "button"

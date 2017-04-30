@@ -1,5 +1,5 @@
 .CodeRay pre {
-  background-color: #d1d1d1;
+  background-color: $code-bg;
   border: 1px solid silver;
   color: #222;
   margin: 0px;
@@ -11,25 +11,25 @@ table.CodeRay { width: 100%; padding: 1px; }
 table.CodeRay td { padding: 0px; vertical-align: top; word-wrap: break-word; }
 
 .CodeRay .line-numbers {
-  background-color: #262690 !important;
+  background-color: $black !important;
   border: 0px !important;
-  color: #f3f3f3;
+  color: $light-grey;
   text-align: right;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 .CodeRay .line-numbers a {
-  background-color: #262690 !important;
-  color: #f3f3f3 !important;
+  background-color: $black !important;
+  color: $light-grey !important;
   text-decoration: none !important;
 }
 .CodeRay .line-numbers pre {
-  background-color: #262690 !important;
+  background-color: $black !important;
   border: 0px !important;
   word-break: normal;
 }
-.CodeRay .line-numbers a:target { color: cyan !important; }
+.CodeRay .line-numbers a:target { color: $dusky-blue !important; }
 .CodeRay .line-numbers .highlighted { color: red !important; }
 .CodeRay .line-numbers .highlighted a { color: red !important; }
 .CodeRay span.line-numbers { padding: 0px 2px; }

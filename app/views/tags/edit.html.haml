@@ -1,0 +1,16 @@
+- provide(:title, "Update Tag")
+= render partial: "layouts/blog_login_logout"
+%h1
+  Update Tag
+
+= render partial: "tags/form"
+
+%ul.divider-list
+  %li
+    = link_to "Back to All Tags", tags_path
+    - if current_user || admin_is_logged_in
+      %li
+        = link_to "Delete Tag", @tag, method: :delete, data: { confirm: 'Are you sure? This cannot be undone' }
+
+
+

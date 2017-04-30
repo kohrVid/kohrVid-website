@@ -1,0 +1,17 @@
+- provide(:title, "Update Post")
+= render partial: "layouts/blog_login_logout"
+%h1
+  Update Blog Post
+
+= render partial: "posts/form"
+
+%ul.divider-list
+  %li
+    = link_to "Back to All Posts", posts_path
+  %li
+    = link_to "Back to #{@post.title}", post_path(@post)
+  - if current_user || admin_is_logged_in
+    %li
+      = link_to "Delete Post", @post, method: :delete, data: { confirm: "Are you sure? This cannot be undone but saving this as a draft will hide the post instead." }
+
+

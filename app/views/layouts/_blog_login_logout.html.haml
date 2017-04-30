@@ -1,7 +1,19 @@
-.right-align
-  - if current_user && admin_is_logged_in
-    = link_to "New User", users_admin_new_path if (params[:controller] == "users" && params[:action] != "new")
-    = link_to "New Post", new_post_path if (params[:controller] == "posts" && params[:action] != "new")
-    = link_to "New Tag", new_tag_path if (params[:controller] == "tags" && params[:action] != "new") | 
-  = link_to "Log In", log_in_path unless user_signed_in?
-  = link_to "Log Out", log_out_path unless !user_signed_in?
+.row
+  .col-lg-3.col-lg-offset-9.col-md-3.col-md-offset-9.col-sm-3.col-sm-offset-9.col-xs-4.col-xs-offset-8.right-align
+    %ul.divider-list.p-l-0
+      - if current_user && admin_is_logged_in
+        - if (params[:controller] == "users") && (params[:action] != "new")
+          %li
+            = link_to "New User", new_user_path
+        - if (params[:controller] == "posts") && (params[:action] != "new")
+          %li
+            = link_to "New Post", new_post_path
+        - if (params[:controller] == "tags") && (params[:action] != "new")
+          %li
+            = link_to "New Tag", new_tag_path 
+      - unless user_signed_in?
+        %li
+          = link_to "Log In", login_path
+      - unless !user_signed_in?
+        %li
+          = link_to "Log Out", log_out_path

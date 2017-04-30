@@ -1,0 +1,12 @@
+- provide(:title, "New User")
+= render "layouts/blog_login_logout"
+%h1
+  New User
+
+= render partial: "admin_form"
+
+%ul.divider-list.p-l-0
+  %li
+    = link_to "Back to All Users", users_path
+
+

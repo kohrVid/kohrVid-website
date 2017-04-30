@@ -12,6 +12,12 @@ fieldset {
   border: 0;
 }
 
+.field_with_errors {
+  input {
+    width: 100%;
+  }
+}
+
 button, .button {
   color: $dusky-blue;
   background-color: $black;

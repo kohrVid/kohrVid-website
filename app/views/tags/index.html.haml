@@ -1,0 +1,8 @@
+- provide(:title, 'All Tags')
+= render partial: "layouts/blog_login_logout"
+%h1
+  All Tags
+.tags
+  - @tags.each do |tag|
+    %li
+      = link_to tag.name, tag
