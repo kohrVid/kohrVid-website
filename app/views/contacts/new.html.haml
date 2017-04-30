@@ -1,0 +1,31 @@
+- provide(:title, 'Contact')
+%h1
+  Contact
+
+%p
+  I am available via #{ mail_to "kohrVid@zoho.com", "email" } and #{ link_to "Twitter", 'https://twitter.com/intent/tweet?screen_name="kohrVid"' }. Alternatively, you can send me a message using the contact form below if you'd prefer.
+= form_for @contact do |f|
+  .general_form
+    %fieldset.row
+      .col-md-2.col-sm-12
+        = f.label :name, "Name:"
+      .col-md-4.col-sm-7.col-xs-7
+        = f.text_field :name
+    %fieldset.row
+      .col-md-2
+        = f.label :email, "Email address:"
+      .col-md-4.col-sm-7.col-xs-7
+        = f.email_field :email
+    %fieldset.row
+      .col-md-2.col-sm-12
+        = f.label :message, "Message:"
+      .col-md-4.col-sm-7.col-xs-7
+        = f.text_area :message, rows: 10
+    %fieldset.row.hidden
+      .col-md-2
+        = f.label :nickname
+      .col-md-4
+        = f.text_field :nickname
+    %fieldset.row
+      .col-lg-7.col-md-6.col-md-offset-2.col-sm-11.col-xs-10
+        = f.button "Send", class: "button"

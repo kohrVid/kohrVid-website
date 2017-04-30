@@ -1,0 +1,18 @@
+!!! 5
+%html{:lang => "en"}
+  = render partial: "layouts/head"
+  %body
+    .container-fluid
+      .row
+        = render partial: "layouts/navigation"
+        %main.col-lg-8.col-md-9.col-sm-8.col-xs-12
+          <!--[if lte IE 8 ]>
+          Sorry, this site doesn't support IE8 or lower. Please upgrade your browser or try switching to Firefox/Chrome/Opera
+          <![endif]-->
+
+          = render partial: "layouts/alerts"
+          = yield
+          - unless !(@post||@posts).present?
+            .blog_archives
+              = render partial: "posts/blog_archives"
+

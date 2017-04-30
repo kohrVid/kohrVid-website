@@ -1,0 +1,55 @@
+.display-inline {
+  display: inline;
+}
+
+.display-block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+	      
+.diamond-list {
+  li:before {
+    content: "\2666 \0020";
+    left: -10px;
+    position: relative;
+  }
+}
+
+.padded-li {
+  position: relative;
+  top: -16px;
+  padding: 0 0 0 10px;
+}
+.no-bullet li:before {
+  content: none !important;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.inline-list {
+  li {
+    display: inline;
+  }
+}
+
+.fake-link:hover {
+  cursor: pointer;
+}
+
+.plain-link {
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none !important;
+    font-style: normal;
+    color: inherit;
+  }
+}

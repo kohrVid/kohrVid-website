@@ -1,0 +1,29 @@
+.position-fixed {
+  position: fixed;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.right-align {
+  float: right;
+  position: relative;
+  right: 0;
+}
+
+.p-l-0 {
+  padding-left: 0;
+}
+
+.p-l-1r {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .small-centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

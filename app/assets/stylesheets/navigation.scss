@@ -1,0 +1,83 @@
+@mixin menu-hover() {
+  color: $light-grey;
+  &:hover {
+    text-decoration: underline;
+    color: $light-grey !important;
+  }
+}
+
+#side-bar {
+  background: transparent url("nav.jpg") 0 0 no-repeat fixed;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  #side-bar {
+    min-height: 100vh;
+  }
+
+  nav {
+    position: fixed;
+  }
+}
+
+#logo a {
+  @include header-font();
+  font-size: 4rem; 
+  letter-spacing: -2px;
+  @include menu-hover();
+}
+
+@media screen and (max-width: 767px) {
+  #side-bar {
+    text-align: center;
+  }
+  #menu {
+    li {
+      display: inline;
+      &:after {
+        content: "|";
+        color: $light-grey;
+        margin-left: 9px;
+      }
+    }
+    li:last-child {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+#menu {
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+#menu li a {
+  font-size: 2.5rem;
+  @include header-font();
+  @include menu-hover();
+}
+
+.icon {
+  display: inline-block;
+  background-color: $black;
+  border-radius: 50%;
+  height: 36px;
+  width: 35px;
+  a > img {
+    width: 35px;
+  }
+  &:hover {
+    background-color: $light-grey;
+    img {
+      filter: brightness(0.5);
+    }
+  }
+}
+
+footer {
+  color: $light-grey;
+  padding-top: 1rem;
+}

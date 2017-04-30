@@ -1,0 +1,17 @@
+%head
+  %meta{ charset: "UTF-8" }
+  %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
+  %meta{ name: "description", content: "" }
+  %meta{ name: "keywords", content: "kohrVid,Jessica,Ete,Developer,Rubyist,Go" }
+  %meta{ name: "google-site-verification",
+    content: "" }
+  %title
+    kohrVid
+    = content_for?(:title) ? " | #{yield(:title)}" : ""
+  = csrf_meta_tags
+  = stylesheet_link_tag 'application', media: 'all'
+  = javascript_include_tag 'application'
+  = favicon_link_tag 'favicon.ico'
+  %script{ type: "application/ld+json" }
+    { "@context" : "https://schema.org", "@type" : "Organization", "name" : "TODO insert description", "url" : "https://www.kohrVid.com", "sameAs" : [ "https://twitter.com/kohrVid", "https://github.com/kohrVid" ] }
+  = render partial: "layouts/ie_shim"

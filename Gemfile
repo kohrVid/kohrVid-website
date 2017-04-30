@@ -4,6 +4,7 @@ source "https://rubygems.org"
 #gem "rails", "4.2.5.rc2"
 gem 'bcrypt', '~> 3.1.7'
 gem "coffee-rails", "~> 4.1.0" #TODO
+gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

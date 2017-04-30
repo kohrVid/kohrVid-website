@@ -1,0 +1,20 @@
+table, label, a, p, ul{
+  font-family: Arial, Helvetica, Tahoma, sans-serif;
+  list-style-type: none;
+}
+
+form .general_form {
+  text-align: left;
+}
+
+fieldset {
+  margin: 16px 0;
+  border: 0;
+}
+
+button, .button {
+  color: $dusky-blue;
+  background-color: $black;
+  border-radius: 10px;
+  width: 100%;
+}
