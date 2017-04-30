@@ -18,12 +18,13 @@ class CommentsController < ApplicationController
     else
       @comment = Comment.new(comment_params)
     end
-    @comment.user_id = current_user.id unless !user_signed_in?
-    @comment.post_id = @post.id
+    user_id = current_user.id unless !user_signed_in?
+    post_id = @post.id
+    @comment.update_attributes(user_id: user_id, post_id: post_id)
     if @comment.save
       flash[:success] =  "Your comment was added successfully!"
       Notification.new_comment_notification(@comment).deliver
-      redirect_to post_path(@post)
+      redirect_to @post
     else
       flash.now[:error] = "Unable to post comment."
       render :new

@@ -1,97 +1,133 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-	it "must have required fields or be invalid" do
-		p = Post.new
-		expect(p).to_not be_valid
-	end
+  it "must have required fields or be invalid" do
+    p = Post.new
+    expect(p).to_not be_valid
+  end
 
-	it "creates a new post with valid attributes" do
-		expect{
-			Post.create(FactoryGirl.attributes_for(:post))
-		}.to change(Post, :count).by(1)
-	end
-	
-	context ".title" do
-		it "must be present" do
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, title: ""))
-			}.to_not change(Post, :count)
-		end
+  it "creates a new post with valid attributes" do
+    expect{
+      Post.create(FactoryGirl.attributes_for(:post))
+    }.to change(Post, :count).by(1)
+  end
 
-		it "must produce an error if no title is given" do
-			p = Post.new
-			expect(p.errors[:title]).to_not be_nil
-		end
-		
-		it "must be no more than 50 characters long" do
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, title: "m"*51))
-			}.to_not change(Post, :count)
-		end
-		
-		it "must be unique" do
-			p = FactoryGirl.create(:post)
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, body: "New Body"))
-			}.to_not change(Post, :count)
-			
-		end
-	end
+  context "#title" do
+    it "must be present" do
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, title: ""))
+      }.to_not change(Post, :count)
+    end
 
-	context ".body" do
-		it "must be present" do
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, body: ""))
-			}.to_not change(Post, :count)
-		end
+    it "must produce an error if no title is given" do
+      p = Post.new
+      expect(p.errors[:title]).to_not be_nil
+    end
+    
+    it "must be no more than 50 characters long" do
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, title: "m"*51))
+      }.to_not change(Post, :count)
+    end
+    
+    it "must be unique" do
+      p = FactoryGirl.create(:post)
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, body: "New Body"))
+      }.to_not change(Post, :count)
+    end
+  end
 
-		it "must produce an error if no email is given" do
-			p = Post.new
-			expect(p.errors[:body]).to_not be_nil
-		end
-		
-		it "must be at least 4 characters long" do
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, body: "m"*3))
-			}.to_not change(Post, :count)
-		end
-		
-		it "must be no more than 20000 characters long" do
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, body: "m"*20001))
-			}.to_not change(Post, :count)
-		end
-		
-		it "must be unique" do
-			p = FactoryGirl.create(:post)
-			expect{
-				Post.create(FactoryGirl.attributes_for(:post, title: "New Title"))
-			}.to_not change(Post, :count)
-		end
-	end
+  context "#body" do
+    it "must be present" do
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, body: ""))
+      }.to_not change(Post, :count)
+    end
 
-	context "Tags" do
-		let(:post) { FactoryGirl.create(:post) }
-		it "can have tags" do
-			expect(Post.new).to respond_to(:tags)
-		end
-		
-		it "can have many tags" do
-			tag = FactoryGirl.create(:tag)
-			tag2 = FactoryGirl.create(:tag, name: "Cats")
-			p = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag.id)
-			p2 = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag2.id)
-			expect(p).to be_valid
-			expect(p2).to be_valid
-		end
+    it "must produce an error if no email is given" do
+      p = Post.new
+      expect(p.errors[:body]).to_not be_nil
+    end
+    
+    it "must be at least 4 characters long" do
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, body: "m"*3))
+      }.to_not change(Post, :count)
+    end
+    
+    it "must be no more than 20000 characters long" do
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, body: "m"*20001))
+      }.to_not change(Post, :count)
+    end
+    
+    it "must be unique" do
+      p = FactoryGirl.create(:post)
+      expect{
+        Post.create(FactoryGirl.attributes_for(:post, title: "New Title"))
+      }.to_not change(Post, :count)
+    end
+  end
+
+  context ".draft" do
+    before do
+      @one = FactoryGirl.create(:post, draft: true)
+      @two = FactoryGirl.create(:post)
+      @three = FactoryGirl.create(:post, draft: true)
+    end
+
+    it 'should contain all draft posts' do
+      expect(Post.drafts).to include(@one)
+      expect(Post.drafts).to include(@three)
+    end
+
+    it 'should not contain any public posts' do
+      expect(Post.drafts).to include(@one)
+      expect(Post.drafts).to_not include(@two)
+    end
+  end
+
+  context ".published" do
+    before do
+      @one = FactoryGirl.create(:post)
+      @two = FactoryGirl.create(:post, draft: true)
+      @three = FactoryGirl.create(:post)
+    end
+
+    it 'should contain all published posts' do
+      expect(Post.drafts).to include(@one)
+      expect(Post.drafts).to include(@three)
+    end
+
+    it 'should not contain any draft posts' do
+      expect(Post.drafts).to include(@one)
+      expect(Post.drafts).to_not include(@two)
+    end
+    #TODO write a test for the order of the posts
+  end
+
+  context "Tags" do
+    let(:post) { FactoryGirl.create(:post) }
+    it "can have tags" do
+      expect(Post.new).to respond_to(:tags)
+    end
+    
+    it "can have many tags" do
+      tag = FactoryGirl.create(:tag)
+      tag2 = FactoryGirl.create(:tag, name: "Cats")
+      p = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag.id)
+      p2 = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag2.id)
+      expect(p).to be_valid
+      expect(p2).to be_valid
+    end
 
 =begin
-		it "must have at least one tag" do
-			p = Post.new
-			expect(p).to_not be_valid
-			expect(p.errors[:tags]).to be_present 
-		end
+    it "must have at least one tag" do
+            p = Post.new
+            expect(p).to_not be_valid
+            expect(p.errors[:tags]).to be_present 
+    end
 =end
-	end
+  end
 end

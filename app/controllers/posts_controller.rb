@@ -4,24 +4,24 @@ class PostsController < ApplicationController
   before_action :redirect_if_draft, only: [:show]
 
   def index
-    @posts = Post.all.where(draft: false).order("published_at DESC").paginate(page: params[:page]).per_page(10)
+    @posts = Post.published.paginate(page: params[:page]).per_page(10)
   end
 
   def show
+    @post = Post.includes(:tags).includes(:comments).friendly.find(params[:id])
     if @post.draft == true
       admin_user_404
     end
-    @comments = @post.comments.hash_tree
   end
 
   def new
-      @post = Post.new
+    @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      @post.tag_relationship(@post, @post.tag_list)
+      Tag.tag_relationship(@post)
       flash[:success] = "Post was created successfully."
       redirect_to @post
     else
@@ -31,11 +31,13 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.includes(:tags).friendly.find(params[:id])
   end
 
   def update
+    @post = Post.includes(:tags).friendly.find(params[:id])
     if @post.update(post_params)
-      @post.tag_relationship(@post, @post.tag_list)
+      Tag.tag_relationship(@post)
       flash[:success] = "Post updated."
       redirect_to @post
     else
@@ -56,7 +58,7 @@ class PostsController < ApplicationController
     end
 
     def friendly_finder
-      @post = Post.friendly.find(params[:id])
+      @post = Post.includes(:tags).includes(:comments).friendly.find(params[:id])
     end
 
     def redirect_if_draft

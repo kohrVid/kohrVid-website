@@ -2,11 +2,11 @@ class TagsController < ApplicationController
   before_action :admin_user_404, except: [:index, :show]
 
   def index
-    @tags = Tag.all.order(:name)
+    @tags = Tag.all.includes(:posts).order(:name)
   end
 
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.includes(:posts).find(params[:id])
   end
 
   def new
