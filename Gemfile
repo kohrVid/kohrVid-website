@@ -10,7 +10,7 @@ gem 'coffee-rails'
 #gem 'dawnscanner', '>= 1.4.2' #run 'dawn -r ./' to use 
 gem 'devise'
 gem 'fancybox2-rails'
-#gem 'fog', '~> 1.34.0'
+gem 'fog'
 gem 'friendly_id', '~> 5.1', :require => 'friendly_id'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
