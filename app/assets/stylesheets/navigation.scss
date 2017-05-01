@@ -13,11 +13,15 @@
   background-repeat: no-repeat;
   background-position: 0 0;
   background-attachment: fixed;
+  background-size: 100%;
 }
 
 @media screen and (min-width: 768px) {
   #navbar {
     min-height: 100vh;
+    bottom: 0px;
+    left: 0px;
+    background-size:100%;
   }
 
   nav {
@@ -29,7 +33,6 @@
   #navbar {
     text-align: center;
     z-index: 999;
-    background-size:100%;
   }
   #menu {
     li {
@@ -94,4 +97,5 @@ footer {
   background-color: $black;
   border-top: 0.3rem $dusky-blue solid;
   padding-bottom: 16px;
+  height: 12rem;
 }

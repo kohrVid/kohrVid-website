@@ -6,7 +6,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 0px;
   a {
     &:link, &:visited, &:hover, &:active {
       text-decoration: none;
@@ -16,9 +15,6 @@ body {
 }
 
 #wrapper {
-  min-height: 100vh;
-  height: auto !important;
-  height: 100%;
   margin: 0 auto -54px;
 }
 
@@ -43,7 +39,10 @@ noscript {
 
 main {
   background-color: $light-grey;
-  padding-bottom: 4.5rem;
+  padding-bottom: 0px;
+  min-height: 100vh;
+  height: auto !important;
+  height: 100%;
 }
 
 .alerts {
@@ -74,4 +73,11 @@ main {
 }
 .actions {
   margin: 16px 0;
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    padding-bottom: 12rem;
+    margin: 0 auto -54px;
+  }
 }
