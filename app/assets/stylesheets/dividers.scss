@@ -19,7 +19,7 @@ body {
 }
 
 noscript {
-  color: #9F0000;
+  color: $rouge;
   font-weight: bold;
   font-size: 1rem;
 }
@@ -58,13 +58,13 @@ main {
   }
   .notice, .success, .alert {
     padding: 7px;
-    background-color: rgba(38, 38, 144, 0.6);
+    background-color: $lilac;
   }
   .error, .danger {
     padding: 7px;
-    background-color: rgba(159, 0, 0, 0.6);
+    background-color: rgba($rouge, 0.6);
     .close {
-      color: #9F0000 !important;
+      color: $rouge !important;
     }
     ul li:before {
       content: none !important;
