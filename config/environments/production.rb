@@ -21,7 +21,18 @@ Rails.application.configure do
 
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
-  # config.force_ssl = true
+  config.force_ssl = false
+=begin
+  config.ssl_options = {
+    redirect: {
+      status: 307, port: 81
+    },
+    secure_cookies: true,
+    hsts: {
+      preload: true
+    }
+  }
+=end
 
   config.log_level = :debug
 
