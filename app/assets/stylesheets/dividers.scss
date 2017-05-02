@@ -39,6 +39,7 @@ noscript {
 
 main {
   background-color: $light-grey;
+  padding-right: 8%;
   padding-bottom: 0px;
   min-height: 100vh;
   height: auto !important;
@@ -75,8 +76,15 @@ main {
   margin: 16px 0;
 }
 
+@media screen and (min-width: 992px) {
+  main {
+    padding-right: 8% !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   main {
+    padding-right: 0;
     padding-bottom: 12rem;
     margin: 0 auto -54px;
   }
