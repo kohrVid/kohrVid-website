@@ -1,9 +1,0 @@
-{:uriI"‰file://app/assets/fonts/Riesling/generator_config.txt?type=text/plain&id=31e4e2b2453dcfdbd63be3c40ae48c37267173784b861a58d420f0cdf0f56ec5:ET:load_pathI"app/assets/fonts;T:filenameI"3app/assets/fonts/Riesling/generator_config.txt;T:	nameI"Riesling/generator_config;T:logical_pathI""Riesling/generator_config.txt;T:content_typeI"text/plain;T:sourceI"/# Font Squirrel Font-face Generator Configuration File
-# Upload this file to the generator to recreate the settings
-# you used to create these fonts.
-
-{"mode":"optimal","formats":["ttf","woff","woff2","eotz"],"tt_instructor":"default","fix_vertical_metrics":"Y","fix_gasp":"xy","add_spaces":"Y","add_hyphens":"Y","fallback":"none","fallback_custom":"100","options_subset":"basic","subset_custom":"","subset_custom_range":"","subset_ot_features_list":"","css_stylesheet":"stylesheet.css","filename_suffix":"-webfont","emsquare":"2048","spacing_adjustment":"0"};T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"Afile-digest://app/assets/fonts/Riesling/generator_config.txt;TT:charsetI"
-utf-8;F:digest"% Òw0-g±¼a8kÑ™Íj…ŞBaÀ»¸n£ø¬	:lengthi/:dependencies_digest"%Ú×s_€e€nåW3ÎDÖÉ€Hã÷¶Êwñ±â?-S:idI"E31e4e2b2453dcfdbd63be3c40ae48c37267173784b861a58d420f0cdf0f56ec5;F:
-mtimel+å×WU
