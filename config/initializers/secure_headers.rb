@@ -13,13 +13,4 @@
     :report_uri => ['/csp_reports'],
     :form_action => ["'self' github.com"],
   }
-  config.hpkp = {
-    :max_age => 60.days.to_i,
-    :include_subdomains => true,
-    :report_uri => '//example.com/uri-directive',
-    :pins => [
-      {:sha256 => 'abc'},
-      {:sha256 => '123'}
-    ]
-  }
 end
