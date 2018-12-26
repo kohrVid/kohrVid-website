@@ -46,25 +46,26 @@ class CommentsController < ApplicationController
 
 
   private
-    def comment_params
-      params.require(:comment).permit(
-        :author,
-        :body,
-        :user_id,
-        :post_id,
-        :parent_id
-      )
-    end
 
-    def find_post
-      @post = Post.friendly.find(params[:post_id])
+  def comment_params
+    params.require(:comment).permit(
+      :author,
+      :body,
+      :user_id,
+      :post_id,
+      :parent_id
+    )
+  end
+
+  def find_post
+    @post = Post.friendly.find(params[:post_id])
+  end
+  
+  def correct_user
+    @comment = Comment.find(params[:id])
+    unless current_user.id == @comment.user_id
+      flash[:error] = "Sorry, you do not have access to that part of the site."
+      redirect_to(root_url)
     end
-    
-    def correct_user
-      @comment = Comment.find(params[:id])
-      unless current_user.id == @comment.user_id
-        flash[:error] = "Sorry, you do not have access to that part of the site."
-        redirect_to(root_url)
-      end
-    end
+  end
 end

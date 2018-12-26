@@ -5,5 +5,4 @@ class NotificationPreview < ActionMailer::Preview
   def new_comment_notification
     Notification.new_comment_notification
   end
-
 end

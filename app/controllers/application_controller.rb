@@ -9,18 +9,18 @@ class ApplicationController < ActionController::Base
   include NestHelper
   #include PostsHelper
   private
-    #def after_sign_in_path_for(resource_or_scope)
-      #scope = Devise::Mapping.find_scope!(resource_or_scope)
-      #home_path = :"#{scope}_root_path"
-      ##respond_to?(admin_home_path) ? send(admin_home_path) : admin_home_path
-    #end
+  #def after_sign_in_path_for(resource_or_scope)
+    #scope = Devise::Mapping.find_scope!(resource_or_scope)
+    #home_path = :"#{scope}_root_path"
+    ##respond_to?(admin_home_path) ? send(admin_home_path) : admin_home_path
+  #end
 
-          #def configure_permitted_parameters
-                  #devise_parameter_sanitizer.for(:account_update) { |u| 
-                          #u.permit(:name, :email, :password, :password_confirmation, :current_password, :bio) 
-                  #}
-                  #devise_parameter_sanitizer.for(:sign_up) { |u| 
-                          #u.permit(:name, :email, :password, :password_confirmation, :current_password, :bio) 
-                  #}
-          #end
+  #def configure_permitted_parameters
+    #devise_parameter_sanitizer.for(:account_update) { |u| 
+      #u.permit(:name, :email, :password, :password_confirmation, :current_password, :bio) 
+    #}
+    #devise_parameter_sanitizer.for(:sign_up) { |u| 
+      #u.permit(:name, :email, :password, :password_confirmation, :current_password, :bio) 
+    #}
+  #end
 end

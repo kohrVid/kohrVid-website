@@ -13,5 +13,4 @@ class Comment < ActiveRecord::Base
       return "Anonymous"
     end
   end
-
 end

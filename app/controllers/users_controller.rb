@@ -67,20 +67,20 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(
-        :name,
-        :email,
-        :password,
-        :password_confirmation,
-        :bio
-      )
-    end
+  def user_params
+    params.require(:user).permit(
+      :name,
+      :email,
+      :password,
+      :password_confirmation,
+      :bio
+    )
+  end
 
-    def correct_user
-      unless current_user.admin? || current_user?(@user)
-        flash[:error] = "Sorry, you do not have access to that part of the site."
-        redirect_to root_url
-      end
+  def correct_user
+    unless current_user.admin? || current_user?(@user)
+      flash[:error] = "Sorry, you do not have access to that part of the site."
+      redirect_to root_url
     end
+  end
 end

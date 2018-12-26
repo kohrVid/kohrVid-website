@@ -77,15 +77,14 @@ class ClientsController < ApplicationController
   #			@client = Client.find(params[:id])
   #		end
 
-    def client_params
-            params.require(:client).permit(
-              :client_name,
-              :client_url,
-              :image_url,
-              :logo_url,
-              :description,
-              :pdf
-            )
-    end
-
+  def client_params
+    params.require(:client).permit(
+      :client_name,
+      :client_url,
+      :image_url,
+      :logo_url,
+      :description,
+      :pdf
+    )
+  end
 end

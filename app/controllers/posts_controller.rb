@@ -53,19 +53,19 @@ class PostsController < ApplicationController
   end
 
   private
-    def post_params
-      params.require(:post).permit(:title, :body, :draft, :published_at, :tag_list)
-    end
 
-    def friendly_finder
-      @post = Post.includes(:tags).includes(:comments).friendly.find(params[:id])
-    end
+  def post_params
+    params.require(:post).permit(:title, :body, :draft, :published_at, :tag_list)
+  end
 
-    def redirect_if_draft
-      friendly_finder
-      unless @post.draft == false || (current_user && current_user.admin?) 
-        raise ActionController::RoutingError.new('Not Found')
-      end
-    end
+  def friendly_finder
+    @post = Post.includes(:tags).includes(:comments).friendly.find(params[:id])
+  end
 
+  def redirect_if_draft
+    friendly_finder
+    unless @post.draft == false || (current_user && current_user.admin?) 
+      raise ActionController::RoutingError.new('Not Found')
+    end
+  end
 end

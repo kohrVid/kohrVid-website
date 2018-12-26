@@ -1,6 +1,6 @@
 <ruleset name="kohrVid">
-	<target host="kohrvid.com" />
-	<target host="www.kohrvid.com" />
-	<rule from="^http:"
-		to="https:" />
+  <target host="kohrvid.com" />
+  <target host="www.kohrvid.com" />
+  <rule from="^http:"
+    to="https:" />
 </ruleset>

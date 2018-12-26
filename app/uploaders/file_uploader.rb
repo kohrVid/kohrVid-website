@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 class FileUploader < CarrierWave::Uploader::Base
-	include CarrierWave::MiniMagick
-#	process resize_to_limit: [400, 400]
+  include CarrierWave::MiniMagick
+#  process resize_to_limit: [400, 400]
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -10,9 +10,9 @@ class FileUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
-	  storage :fog
+    storage :fog
   else
-	  storage :file
+    storage :file
   end
 
   # Override the directory where uploaded files will be stored.
@@ -52,5 +52,4 @@ class FileUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

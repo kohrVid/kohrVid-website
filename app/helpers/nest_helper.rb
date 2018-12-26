@@ -29,5 +29,4 @@ module NestHelper
     session[:forwarding_url] = request.url if request.get?
   end
 =end
-
 end
