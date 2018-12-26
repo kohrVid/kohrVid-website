@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  prepend_before_filter :require_no_authentication, only: [:cancel ]
+  prepend_before_action :require_no_authentication, only: [:cancel ]
   before_action :redirect_to_login, except: [:new, :create]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_is_logged_in, only: :destroy
