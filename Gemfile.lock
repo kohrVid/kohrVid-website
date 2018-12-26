@@ -1002,7 +1002,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     heroku-deflater (0.6.3)
-      rack (>= 2.0.6)
+      rack (>= 1.4.5)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httpclient (2.8.3)
@@ -1266,7 +1266,6 @@ DEPENDENCIES
   pg (~> 0.18)
   pry-byebug
   puma (~> 3.0)
-  rack (>= 1.4.5)
   rack-attack (~> 4.3)
   rack-ssl-enforcer
   rails (~> 5.2.2, >= 5.2.0)
