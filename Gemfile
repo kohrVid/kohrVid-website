@@ -22,6 +22,7 @@ gem 'mini_magick', '~> 3.8.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rack-attack', '~> 4.3'
+gem 'rack', '>= 1.4.5'
 gem 'rack-ssl-enforcer'
 gem 'rails', '~> 5.2.2', '>= 5.2.0'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
