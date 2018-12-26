@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :post do
     title Faker::Lorem.words.join(" ")
     body Faker::Lorem.paragraph

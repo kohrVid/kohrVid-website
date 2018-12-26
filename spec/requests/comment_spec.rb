@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Comment", :type => :request do
-	let(:user) { FactoryGirl.create(:user) }
-	let(:blog_post) { FactoryGirl.create(:post) }
+	let(:user) { FactoryBot.create(:user) }
+	let(:blog_post) { FactoryBot.create(:post) }
 
 	def sign_in(a_user)
 		visit new_user_session_url

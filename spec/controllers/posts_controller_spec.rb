@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-	let(:valid_post) { FactoryGirl.create(:post) }
+	let(:valid_post) { FactoryBot.create(:post) }
 	let(:draft_post) { Post.create(title: "Rough", body: "copy", draft: true, published_at: nil) }
-	let(:admin) { FactoryGirl.create(:admin) }
-	let(:user) { FactoryGirl.create(:user) }
+	let(:admin) { FactoryBot.create(:admin) }
+	let(:user) { FactoryBot.create(:user) }
 
 	describe "GET #index" do
 		it "populates an array of posts" do
@@ -86,17 +86,17 @@ RSpec.describe PostsController, type: :controller do
 		context "with valid attributes" do
 			it "creates a new post" do
 				expect{
-					post :create, post: FactoryGirl.attributes_for(:post)
+					post :create, post: FactoryBot.attributes_for(:post)
 				}.to change(Post, :count).by(1)
 			end
 
 			it "redirects to the new post" do
-				post :create, post: FactoryGirl.attributes_for(:post)
+				post :create, post: FactoryBot.attributes_for(:post)
 				expect(response).to redirect_to Post.last
 			end
 
 			it "displays the correct flash message on redirect" do
-				post :create, post: FactoryGirl.attributes_for(:post)
+				post :create, post: FactoryBot.attributes_for(:post)
 				expect(flash[:success]).to have_content("Post was created successfully.")
 			end
 		end
@@ -104,17 +104,17 @@ RSpec.describe PostsController, type: :controller do
 		context "with invalid attributes" do
 			it "doesn't save the new post" do
 				expect{
-					post :create, post: FactoryGirl.attributes_for(:post, title: "")
+					post :create, post: FactoryBot.attributes_for(:post, title: "")
 				}.to_not change(Post, :count)
 			end
 
 			it "re-renders the new method" do
-				post :create, post: FactoryGirl.attributes_for(:post, title: "")
+				post :create, post: FactoryBot.attributes_for(:post, title: "")
 				expect(response).to render_template :new
 			end
 
 			it "displays the correct flash message on redirect" do
-				post :create, post: FactoryGirl.attributes_for(:post, title: "")
+				post :create, post: FactoryBot.attributes_for(:post, title: "")
 				expect(flash[:error]).to have_content("An error has prevented this post from being saved")
 			end
 		end
@@ -145,43 +145,43 @@ RSpec.describe PostsController, type: :controller do
 
 		context "with valid attributes" do
 			it "locates the requested @post" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post)
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post)
 				expect(assigns(:post)).to eq(valid_post)
 			end
 
 			it "changes @post's attributes" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post, title: "Services", body: "These are the services we provide.")
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post, title: "Services", body: "These are the services we provide.")
 				valid_post.reload
 				expect(@post.title).to eq("Services")
 				expect(@post.body).to eq("These are the services we provide.")
 			end
 
 			it "redirects to the updated post" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post)
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post)
 				expect(response).to redirect_to valid_post
 			end
 
 			it "displays the correct flash message on redirect" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post)
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post)
 				expect(flash[:success]).to have_content("Post updated.")
 			end
 		end
 
 		context "with invalid attributes" do
 			it "shouldn't change @post's attributes" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post, title: "", body: "r")
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post, title: "", body: "r")
 				@post.reload
 				expect(@post.title).to_not eq("")
 				expect(@post.body).to_not eq("r")
 			end
 
 			it "renders the edit post" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post, title: "", body: "Raine is from Cote d'Ivoire")
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post, title: "", body: "Raine is from Cote d'Ivoire")
 				expect(response).to render_template :edit
 			end
 
 			it "displays the correct flash message on redirect" do
-				put :update, id: @post.id, post: FactoryGirl.attributes_for(:post, title: "", body: "r")
+				put :update, id: @post.id, post: FactoryBot.attributes_for(:post, title: "", body: "r")
 				expect(flash[:error]).to have_content("Unable to update post.")
 			end
 		end

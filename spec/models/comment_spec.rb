@@ -8,14 +8,14 @@ RSpec.describe Comment, type: :model do
 
 	it "creates a new comment with valid attributes" do
 		expect{
-			Comment.create(FactoryGirl.attributes_for(:comment))
+			Comment.create(FactoryBot.attributes_for(:comment))
 		}.to change(Comment, :count).by(1)
 	end
 	
 	context ".body" do
 		it "must be present" do
 			expect{
-				Comment.create(FactoryGirl.attributes_for(:comment, body: ""))
+				Comment.create(FactoryBot.attributes_for(:comment, body: ""))
 			}.to_not change(Comment, :count)
 		end
 
@@ -28,7 +28,7 @@ RSpec.describe Comment, type: :model do
 	context ".post_id" do
 		it "must be present" do
 			expect{
-				Comment.create(FactoryGirl.attributes_for(:comment, post_id: nil))
+				Comment.create(FactoryBot.attributes_for(:comment, post_id: nil))
 			}.to_not change(Comment, :count)
 		end
 
@@ -40,7 +40,7 @@ RSpec.describe Comment, type: :model do
 
 	context "@author" do
 		it "to be set to Anonymous if no user_id is set" do
-			c = FactoryGirl.create(:comment, author: "", user_id: "")
+			c = FactoryBot.create(:comment, author: "", user_id: "")
 			expect(c.author).to eq("Anonymous")
 		end
 	end

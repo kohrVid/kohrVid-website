@@ -8,14 +8,14 @@ RSpec.describe Tag, type: :model do
 
 	it "creates a new tag with valid attributes" do
 		expect{
-			Tag.create(FactoryGirl.attributes_for(:tag))
+			Tag.create(FactoryBot.attributes_for(:tag))
 		}.to change(Tag, :count).by(1)
 	end
 	
 	context "Name" do
 		it "must be present" do
 			expect{
-				Tag.create(FactoryGirl.attributes_for(:tag, name: ""))
+				Tag.create(FactoryBot.attributes_for(:tag, name: ""))
 			}.to_not change(Tag, :count)
 		end
 
@@ -26,14 +26,14 @@ RSpec.describe Tag, type: :model do
 		
 		it "must be no more than 15 characters long" do
 			expect{
-				Tag.create(FactoryGirl.attributes_for(:tag, name: "m"*16))
+				Tag.create(FactoryBot.attributes_for(:tag, name: "m"*16))
 			}.to_not change(Tag, :count)
 		end
 		
 		it "must be unique" do
-			t = FactoryGirl.create(:tag)
+			t = FactoryBot.create(:tag)
 			expect{
-				Tag.create(FactoryGirl.attributes_for(:tag))
+				Tag.create(FactoryBot.attributes_for(:tag))
 			}.to_not change(Tag, :count)
 			
 		end

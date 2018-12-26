@@ -8,14 +8,14 @@ RSpec.describe Post, type: :model do
 
   it "creates a new post with valid attributes" do
     expect{
-      Post.create(FactoryGirl.attributes_for(:post))
+      Post.create(FactoryBot.attributes_for(:post))
     }.to change(Post, :count).by(1)
   end
 
   context "#title" do
     it "must be present" do
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, title: ""))
+        Post.create(FactoryBot.attributes_for(:post, title: ""))
       }.to_not change(Post, :count)
     end
 
@@ -26,14 +26,14 @@ RSpec.describe Post, type: :model do
     
     it "must be no more than 50 characters long" do
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, title: "m"*51))
+        Post.create(FactoryBot.attributes_for(:post, title: "m"*51))
       }.to_not change(Post, :count)
     end
     
     it "must be unique" do
-      p = FactoryGirl.create(:post)
+      p = FactoryBot.create(:post)
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, body: "New Body"))
+        Post.create(FactoryBot.attributes_for(:post, body: "New Body"))
       }.to_not change(Post, :count)
     end
   end
@@ -41,7 +41,7 @@ RSpec.describe Post, type: :model do
   context "#body" do
     it "must be present" do
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, body: ""))
+        Post.create(FactoryBot.attributes_for(:post, body: ""))
       }.to_not change(Post, :count)
     end
 
@@ -52,29 +52,29 @@ RSpec.describe Post, type: :model do
     
     it "must be at least 4 characters long" do
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, body: "m"*3))
+        Post.create(FactoryBot.attributes_for(:post, body: "m"*3))
       }.to_not change(Post, :count)
     end
     
     it "must be no more than 20000 characters long" do
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, body: "m"*20001))
+        Post.create(FactoryBot.attributes_for(:post, body: "m"*20001))
       }.to_not change(Post, :count)
     end
     
     it "must be unique" do
-      p = FactoryGirl.create(:post)
+      p = FactoryBot.create(:post)
       expect{
-        Post.create(FactoryGirl.attributes_for(:post, title: "New Title"))
+        Post.create(FactoryBot.attributes_for(:post, title: "New Title"))
       }.to_not change(Post, :count)
     end
   end
 
   context ".draft" do
     before do
-      @one = FactoryGirl.create(:post, draft: true)
-      @two = FactoryGirl.create(:post)
-      @three = FactoryGirl.create(:post, draft: true)
+      @one = FactoryBot.create(:post, draft: true)
+      @two = FactoryBot.create(:post)
+      @three = FactoryBot.create(:post, draft: true)
     end
 
     it 'should contain all draft posts' do
@@ -90,9 +90,9 @@ RSpec.describe Post, type: :model do
 
   context ".published" do
     before do
-      @one = FactoryGirl.create(:post)
-      @two = FactoryGirl.create(:post, draft: true)
-      @three = FactoryGirl.create(:post)
+      @one = FactoryBot.create(:post)
+      @two = FactoryBot.create(:post, draft: true)
+      @three = FactoryBot.create(:post)
     end
 
     it 'should contain all published posts' do
@@ -108,16 +108,16 @@ RSpec.describe Post, type: :model do
   end
 
   context "Tags" do
-    let(:post) { FactoryGirl.create(:post) }
+    let(:post) { FactoryBot.create(:post) }
     it "can have tags" do
       expect(Post.new).to respond_to(:tags)
     end
     
     it "can have many tags" do
-      tag = FactoryGirl.create(:tag)
-      tag2 = FactoryGirl.create(:tag, name: "Cats")
-      p = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag.id)
-      p2 = FactoryGirl.create(:post_tag, post_id: post.id, tag_id: tag2.id)
+      tag = FactoryBot.create(:tag)
+      tag2 = FactoryBot.create(:tag, name: "Cats")
+      p = FactoryBot.create(:post_tag, post_id: post.id, tag_id: tag.id)
+      p2 = FactoryBot.create(:post_tag, post_id: post.id, tag_id: tag2.id)
       expect(p).to be_valid
       expect(p2).to be_valid
     end

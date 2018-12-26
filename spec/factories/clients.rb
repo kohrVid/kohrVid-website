@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 	factory :client do
 		client_name "Stranger'sCandy"
 		client_url "www.takesyouwhereyouwannabe.dep"

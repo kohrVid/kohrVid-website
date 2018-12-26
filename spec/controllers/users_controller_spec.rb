@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-	let(:user) { FactoryGirl.create(:user) }
-	let(:admin) { FactoryGirl.create(:admin) }
+	let(:user) { FactoryBot.create(:user) }
+	let(:admin) { FactoryBot.create(:admin) }
 
 	describe "GET #index" do
 		before(:each) do
@@ -59,17 +59,17 @@ RSpec.describe UsersController, type: :controller do
 		context "with valid attributes" do
 			it "creates a new user" do
 				expect{
-					post :create, user: FactoryGirl.attributes_for(:user)
+					post :create, user: FactoryBot.attributes_for(:user)
 				}.to change(User, :count).by(1)
 			end
 
 			it "redirects to the new user" do
-				post :create, user: FactoryGirl.attributes_for(:user)
+				post :create, user: FactoryBot.attributes_for(:user)
 				expect(response).to redirect_to User.last
 			end
 
 			it "displays the correct flash message on redirect" do
-				post :create, user: FactoryGirl.attributes_for(:user)
+				post :create, user: FactoryBot.attributes_for(:user)
 				expect(flash[:success]).to have_content("User was created successfully.")
 			end
 		end
@@ -77,17 +77,17 @@ RSpec.describe UsersController, type: :controller do
 		context "with invalid attributes" do
 			it "doesn't save the new user" do
 				expect{
-					post :create, user: FactoryGirl.attributes_for(:user, name: "")
+					post :create, user: FactoryBot.attributes_for(:user, name: "")
 				}.to_not change(User, :count)
 			end
 
 			it "re-renders the new method" do
-				post :create, user: FactoryGirl.attributes_for(:user, name: "")
+				post :create, user: FactoryBot.attributes_for(:user, name: "")
 				expect(response).to render_template :new
 			end
 
 			it "displays the correct flash message on redirect" do
-				post :create, user: FactoryGirl.attributes_for(:user, name: "")
+				post :create, user: FactoryBot.attributes_for(:user, name: "")
 				expect(flash[:error]).to have_content("An error has prevented this account from being saved")
 			end
 		end
@@ -118,43 +118,43 @@ RSpec.describe UsersController, type: :controller do
 
 		context "with valid attributes" do
 			it "locates the requested @user" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user)
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user)
 				expect(assigns(:user)).to eq(user)
 			end
 
 			it "changes @user's attributes" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user, name: "Services", bio: "These are the services we provide.")
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user, name: "Services", bio: "These are the services we provide.")
 				user.reload
 				expect(@user.name).to eq("Services")
 				expect(@user.bio).to eq("These are the services we provide.")
 			end
 
 			it "redirects to the updated user" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user)
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user)
 				expect(response).to redirect_to user
 			end
 
 			it "displays the correct flash message on redirect" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user)
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user)
 				expect(flash[:success]).to have_content("Profile updated.")
 			end
 		end
 
 		context "with invalid attributes" do
 			it "shouldn't change @user's attributes" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user, name: "", bio: "r")
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user, name: "", bio: "r")
 				@user.reload
 				expect(@user.name).to_not eq("")
 				expect(@user.bio).to_not eq("r")
 			end
 
 			it "renders the edit user" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user, name: "", bio: "Raine is from Cote d'Ivoire")
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user, name: "", bio: "Raine is from Cote d'Ivoire")
 				expect(response).to render_template :edit
 			end
 
 			it "displays the correct flash message on redirect" do
-				put :update, id: @user.id, user: FactoryGirl.attributes_for(:user, name: "", bio: "r")
+				put :update, id: @user.id, user: FactoryBot.attributes_for(:user, name: "", bio: "r")
 				expect(flash[:error]).to have_content("Unable to update profile.")
 			end
 		end

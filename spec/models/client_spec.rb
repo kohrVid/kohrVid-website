@@ -8,14 +8,14 @@ RSpec.describe Client, type: :model do
 
 	it "creates a new client with valid attributes" do
 		expect{
-			Client.create(FactoryGirl.attributes_for(:client))
+			Client.create(FactoryBot.attributes_for(:client))
 		}.to change(Client, :count).by(1)
 	end
 
 	context "Name" do
 		it "must be present" do
 			expect{
-				Client.create(FactoryGirl.attributes_for(:client, client_name: ""))
+				Client.create(FactoryBot.attributes_for(:client, client_name: ""))
 			}.to_not change(Client, :count)
 		end
 
@@ -28,7 +28,7 @@ RSpec.describe Client, type: :model do
 	context "URL" do
 		it "must be present" do
 			expect{
-				Client.create(FactoryGirl.attributes_for(:client, client_url: ""))
+				Client.create(FactoryBot.attributes_for(:client, client_url: ""))
 			}.to_not change(Client, :count)
 		end
 

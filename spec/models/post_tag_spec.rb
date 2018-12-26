@@ -8,20 +8,20 @@ RSpec.describe PostTag, type: :model do
 
 	it "creates a new post_tag relationship with valid attributes" do
 		expect{
-			PostTag.create(FactoryGirl.attributes_for(:post_tag))
+			PostTag.create(FactoryBot.attributes_for(:post_tag))
 		}.to change(PostTag, :count).by(1)
 	end
 
 	context "unique records" do
-		let(:valid_post) { FactoryGirl.create(:post) }
-		let(:valid_tag) { FactoryGirl.create(:tag) }
+		let(:valid_post) { FactoryBot.create(:post) }
+		let(:valid_tag) { FactoryBot.create(:tag) }
 
 		it "must be unique" do
 			expect{
-				PostTag.create(FactoryGirl.attributes_for(:post_tag, post_id: valid_post.id, tag_id: valid_tag.id))
+				PostTag.create(FactoryBot.attributes_for(:post_tag, post_id: valid_post.id, tag_id: valid_tag.id))
 			}.to change(PostTag, :count).by(1)
 			expect{
-				PostTag.create(FactoryGirl.attributes_for(:post_tag, post_id: valid_post.id, tag_id: valid_tag.id))
+				PostTag.create(FactoryBot.attributes_for(:post_tag, post_id: valid_post.id, tag_id: valid_tag.id))
 			}.to_not change(PostTag, :count)
 		end
 	end
@@ -29,7 +29,7 @@ RSpec.describe PostTag, type: :model do
 	context "post_id" do
 		it "must be present" do
 			expect{
-				PostTag.create(FactoryGirl.attributes_for(:post_tag, post_id: nil))
+				PostTag.create(FactoryBot.attributes_for(:post_tag, post_id: nil))
 			}.to_not change(PostTag, :count)
 		end
 
@@ -42,7 +42,7 @@ RSpec.describe PostTag, type: :model do
 	context "tag_id" do
 		it "must be present" do
 			expect{
-				PostTag.create(FactoryGirl.attributes_for(:post_tag, tag_id: nil))
+				PostTag.create(FactoryBot.attributes_for(:post_tag, tag_id: nil))
 			}.to_not change(PostTag, :count)
 		end
 
