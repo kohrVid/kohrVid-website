@@ -9,7 +9,7 @@ module KohrVid
   class Application < Rails::Application
     config.action_controller.perform_caching = true
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.active_record.raise_in_transactional_callbacks = true
+    #config.active_record.raise_in_transactional_callbacks = true
     config.assets.enabled = true
     config.assets.initialized_on_precompile = true
     config.assets.paths << Rails.root.join('node_modules')
