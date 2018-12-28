@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 //= require fancybox
 //= require jquery.remotipart
 //= require jquery.iframe-transport
