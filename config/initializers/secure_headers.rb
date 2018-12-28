@@ -9,7 +9,7 @@
     :default_src => ["https: 'self'"],
     :style_src => ["'self'", "'unsafe-inline'"],
     :script_src => ["'self'", "http://kohrvid.com", "http://www.kohrvid.com"],
-    :img_src => ["'self'", "http://kohrvid.com", "http://www.kohrvid.com"],
+    :img_src => ["'self'", "http://kohrvid.com", "http://www.kohrvid.com", "http://kohrvid-website-static.storage.googleapis.com"],
     :report_uri => ['/csp_reports'],
     :form_action => ["'self' github.com"],
   }
