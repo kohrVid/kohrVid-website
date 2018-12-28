@@ -403,7 +403,6 @@ DEPENDENCIES
   figaro
   fog-google
   friendly_id (~> 5.1)
-  google-api-client (~> 0.11)
   haml
   heroku-deflater
   jasmine
