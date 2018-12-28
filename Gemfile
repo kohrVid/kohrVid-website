@@ -11,13 +11,15 @@ gem 'coffee-rails'
 #gem 'dawnscanner', '>= 1.4.2' #run 'dawn -r ./' to use
 gem 'devise'
 gem 'fancybox2-rails'
-gem 'fog'
-gem 'friendly_id', '~> 5.1', :require => 'friendly_id'
+gem 'fog-google'
+gem 'friendly_id', '~> 5.1', require: 'friendly_id'
+gem 'google-api-client', '~> 0.11'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'mail_form'
+gem 'mime-types'
 gem 'mini_magick', '~> 3.8.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -60,7 +62,6 @@ group :development do
 end
 
 group :production do
-  gem 'aws-sdk'
   gem 'dotenv'
   gem 'heroku-deflater'
   gem 'ngannotate-rails'
