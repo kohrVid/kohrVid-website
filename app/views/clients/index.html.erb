@@ -4,15 +4,17 @@
 
 <ul class = "clients">
   <% @clients.each do |client| %>
-    
+
     <li>
-      <%= link_to image_tag(client.logo_url, width: "100%"), "#client-#{client.id}", class: "fancybox" %>
+      <% unless client.logo_url.nil? %>
+        <%= link_to image_tag(client.logo_url.url, width: "100%"), "#client-#{client.id}", class: "fancybox" %>
+      <% end %>
         <br />
         <div>
           <%= client.client_name %>
           <noscript>
             <%=link_to "Site", client.client_url %>|
-            <%=link_to "Screenshot",image_path(client.image_url) %>|
+            <% unless client.image_url.blank? %><%=link_to "Screenshot", image_path(client.image_url(:url)) %><% end %>|
             <%= link_to "PDF", (client.pdf.to_s) %>|
           </noscript>
         </div>
@@ -26,10 +28,12 @@
           <%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       <%end%>
-      
+
       <br />
       <div class = "screenshot" id = "client-<%=client.id%>">
-        <%= image_tag(client.image_url) %>    
+        <% unless client.image_url.blank? %>
+          <%= image_tag(client.image_url(:url)) %>
+        <% end %>
         <div class = "description">
           <strong><u><%= link_to "#{client.client_name} - #{client.client_url.gsub(/((https?)\:\/+(w+\.)?)/i, "")}", client.client_url %></u></strong>
           <p><%= client.description %>
