@@ -28,7 +28,6 @@ gem 'rails', '~> 5.2.2', '>= 5.2.0'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
 gem 'redcarpet'
 gem 'sass', '~>3.2.19'
-gem 'secure_headers', git: 'https://github.com/twitter/secureheaders'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 

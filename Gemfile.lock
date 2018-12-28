@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/twitter/secureheaders
-  revision: 9965178f125a977d1eb248a52003fba5ffa8b321
-  specs:
-    secure_headers (6.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -428,7 +422,6 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass (~> 3.2.19)
-  secure_headers!
   simplecov
   timecop
   turbolinks (~> 5)
