@@ -44,11 +44,11 @@ Rails.application.configure do
 
   # config.action_controller.asset_host = 'http://assets.example.com'
 
-  config.action_mailer.default_url_options = { 
-    host: 'kohrvid-env.elasticbeanstalk.com', 
+  config.action_mailer.default_url_options = {
+    host: 'kohrvid.com',
     from: 'notifications@kohrVid.com'
   }
-  Rails.application.routes.default_url_options[:host] = 'kohrvid-env.elasticbeanstalk.com'
+  Rails.application.routes.default_url_options[:host] = 'kohrvid.com'
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
