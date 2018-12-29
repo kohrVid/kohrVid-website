@@ -14,7 +14,7 @@
           <%= client.client_name %>
           <noscript>
             <%=link_to "Site", client.client_url %>|
-            <% unless client.image_url.blank? %><%=link_to "Screenshot", image_path(client.image_url(:url)) %><% end %>|
+            <% unless client.image_url.blank? %><%=link_to_unless client.image_url.blank?, "Screenshot", image_path(client.image_url.url) %>|<% end %>
             <%= link_to "PDF", (client.pdf.to_s) %>|
           </noscript>
         </div>
@@ -32,7 +32,7 @@
       <br />
       <div class = "screenshot" id = "client-<%=client.id%>">
         <% unless client.image_url.blank? %>
-          <%= image_tag(client.image_url(:url)) %>
+          <%= image_tag(client.image_url.url) %>
         <% end %>
         <div class = "description">
           <strong><u><%= link_to "#{client.client_name} - #{client.client_url.gsub(/((https?)\:\/+(w+\.)?)/i, "")}", client.client_url %></u></strong>
