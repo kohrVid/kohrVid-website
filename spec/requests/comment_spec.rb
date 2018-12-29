@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Comment", :type => :request do
-  let(:user) { FactoryBot.create(:user) }
+RSpec.describe "Comment", type: :request do
+  let(:user) { FactoryBot.create(:user, :reader) }
   let(:blog_post) { FactoryBot.create(:post) }
 
   def sign_in(a_user)
@@ -13,6 +13,7 @@ RSpec.describe "Comment", :type => :request do
        
 
   before(:each) do
+    blog_post
     sign_in(user)
   end
   
@@ -21,10 +22,11 @@ RSpec.describe "Comment", :type => :request do
     click_link "Post a comment"
     expect(current_path).to eql(post_new_comment_path(blog_post))
     fill_in "comment[body]", with: "This is a new comment"
-    #fill_in "Nickname", with: ""
     click_button "Submit"
     expect(page).to have_content("Your comment was added successfully!")
     expect(last_email.to).to include("kohrVid@gmail.com")
-    expect(last_email.subject).to include("New comment posted under 'This is my first blog post'")
+    expect(last_email.subject).to include(
+      "New comment posted under '#{blog_post.title}'"
+    )
   end
 end
