@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   let(:valid_post) { FactoryBot.create(:post) }
   let(:draft_post) { Post.create(title: "Rough", body: "copy", draft: true, published_at: nil) }
-  let(:admin) { FactoryBot.create(:admin) }
-  let(:user) { FactoryBot.create(:user) }
+  let(:admin) { FactoryBot.create(:user, :admin) }
+  let(:user) { FactoryBot.create(:user, :reader) }
 
   describe "GET #index" do
     it "populates an array of posts" do

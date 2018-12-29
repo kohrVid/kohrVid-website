@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Post", :type => :request do
   let(:draft_post) { FactoryBot.create(:post, draft: true, published_at: nil) }
-  let(:admin) { FactoryBot.create(:admin) }
+  let(:admin) { FactoryBot.create(:user, :admin) }
 
   def sign_in(a_user)
     visit new_user_session_url
