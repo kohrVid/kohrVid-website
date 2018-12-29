@@ -44,6 +44,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'figaro'
+  gem 'guard-rspec'
+  gem 'guard-shell'
   gem 'jasmine'
   gem 'launchy'
   gem 'pry-byebug', platform: :mri
