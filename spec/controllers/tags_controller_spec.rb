@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TagsController, type: :controller do
   let(:valid_tag) { FactoryBot.create(:tag) }
-  let(:admin) { FactoryBot.create(:admin) }
+  let(:admin) { FactoryBot.create(:user, :admin) }
 
   describe "GET #index" do
     it "populates an array of tags" do
@@ -17,24 +17,26 @@ RSpec.describe TagsController, type: :controller do
   end
 
   describe "GET #show" do
+    before do
+      get(:show, params: { id: valid_tag.id })
+    end
+
     it "assigns requested tag to @tag" do
-      get(:show, id: valid_tag.id)
       expect(assigns(:tag)).to eq(valid_tag)
     end
 
     it "returns http success" do
-      get(:show, id: valid_tag.id)
       expect(response).to have_http_status(:success)
     end
   end
-  
+
   describe "GET #new" do
     before(:each) do
       sign_in :user, admin
+      get(:new)
     end
 
     it "returns http success" do
-      get(:new)
       expect(response).to have_http_status(:success)
     end
   end
@@ -45,38 +47,45 @@ RSpec.describe TagsController, type: :controller do
     end
 
     context "with valid attributes" do
+      subject(:post_attributes) do
+        post :create, params: {
+          tag: FactoryBot.attributes_for(:tag)
+        }
+      end
+
       it "creates a new post" do
-        expect{
-          post :create, tag: FactoryBot.attributes_for(:tag)
-        }.to change(Tag, :count).by(1)
+        expect { post_attributes }.to change(Tag, :count).by(1)
       end
 
       it "redirects to the new tag" do
-        post :create, tag: FactoryBot.attributes_for(:tag)
-        expect(response).to redirect_to Tag.last
+        is_expected.to redirect_to Tag.last
       end
 
       it "displays the correct flash message on redirect" do
-        post :create, tag: FactoryBot.attributes_for(:tag)
+        subject
         expect(flash[:success]).to have_content("Tag was created successfully.")
       end
     end
 
     context "with invalid attributes" do
+      subject(:post_attributes) do
+        post :create, params: {
+          tag: FactoryBot.attributes_for(:tag, name: '')
+        }
+      end
+
       it "doesn't save the new tag" do
-        expect{
-          post :create, tag: FactoryBot.attributes_for(:tag, name: "")
-        }.to_not change(Tag, :count)
+        expect{ post_attributes }.to_not change(Tag, :count)
       end
 
       it "re-renders the new method" do
-        post :create, tag: FactoryBot.attributes_for(:tag, name: "")
-        expect(response).to render_template :new
+        is_expected.to render_template :new
       end
 
       it "displays the correct flash message on redirect" do
-        post :create, tag: FactoryBot.attributes_for(:tag, name: "")
-        expect(flash[:error]).to have_content("An error has prevented this tag from being saved")
+        subject
+        expect(flash[:error])
+          .to have_content("An error has prevented this tag from being saved")
       end
     end
   end
@@ -84,16 +93,14 @@ RSpec.describe TagsController, type: :controller do
   describe "GET #edit" do
     before(:each) do
       sign_in :user, admin
-      @tag = valid_tag
+      get(:edit, params: { id: valid_tag.id })
     end
 
     it "assigns requested post to @tag" do
-      get(:edit, id: valid_tag.id)
       expect(assigns(:tag)).to eq(valid_tag)
     end
 
     it "returns http success" do
-      get(:edit, id: valid_tag.id)
       expect(response).to have_http_status(:success)
     end
   end
@@ -101,72 +108,77 @@ RSpec.describe TagsController, type: :controller do
   describe "PUT update" do
     before(:each) do
       sign_in :user, admin
-      @tag = valid_tag
     end
 
     context "with valid attributes" do
-      it "locates the requested @tag" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag)
-        expect(assigns(:tag)).to eq(valid_tag)
+      subject(:put_attributes) do
+        put :update, params: {
+          id: valid_tag.id, tag: FactoryBot.attributes_for(:tag, name: 'Food')
+        }
       end
 
       it "changes @tag's attributes" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag, name: "Food")
-        valid_tag.reload
-        expect(@tag.name).to eq("Food")
+        expect { put_attributes }
+          .to change { Tag.find(valid_tag.id).name }
+          .from(valid_tag.name).to('Food')
       end
 
       it "redirects to the updated post" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag, name: "Food")
-        expect(response).to redirect_to valid_tag
+        is_expected.to redirect_to valid_tag
       end
 
       it "displays the correct flash message on redirect" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag, name: "Food")
+        subject
         expect(flash[:success]).to have_content("Tag updated.")
       end
     end
 
     context "with invalid attributes" do
+      subject(:put_attributes) do
+        put :update, params: {
+          id: valid_tag.id, tag: FactoryBot.attributes_for(:tag, name: '')
+        }
+      end
+
+
       it "shouldn't change @tag's attributes" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag, name: "")
-        @tag.reload
-        expect(@tag.name).to_not eq("")
+        valid_tag.reload
+        expect { put_attributes }
+          .to_not change { Tag.find(valid_tag.id).name }
       end
 
       it "renders the edit post" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag, name: "")
-        expect(response).to render_template :edit
+        is_expected.to render_template :edit
       end
 
       it "displays the correct flash message on redirect" do
-        put :update, id: @tag.id, tag: FactoryBot.attributes_for(:tag, name: "")
+        subject
         expect(flash[:error]).to have_content("Unable to update tag.")
       end
     end
   end
 
   describe "DELETE destroy" do
+    subject(:delete_tag) do
+      delete :destroy, params: { id: valid_tag.id }
+    end
+
     before(:each) do
       sign_in :user, admin
-      @tag = valid_tag
+      valid_tag
     end
 
     it "deletes the post" do
-      expect{
-        delete :destroy, id: @tag.id
-      }.to change(Tag, :count).by(-1)
+      expect { delete_tag }.to change(Tag, :count).by(-1)
     end
 
     it "redirects to the tags#index" do
-      delete :destroy, id: @tag.id
-      expect(response).to redirect_to tags_path
+      is_expected.to redirect_to tags_path
     end
 
     it "displays the correct flash message on redirect" do
-      delete :destroy, id: @tag.id
+      subject
       expect(flash[:success]).to have_content("Tag deleted.")
     end
   end
-  
 end
