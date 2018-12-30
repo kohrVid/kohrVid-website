@@ -10,13 +10,13 @@ RSpec.describe "Comment", type: :request do
     fill_in "Password", with: a_user.password
     click_button "Log In"
   end
-       
+
 
   before(:each) do
     blog_post
     sign_in(user)
   end
-  
+
   it "must send a notification once a comment is posted" do
     visit post_path(blog_post)
     click_link "Post a comment"
@@ -24,7 +24,7 @@ RSpec.describe "Comment", type: :request do
     fill_in "comment[body]", with: "This is a new comment"
     click_button "Submit"
     expect(page).to have_content("Your comment was added successfully!")
-    expect(last_email.to).to include("kohrVid@gmail.com")
+    expect(last_email.to).to include(ENV['GMAIL_USERNAME'])
     expect(last_email.subject).to include(
       "New comment posted under '#{blog_post.title}'"
     )

@@ -10,7 +10,7 @@ RSpec.describe Notification, type: :mailer do
         "New comment posted under '#{comment.post.title}'"
       )
 
-      expect(mail.to).to eq(['kohrVid@gmail.com'])
+      expect(mail.to).to eq([ENV['GMAIL_USERNAME']])
       expect(mail.from).to eq(['noreply@kohrVid.com'])
     end
 
