@@ -3,7 +3,7 @@ Feature: Contact
   Scenario: A customer can see my contact details on the Contact page
     Given that a user is on the contact page
     Then they can see my contact details
-  
+
   Scenario: A customer can locate the office in Google Maps
 
   Scenario: A customer can send a message via the contact form successfully
