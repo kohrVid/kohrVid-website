@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @comment.update_attributes(user_id: user_id, post_id: post_id)
     if @comment.save
       flash[:success] =  "Your comment was added successfully!"
-      Notification.new_comment_notification(@comment).deliver
+      Notification.new_comment_admin_notification(@comment).deliver
       redirect_to @post
     else
       flash.now[:error] = "Unable to post comment."

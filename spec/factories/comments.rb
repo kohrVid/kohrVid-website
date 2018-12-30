@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :comment do
     author "MyString"
     body "MyText"
-    post_id { create(:post).id }
+    post
     user_id { create(:user, :reader).id }
   end
 end
