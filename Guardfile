@@ -28,3 +28,9 @@ guard :rspec, cmd: 'rspec' do
   watch(%r{app\/views\/(.*)\/.*\.html\.haml}) { |m| "spec/system/#{m[1]}_spec.rb"  }
   watch(%r{app\/views\/(.*)\/.*\.coffee})     { |m| "spec/system/#{m[1]}_spec.rb"  }
 end
+
+guard :shell do
+  watch(%r{features\/.+\.feature}) do |m|
+    `bundle exec cucumber --color #{m}`
+  end
+end
