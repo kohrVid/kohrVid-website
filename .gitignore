@@ -44,3 +44,6 @@ rerun.txt
 # Ignore application configuration
 /config/application.yml
 /node_modules
+
+# Ignore cucumber rubbish
+.cucumber.rerun
