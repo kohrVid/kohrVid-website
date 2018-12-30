@@ -26,4 +26,3 @@ Feature: Contact
     And they fill in their message
     And they click "Send"
     Then the message isn't sent
-
