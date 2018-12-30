@@ -23,7 +23,7 @@ RSpec.describe Notification, type: :mailer do
         "A new comment has been posted on the blog. View the comment"
       )
 
-      expect(mail.body.encoded).to include("blog/posts/#{comment.post.slug}")
+      expect(mail.body.encoded).to include("blog/posts/#{comment.post.slug}\">")
     end
   end
 end
