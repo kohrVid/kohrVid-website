@@ -6,12 +6,13 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #index" do
     before(:each) do
-      sign_in user
+      sign_in admin, scope: :user
       get :index
     end
 
     it "populates an array of users" do
-      expect(assigns(:users)).to eq([user, admin])
+      expect(assigns(:users)).to include(user)
+      expect(assigns(:users)).to include(admin)
     end
 
     it "returns http success" do
@@ -21,10 +22,10 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #show" do
     before(:each) do
-      sign_in user
+      sign_in admin, scope: :user
       get(:show, params: { id: user.id })
     end
-    
+
     it "assigns requested user to @user" do
       expect(assigns(:user)).to eq(user)
     end
@@ -36,7 +37,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #new" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
       get(:new)
     end
 
@@ -47,7 +48,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST create" do
     before(:each) do
-      sign_in admin
+      sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
@@ -97,7 +98,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #edit" do
     before do
-      sign_in admin
+      sign_in admin, scope: :user
       get(:edit, params: { id: user.id })
     end
 
@@ -112,7 +113,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "PUT update" do
     before do
-      sign_in admin
+      sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
@@ -190,7 +191,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     before(:each) do
-      sign_in admin
+      sign_in admin, scope: :user
       user
     end
 

@@ -44,7 +44,7 @@ RSpec.describe PostsController, type: :controller do
 
       context "Admin user" do
         before do
-          sign_in admin
+          sign_in admin, scope: :user
           get_post
         end
 
@@ -59,7 +59,7 @@ RSpec.describe PostsController, type: :controller do
 
       context "Standard User" do
         it "returns http success" do
-          sign_in user
+          sign_in user, scope: :user
           expect { get_post }.to raise_error(ActionController::RoutingError)
         end
       end
@@ -74,7 +74,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #new" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
       get(:new)
     end
 
@@ -85,7 +85,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST create" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
@@ -133,7 +133,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #edit" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
       get(:edit, params: { id: valid_post.id })
     end
 
@@ -148,7 +148,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PUT update" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
@@ -223,7 +223,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     before do
-      sign_in admin
+      sign_in admin, scope: :user
       valid_post
     end
 
@@ -240,5 +240,4 @@ RSpec.describe PostsController, type: :controller do
       expect(flash[:success]).to have_content("Post deleted.")
     end
   end
-
 end

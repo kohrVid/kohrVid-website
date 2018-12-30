@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :client do
-    client_name "Stranger'sCandy"
-    client_url "www.takesyouwhereyouwannabe.dep"
+    client_name { "Stranger'sCandy" }
+    client_url { "www.takesyouwhereyouwannabe.dep" }
 
     logo_url {
       Rack::Test::UploadedFile.new(

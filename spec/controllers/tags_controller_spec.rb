@@ -32,7 +32,7 @@ RSpec.describe TagsController, type: :controller do
 
   describe "GET #new" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
       get(:new)
     end
 
@@ -43,7 +43,7 @@ RSpec.describe TagsController, type: :controller do
 
   describe "POST create" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
@@ -92,7 +92,7 @@ RSpec.describe TagsController, type: :controller do
 
   describe "GET #edit" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
       get(:edit, params: { id: valid_tag.id })
     end
 
@@ -107,7 +107,7 @@ RSpec.describe TagsController, type: :controller do
 
   describe "PUT update" do
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
@@ -140,7 +140,6 @@ RSpec.describe TagsController, type: :controller do
         }
       end
 
-
       it "shouldn't change @tag's attributes" do
         valid_tag.reload
         expect { put_attributes }
@@ -164,7 +163,7 @@ RSpec.describe TagsController, type: :controller do
     end
 
     before(:each) do
-      sign_in :user, admin
+      sign_in admin, scope: :user
       valid_tag
     end
 
