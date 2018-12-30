@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let(:user) { FactoryBot.create(:user, :reader) }
+
   it "must have required fields or be invalid" do
-    u = User.new
-    expect(u).to_not be_valid
+    expect(User.new).to_not be_valid
     end
 
   it "creates a new user with valid attributes" do
@@ -36,9 +37,12 @@ RSpec.describe User, type: :model do
     end
 
     it "should not be case sensitive" do
-      user1 = FactoryBot.create(:user, :reader)
-      user2 = FactoryBot.build(:user, :reader, name: user1.name.upcase, email: "test@something.com")
-      expect(user2).to_not be_valid
+      user
+      new_user = FactoryBot.build(
+        :user, :reader, name: user.name.upcase, email: "test@something.com"
+      )
+
+      expect(new_user).to_not be_valid
     end
   end
 
@@ -56,7 +60,9 @@ RSpec.describe User, type: :model do
 
     it "must be no more than 255 characters long" do
       expect{
-        User.create(FactoryBot.attributes_for(:user, :reader, email: "m"*241+"@premiergaou.ci"))
+        User.create(FactoryBot.attributes_for(
+          :user, :reader, email: "m"*241+"@premiergaou.ci"
+        ))
       }.to_not change(User, :count)
     end
 
@@ -64,7 +70,12 @@ RSpec.describe User, type: :model do
       valid_email_address = %w[user@example.com USER@foo.COM A_US-ER@Foo.bar.org first.last@foo.jp alice+bob@baz.cn user@an.example.com 12@example.com]
       valid_email_address.each do |email_address|
         expect{
-          User.create(FactoryBot.attributes_for(:user, :reader, email: email_address))
+          User.create(FactoryBot.attributes_for(
+            :user,
+            :reader,
+            email: email_address,
+            name: [*'A'...'z'].sample(3).join
+          ))
         }.to change(User, :count).by(1)
       end
     end
@@ -73,27 +84,47 @@ RSpec.describe User, type: :model do
       invalid_email_address = %w[user@example,com user_at_foo.org user.name@example. foo@bar_baz.com foo@bar+baz.com .@example.com foo@bar..com]
       invalid_email_address.each do |email_address|
         expect{
-          User.create(FactoryBot.attributes_for(:user, :reader, email: email_address))
+          User.create(FactoryBot.attributes_for(
+            :user,
+            :reader,
+            email: email_address,
+            name: [*'A'...'z'].sample(3).join
+          ))
         }.to_not change(User, :count)
       end
     end
 
     it "must be unique" do
-      p = FactoryBot.create(:user, :reader)
-      expect{
-        User.create(FactoryBot.attributes_for(:user, :reader, name: "Princess", password: "cest2nd", password_confirmation: "cest2nd"))
+      user
+      expect {
+        User.create(FactoryBot.attributes_for(
+          :user,
+          :reader,
+          name: "Raine",
+          password: "cest2nd",
+          password_confirmation: "cest2nd",
+          admin: false
+        ))
       }.to_not change(User, :count)
     end
 
     it "must be case insensitive" do
-      p = FactoryBot.create(:user, :reader)
-      expect{
-        User.create(name: "Princess", email: "NANGIOwAH@PREMIERGAOU.CI", password: "cest2nd",password_confirmation: "cest2nd", admin: false)
+      user
+      expect {
+        User.create(
+          name: "Raine",
+          email: user.email.swapcase,
+          password: "cest2nd",
+          password_confirmation: "cest2nd",
+          admin: false
+        )
       }.to_not change(User, :count)
     end
   end
 
   context "Password" do
+    let(:short_password) { 'five5' }
+
     it "must be present" do
       expect{
         User.create(FactoryBot.attributes_for(:user, :reader, password: ""))
@@ -106,10 +137,13 @@ RSpec.describe User, type: :model do
     end
 
     it "must be at least six characters long" do
-      u = FactoryBot.build(:user, :reader)
-      u.password = "five5"
-      u.password_confirmation = u.password
-      expect(u).to_not be_valid
+      expect(
+        FactoryBot.build(
+          :user, :reader,
+          password: short_password,
+          password_confirmation: short_password
+        )
+      ).to_not be_valid
     end
   end
 end
