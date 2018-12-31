@@ -20,4 +20,7 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.filter_run :focus
+  config.run_all_when_everything_filtered = true
 end

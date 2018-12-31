@@ -3,21 +3,23 @@ source 'https://rubygems.org'
 ruby '>= 2.4.0'
 gem 'activerecord-session_store'
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootsnap', require: false
 #gem 'brakeman', '~> 3.1', '>= 3.1.2'
-gem 'carrierwave', '0.10.0'
+gem 'carrierwave', '1.3'
 gem 'closure_tree'
 gem 'coderay'
 gem 'coffee-rails'
 #gem 'dawnscanner', '>= 1.4.2' #run 'dawn -r ./' to use
 gem 'devise'
 gem 'fancybox2-rails'
-gem 'fog'
-gem 'friendly_id', '~> 5.1', :require => 'friendly_id'
+gem 'fog-google'
+gem 'friendly_id', '~> 5.1', require: 'friendly_id'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'mail_form'
+gem 'mime-types'
 gem 'mini_magick', '~> 3.8.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -27,7 +29,6 @@ gem 'rails', '~> 5.2.2', '>= 5.2.0'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
 gem 'redcarpet'
 gem 'sass', '~>3.2.19'
-gem 'secure_headers', git: 'https://github.com/twitter/secureheaders'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -43,7 +44,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'figaro'
-  gem 'jasmine'
+  gem 'guard-rspec'
+  gem 'guard-shell'
   gem 'launchy'
   gem 'pry-byebug', platform: :mri
   gem 'rails-controller-testing'
@@ -60,7 +62,6 @@ group :development do
 end
 
 group :production do
-  gem 'aws-sdk'
   gem 'dotenv'
   gem 'heroku-deflater'
   gem 'ngannotate-rails'

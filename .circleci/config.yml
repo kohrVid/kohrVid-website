@@ -1,0 +1,72 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    working_directory: ~/kohrVid-website
+
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.4.1-node
+        environment:
+          RAILS_ENV: test
+          PGHOST: 127.0.0.1
+          PGUSER: root
+          GMAIL_USERNAME: 'test@example.com'
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/postgres:9.6.2-alpine
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: kohrVid_test
+
+    steps:
+      - checkout
+      - run:
+          command: mkdir -p /tmp/test-results
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - rails-demo-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - rails-demo-
+
+      - run:
+          name: Install dependencies
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs 4 --retry 3
+
+      - save_cache:
+          key: rails-demo-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+
+      # Database setup
+      - run:
+          name: Database Setup
+          command: |
+            bundle exec rake db:create
+            bundle exec rake db:schema:load
+
+      # run tests!
+      - run:
+          name: Run unit tests
+          command: |
+            bundle exec rspec
+
+      - run:
+          name: Run integration tests
+          environment:
+          #CIRCLE_ARTIFACTS: ~/tmp/test-results
+          command: |
+            bundle exec cucumber \
+            --require features \
+            --format json --out /tmp/test-results/cucumber.json \
+            $(circleci tests glob "features/**/*.feature" | circleci tests split --split-by=timings --timings-type=classname)
+
+      # Save artifacts
+      - store_test_results:
+          path: /tmp/test-results

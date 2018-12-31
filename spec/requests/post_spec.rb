@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Post", :type => :request do
   let(:draft_post) { FactoryBot.create(:post, draft: true, published_at: nil) }
-  let(:admin) { FactoryBot.create(:admin) }
+  let(:admin) { FactoryBot.create(:user, :admin) }
 
   def sign_in(a_user)
     visit new_user_session_url
@@ -10,7 +10,7 @@ RSpec.describe "Post", :type => :request do
     fill_in "Password", with: a_user.password
     click_button "Log In"
   end
-       
+
 
   before(:each) do
     sign_in(admin)
@@ -28,7 +28,7 @@ RSpec.describe "Post", :type => :request do
       expect(Post.find(draft_post.id).draft).to be false
       expect(Post.find(draft_post.id).published_at).to eq(time)
     end
-    
+
     it "should not set the published_at date if draft is unticked a second time" do
       visit edit_post_path(draft_post)
       page.uncheck("post_draft")
@@ -37,14 +37,14 @@ RSpec.describe "Post", :type => :request do
       time = Time.now
       recheck_time = Time.now + 5
       Timecop.return
-      
+
       visit edit_post_path(draft_post)
       page.check("post_draft")
       Timecop.travel(recheck_time)
       click_button "Submit"
       second_uncheck_time = Time.now + 5
       Timecop.return
-      
+
       visit edit_post_path(draft_post)
       page.uncheck("post_draft")
       Timecop.travel(second_uncheck_time)

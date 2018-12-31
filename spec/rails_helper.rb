@@ -16,8 +16,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   ##Devise helpers
   config.infer_spec_type_from_file_location!
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 
   #Mailer helpers
   config.include Capybara::DSL

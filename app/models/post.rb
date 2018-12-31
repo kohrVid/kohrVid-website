@@ -2,16 +2,20 @@ class Post < ActiveRecord::Base
   before_save :publish
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged]
+
   has_many :post_tags, dependent: :destroy
   has_many :tags, -> { distinct }, through: :post_tags
   has_many :comments, dependent: :destroy
+
   validates :title, presence: true, length: { maximum: 50 }, uniqueness: true
-  validates :body, presence: true, length: { minimum: 4, maximum: 20000 }, uniqueness: true
+  validates :body, presence: true,
+    length: { minimum: 4, maximum: 20000 }, uniqueness: true
 #	validates :post_tags, presence: true, associated: true
+
   scope :drafts, proc { where(draft: true) }
   scope :published, proc { where(draft: false).order("published_at DESC") }
 
-  
+
   def slug_candidates
     [
       :title,

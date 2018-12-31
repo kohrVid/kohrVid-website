@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Contact", :type => :request do
-  
+
   it "must send valid message using the Contact form" do
     visit new_contact_path
     fill_in "Name", with: "MagicS"
@@ -10,10 +10,10 @@ RSpec.describe "Contact", :type => :request do
     fill_in "Nickname", with: ""
     click_button "Send"
     expect(page).to have_content("Thank you for your message! I try to respond within 24hrs so you should hear from me soon.")
-    expect(last_email.to).to include("kohrVid@gmail.com")
+    expect(last_email.to).to include(ENV['GMAIL_USERNAME'])
     expect(last_email.from).to include("nangioWah@premiergaou.ci")
   end
-  
+
   it "must not deliver spam" do
     visit new_contact_path
     fill_in "Name", with: "Rick"
@@ -37,7 +37,7 @@ RSpec.describe "Contact", :type => :request do
       expect(page).to have_content("Name can't be blank")
       expect(last_email).to be_nil
     end
-    
+
     it "must be at least 2 characters long" do
       visit new_contact_path
       fill_in "Name", with: "c"
@@ -75,7 +75,7 @@ RSpec.describe "Contact", :type => :request do
       expect(page).to have_content("Email can't be blank")
       expect(last_email).to be_nil
     end
-    
+
     it "must not exceed 255 characters" do
       visit new_contact_path
       fill_in "Name", with: "MagicS"
@@ -88,7 +88,7 @@ RSpec.describe "Contact", :type => :request do
       expect(page).to have_content("")
       expect(last_email).to be_nil
     end
-    
+
     invalid_email_address = %w(user@example,com user_at_foo.org user.name@example. foo@bar_baz.com foo@bar+baz.com .@example.com foo@bar..com)
     invalid_email_address.each do |email_address|
       it "must not send message without a valid email address" do
@@ -103,7 +103,7 @@ RSpec.describe "Contact", :type => :request do
         expect(last_email).to be_nil
       end
     end
-    
+
     valid_email_address = %w(user@example.com USER@foo.COM A_US-ER@Foo.bar.org first.last@foo.jp alice+bob@baz.cn user@an.example.com 12@example.com)
     valid_email_address.each do |email_address|
       it "must send valid message using the Contact form if a valid email address is given" do
@@ -114,7 +114,7 @@ RSpec.describe "Contact", :type => :request do
         fill_in "Nickname", with: ""
         click_button "Send"
         expect(page).to have_content("Thank you for your message! I try to respond within 24hrs so you should hear from me soon.")
-        expect(last_email.to).to include("kohrVid@gmail.com")
+        expect(last_email.to).to include(ENV['GMAIL_USERNAME'])
         expect(last_email.from).to include(email_address)
       end
     end

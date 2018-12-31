@@ -2,20 +2,19 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   it "must have required fields or be invalid" do
-    c = Comment.new
-    expect(c).to_not be_valid
+    expect(Comment.new).to_not be_valid
   end
 
   it "creates a new comment with valid attributes" do
-    expect{
-      Comment.create(FactoryBot.attributes_for(:comment))
+    expect {
+      FactoryBot.build(:comment).save
     }.to change(Comment, :count).by(1)
   end
-  
+
   context ".body" do
     it "must be present" do
-      expect{
-        Comment.create(FactoryBot.attributes_for(:comment, body: ""))
+      expect {
+        FactoryBot.build(:comment, body: '').save
       }.to_not change(Comment, :count)
     end
 
@@ -24,11 +23,11 @@ RSpec.describe Comment, type: :model do
       expect(c.errors[:body]).to_not be_nil
     end
   end
-  
+
   context ".post_id" do
     it "must be present" do
-      expect{
-        Comment.create(FactoryBot.attributes_for(:comment, post_id: nil))
+      expect {
+        FactoryBot.build(:comment, post_id: nil).save
       }.to_not change(Comment, :count)
     end
 
@@ -40,7 +39,7 @@ RSpec.describe Comment, type: :model do
 
   context "@author" do
     it "to be set to Anonymous if no user_id is set" do
-      c = FactoryBot.create(:comment, author: "", user_id: "")
+      c = FactoryBot.create(:comment, author: '', user_id: '')
       expect(c.author).to eq("Anonymous")
     end
   end
