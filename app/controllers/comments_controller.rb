@@ -12,12 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if params[:comment][:parent_id].to_i > 0
-      parent = Comment.find_by_id(params[:comment].delete(:parent_id))
-      @comment = parent.children.build(comment_params)
-    else
-      @comment = Comment.new(comment_params)
-    end
+    @comment = build_comment(params[:comment])
     user_id = current_user.id unless !user_signed_in?
     post_id = @post.id
     @comment.update_attributes(user_id: user_id, post_id: post_id)
@@ -66,6 +61,15 @@ class CommentsController < ApplicationController
     unless current_user.id == @comment.user_id
       flash[:error] = "Sorry, you do not have access to that part of the site."
       redirect_to(root_url)
+    end
+  end
+
+  def build_comment(comment_json)
+    if comment_json[:parent_id].to_i > 0
+      parent = Comment.find_by_id(comment_json.delete(:parent_id))
+      parent.children.build(comment_params)
+    else
+      Comment.new(comment_params)
     end
   end
 end
