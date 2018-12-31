@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :comment do
-    author { "MyString" }
+    author { (User.last || create(:user, :reader)).name }
     body { "MyText" }
-    post
-    user_id { create(:user, :reader).id }
+    post { Post.last || create(:post) }
+    user { User.last || create(:user, :reader) }
   end
 end
