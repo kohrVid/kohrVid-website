@@ -4,6 +4,7 @@ class ClientsController < ApplicationController
 
   def index
     @clients = Client.all.order(:id)
+    render json: @clients
   end
 
   def list

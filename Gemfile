@@ -31,11 +31,12 @@ gem 'redcarpet'
 gem 'sass', '~>3.2.19'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '4.0.0.rc2'
+gem 'will_paginate', '~> 3.0.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'will_paginate', '~> 3.0.7'
 
 group :development, :test do
   gem 'capybara'

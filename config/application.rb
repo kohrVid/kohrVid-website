@@ -12,7 +12,7 @@ module KohrVid
     #config.active_record.raise_in_transactional_callbacks = true
     config.assets.enabled = true
     config.assets.initialized_on_precompile = true
-    config.assets.paths << Rails.root.join('node_modules')
+    #config.assets.paths << Rails.root.join('node_modules')
     config.middleware.insert_before ActionDispatch::Cookies, Rack::SslEnforcer,
       only_environments: 'production'
     config.middleware.use Rack::Attack
