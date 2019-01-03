@@ -1,5 +1,5 @@
-import React, { Component  } from 'react'
-import axios from 'axios'
+import React, { Component  } from 'react';
+import axios from 'axios';
 import Modal from 'react-modal';
 
 class ClientsContainer extends Component {
@@ -9,9 +9,6 @@ class ClientsContainer extends Component {
       clients: [],
       modalIsOpen: false
     };
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -30,25 +27,48 @@ class ClientsContainer extends Component {
     }
   }
 
-  openModal() {
-     this.setState({modalIsOpen: true});
-
+  toggleClientModal = () => {
+    this.setState(state => ({
+      modalOpen: !state.modaleOpen
+    }));
   }
 
-  afterOpenModal() {
-     // references are now sync'd and can be accessed.
-    //  this.subtitle.style.color = '#f00';
-    //
+  openModal = (client) => {
+    this.setState({
+      modalIsOpen: true,
+      name: client.client_name,
+      url: client.client_url,
+      logo: client.logo_url.url,
+      screenshot: client.image_url.url,
+      description: client.description,
+      pdf: client.pdf.url
+    });
   }
 
-  closeModal() {
-     this.setState({modalIsOpen: false});
+  afterOpenModal = () => {
+  }
 
+  closeModal = (client) => {
+    this.setState({
+      modalIsOpen: false,
+      client: client
+    });
+  }
+
+  handleString(str) {
+    if (str == undefined) {
+      return ""
+    } else {
+     return str
+    }
   }
 
   render() {
     return (
-      <div>
+      <div id="Clients">
+        <h1>
+          Clients
+        </h1>
         <p>
           Many of the informal projects I've worked on can be found on my
           &nbsp;<a href="https://github.com/kohrVid">GitHub</a> page (which
@@ -56,55 +76,47 @@ class ClientsContainer extends Component {
             following is a list of my previous clients.
         </p>
 
-        <ul>
+        <ul className="row">
           {this.state.clients.map(
             (client) => {
               return(
-                <li className="tile" key={client.id} onClick={this.openModal}>
-                  <img src={client.logo_url.url} className="fancybox" />
+                <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={client.id} onClick={() => this.openModal(client)}>
+                  <img src={client.logo_url.url} />
                   <div>
                     {client.client_name}
                   </div>
                   <div className="desc">
                     {this.truncate(client.description, 26)}
                   </div>
-
-
-                  <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    //style=
-                    contentLabel="Example Modal"
-                  >
-                      <img src={client.image_url.url} />
-                      <div className="description">
-                        <strong><u><a href={client.client_url}>{client.client_name} - {client.client_url.replace(/((https?)\:\/+(w+\.)?)/i, "")}</a></u></strong>
-                        <p>
-                          {client.description}
-                          <strong><a href={client.pdf.url}>[PDF]</a></strong>
-                        </p>
-                      </div>
-                  </Modal>
                 </li>
               )
             }
           )}
         </ul>
+
+        <Modal
+          appElement={document.getElementById('Clients')}
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          type="fullscreen"
+          className="modal"
+        >
+          <button className="close-button pull-right" onClick={this.closeModal}>×</button>
+          <strong><u><a href={this.state.url}>
+            {this.state.name} - {this.handleString(this.state.url).replace(/((https?)\:\/+(w+\.)?)/i, "")}
+          </a></u></strong>
+          <img src={this.handleString(this.state.screenshot)} />
+          <div className="description">
+            <p>
+              {this.handleString(this.state.description)}
+              <strong><a href={this.handleString(this.state.pdf)}>[PDF]</a></strong>
+            </p>
+          </div>
+        </Modal>
       </div>
     );
   }
 }
 
 export default ClientsContainer
-
-/*
- * TODO
-                  <noscript>
-                    <%=link_to "Site", client.client_url %>|
-                    <% unless client.image_url.blank? %><%=link_to_unless client.image_url.blank?, "Screenshot", image_path(client.image_url.url) %>|<% end %>
-                    <%= link_to "PDF", (client.pdf.to_s) %>|
-                  </noscript>
-                    <div className="screenshot" id="client-{client.id}">
-                    </div>
-        */
