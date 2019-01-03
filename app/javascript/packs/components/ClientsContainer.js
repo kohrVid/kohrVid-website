@@ -63,6 +63,12 @@ class ClientsContainer extends Component {
     }
   }
 
+  handlePdf(pdf) {
+    if (pdf != undefined) {
+     return <strong><a href={this.handleString(pdf)}>[PDF]</a></strong>
+    }
+  }
+
   render() {
     return (
       <div id="Clients">
@@ -103,14 +109,14 @@ class ClientsContainer extends Component {
           className="modal"
         >
           <button className="close-button pull-right" onClick={this.closeModal}>×</button>
-          <strong><u><a href={this.state.url}>
-            {this.state.name} - {this.handleString(this.state.url).replace(/((https?)\:\/+(w+\.)?)/i, "")}
-          </a></u></strong>
           <img src={this.handleString(this.state.screenshot)} />
           <div className="description">
+            <strong><u><a href={this.state.url}>
+              {this.state.name} - {this.handleString(this.state.url).replace(/((https?)\:\/+(w+\.)?)/i, "")}
+            </a></u></strong>
             <p>
               {this.handleString(this.state.description)}
-              <strong><a href={this.handleString(this.state.pdf)}>[PDF]</a></strong>
+              {this.handlePdf(this.state.pdf)}
             </p>
           </div>
         </Modal>
