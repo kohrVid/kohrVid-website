@@ -1,6 +1,7 @@
 import React, { Component  } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
+import { truncate, handleString, renderLink } from '../utils/StringUtils.js';
 
 class ClientsContainer extends Component {
   constructor(props) {
@@ -17,14 +18,6 @@ class ClientsContainer extends Component {
         this.setState({clients: response.data})
       })
       .catch(error => console.log(error))
-  }
-
-  truncate(str, len) {
-    if (str.length > len) {
-      return str.substring(0, len) + "..."
-    } else {
-      return str
-    }
   }
 
   toggleClientModal = () => {
@@ -55,20 +48,6 @@ class ClientsContainer extends Component {
     });
   }
 
-  handleString(str) {
-    if (str == undefined) {
-      return ""
-    } else {
-     return str
-    }
-  }
-
-  handlePdf(pdf) {
-    if (pdf != undefined) {
-     return <strong><a href={this.handleString(pdf)}>[PDF]</a></strong>
-    }
-  }
-
   render() {
     return (
       <div id="Clients">
@@ -92,7 +71,7 @@ class ClientsContainer extends Component {
                     {client.client_name}
                   </div>
                   <div className="desc">
-                    {this.truncate(client.description, 26)}
+                    {truncate(client.description, 26)}
                   </div>
                 </li>
               )
@@ -109,14 +88,14 @@ class ClientsContainer extends Component {
           className="modal"
         >
           <button className="close-button pull-right" onClick={this.closeModal}>×</button>
-          <img src={this.handleString(this.state.screenshot)} />
+          <img src={handleString(this.state.screenshot)} />
           <div className="description">
             <strong><u><a href={this.state.url}>
-              {this.state.name} - {this.handleString(this.state.url).replace(/((https?)\:\/+(w+\.)?)/i, "")}
+              {this.state.name} - {handleString(this.state.url).replace(/((https?)\:\/+(w+\.)?)/i, "")}
             </a></u></strong>
             <p>
-              {this.handleString(this.state.description)}
-              {this.handlePdf(this.state.pdf)}
+              {handleString(this.state.description)}
+              &nbsp;{renderLink("[PDF]", this.state.pdf)}
             </p>
           </div>
         </Modal>
