@@ -1,7 +1,9 @@
 import React, { Component  } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
+
 import { truncate, handleString, renderLink } from '../utils/StringUtils.js';
+import { takeMeBack } from '../utils/ViewUtils.js';
 
 class ClientsContainer extends Component {
   constructor(props) {
@@ -51,6 +53,7 @@ class ClientsContainer extends Component {
   render() {
     return (
       <div id="Clients">
+        {takeMeBack()}
         <h1>
           Clients
         </h1>
