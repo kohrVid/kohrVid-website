@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2016_04_08_131946) do
+ActiveRecord::Schema.define(version: 2019_01_03_030537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,18 @@ ActiveRecord::Schema.define(version: 2016_04_08_131946) do
     t.datetime "published_at"
     t.string "slug"
     t.string "tag_list"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.string "image"
+    t.text "repo_url"
+    t.text "app_url"
+    t.string "languages"
+    t.boolean "draft", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", id: :serial, force: :cascade do |t|
