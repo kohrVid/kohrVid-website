@@ -1,0 +1,53 @@
+= form_for(@project, html: { multipart: true }, remote: true) do |f|
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :name, t('projects.form.name'), id: 'name'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.text_field :name, tabindex: 1, 'aria-labelledby': 'name',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :repo_url, t('projects.form.repo_url'), id: 'repo_url'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.text_field :repo_url, tabindex: 2, 'aria-labelledby': 'repo_url',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :app_url, t('projects.form.app_url'), id: 'app_url'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.text_field :app_url, tabindex: 3, 'aria-labelledby': 'app_url',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :image, t('projects.form.image'), id: 'image'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.file_field :image, tabindex: 4, accept: 'image/jpeg,image/gif,image/png', 'aria-labelledby': 'image',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :description, t('projects.form.description'), id: 'description'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.text_area :description, tabindex: 5, 'aria-labelledby': 'description',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :languages, t('projects.form.languages'), id: 'languages'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.text_field :languages, tabindex: 6, 'aria-labelledby': 'languages',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-2.col-sm-2.col-xs-12
+      = f.label :draft, t('projects.form.draft'), id: 'draft'
+    .col-md-10.col-sm-10.col-xs-12
+      = f.check_box :draft, tabindex: 7, 'aria-labelledby': 'draft',
+        class: 'width-100p glowing-border'
+
+  %fieldset.row.field.m-10px-bottom
+    .col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-2.col-xs-12
+      = f.submit "Save", class: "button"

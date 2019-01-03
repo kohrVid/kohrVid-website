@@ -1,0 +1,72 @@
+- provide(:title, 'Projects: ' + @project.name.capitalize)
+%h1
+  = @project.name
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Name:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.name
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Repo URL:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.repo_url
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong App URL:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.app_url
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong App URL:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.app_url
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Image URL:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.image.url
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Description:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.description
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Languages:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.languages
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Draft:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.draft
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Date Created:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.created_at
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Date Last Modified:
+  .col-md-10.col-sm-10.col-xs-12
+    = @project.updated_at
+
+%br
+%div
+  - if admin_is_logged_in
+    = link_to 'Edit', edit_project_path(@project)
+    |
+    = link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }
+    |
+  = link_to 'Back', projects_path

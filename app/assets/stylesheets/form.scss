@@ -18,6 +18,10 @@ fieldset {
   }
 }
 
+input, textarea {
+  background-color: $light-grey;
+}
+
 button, .button {
   color: $light-grey;
   background-color: $black;
