@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import ClientsContainer from './components/ClientsContainer';
+import ProjectsContainer from './components/ProjectsContainer';
 
 class App extends Component {
   constructor(props) {
@@ -9,16 +10,14 @@ class App extends Component {
     this.state = {
       modalIsOpen: false
     };
-    this.portfolioContainerOpen = this.portfolioContainerOpen.bind(this);
-    this.clientContainerOpen = this.clientContainerOpen.bind(this);
   }
 
-  clientContainerOpen() {
+  clientsContainerOpen() {
     ReactDOM.render(<ClientsContainer />, document.getElementById('Portfolio'));
   }
 
-  portfolioContainerOpen() {
-    ReactDOM.render(<PortfolioContainer />, document.getElementById('Portfolio'));
+  projectsContainerOpen() {
+    ReactDOM.render(<ProjectsContainer />, document.getElementById('Portfolio'));
   }
 
   render() {
@@ -31,10 +30,10 @@ class App extends Component {
         </div>
         <ul className="diamond-list">
           <li className="padded-li">
-            <a href="#" onClick={this.portfolioContainerOpen}>Previous Projects</a>
+            <a href="#" onClick={this.projectsContainerOpen}>Previous Projects</a>
           </li>
           <li className="padded-li">
-          <a href="#" onClick={this.clientContainerOpen}>Clients</a></li>
+          <a href="#" onClick={this.clientsContainerOpen}>Clients</a></li>
         </ul>
       </div>
     );
