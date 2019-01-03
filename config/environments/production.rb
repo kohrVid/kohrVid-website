@@ -11,6 +11,7 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   config.serve_static_files = true
+  config.public_file_server.enabled = true
 
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
