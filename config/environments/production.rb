@@ -1,4 +1,6 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's package.json
+  config.webpacker.check_yarn_integrity = false
   config.cache_classes = true
 
   config.eager_load = true
@@ -9,6 +11,7 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   config.serve_static_files = true
+  config.public_file_server.enabled = true
 
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass

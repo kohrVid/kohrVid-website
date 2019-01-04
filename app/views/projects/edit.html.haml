@@ -1,0 +1,13 @@
+- provide(:title, 'Update Project: ' + @project.name.capitalize)
+
+%h1
+  Update
+  = @project.name
+
+= render 'projects/form'
+
+%p
+  = link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }
+  |
+
+  = link_to 'Back', @project

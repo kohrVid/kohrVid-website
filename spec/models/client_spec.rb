@@ -24,7 +24,7 @@ RSpec.describe Client, type: :model do
       expect(c.errors[:client_name]).to_not be_nil
     end
   end
-  
+
   context "URL" do
     it "must be present" do
       expect{

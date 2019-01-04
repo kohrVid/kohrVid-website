@@ -47,3 +47,14 @@ rerun.txt
 
 # Ignore cucumber rubbish
 .cucumber.rerun
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
