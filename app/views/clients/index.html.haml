@@ -8,7 +8,7 @@
   - @clients.each do |client|
     %li
       - unless client.logo_url.nil?
-        = link_to image_tag(client.logo_url.url, width: "100%"), "#client-#{client.id}"
+        = link_to image_tag(client.logo_url.url, width: "100%"), image_path(client.image_url.url)
       %br
       %div
         = client.client_name

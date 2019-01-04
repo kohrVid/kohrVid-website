@@ -30,10 +30,10 @@ class App extends Component {
         </div>
         <ul className="diamond-list">
           <li className="padded-li">
-            <a href="#" onClick={this.projectsContainerOpen}>Previous Projects</a>
+            <span className="fake-link" onClick={this.projectsContainerOpen}>Previous Projects</span>
           </li>
           <li className="padded-li">
-          <a href="#" onClick={this.clientsContainerOpen}>Clients</a></li>
+          <span className="fake-link" onClick={this.clientsContainerOpen}>Clients</span></li>
         </ul>
       </div>
     );

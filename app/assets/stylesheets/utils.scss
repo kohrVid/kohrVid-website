@@ -14,12 +14,12 @@
   clear: both;
 }
 
-	      
 .diamond-list {
   li:before {
     content: "\2666 \0020";
     left: -10px;
     position: relative;
+    color: $black;
   }
 }
 
@@ -28,6 +28,7 @@
   top: -16px;
   padding: 0 0 0 10px;
 }
+
 .no-bullet li:before {
   content: none !important;
 }

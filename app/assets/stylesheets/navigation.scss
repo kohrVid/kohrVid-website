@@ -21,7 +21,7 @@
     min-height: 100vh;
     bottom: 0px;
     left: 0px;
-    background-size:100%;
+    background-size: 100%;
   }
 
   nav {
@@ -54,7 +54,7 @@
 
 #logo a {
   @include header-font();
-  font-size: 4rem; 
+  font-size: 4rem;
   letter-spacing: -2px;
   @include menu-hover();
 }

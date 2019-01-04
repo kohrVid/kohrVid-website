@@ -68,7 +68,7 @@ class ClientsContainer extends Component {
           {this.state.clients.map(
             (client) => {
               return(
-                <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={client.id} onClick={() => this.openModal(client)}>
+                <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12 fake-link" key={client.id} onClick={() => this.openModal(client)}>
                   <img src={client.logo_url.url} />
                   <div>
                     {client.client_name}
