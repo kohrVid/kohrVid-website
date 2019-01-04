@@ -1,5 +1,5 @@
 Rails.application.config.content_security_policy do |p|
-  p.default_src :self, :https
+  p.default_src :self, :https, "http://localhost:3000"
   p.font_src    :self, :https, :data
   p.img_src     :self, :https, :data, "http://kohrvid.com", "http://www.kohrvid.com", "http://kohrvid-website-static.storage.googleapis.com"
   p.object_src  :none
