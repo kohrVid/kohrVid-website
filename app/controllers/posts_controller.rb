@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @posts = Post.published.paginate(page: params[:page]).per_page(10)
   end
 
+  def drafts
+    @posts = Post.drafts.paginate(page: params[:page]).per_page(10)
+  end
+
   def show
     @post = Post.includes(:tags).includes(:comments).friendly.find(params[:id])
     if @post.draft == true

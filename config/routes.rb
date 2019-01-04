@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'about'   =>  'nest#about'
   get 'blog' =>  'posts#index'
   scope '/blog' do
+    get 'drafts' => 'posts#drafts'
     resources :posts do
       resources :comments, only: [:index, :create, :edit, :update]
       get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
