@@ -18,8 +18,9 @@ fieldset {
   }
 }
 
-input, textarea {
+input, textarea, input[type="checkbox"]:checked {
   background-color: $light-grey;
+  color: $black;
 }
 
 button, .button {

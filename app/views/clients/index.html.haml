@@ -1,14 +1,16 @@
 - provide(:title, "Clients")
+
 %h1
   Clients
+
 %p
-  Many of the informal projects I've worked on can be found on my #{link_to "GitHub", "https://github.com/kohrVid"} page (which contains links to the apps that I've deployed to Heroku). The following is a list of my previous clients.
+  The following is a list of clients that I have worked with in the past:
 
 %ul.clients
   - @clients.each do |client|
     %li
       - unless client.logo_url.nil?
-        = link_to image_tag(client.logo_url.url, width: "100%"), "#client-#{client.id}"
+        = link_to image_tag(client.logo_url.url, width: "100%"), image_path(client.image_url.url)
       %br
       %div
         = client.client_name

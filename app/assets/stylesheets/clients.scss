@@ -17,24 +17,6 @@
   }
 }
 
-.screenshot {
-  background-color: $lilac;
-  display: none;
-  color: $light-grey;
-  a:link, a:visited, a:hover, a:active {
-    color: $light-grey !important;
-  }
-
-  .description {
-    @include main-font();
-    margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-bottom: 20px;
-    text-align: left;
-  }
-}
-
 .modal {
   background-color: $lilac;
   color: $light-grey;
@@ -86,6 +68,7 @@
     margin-right: 5%;
     padding-bottom: 20px;
     text-align: left;
+    color: $light-grey;
   }
 
   .close-button {
