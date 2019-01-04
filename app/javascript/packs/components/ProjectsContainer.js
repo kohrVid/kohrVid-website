@@ -14,7 +14,7 @@ class ProjectsContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/projects.json')
+    axios.get('/projects.json')
       .then(response => {
         this.setState({projects: response.data})
       })

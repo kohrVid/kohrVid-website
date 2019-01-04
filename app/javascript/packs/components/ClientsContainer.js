@@ -15,7 +15,7 @@ class ClientsContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/clients.json')
+    axios.get('/clients.json')
       .then(response => {
         this.setState({clients: response.data})
       })
