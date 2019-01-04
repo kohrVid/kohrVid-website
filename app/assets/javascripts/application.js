@@ -12,11 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require fancybox
 //= require jquery.remotipart
 //= require jquery.iframe-transport
 //= require nest
-
-$(document).ready(function(){
-  $("a.fancybox").fancybox();
-});
