@@ -4,7 +4,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all.order(:id)
-    render json: @projects
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @projects }
+    end
   end
 
   def list
