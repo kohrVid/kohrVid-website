@@ -1,9 +1,13 @@
 - provide(:title, 'About')
+
 %h1
   About
 
 %p
-  I'm twenty-four, born and raised in London. Languages, frameworks and tools I've worked with in the past include:
+  My name is Jessica Ete (pronounced "eh-tay"...you may see this written with
+  accent aigus elsewhere because no-one knows how to say it). I was born and
+  raised in London. Languages, frameworks and tools I've worked with in the past
+  include:
 
 = render partial: "nest/skills_list"
 
@@ -13,9 +17,10 @@
   %ul.no-bullet.p-l-0
     = render partial: "nest/job"
   %p
-    I'm actually on 
-    #{ link_to "LinkedIn", "https://uk.linkedin.com/pub/jessica-ete/61/21b/323", title: "¯\_(ツ)_/¯" }&nbsp; 
-    but I still haven't really worked out what I'm supposed to use it for. I worked in IT for a few years after sixth-form but, like, I don't anymore.
+    I'm actually on
+    #{ link_to "LinkedIn", "https://uk.linkedin.com/pub/jessica-ete/61/21b/323", title: "¯\_(ツ)_/¯" }&nbsp;
+    but I still haven't really worked out what I'm supposed to use it for. I
+    worked in IT for a few years after sixth-form but, like, I don't anymore.
 
 %section.m-t-2r
   %h2
@@ -25,19 +30,42 @@
   %ul.diamond-list
     %li
       .padded-li
-        I'm not #{ link_to "French", "https://en.wiktionary.org/wiki/%C3%A9t%C3%A9" } (sorry)
+        I'm not #{ link_to "French", "https://en.wiktionary.org/wiki/%C3%A9t%C3%A9" }
+        &nbsp;(sorry)
     %li
       .padded-li
-        I <i>am</i> an INTP (which I'm actually rather #{ link_to "proud", "http://www.celebritytypes.com/intp.php" } of but of course YMMV)
+        I tend to score as an #{ link_to "INTP", "https://www.16personalities.com/intp-personality" }
+        &nbsp;when I take MBTI tests but it's been a while
     %li
       .padded-li
-        I listen to music sometimes - mostly just alternative or whatever passed for #{ link_to "punk", "https://en.wikipedia.org/wiki/Emo#Mainstream_popularity:_2000s" } back when I was thirteen
+        I listen to music sometimes - mostly just alternative or whatever passed
+        for #{ link_to "punk", "https://en.wikipedia.org/wiki/Emo#Mainstream_popularity:_2000s" }
+        &nbsp;back when I was thirteen. Increasingly, I find I listen to far too many podcasts
     %li
       .padded-li
-        I occasionally follow #{ link_to "corvids", image_path("corvid.jpg") } and take pictures of them #{ link_to "running away", image_path("running.jpg") } on my smartphone
+        Last year I took up dance, specifically
+        &nbsp;#{ link_to "zouk", "https://www.facebook.com/zouklambada.co.uk/?_fb_noscript=1" }
+        &nbsp;as I know a #{ link_to "great teacher", "https://deliveroo.engineering/authors/kriselda-rabino/" }.
+        &nbsp;I apparently no longer suck at it which, considering how rubbish I was at PE as a kid, is pretty good!
+    %li
+      .padded-li
+        I know a mouse-hunter named #{ link_to "QT", image_path("QT.jpg") }.
+        &nbsp;Saying that I own him makes me feel guilty but, like, I did pay for him
+        once. I <em>think</em> he likes me
+    %li
+      .padded-li
+        I have a laptop at home named #{ link_to "kandiStryp", image_path("meAndkandiStryp.jpg") }
+        &nbsp;and a custom desktop named medea. kandi's seen better days.
+    %li
+      .padded-li
+        I #{ link_to "change my hair", image_path("white_hair.jpg") }.
+        &nbsp;#{ link_to "A", image_path("purple_hair.jpg") } #{ link_to "lot", image_path("pink_hair.jpg")}.
     %li
       .padded-li
         I have a #{ link_to "Twitter account", "https://twitter.com/kohrVid" } if you'd like to follow/tweet.
     %li
       .padded-li
-        I have a laptop at home named #{ link_to "kandiStryp", image_path("meAndkandiStryp.jpg") }. kandi's seen better days.
+        Back when I was poor and in between jobs, I would occasionally follow
+        &nbsp;#{ link_to "corvids", image_path("corvid.jpg") } and take pictures of
+        them #{ link_to "running away", image_path("running.jpg") } on my smartphone.
+        &nbsp;I sort of miss it a little
