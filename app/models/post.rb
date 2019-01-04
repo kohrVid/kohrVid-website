@@ -31,7 +31,11 @@ class Post < ActiveRecord::Base
 
   def self.post_date
     date = {}
-    Post.all.where(["published_at is not null"]).order("published_at DESC").group_by { |post| post.published_at.year }.sort.reverse.each { |year, e| date[year] = e.group_by { |post| post.published_at.month } }
+
+    Post.published.group_by { |post| post.published_at.year }
+      .sort.reverse.each do |year, e|
+        date[year] = e.group_by { |post| post.published_at.month }
+      end
     return date
   end
 end

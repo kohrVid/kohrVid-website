@@ -23,12 +23,18 @@
 
   %ul.divider-list.p-l-0
     %li
-      = link_to "Back to All Posts", posts_path
-    - if current_user || admin_is_logged_in
+      - if @post.draft == false
+        = link_to "Back to All Posts", posts_path
+      - if @post.draft == true && admin_is_logged_in
+        = link_to "Back to All Drafts", drafts_path
+
+    - if current_user && admin_is_logged_in
       %li
         = link_to "Edit Post", edit_post_path(@post)
       %li
-        = link_to "Delete Post", @post, method: :delete, data: { confirm: "Are you sure? This cannot be undone but saving this as a draft will hide the post instead." }
+        = link_to "Delete Post", @post,
+          method: :delete,
+          data: { confirm: "Are you sure? This cannot be undone but saving this as a draft will hide the post instead." }
 
 = link_to "Post a comment", post_new_comment_path(@post)
 

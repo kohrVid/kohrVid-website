@@ -4,7 +4,7 @@
   = @tag.name
 
 %ul.no-bullet
-  - @tag.posts.each do |post|
+  - @tag.posts.published.each do |post|
     %li
       <strong>#{ link_to post.title, post },</strong> published #{ time_ago_in_words(post.published_at) } ago
 %br

@@ -8,6 +8,11 @@
         - if (params[:controller] == "posts") && (params[:action] != "new")
           %li
             = link_to "New Post", new_post_path
+          %li
+            - if yield(:title) == "Blog"
+              = link_to "Drafts", drafts_path
+            - if yield(:title) == "Blog | Drafts"
+              = link_to "Published Posts", blog_path
         - if (params[:controller] == "tags") && (params[:action] != "new")
           %li
             = link_to "New Tag", new_tag_path 
