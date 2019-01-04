@@ -58,10 +58,10 @@ class ProjectsContainer extends Component {
           Projects
         </h1>
         <p>
-          Many of the informal projects I've worked on can be found on my
-          &nbsp;<a href="https://github.com/kohrVid">GitHub</a> page (which
-            contains links to the apps that I've deployed to Heroku). The
-            following is a list of my previous projects.
+          Many of the personal projects I've worked on can be found on my
+          &nbsp;<a href="https://github.com/kohrVid">GitHub</a> page (which also contains
+          &nbsp;links to the apps that I've deployed to Heroku). The following
+          is a sample of what I've worked on in the past:
         </p>
 
         <ul className="row">
@@ -75,7 +75,7 @@ class ProjectsContainer extends Component {
                       {project.name}
                     </div>
                     <div className="desc">
-                      {truncate(project.description, 26)}
+                      {truncate(project.description, 50)}
                     </div>
                   </li>
                 )

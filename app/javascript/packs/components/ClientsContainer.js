@@ -58,10 +58,7 @@ class ClientsContainer extends Component {
           Clients
         </h1>
         <p>
-          Many of the informal projects I've worked on can be found on my
-          &nbsp;<a href="https://github.com/kohrVid">GitHub</a> page (which
-            contains links to the apps that I've deployed to Heroku). The
-            following is a list of my previous clients.
+          The following is a list of clients that I have worked with in the past:
         </p>
 
         <ul className="row">
@@ -74,7 +71,7 @@ class ClientsContainer extends Component {
                     {client.client_name}
                   </div>
                   <div className="desc">
-                    {truncate(client.description, 26)}
+                    {truncate(client.description, 50)}
                   </div>
                 </li>
               )
