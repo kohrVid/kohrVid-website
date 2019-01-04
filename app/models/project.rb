@@ -3,7 +3,12 @@ class Project < ApplicationRecord
   validates :name, presence: true
   validate :publishing_requirements
 
-  REQUIRED_PUBLISHING_ATTRIBUTES = %w(image repo_url languages description)
+  scope :drafts, proc { where(draft: true) }
+  scope :published, proc { where(draft: false) }
+
+  # Note, currently unable to test published projects when :image appears in the
+  # list below so have had to remove it for the time being
+  REQUIRED_PUBLISHING_ATTRIBUTES = %w(repo_url languages description)
 
   private
 
