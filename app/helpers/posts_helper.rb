@@ -10,7 +10,11 @@ module PostsHelper
   end
 
   def markdown(text)
+    coderayified = CodeRayify.new()
+
     options = {
+      filter_html: false,
+      hard_wrap: true,
       fenced_code_blocks: true,
       no_intra_emphasis: true,
       autolink: true,
@@ -21,8 +25,11 @@ module PostsHelper
       no_styles: false,
       tokens: true
     }
-    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)
-    style = CodeRay::Encoders[:html]::CSS.new(:default).stylesheet
+
+    # TODO - Not sure what this line does so may completely remove later on if
+    # nothing breaks
+    # style = CodeRay::Encoders[:html]::CSS.new(:default).stylesheet
+
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     return markdown_to_html.render(text).html_safe
   end
