@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
   scope :drafts, proc { where(draft: true) }
   scope :published, proc { where(draft: false).order("published_at DESC") }
 
-
   def slug_candidates
     [
       :title,
@@ -37,5 +36,9 @@ class Post < ActiveRecord::Base
         date[year] = e.group_by { |post| post.published_at.month }
       end
     return date
+  end
+
+  def tag_names
+    tags.map(&:name)
   end
 end

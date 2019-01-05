@@ -24,6 +24,13 @@ module NestHelper
       #render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
     end
   end
+
+  def meta_keywords
+    main_keywords = %w(kohrVid Jessica Ete Developer Rubyist Scala Go)
+    main_keywords += @post.tag_names if @post.present?
+
+    main_keywords.uniq(&:downcase).join(",")
+  end
 =begin
   def store_location
     session[:forwarding_url] = request.url if request.get?
