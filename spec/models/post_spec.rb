@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
     }.to change(Post, :count).by(1)
   end
 
-  context "#title" do
+  describe "#title" do
     it "must be present" do
       expect {
         Post.create(FactoryBot.attributes_for(:post, title: ""))
@@ -41,7 +41,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  context "#body" do
+  describe "#body" do
     it "must be present" do
       expect {
         Post.create(FactoryBot.attributes_for(:post, body: ""))
@@ -136,6 +136,20 @@ RSpec.describe Post, type: :model do
     it "can have many tags" do
       expect(post_tag1).to be_valid
       expect(post_tag2).to be_valid
+    end
+
+    describe "#tag_names" do
+      subject { post.tag_names }
+      before do
+        tag1
+        tag2
+        post_tag1.save
+        post_tag2.save
+      end
+
+      it "returns the correct tag names in the expected order" do
+        is_expected.to eq(["#{tag1.name}", "#{tag2.name}"])
+      end
     end
 
 =begin
