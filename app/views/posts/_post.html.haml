@@ -5,7 +5,7 @@
     %small.smaller_text
       %em
         (#{ pluralize(post.comments.count, "comment") })
-  = markdown(post.body.to_s.truncate(500) )
+  = markdown(post.body).truncate(560).html_safe
   = link_to "[Read more...]", post
   %br
   - if admin_is_logged_in
