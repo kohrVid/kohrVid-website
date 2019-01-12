@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   before_action :admin_user_404, except: :index
 
   def index
-    @clients = Client.all.order(:id)
+    @clients = Client.published
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @clients }
@@ -88,7 +88,9 @@ class ClientsController < ApplicationController
       :image_url,
       :logo_url,
       :description,
-      :pdf
+      :pdf,
+      :draft,
+      :rank
     )
   end
 end

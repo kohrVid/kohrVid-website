@@ -4,7 +4,7 @@ class Project < ApplicationRecord
   validate :publishing_requirements
 
   scope :drafts, proc { where(draft: true) }
-  scope :published, proc { where(draft: false) }
+  scope :published, proc { where(draft: false).order("rank ASC") }
 
   # Note, currently unable to test published projects when :image appears in the
   # list below so have had to remove it for the time being

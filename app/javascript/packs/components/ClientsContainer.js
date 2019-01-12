@@ -3,7 +3,7 @@ import axios from 'axios';
 import Modal from 'react-modal';
 
 import { truncate, handleString, renderLink } from '../utils/StringUtils.js';
-import { takeMeBack } from '../utils/ViewUtils.js';
+import { takeMeBack, handleEmptyState } from '../utils/ViewUtils.js';
 
 class ClientsContainer extends Component {
   constructor(props) {
@@ -50,13 +50,9 @@ class ClientsContainer extends Component {
     });
   }
 
-  render() {
+  clientsView = () => {
     return (
-      <div id="Clients">
-        {takeMeBack()}
-        <h1>
-          Clients
-        </h1>
+      <div>
         <p>
           The following is a list of clients that I have worked with in the past:
         </p>
@@ -99,6 +95,18 @@ class ClientsContainer extends Component {
             </p>
           </div>
         </Modal>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div id="Clients">
+        {takeMeBack()}
+        <h1>
+          Clients
+        </h1>
+        {handleEmptyState(this.state.clients, "clients", this.clientsView())}
       </div>
     );
   }

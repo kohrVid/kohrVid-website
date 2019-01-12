@@ -27,5 +27,6 @@ FactoryBot.define do
       )
     }
 
+    draft { true }
   end
 end

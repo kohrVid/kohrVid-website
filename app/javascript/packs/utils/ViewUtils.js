@@ -24,3 +24,27 @@ export const takeMeBack = () => {
     </div>
   )
 }
+
+export const handleEmptyState = (resource, resourceName, view) => {
+  if (resource.length > 0) {
+    return view
+  } else {
+    return emptyState(resourceName)
+  }
+}
+
+const emptyState = (resourceName) => {
+    return (
+      <div>
+        <p>
+          Yeah...so I don't actually have any {resourceName}. I'm really sorry.
+        </p>
+        <p>
+          Here's a corvid I saw on a roof garden!
+        </p>
+        <center>
+          <img src="/assets/roof_bird.jpg" />
+        </center>
+      </div>
+    )
+  }

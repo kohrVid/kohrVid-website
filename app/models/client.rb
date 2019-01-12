@@ -4,4 +4,7 @@ class Client < ActiveRecord::Base
   mount_uploader :pdf, FileUploader, s3_protocol: :https
   validates :client_name, presence: true
   validates :client_url, presence: true
+
+  scope :drafts, proc { where(draft: true) }
+  scope :published, proc { where(draft: false).order("rank ASC") }
 end

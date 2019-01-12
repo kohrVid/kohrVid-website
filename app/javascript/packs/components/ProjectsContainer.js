@@ -2,7 +2,7 @@ import React, { Component  } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { truncate, handleString, renderLink } from '../utils/StringUtils.js';
-import { renderTags, takeMeBack } from '../utils/ViewUtils.js';
+import { renderTags, takeMeBack, handleEmptyState } from '../utils/ViewUtils.js';
 
 class ProjectsContainer extends Component {
   constructor(props) {
@@ -50,13 +50,9 @@ class ProjectsContainer extends Component {
     });
   }
 
-  render() {
+  projectsView = () => {
     return (
-      <div id="Projects">
-        {takeMeBack()}
-        <h1>
-          Projects
-        </h1>
+      <div>
         <p>
           Many of the personal projects I've worked on can be found on my
           &nbsp;<a href="https://github.com/kohrVid">GitHub</a> page (which also contains
@@ -105,6 +101,18 @@ class ProjectsContainer extends Component {
             {renderTags(this.state.languages)}
           </div>
         </Modal>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div id="Projects">
+        {takeMeBack()}
+        <h1>
+          Projects
+        </h1>
+        {handleEmptyState(this.state.projects, "projects", this.projectsView())}
       </div>
     );
   }
