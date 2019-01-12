@@ -10,7 +10,7 @@
   what I've worked on in the past:
 
 %ul.projects
-  - @projects.published.each do |project|
+  - @projects.each do |project|
     %li
       - unless project.image.try(:thumb).nil?
         = link_to image_tag(project.image.thumb.url), image_path(project.image.url)
