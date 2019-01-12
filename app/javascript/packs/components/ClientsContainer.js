@@ -50,19 +50,15 @@ class ClientsContainer extends Component {
     });
   }
 
-  render() {
+  clientsView = (clients) => {
     return (
-      <div id="Clients">
-        {takeMeBack()}
-        <h1>
-          Clients
-        </h1>
+      <div>
         <p>
           The following is a list of clients that I have worked with in the past:
         </p>
 
         <ul className="row">
-          {this.state.clients.map(
+          {clients.map(
             (client) => {
               return(
                 <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12 fake-link" key={client.id} onClick={() => this.openModal(client)}>
@@ -99,6 +95,43 @@ class ClientsContainer extends Component {
             </p>
           </div>
         </Modal>
+      </div>
+    )
+  }
+
+  sorry = () => {
+    console.log("showing soz")
+    return (
+      <div>
+        <p>
+          Yeah...so I don't actually have any clients. I'm really sorry.
+        </p>
+        <p>
+          Here's a corvid I saw on a roof garden!
+        </p>
+        <center>
+          <img src="/assets/roof_bird.jpg" />
+        </center>
+      </div>
+    )
+  }
+
+  controlClientsView = (clients) => {
+    if (clients.length > 0) {
+      return this.clientsView(clients)
+    } else {
+      return this.sorry()
+    }
+  }
+
+  render() {
+    return (
+      <div id="Clients">
+        {takeMeBack()}
+        <h1>
+          Clients
+        </h1>
+        {this.controlClientsView(this.state.clients)}
       </div>
     );
   }
