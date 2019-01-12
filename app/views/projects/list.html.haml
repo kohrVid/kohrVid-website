@@ -30,6 +30,7 @@
             = project.languages.gsub(", ", "|")
       .desc
         = link_to_if(admin_is_logged_in, "#{project.description}", project)
+        | rank: #{ project.rank }
       - if admin_is_logged_in
         %div
           = link_to 'Show', project
