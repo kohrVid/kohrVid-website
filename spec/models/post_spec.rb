@@ -79,7 +79,7 @@ RSpec.describe Post, type: :model do
     let(:post1) { FactoryBot.create(:post, draft: true) }
     let(:post2) { FactoryBot.create(:post) }
     let(:post3) { FactoryBot.create(:post, draft: true) }
-    let(:post4) { FactoryBot.create(:post) }
+    let(:post4) { FactoryBot.create(:post, published_at: (Time.now - 1.day)) }
 
     before do
       post1
@@ -113,6 +113,10 @@ RSpec.describe Post, type: :model do
       it 'should not contain any draft posts' do
         is_expected.to_not include(post1)
         is_expected.to_not include(post3)
+      end
+
+      it 'should be in order of most recently published' do
+        is_expected.to eq([post2, post4])
       end
     end
   end
