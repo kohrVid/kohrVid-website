@@ -3,7 +3,7 @@ import axios from 'axios';
 import Modal from 'react-modal';
 
 import { truncate, handleString, renderLink } from '../utils/StringUtils.js';
-import { takeMeBack } from '../utils/ViewUtils.js';
+import { takeMeBack, handleEmptyState } from '../utils/ViewUtils.js';
 
 class ClientsContainer extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class ClientsContainer extends Component {
     });
   }
 
-  clientsView = (clients) => {
+  clientsView = () => {
     return (
       <div>
         <p>
@@ -58,7 +58,7 @@ class ClientsContainer extends Component {
         </p>
 
         <ul className="row">
-          {clients.map(
+          {this.state.clients.map(
             (client) => {
               return(
                 <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12 fake-link" key={client.id} onClick={() => this.openModal(client)}>
@@ -99,31 +99,6 @@ class ClientsContainer extends Component {
     )
   }
 
-  sorry = () => {
-    console.log("showing soz")
-    return (
-      <div>
-        <p>
-          Yeah...so I don't actually have any clients. I'm really sorry.
-        </p>
-        <p>
-          Here's a corvid I saw on a roof garden!
-        </p>
-        <center>
-          <img src="/assets/roof_bird.jpg" />
-        </center>
-      </div>
-    )
-  }
-
-  controlClientsView = (clients) => {
-    if (clients.length > 0) {
-      return this.clientsView(clients)
-    } else {
-      return this.sorry()
-    }
-  }
-
   render() {
     return (
       <div id="Clients">
@@ -131,7 +106,7 @@ class ClientsContainer extends Component {
         <h1>
           Clients
         </h1>
-        {this.controlClientsView(this.state.clients)}
+        {handleEmptyState(this.state.clients, "clients", this.clientsView())}
       </div>
     );
   }
