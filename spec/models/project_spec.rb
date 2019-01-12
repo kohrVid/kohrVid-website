@@ -48,9 +48,9 @@ RSpec.describe Project, type: :model do
 
   describe 'scopes' do
     let(:project1) { FactoryBot.create(:project, draft: true) }
-    let(:project2) { FactoryBot.create(:project, draft: false) }
+    let(:project2) { FactoryBot.create(:project, draft: false, rank: 2) }
     let(:project3) { FactoryBot.create(:project, draft: true) }
-    let(:project4) { FactoryBot.create(:project, draft: false) }
+    let(:project4) { FactoryBot.create(:project, draft: false, rank: 1) }
 
     before do
       project1
@@ -84,6 +84,10 @@ RSpec.describe Project, type: :model do
       it 'should not contain any draft projects' do
         is_expected.to_not include(project1)
         is_expected.to_not include(project3)
+      end
+
+      it 'should be in order of ranking' do
+        is_expected.to eq([project4, project2])
       end
     end
   end
