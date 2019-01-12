@@ -10,7 +10,7 @@ export const truncate = (str, len) => {
 }
 
 export const handleString = (str) => {
-  if (str === undefined) {
+  if (str === undefined || str == null) {
     return ""
   } else {
    return str
@@ -18,7 +18,7 @@ export const handleString = (str) => {
 }
 
 export const renderLink = (link, url) => {
-  if (url !== undefined) {
+  if (handleString(url) !== "") {
    return <strong><a href={handleString(url)}>{link}</a></strong>
   }
 }
