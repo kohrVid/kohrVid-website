@@ -39,9 +39,9 @@ RSpec.describe Client, type: :model do
   end
 
   describe 'scopes' do
-    let(:client1) { FactoryBot.create(:client, draft: true) }
+    let(:client1) { FactoryBot.create(:client, draft: true, rank: 2) }
     let(:client2) { FactoryBot.create(:client, draft: false, rank: 2) }
-    let(:client3) { FactoryBot.create(:client, draft: true) }
+    let(:client3) { FactoryBot.create(:client, draft: true, rank: 1) }
     let(:client4) { FactoryBot.create(:client, draft: false, rank: 1) }
 
     before do
@@ -62,6 +62,10 @@ RSpec.describe Client, type: :model do
       it 'should not contain any public clients' do
         is_expected.to_not include(client2)
         is_expected.to_not include(client4)
+      end
+
+      it 'should be in order of ranking' do
+        is_expected.to eq([client3, client1])
       end
     end
 
