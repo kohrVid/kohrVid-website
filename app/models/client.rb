@@ -5,6 +5,6 @@ class Client < ActiveRecord::Base
   validates :client_name, presence: true
   validates :client_url, presence: true
 
-  scope :drafts, proc { where(draft: true) }
+  scope :drafts, proc { where(draft: true).order("rank ASC") }
   scope :published, proc { where(draft: false).order("rank ASC") }
 end

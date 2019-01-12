@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   validates :name, presence: true
   validate :publishing_requirements
 
-  scope :drafts, proc { where(draft: true) }
+  scope :drafts, proc { where(draft: true).order("rank ASC") }
   scope :published, proc { where(draft: false).order("rank ASC") }
 
   # Note, currently unable to test published projects when :image appears in the
