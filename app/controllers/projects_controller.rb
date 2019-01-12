@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :admin_user_404, except: :index
 
   def index
-    @projects = Project.all.order(:id)
+    @projects = Project.published
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @projects }
@@ -87,7 +87,8 @@ class ProjectsController < ApplicationController
       :image,
       :description,
       :languages,
-      :draft
+      :draft,
+      :rank
     )
   end
 end

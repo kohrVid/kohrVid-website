@@ -1,8 +1,0 @@
-<% provide(:title, 'Update Client: ' + @client.client_name.capitalize) %>
-<h1>Update <%=@client.client_name%></h1>
-
-<%= render 'clients/form' %>
-
-<p><%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %> | 
-
-<%= link_to 'Back', @client %></p>

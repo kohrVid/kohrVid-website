@@ -27,13 +27,14 @@ Rails.application.routes.draw do
     end
     resources :tags
   end
-  resources 'clients'
   get 'clients/list' =>  'clients#list'
+  resources 'clients'
   #resources :comments, only: [:index, :create, :edit, :update]
   #get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
   get 'contact'	=>  'contacts#new'
   resources 'contacts', only: [ :new, :create ]
   post 'csp_reports' =>  'nest#csp_reports'
   get 'portfolio' => 'nest#portfolio'
+  get 'projects/list' =>  'projects#list'
   resources 'projects'
 end

@@ -1,84 +1,79 @@
-- provide(:title, 'Projects: ' + @project.name.capitalize)
+- provide(:title, 'Clients: ' + @client.client_name.capitalize)
+
 %h1
-  = @project.name
+  = @client.client_name
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong ID:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.id
+    = @client.id
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Name:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.name
+    = @client.client_name
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
-    %strong Repo URL:
+    %strong Client Website:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.repo_url
+    = @client.client_url
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
-    %strong App URL:
+    %strong Client Logo:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.app_url
+    = @client.logo_url.url
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
-    %strong App URL:
+    %strong Screenshot URL:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.app_url
+    = @client.image_url.url
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
-    %strong Image URL:
+    %strong Screenshot PDF:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.image.url
+    = @client.pdf.url
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Description:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.description
-
-.row.m-10px-bottom
-  .col-md-2.col-sm-2.col-xs-12
-    %strong Languages:
-  .col-md-10.col-sm-10.col-xs-12
-    = @project.languages
+    = @client.description
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Draft:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.draft
+    = @client.draft
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Rank:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.rank
+    = @client.rank
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Date Created:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.created_at
+    = @client.created_at
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Date Last Modified:
   .col-md-10.col-sm-10.col-xs-12
-    = @project.updated_at
+    = @client.updated_at
 
 %br
 %div
   - if admin_is_logged_in
-    = link_to 'Edit', edit_project_path(@project)
+    = link_to 'Edit', edit_client_path(@client)
     |
-    = link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' }
     |
-  = link_to 'Back', projects_path
+  = link_to 'Back', clients_path
