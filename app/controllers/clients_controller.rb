@@ -83,10 +83,10 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(
-      :client_name,
+      :name,
       :client_url,
-      :image_url,
-      :logo_url,
+      :image,
+      :logo,
       :description,
       :pdf,
       :draft,

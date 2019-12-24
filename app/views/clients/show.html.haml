@@ -1,7 +1,7 @@
-- provide(:title, 'Clients: ' + @client.client_name.capitalize)
+- provide(:title, 'Clients: ' + @client.name.capitalize)
 
 %h1
-  = @client.client_name
+  = @client.name
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
@@ -13,7 +13,7 @@
   .col-md-2.col-sm-2.col-xs-12
     %strong Name:
   .col-md-10.col-sm-10.col-xs-12
-    = @client.client_name
+    = @client.name
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
@@ -25,13 +25,13 @@
   .col-md-2.col-sm-2.col-xs-12
     %strong Client Logo:
   .col-md-10.col-sm-10.col-xs-12
-    = @client.logo_url.url
+    = @client.logo.url
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12
     %strong Screenshot URL:
   .col-md-10.col-sm-10.col-xs-12
-    = @client.image_url.url
+    = @client.try(:image).try(:url)
 
 .row.m-10px-bottom
   .col-md-2.col-sm-2.col-xs-12

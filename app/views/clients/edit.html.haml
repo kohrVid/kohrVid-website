@@ -1,7 +1,7 @@
-- provide(:title, 'Update Client: ' + @client.client_name.capitalize)
+- provide(:title, 'Update Client: ' + @client.name.capitalize)
 
 %h1
-  Update #{ @client.client_name }
+  Update #{ @client.name }
 
 = render 'clients/form'
 
