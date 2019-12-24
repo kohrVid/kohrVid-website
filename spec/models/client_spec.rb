@@ -15,13 +15,13 @@ RSpec.describe Client, type: :model do
   context "Name" do
     it "must be present" do
       expect{
-        Client.create(FactoryBot.attributes_for(:client, client_name: ""))
+        Client.create(FactoryBot.attributes_for(:client, name: ""))
       }.to_not change(Client, :count)
     end
 
     it "must produce an error if no name is given" do
-      c = Client.new
-      expect(c.errors[:client_name]).to_not be_nil
+      c = Client.create
+      expect(c.errors[:name]).to_not be_empty
     end
   end
 
@@ -33,16 +33,17 @@ RSpec.describe Client, type: :model do
     end
 
     it "must produce an error if no URL is given" do
-      c = Client.new
-      expect(c.errors[:client_url]).to_not be_nil
+      c = Client.create
+      expect(c.errors[:client_url]).to_not be_empty
     end
   end
 
+  # TODO - Fix issues with PDF uploads
   describe 'scopes' do
-    let(:client1) { FactoryBot.create(:client, draft: true, rank: 2) }
-    let(:client2) { FactoryBot.create(:client, draft: false, rank: 2) }
-    let(:client3) { FactoryBot.create(:client, draft: true, rank: 1) }
-    let(:client4) { FactoryBot.create(:client, draft: false, rank: 1) }
+    let(:client1) { FactoryBot.create(:client, pdf: nil, draft: true, rank: 2) }
+    let(:client2) { FactoryBot.create(:client, pdf: nil, draft: false, rank: 2) }
+    let(:client3) { FactoryBot.create(:client, pdf: nil, draft: true, rank: 1) }
+    let(:client4) { FactoryBot.create(:client, pdf: nil, draft: false, rank: 1) }
 
     before do
       client1
