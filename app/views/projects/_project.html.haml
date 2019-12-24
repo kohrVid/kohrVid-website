@@ -1,0 +1,33 @@
+%li
+  - unless project.try(:image).try(:thumb).try(:url).nil?
+    = link_to image_tag(project.image.thumb.url.to_s),
+      image_path(project.image.url.to_s)
+  %br
+  %div
+    = project.name
+    - unless project.repo_url.blank?
+      %div
+        = link_to "Repo URL", project.repo_url
+        |
+    - unless project.app_url.blank?
+      %div
+        = link_to "App URL", project.app_url
+        |
+      - unless project.image.try(:url).nil?
+        = link_to "Screenshot", image_path(project.image.url.to_s)
+        |
+
+    - unless project.languages.blank?
+      %div
+        = project.languages.gsub(", ", "|")
+  .desc
+    = link_to_if(admin_is_logged_in, "#{project.description}", project)
+    | rank: #{ project.rank }
+  - if admin_is_logged_in
+    %div
+      = link_to 'Show', project
+      |
+      = link_to 'Edit', edit_project_path(project)
+      |
+      = link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
+  %br

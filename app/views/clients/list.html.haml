@@ -8,32 +8,8 @@
 
 %ul.clients
   - @clients.each do |client|
-    %li
-      - unless client.logo_url.nil?
-        = link_to image_tag(client.logo_url.url, width: "100%"), image_path(client.image_url.url)
-      %br
-      %div
-        = client.client_name
-        %div
-          =link_to "Site", client.client_url
-          |
-          - unless client.image_url.blank?
-            =link_to_unless client.image_url.blank?, "Screenshot", image_path(client.image_url.url)
-            |
-          = link_to "PDF", (client.pdf.to_s)
-          |
-      .desc
-        = link_to_if(admin_is_logged_in, "#{client.description}", client)
-        | rank: #{ client.rank }
-      - if admin_is_logged_in
-        %div
-          = link_to 'Show', client
-          |
-          = link_to 'Edit', edit_client_path(client)
-          |
-          = link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
+    = render partial: 'clients/client', locals: { client: client }
 
-      %br
 %br
 - if admin_is_logged_in
   = link_to 'New Client', new_client_path

@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def list
-    @projects = Project.all.order(:id)
+    @projects = Project.all.order(:rank)
   end
 
   def show

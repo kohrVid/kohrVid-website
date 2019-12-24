@@ -1,0 +1,27 @@
+%li
+  - unless client.logo_url.nil?
+    = link_to image_tag(client.try(:logo).url.to_s, width: "100%"),
+      image_path(client.image.url)
+  %br
+  %div
+    = client.name
+    %div
+      =link_to "Site", client.client_url
+      |
+      - unless client.image.url.blank?
+        = link_to_unless client.image.url.blank?, "Screenshot", image_path(client.image.url)
+        |
+      - unless client.try(:pdf).url.nil?
+        = link_to "PDF", (client.try(:pdf).url.to_s)
+        |
+  .desc
+    = link_to_if(admin_is_logged_in, "#{client.description}", client)
+    | rank: #{ client.rank }
+  - if admin_is_logged_in
+    %div
+      = link_to 'Show', client
+      |
+      = link_to 'Edit', edit_client_path(client)
+      |
+      = link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
+  %br

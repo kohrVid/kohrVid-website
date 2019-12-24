@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
   end
 
   def list
-    @clients = Client.all.order(:id)
+    @clients = Client.all.order(:rank)
   end
 
   def show
