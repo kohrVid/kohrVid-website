@@ -42,7 +42,8 @@ class App extends Component {
                 <span className="fake-link" onClick={this.projectsContainerOpen}>Personal Projects</span>
               </li>
               <li className="padded-li">
-              <span className="fake-link" onClick={this.clientsContainerOpen}>Clients</span></li>
+                <span className="fake-link" onClick={this.clientsContainerOpen}>Clients</span>
+              </li>
             </ul>
           </main>
         </div>
