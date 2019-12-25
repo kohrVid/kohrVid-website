@@ -18,7 +18,13 @@ RSpec.describe PostTag, type: :model do
       valid_post_tag
 
       expect {
-        PostTag.create(FactoryBot.attributes_for(:post_tag))
+        PostTag.create(
+          FactoryBot.attributes_for(
+            :post_tag,
+            post: valid_post_tag.post,
+            tag: valid_post_tag.tag
+          )
+        )
       }.to_not change(PostTag, :count)
     end
   end
