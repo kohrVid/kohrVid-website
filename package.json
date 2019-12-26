@@ -1,0 +1,38 @@
+{
+  "name": "kohrvid",
+  "version": "2.1.0",
+  "description": "The kohrVid website",
+  "main": "app/assets/javascripts/application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohrVid/kohrVid-website.git"
+  },
+  "keywords": [
+    "kohrVid",
+    "ruby"
+  ],
+  "author": "Jessica Ete",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kohrVid/kohrVid-website/issues"
+  },
+  "homepage": "https://github.com/kohrVid/kohrVid-website#readme",
+  "dependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@rails/webpacker": "https://github.com/rails/webpacker",
+    "axios": "^0.18.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
+    "marked": ">= 0.3.9",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-modal": "3.8.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
