@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-  config.webpacker.check_yarn_integrity = false
+  config.webpacker.check_yarn_integrity = true
   config.cache_classes = true
 
   config.eager_load = true
@@ -16,7 +16,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  config.assets.compile = true
+  config.assets.compile = false
 
   config.assets.digest = true
 
@@ -66,7 +66,7 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
-  config.i18n.fallbacks = true
+  config.i18n.fallbacks = [I18n.default_locale]
 
   config.active_support.deprecation = :notify
 

@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 
 export const renderTags = (tags) => {
   if (tags !== undefined) {
-   return (
-    <ul className="tags p-l-0">
-      {tags.split(",").map(
-        (tag) => {
-          return(<li>{tag}</li>)
+    return (
+      <ul className="tags p-l-0">
+        {
+          tags.split(",").map(
+            (tag) => {
+              return(<li>{tag}</li>)
+            }
+          )
         }
-      )}
-    </ul>
-   )
+      </ul>
+    )
   }
 };
 
