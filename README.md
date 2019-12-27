@@ -7,6 +7,7 @@ This is the repo for my site.
 * [Prerequisites](#prerequisites)
 * [Set up](#set-up)
 * [Run locally](#run-locally)
+* [Deploy to production](#deploy-to-production)
 
 <!-- vim-markdown-toc -->
 
@@ -36,3 +37,11 @@ To install run:
 To run the app locally run:
 
     rails s
+
+
+## Deploy to production
+
+This is really more of a note to self as I seem to forget this _everytime I
+update this._ The assets can only be compiled locally with a command like this:
+
+    heroku run bundle exec rake assets:precompile RAILS_ENV=$ENV -a $appName
