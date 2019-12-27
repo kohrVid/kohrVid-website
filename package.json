@@ -33,6 +33,7 @@
     "react-modal": "3.8.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
     "@babel/preset-env": "^7.7.1",
     "webpack-dev-server": "^3.10.1"
   }
