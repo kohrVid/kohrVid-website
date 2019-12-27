@@ -30,6 +30,10 @@ To install run:
     rails webpacker:install
     rails webpacker:install:react
 
+Add libraries:
+
+    npm install --save-dev package-name
+    yarn
 
 ## Run locally
 
