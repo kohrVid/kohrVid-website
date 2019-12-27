@@ -29,7 +29,6 @@ To install run:
     bundle install
     rails webpacker:install
     rails webpacker:install:react
-    rails generate react:install
 
 
 ## Run locally

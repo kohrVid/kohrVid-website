@@ -56,3 +56,4 @@ yarn-debug.log*
 /public/packs
 /public/packs-test
 /yarn-error.log
+package-lock.json
