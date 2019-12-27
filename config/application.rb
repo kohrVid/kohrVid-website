@@ -13,6 +13,7 @@ module KohrVid
     config.assets.enabled = true
     config.assets.initialized_on_precompile = true
     #config.assets.paths << Rails.root.join('node_modules')
+    #config.load_defaults "6.0"
     config.middleware.insert_before ActionDispatch::Cookies, Rack::SslEnforcer,
       only_environments: 'production'
     config.middleware.use Rack::Attack

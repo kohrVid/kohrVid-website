@@ -1,9 +1,9 @@
 = form_for(@client, html: { multipart: true }, remote: true) do |f|
   %fieldset.row.field.m-10px-bottom
     .col-md-2.col-sm-2.col-xs-12
-      = f.label :client_name, t('clients.form.name'), id: 'name'
+      = f.label :name, t('clients.form.name'), id: 'name'
     .col-md-10.col-sm-10.col-xs-12
-      = f.text_field :client_name, tabindex: 1, 'aria-labelledby': 'name',
+      = f.text_field :name, tabindex: 1, 'aria-labelledby': 'name',
         class: 'width-100p glowing-border'
 
   %fieldset.row.field.m-10px-bottom
@@ -15,16 +15,16 @@
 
   %fieldset.row.field.m-10px-bottom
     .col-md-2.col-sm-2.col-xs-12
-      = f.label :logo_url, t('clients.form.logo_url'), id: 'logo_url'
+      = f.label :logo, t('clients.form.logo'), id: 'logo'
     .col-md-10.col-sm-10.col-xs-12
-      = f.text_field :logo_url, tabindex: 3, 'aria-labelledby': 'logo_url',
+      = f.file_field :logo, tabindex: 3, accept: 'image/jpeg,image/gif,image/png', 'aria-labelledby': 'logo',
         class: 'width-100p glowing-border'
 
   %fieldset.row.field.m-10px-bottom
     .col-md-2.col-sm-2.col-xs-12
-      = f.label :image_url, t('clients.form.image_url'), id: 'image_url'
+      = f.label :image, t('clients.form.image'), id: 'image'
     .col-md-10.col-sm-10.col-xs-12
-      = f.file_field :image_url, tabindex: 4, accept: 'image/jpeg,image/gif,image/png', 'aria-labelledby': 'image',
+      = f.file_field :image, tabindex: 4, accept: 'image/jpeg,image/gif,image/png', 'aria-labelledby': 'image',
         class: 'width-100p glowing-border'
 
   %fieldset.row.field.m-10px-bottom

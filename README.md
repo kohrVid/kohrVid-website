@@ -1,3 +1,47 @@
 # kohrVid.com
 
-April 2017: I'm in the process of writing version 2 of the [kohrVid site](https://www.kohrVid.com). This is still a work in progress so stay tuned!
+This is the repo for my site.
+
+<!-- vim-markdown-toc GFM -->
+
+* [Prerequisites](#prerequisites)
+* [Set up](#set-up)
+* [Run locally](#run-locally)
+* [Deploy to production](#deploy-to-production)
+
+<!-- vim-markdown-toc -->
+
+## Prerequisites
+
+* Ruby v2.6+
+* Node v12+
+* Postgres v9.6+
+
+
+## Set up
+
+To install run:
+
+    rails db:create
+    rails db:migrate
+    gem install bundler
+    yarn install --check-files
+    bundle install
+    rails webpacker:install
+    rails webpacker:install:react
+    rails generate react:install
+
+
+## Run locally
+
+To run the app locally run:
+
+    rails s
+
+
+## Deploy to production
+
+This is really more of a note to self as I seem to forget this _everytime I
+update this._ The assets can only be compiled locally with a command like this:
+
+    heroku run bundle exec rake assets:precompile RAILS_ENV=$ENV -a $appName

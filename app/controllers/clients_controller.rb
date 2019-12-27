@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
   end
 
   def list
-    @clients = Client.all.order(:id)
+    @clients = Client.all.order(:rank)
   end
 
   def show
@@ -83,10 +83,10 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(
-      :client_name,
+      :name,
       :client_url,
-      :image_url,
-      :logo_url,
+      :image,
+      :logo,
       :description,
       :pdf,
       :draft,

@@ -1,20 +1,20 @@
 FactoryBot.define do
   factory :client do
-    client_name { "Stranger'sCandy" }
+    name { "Stranger'sCandy" }
     client_url { "www.takesyouwhereyouwannabe.dep" }
 
-    logo_url {
+    logo {
       Rack::Test::UploadedFile.new(
         File.join(
-          Rails.root, "spec", "public", "uploads", "client", "logo_url", "logo_image.jpg"
+          Rails.root, "spec", "public", "uploads", "client", "logo", "logo_image.png"
         )
       )
     }
 
-    image_url {
+    image {
       Rack::Test::UploadedFile.new(
         File.join(
-          Rails.root, "spec", "public", "uploads", "client", "image_url", "bg_image.jpg"
+          Rails.root, "spec", "public", "uploads", "client", "image", "bg_image.png"
         )
       )
     }

@@ -19,6 +19,10 @@ export const handleString = (str) => {
 
 export const renderLink = (link, url) => {
   if (handleString(url) !== "") {
-   return <strong><a href={handleString(url)}>{link}</a></strong>
+    return(
+      <strong>
+        <a href={handleString(url)}>{link}</a>
+      </strong>
+    )
   }
 }

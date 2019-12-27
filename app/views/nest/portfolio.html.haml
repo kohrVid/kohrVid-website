@@ -1,2 +1,20 @@
 = javascript_pack_tag 'index'
 #root
+
+<!--[if !IE]> -->
+%noscript
+  %div
+    %h1 Portfolio
+  %p
+    I've split up my portfolio into "Personal Projects" and "Clients" just
+    for clarity. However, I'm not currently contracting so the client list
+    is quite low.
+
+  %row
+    .col-lg-8.col-md-9.col-sm-8.col-xs-12
+      %ul.diamond-list
+        %li.padded-li
+          = link_to "Personal Projects", "/projects"
+        %li.padded-li
+          = link_to "Clients", "/clients"
+<!-- <![endif]-->

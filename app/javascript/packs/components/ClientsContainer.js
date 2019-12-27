@@ -31,10 +31,10 @@ class ClientsContainer extends Component {
   openModal = (client) => {
     this.setState({
       modalIsOpen: true,
-      name: client.client_name,
+      name: client.name,
       url: client.client_url,
-      logo: client.logo_url.url,
-      screenshot: client.image_url.url,
+      logo: client.logo.url,
+      screenshot: client.image.url,
       description: client.description,
       pdf: client.pdf.url
     });
@@ -62,9 +62,9 @@ class ClientsContainer extends Component {
             (client) => {
               return(
                 <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12 fake-link" key={client.id} onClick={() => this.openModal(client)}>
-                  <img src={client.logo_url.url} />
+                  <img src={client.logo.url} />
                   <div>
-                    {client.client_name}
+                    {client.name}
                   </div>
                   <div className="desc">
                     {truncate(client.description, 50)}
