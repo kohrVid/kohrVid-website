@@ -256,9 +256,6 @@ GEM
     multi_test (0.1.2)
     multipart-post (2.1.1)
     nenv (0.3.0)
-    ngannotate-rails (1.2.2)
-      execjs
-      rails (>= 3.1)
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
@@ -467,7 +464,6 @@ DEPENDENCIES
   mail_form
   mime-types
   mini_magick
-  ngannotate-rails
   pg (~> 0.18)
   pry-byebug
   puma (~> 3.0)
