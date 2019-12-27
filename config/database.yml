@@ -2,18 +2,19 @@
 
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
+  pool: 5
 
 development:
   <<: *default
   database: kohrVid_development
+
 test: &test
   <<: *default
   database: kohrVid_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: <%= ENV["RDS_DB_NAME"] %>
   username: <%= ENV["RDS_USERNAME"] %>
   password: <%= ENV["RDS_PASSWORD"] %>
