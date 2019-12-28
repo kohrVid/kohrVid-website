@@ -8,11 +8,7 @@ $black: #010101;
 $rouge: #9F0000;
 
 
-@import "normalize.css";
-@import "bootstrap-grid12.css";
 @import "fonts.scss";
-
-
 @import "clients.scss";
 @import "coderay.scss";
 @import "dividers.scss";
@@ -22,3 +18,5 @@ $rouge: #9F0000;
 @import "position.scss";
 @import "posts.scss";
 @import "utils.scss";
+
+@import "normalize.css";
