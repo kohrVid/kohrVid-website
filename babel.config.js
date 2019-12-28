@@ -20,6 +20,7 @@ module.exports = function(api) {
       isTestEnv && [
         require('@babel/preset-env').default,
         {
+          modules: "commonjs",
           targets: {
             node: 'current'
           }
