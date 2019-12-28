@@ -25,15 +25,10 @@ To install run:
     rails db:create
     rails db:migrate
     gem install bundler
-    yarn install --check-files
     bundle install
     rails webpacker:install
     rails webpacker:install:react
 
-Add libraries:
-
-    npm install --save-dev package-name
-    yarn
 
 ## Run locally
 
@@ -45,6 +40,7 @@ To run the app locally run:
 ## Deploy to production
 
 This is really more of a note to self as I seem to forget this _everytime I
-update this._ The assets can only be compiled locally with a command like this:
+update the site._ The assets can only be compiled locally with a command like
+this:
 
     heroku run bundle exec rake assets:precompile RAILS_ENV=$ENV -a $appName

@@ -4,6 +4,7 @@
   "description": "The kohrVid website",
   "main": "app/assets/javascripts/application.js",
   "scripts": {
+    "start": "node babel.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
