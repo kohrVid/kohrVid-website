@@ -40,7 +40,13 @@ To run the app locally run:
 ## Deploy to production
 
 This is really more of a note to self as I seem to forget this _everytime I
-update the site._ The assets can only be compiled locally with a command like
-this:
+update the site._ The assets should compile automatically during deployment. If
+they don't, I could just run:
 
     heroku run bundle exec rake assets:precompile RAILS_ENV=$ENV -a $appName
+
+
+This depends on the following buildpacks:
+
+  * heroku/ruby
+  * heroku/nodejs
