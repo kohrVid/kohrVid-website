@@ -11,7 +11,4 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
-//= require jquery.remotipart
-//= require jquery.iframe-transport
 //= require nest
