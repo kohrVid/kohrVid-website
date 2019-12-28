@@ -60,12 +60,12 @@ class ProjectsContainer extends Component {
           is a sample of what I've worked on in the past:
         </p>
 
-        <ul className="row">
+        <ul className="row projects">
           {this.state.projects.map(
             (project) => {
               if (project.draft === false) {
                 return(
-                  <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={project.id} onClick={() => this.openModal(project)}>
+                  <li className="col-lg-3 col-md-4 col-sm-6 col-xs-10 col-xs-push-1 fake-link" key={project.id} onClick={() => this.openModal(project)}>
                     <img src={project.image.thumb.url} />
                     <div>
                       {project.name}

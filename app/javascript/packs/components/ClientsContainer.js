@@ -57,11 +57,11 @@ class ClientsContainer extends Component {
           The following is a list of clients that I have worked with in the past:
         </p>
 
-        <ul className="row">
+        <ul className="row clients">
           {this.state.clients.map(
             (client) => {
               return(
-                <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12 fake-link" key={client.id} onClick={() => this.openModal(client)}>
+                <li className="col-lg-3 col-md-4 col-sm-6 col-xs-10 col-xs-push-1 fake-link" key={client.id} onClick={() => this.openModal(client)}>
                   <img src={client.logo.url} />
                   <div>
                     {client.name}
