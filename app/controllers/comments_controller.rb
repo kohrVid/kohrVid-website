@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :find_post
   before_action :correct_user, only: [:edit, :update]
-  
+
   def index
     @comments = Comment.hash_tree
   end
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     user_id = current_user.id unless !user_signed_in?
     post_id = @post.id
     @comment.update_attributes(user_id: user_id, post_id: post_id)
-    if @comment.save
+    if verify_recaptcha(model: @comment) && @comment.save
       flash[:success] =  "Your comment was added successfully!"
       Notification.new_comment_admin_notification(@comment).deliver
       redirect_to @post
@@ -35,7 +35,8 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update_attributes(comment_params)
+    if verify_recaptcha(model: @comment) &&
+        @comment.update_attributes(comment_params)
       flash[:success] =  "Your comment was updated successfully!"
       redirect_to post_path(@post)
     else
@@ -60,7 +61,7 @@ class CommentsController < ApplicationController
   def find_post
     @post = Post.friendly.find(params[:post_id])
   end
-  
+
   def correct_user
     @comment = Comment.find(params[:id])
     unless current_user.id == @comment.user_id
