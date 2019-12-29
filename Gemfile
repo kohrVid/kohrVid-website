@@ -25,6 +25,7 @@ gem 'rack-attack', '~> 6.2.2'
 gem 'rack-ssl-enforcer'
 gem 'rails', '~> 6.0.2.1'
 gem 'railties'
+gem 'recaptcha'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
 gem 'redcarpet'
 gem 'sass-rails', '6.0.0'
