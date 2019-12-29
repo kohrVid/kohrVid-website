@@ -14,7 +14,7 @@
     &nbsp;links to the apps that I've deployed to Heroku). The following is a
     sample of what I've worked on in the past:
 
-  %ul.projects
+  %ul.row.projects.no-bullet
     - @projects.each do |project|
       = render partial: 'projects/project', locals: { project: project }
 - else

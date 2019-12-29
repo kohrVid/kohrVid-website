@@ -11,7 +11,7 @@
   %p
     The following is a list of clients that I have worked with in the past:
 
-  %ul.clients
+  %ul.row.clients.no-bullet
     - @clients.each do |client|
       = render partial: 'clients/client', locals: { client: client }
 - else

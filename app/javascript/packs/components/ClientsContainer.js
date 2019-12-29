@@ -61,25 +61,23 @@ class ClientsContainer extends Component {
           The following is a list of clients that I have worked with in the past:
         </p>
 
-        <div className="row">
-          <ul className="clients">
-            {this.state.clients.map(
-              (client) => {
-                return(
-                  <li className="col-lg-3 col-md-4 col-sm-6 col-xs-10 fake-link" key={client.id} onClick={() => this.openModal(client)}>
-                    <img src={client.logo.url} />
-                    <div>
-                      {client.name}
-                    </div>
-                    <div className="desc">
-                      {truncate(client.description, 50)}
-                    </div>
-                  </li>
-                )
-              }
-            )}
-          </ul>
-        </div>
+        <ul className="row clients no-bullet">
+          {this.state.clients.map(
+            (client) => {
+              return(
+                <li className="col-lg-3 col-md-4 col-sm-6 col-xs-10 fake-link" key={client.id} onClick={() => this.openModal(client)}>
+                  <img src={client.logo.url} />
+                  <div>
+                    {client.name}
+                  </div>
+                  <div className="desc">
+                    {truncate(client.description, 50)}
+                  </div>
+                </li>
+              )
+            }
+          )}
+        </ul>
 
         <Modal
           appElement={document.getElementById('Clients')}

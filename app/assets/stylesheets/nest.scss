@@ -7,7 +7,7 @@ $light-grey: #f9f9f9;
 $black: #010101;
 $rouge: #9F0000;
 
-
+// These will be overwritten by custom styles
 @import "normalize";
 @import "bootstrap-grid12";
 
@@ -18,6 +18,8 @@ $rouge: #9F0000;
 @import "form.scss";
 @import "navigation.scss";
 @import "padding.scss";
-@import "position.scss";
 @import "posts.scss";
 @import "utils.scss";
+
+// This should override all other styles
+@import "position.scss";
