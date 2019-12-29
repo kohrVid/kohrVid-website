@@ -27,7 +27,7 @@ gem 'rails', '~> 6.0.2.1'
 gem 'railties'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
 gem 'redcarpet'
-gem 'sass-rails'
+gem 'sass-rails', '6.0.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier'
 gem 'webpacker', '~> 4.x'
