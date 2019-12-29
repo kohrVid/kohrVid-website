@@ -11,6 +11,7 @@
 /log/**
 !/log/.keep
 /tmp/**
+/tmp/**/*
 /public/uploads/*
 coverage
 
@@ -51,11 +52,5 @@ rerun.txt
 /public/packs-test
 
 /node_modules
-yarn-debug.log*
-.yarn-integrity
 /public/packs
 /public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity

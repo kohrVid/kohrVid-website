@@ -6,7 +6,15 @@ class ProjectsController < ApplicationController
     @projects = Project.published
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @projects }
+
+      format.json {
+        render json: {
+          projects: @projects,
+          _404_image_url: ActionController::Base.helpers.asset_path(
+            "roof_bird.jpg"
+          )
+        }
+      }
     end
   end
 

@@ -9,6 +9,7 @@ class ProjectsContainer extends Component {
     super(props);
     this.state = {
       projects: [],
+      _404ImageUrl: "",
       modalIsOpen: false
     };
   }
@@ -16,7 +17,11 @@ class ProjectsContainer extends Component {
   componentDidMount() {
     axios.get('/projects.json')
       .then(response => {
-        this.setState({projects: response.data})
+        console.log(response.data)
+        this.setState({
+          projects: response.data.projects,
+          _404ImageUrl: response.data._404_image_url
+        })
       })
       .catch(error => console.log(error))
   }
@@ -60,12 +65,12 @@ class ProjectsContainer extends Component {
           is a sample of what I've worked on in the past:
         </p>
 
-        <ul className="row">
+        <ul className="row projects no-bullet">
           {this.state.projects.map(
             (project) => {
               if (project.draft === false) {
                 return(
-                  <li className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={project.id} onClick={() => this.openModal(project)}>
+                  <li className="col-lg-3 col-md-4 col-sm-6 col-xs-10 fake-link" key={project.id} onClick={() => this.openModal(project)}>
                     <img src={project.image.thumb.url} />
                     <div>
                       {project.name}
@@ -112,7 +117,15 @@ class ProjectsContainer extends Component {
         <h1>
           Projects
         </h1>
-        {handleEmptyState(this.state.projects, "projects", this.projectsView())}
+
+        {
+          handleEmptyState(
+            this.state.projects,
+            "projects",
+            this.projectsView(),
+            this.state._404ImageUrl
+          )
+        }
       </div>
     );
   }

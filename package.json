@@ -4,6 +4,7 @@
   "description": "The kohrVid website",
   "main": "app/assets/javascripts/application.js",
   "scripts": {
+    "start": "node babel.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,18 +22,20 @@
   },
   "homepage": "https://github.com/kohrVid/kohrVid-website#readme",
   "dependencies": {
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.7.4",
     "@rails/webpacker": "https://github.com/rails/webpacker",
-    "axios": "^0.18.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
-    "marked": ">= 0.3.9",
+    "axios": "0.18.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "core-js": "2",
+    "marked": "0.8.0",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-modal": "3.8.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "@babel/preset-env": "^7.7.1",
+    "webpack-dev-server": "^3.10.1"
   }
 }

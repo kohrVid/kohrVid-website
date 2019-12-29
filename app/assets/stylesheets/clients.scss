@@ -1,19 +1,9 @@
-.clients {
-  overflow: hidden;
-  margin: auto;
-  display: block;
-  width: 100%;
-  padding: 0;
+.clients, .projects {
   li {
-    float: left;
-    position: relative;
-    padding:0 5%;
-    margin: 0;
-    list-style-type: none;
     word-wrap: break-word;
-  }
-  li:before {
-    content: "" !important;
+    img {
+      width: 100%;
+    }
   }
 }
 

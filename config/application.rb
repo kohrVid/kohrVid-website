@@ -1,9 +1,24 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
-require 'rails/all'
-require "action_mailer/railtie"
+require 'rails'
+# Pick the frameworks you want:
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'active_record/railtie'
+require 'active_storage/engine'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_mailbox/engine'
+require 'action_text/engine'
+require 'action_view/railtie'
+require 'action_cable/engine'
+require 'sprockets/railtie'
+require 'rack/ssl-enforcer'
+# require "rails/test_unit/railtie"
 
-Bundler.require(*Rails.groups)
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups) if defined?(Bundler)
 
 module KohrVid
   class Application < Rails::Application
@@ -13,7 +28,8 @@ module KohrVid
     config.assets.enabled = true
     config.assets.initialized_on_precompile = true
     #config.assets.paths << Rails.root.join('node_modules')
-    #config.load_defaults "6.0"
+    config.generators.system_tests = nil
+    config.load_defaults 6.0
     config.middleware.insert_before ActionDispatch::Cookies, Rack::SslEnforcer,
       only_environments: 'production'
     config.middleware.use Rack::Attack

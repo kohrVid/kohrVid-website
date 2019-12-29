@@ -7,15 +7,19 @@
   .col-lg-3.col-lg-offset-9.col-md-3.col-md-offset-9.col-sm-3.col-sm-offset-9.col-xs-4.col-xs-offset-8.right-align
     = link_to "Back to Portfolio", "/portfolio"
 
-%p
-  Many of the personal projects I've worked on can be found on my
-  #{ link_to "GitHub", "https://github.com/kohrVid" } page (which also contains
-  &nbsp;links to the apps that I've deployed to Heroku). The following is a sample of
-  what I've worked on in the past:
+- if @projects.any?
+  %p
+    Many of the personal projects I've worked on can be found on my
+    #{ link_to "GitHub", "https://github.com/kohrVid" } page (which also contains
+    &nbsp;links to the apps that I've deployed to Heroku). The following is a
+    sample of what I've worked on in the past:
 
-%ul.projects
-  - @projects.each do |project|
-    = render partial: 'projects/project', locals: { project: project }
+  %ul.row.projects.no-bullet
+    - @projects.each do |project|
+      = render partial: 'projects/project', locals: { project: project }
+- else
+  = render partial: 'nest/portfolio_not_found',
+    locals: { portfolio_resource: "projects" }
 
 %br
 - if admin_is_logged_in

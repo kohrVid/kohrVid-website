@@ -16,7 +16,6 @@ gem 'friendly_id', '~> 5.2.4', require: 'friendly_id'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'mail_form'
 gem 'mime-types'
 gem 'mini_magick'
@@ -28,7 +27,7 @@ gem 'rails', '~> 6.0.2.1'
 gem 'railties'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
 gem 'redcarpet'
-gem 'sass-rails'
+gem 'sass-rails', '6.0.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier'
 gem 'webpacker', '~> 4.x'
@@ -65,7 +64,5 @@ end
 group :production do
   gem 'dotenv'
   gem 'heroku-deflater'
-  gem 'ngannotate-rails'
-  gem 'rails_12factor'
 end
 

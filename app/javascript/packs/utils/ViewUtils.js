@@ -27,15 +27,15 @@ export const takeMeBack = () => {
   )
 }
 
-export const handleEmptyState = (resource, resourceName, view) => {
+export const handleEmptyState = (resource, resourceName, view, _404ImageUrl) => {
   if (resource.length > 0) {
     return view
   } else {
-    return emptyState(resourceName)
+    return emptyState(resourceName, _404ImageUrl)
   }
 }
 
-const emptyState = (resourceName) => {
+const emptyState = (resourceName, imageUrl) => {
     return (
       <div>
         <p>
@@ -45,7 +45,7 @@ const emptyState = (resourceName) => {
           Here's a corvid I saw on a roof garden!
         </p>
         <center>
-          <img src="/assets/roof_bird.jpg" />
+          <img src={imageUrl} />
         </center>
       </div>
     )
