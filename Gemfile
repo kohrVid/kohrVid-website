@@ -64,6 +64,5 @@ end
 group :production do
   gem 'dotenv'
   gem 'heroku-deflater'
-  gem 'rails_12factor'
 end
 
