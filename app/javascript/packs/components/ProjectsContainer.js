@@ -9,6 +9,7 @@ class ProjectsContainer extends Component {
     super(props);
     this.state = {
       projects: [],
+      _404ImageUrl: "",
       modalIsOpen: false
     };
   }
@@ -16,7 +17,11 @@ class ProjectsContainer extends Component {
   componentDidMount() {
     axios.get('/projects.json')
       .then(response => {
-        this.setState({projects: response.data})
+        console.log(response.data)
+        this.setState({
+          projects: response.data.projects,
+          _404ImageUrl: response.data._404_image_url
+        })
       })
       .catch(error => console.log(error))
   }
@@ -114,7 +119,15 @@ class ProjectsContainer extends Component {
         <h1>
           Projects
         </h1>
-        {handleEmptyState(this.state.projects, "projects", this.projectsView())}
+
+        {
+          handleEmptyState(
+            this.state.projects,
+            "projects",
+            this.projectsView(),
+            this.state._404ImageUrl
+          )
+        }
       </div>
     );
   }

@@ -6,7 +6,15 @@ class ClientsController < ApplicationController
     @clients = Client.published
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @clients }
+
+      format.json {
+        render json: {
+          clients: @clients,
+          _404_image_url: ActionController::Base.helpers.asset_path(
+            "roof_bird.jpg"
+          )
+        }
+      }
     end
   end
 

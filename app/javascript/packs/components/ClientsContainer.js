@@ -10,6 +10,7 @@ class ClientsContainer extends Component {
     super(props);
     this.state = {
       clients: [],
+      _404ImageUrl: "",
       modalIsOpen: false
     };
   }
@@ -17,7 +18,10 @@ class ClientsContainer extends Component {
   componentDidMount() {
     axios.get('/clients.json')
       .then(response => {
-        this.setState({clients: response.data})
+        this.setState({
+          clients: response.data.clients,
+          _404ImageUrl: response.data._404_image_url
+        })
       })
       .catch(error => console.log(error))
   }
@@ -108,7 +112,15 @@ class ClientsContainer extends Component {
         <h1>
           Clients
         </h1>
-        {handleEmptyState(this.state.clients, "clients", this.clientsView())}
+
+        {
+          handleEmptyState(
+            this.state.clients,
+            "clients",
+            this.clientsView(),
+            this.state._404ImageUrl
+          )
+        }
       </div>
     );
   }
