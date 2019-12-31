@@ -84,10 +84,14 @@ small {
   @include main-font();
 }
 
-.smaller_text {
+.smaller-text {
   font-size: 0.8rem;
 }
 
 .riesling {
   @include header-font();
+}
+
+.main-font {
+  @include main-font();
 }

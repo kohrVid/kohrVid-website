@@ -1,6 +1,6 @@
 .comment
   %a{ id: comment.id }
-  %p.smaller_text
+  %p.smaller-text
     Posted by 
     <strong>#{ link_to_if(!comment.user_id.nil?, comment.author, { controller: "users", action: "show", id: comment.user_id }) }</strong> on&nbsp;
     = comment.created_at.strftime("%e#{comment.created_at.day.ordinal} %B %Y at %H:%M:%S")

@@ -2,7 +2,7 @@
   %h2.blog-index-titles
     = link_to post.title, post
     &nbsp;
-    %small.smaller_text
+    %small.smaller-text
       %em
         (#{ pluralize(post.comments.count, "comment") })
   = markdown(post.body).truncate(560).html_safe
