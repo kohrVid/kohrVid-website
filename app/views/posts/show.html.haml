@@ -1,14 +1,14 @@
 - provide(:title, @post.title)
 = render partial: "layouts/blog_login_logout"
 
-%article
-  %h1
+%article.blog-post
+  %h1.blog-title
     = @post.title
   %p
     %em
       = @post.published_at.strftime("Published %e#{@post.published_at.day.ordinal} %B %Y at %H:%M") if @post.published_at.present?
     %br
-    %em.smaller_text
+    %em.smaller-text
       = @post.updated_at.strftime("(Last Updated %e#{@post.updated_at.day.ordinal} %B %Y at %H:%M)") if @post.published_at.present? && (@post.published_at.to_date != @post.updated_at.to_date)
 
   - unless !@post.draft?

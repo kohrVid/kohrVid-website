@@ -57,11 +57,11 @@ main {
     right: 10px;
     text-align: right;
   }
-  .notice, .success, .alert {
+  .notice, .success {
     padding: 7px;
     background-color: $lilac;
   }
-  .error, .danger {
+  .error, .danger, .alert {
     padding: 7px;
     background-color: rgba($rouge, 0.6);
     .close {
