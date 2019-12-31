@@ -13,8 +13,8 @@ module DeviseHelper
 
     html = <<-HTML
     <div id="error_explanation" class = "alerts">
-      <div class = "error">
-        <a href = "#" class = "close">&times;</a>
+      <div class="error">
+        <a href = "#" class="close">&times;</a>
         <h4>#{ sentence }</h4>
         <ul>#{ messages }</ul>
       </div>
