@@ -29,11 +29,12 @@
 }
 
 @mixin main-font() {
-  font-family: Open Sans, Arial, Helvetica, sans-serif;
+  font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: $black;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h5, h6 {
+  @include header-font();
   font-weight: bold;
 }
 
@@ -43,35 +44,10 @@ h1 {
   line-height: 1.8rem
 }
 
-h2, h3, h5, h6 {
-  @include main-font();
-}
-
 h2, h3 {
   font-size: 3.1rem;
   line-height: 1.8rem;
   margin: 0;
-}
-
-article h2, h3 {
-  font-size: 2.6rem;
-  line-height: 2.1rem;
-  margin: 0;
-}
-
-.blog-index-titles {
-  font-size: 2.1rem;
-  a:hover {
-    font-size: 2.3rem !important;
-  }
-}
-
-.blog-title {
-  line-height: 2.8rem !important;
-}
-
-main {
-  font-size: 1rem;
 }
 
 a:link, a:visited, a:hover, a:active, .fake-link {
@@ -80,6 +56,33 @@ a:link, a:visited, a:hover, a:active, .fake-link {
   &:hover {
     font-size: 1.1rem;
   }
+}
+
+.blog-post {
+  h1, h2, h3, h4, h5, h6, p {
+    @include main-font();
+  }
+
+  .blog-title {
+    line-height: 2.8rem;
+  }
+
+  h2, h3 {
+    font-size: 2.6rem;
+    line-height: 2.1rem;
+    margin: 0;
+  }
+}
+
+.blog-index-titles {
+  font-size: 2.1rem;
+  a:hover {
+    font-size: 2.3rem;
+  }
+}
+
+main {
+  font-size: 1rem;
 }
 
 em {

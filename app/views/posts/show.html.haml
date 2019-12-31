@@ -1,8 +1,8 @@
 - provide(:title, @post.title)
 = render partial: "layouts/blog_login_logout"
 
-%article
-  %h1.blog-title.main-font
+%article.blog-post
+  %h1.blog-title
     = @post.title
   %p
     %em
