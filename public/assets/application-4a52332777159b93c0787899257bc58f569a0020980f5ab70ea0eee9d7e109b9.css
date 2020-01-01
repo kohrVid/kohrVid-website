@@ -2973,7 +2973,7 @@ article {
   content: "\2666 \0020";
   left: -10px;
   position: relative;
-  color: #010101;
+  color: #010101 !important;
 }
 
 /* line 26, app/assets/stylesheets/utils.scss */
@@ -3044,8 +3044,15 @@ article {
   right: 0;
 }
 
+/* line 15, app/assets/stylesheets/position.scss */
+.centre {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 @media screen and (max-width: 767px) {
-  /* line 16, app/assets/stylesheets/position.scss */
+  /* line 22, app/assets/stylesheets/position.scss */
   .small-centre {
     display: block;
     margin-left: auto;

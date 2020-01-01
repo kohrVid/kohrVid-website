@@ -9,12 +9,19 @@ $(window).resize ->
 $(window).scroll ->
   navigation()
 
+window.addEventListener('orientationchange', (() ->
+  navigation()
+).bind(this))
+
 navigation = () ->
   menu = $('#hide-on-scroll')
   navbar = $('#navbar')
+  logoText = $('#logo a')
+
   if window.innerWidth < 768
     if $(this).scrollTop().valueOf() >= navbar.height()
       navbar.removeClass("position-relative")
+      logoText.addClass("centre")
       navbar.addClass("position-fixed")
       menu.addClass("hidden")
     else if $(this).scrollTop().valueOf() <= 3
