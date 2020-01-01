@@ -1,0 +1,79 @@
+.clients, .projects {
+  li {
+    word-wrap: break-word;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.modal {
+  background-color: $lilac;
+  color: $light-grey;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding: 1rem 2rem;
+  display: block;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+  overflow-y: scroll;
+  overflow: auto;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    word-wrap: break-word;
+    img {
+      width: 50%;
+    }
+  }
+
+  a:link, a:visited, a:hover, a:active {
+    color: $light-grey !important;
+  }
+
+  img {
+    display: block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  .description {
+    @include main-font();
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 20px;
+    text-align: left;
+    color: $light-grey;
+  }
+
+  .close-button {
+    padding: 1px 2px;
+    width: 1.8rem;
+    border-radius: 100%;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.ReactModal__Body--open {
+  z-index: 10000000;
+
+  #navbar {
+    z-index: 0 !important;
+  }
+}

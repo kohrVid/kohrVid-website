@@ -24,16 +24,17 @@ Rails.application.configure do
   }
 
 
-  config.active_support.deprecation = :notify
-
   config.active_record.dump_schema_after_migration = false
 
-  config.assets.js_compressor = :uglifier
+  config.active_support.deprecation = :notify
+
   # config.assets.css_compressor = :sass
 
   config.assets.compile = false
 
   config.assets.digest = true
+
+  config.assets.js_compressor = :uglifier
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -48,15 +49,20 @@ Rails.application.configure do
 
   config.i18n.fallbacks = [I18n.default_locale]
 
-  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-
   config.log_formatter = ::Logger::Formatter.new
 
   config.log_level = :debug
 
   # config.log_tags = [ :subdomain, :uuid ]
 
-  config.public_file_server.enabled = true
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=31536000' }
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
+
   config.serve_static_files = true
 
 =begin

@@ -18,7 +18,7 @@ coverage
 # Rails generated files
 /db/structure.sql
 /db/schema.rb
-/public/assets
+#/public/assets
 *.rbc
 capybara-*.html
 .rspec
@@ -48,9 +48,7 @@ rerun.txt
 
 # Ignore cucumber rubbish
 .cucumber.rerun
-/public/packs
-/public/packs-test
 
 /node_modules
-/public/packs
+#/public/packs
 /public/packs-test

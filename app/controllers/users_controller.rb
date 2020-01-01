@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   prepend_before_action :require_no_authentication, only: [:cancel ]
   before_action :redirect_to_login, except: [:new, :create]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_is_logged_in, only: :destroy
 
@@ -9,9 +10,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
-  
+
   def new
     @user = User.new
   end
@@ -28,11 +28,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated."
       redirect_to @user
@@ -42,7 +40,7 @@ class UsersController < ApplicationController
     end
   end
 
-  
+
   def admin_new
     @user = User.new
   end
@@ -59,13 +57,17 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = "User deleted."
     redirect_to users_url
   end
 
 
   private
+
+  def find_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(
@@ -78,6 +80,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
+    find_user
     unless current_user.admin? || current_user?(@user)
       flash[:error] = "Sorry, you do not have access to that part of the site."
       redirect_to root_url

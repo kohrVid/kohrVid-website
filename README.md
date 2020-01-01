@@ -44,6 +44,7 @@ update the site._ The assets should compile automatically during deployment. If
 they don't, I could just run:
 
     heroku run bundle exec rake assets:precompile RAILS_ENV=$ENV -a $appName
+    heroku run bundle exec rake webpacker:compile RAILS_ENV=$ENV -a $appName
 
 
 This depends on the following buildpacks:
