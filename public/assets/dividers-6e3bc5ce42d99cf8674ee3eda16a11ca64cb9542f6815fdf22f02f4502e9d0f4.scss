@@ -1,0 +1,92 @@
+body {
+  background-color: $black;
+  height: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  a {
+    &:link, &:visited, &:hover, &:active {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+#wrapper {
+  margin: 0 auto -54px;
+}
+
+noscript {
+  color: $rouge;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  background-color: $light-grey;
+  padding-right: 8%;
+  padding-bottom: 0px;
+  min-height: 100vh;
+  height: auto !important;
+  height: 100%;
+}
+
+.alerts {
+  position: relative;
+  @include main-font();
+  color: $light-grey;
+  .close {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    text-align: right;
+  }
+  .notice, .success {
+    padding: 7px;
+    background-color: $lilac;
+  }
+  .error, .danger, .alert {
+    padding: 7px;
+    background-color: rgba($rouge, 0.6);
+    .close {
+      color: $rouge !important;
+    }
+    ul li:before {
+      content: none !important;
+    }
+  }
+}
+
+.actions {
+  margin: 16px 0;
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    padding-right: 8% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    padding-right: 0;
+    padding-bottom: 12rem;
+    margin: 0 auto -54px;
+  }
+}
