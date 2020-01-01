@@ -11023,13 +11023,19 @@ return jQuery;
     return navigation();
   });
 
+  window.addEventListener('orientationchange', (function() {
+    return navigation();
+  }).bind(this));
+
   navigation = function() {
-    var menu, navbar;
+    var logoText, menu, navbar;
     menu = $('#hide-on-scroll');
     navbar = $('#navbar');
+    logoText = $('#logo a');
     if (window.innerWidth < 768) {
       if ($(this).scrollTop().valueOf() >= navbar.height()) {
         navbar.removeClass("position-relative");
+        logoText.addClass("centre");
         navbar.addClass("position-fixed");
         return menu.addClass("hidden");
       } else if ($(this).scrollTop().valueOf() <= 3) {
