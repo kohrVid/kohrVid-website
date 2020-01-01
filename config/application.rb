@@ -33,6 +33,7 @@ module KohrVid
       only_environments: 'production'
     config.middleware.use Rack::Attack
     config.middleware.use Rack::Deflater
+    config.public_file_server.enabled = true
     config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=31536000' }
     config.time_zone = 'London'
   end
