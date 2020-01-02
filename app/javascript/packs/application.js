@@ -11,3 +11,6 @@
 //= require react_ujs
 //= require components
 //= require index
+
+require("trix")
+require("@rails/actiontext")

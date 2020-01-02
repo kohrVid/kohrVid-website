@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $lilac: #6767D7;
-$light-grey: #f9f9f9;
+$light-grey: #F9F9F9;
+$grey: #D7D7D7;
 $black: #010101;
 $rouge: #9F0000;
 
@@ -23,3 +24,4 @@ $rouge: #9F0000;
 
 // This should override all other styles
 @import "position.scss";
+@import "actiontext.scss";
