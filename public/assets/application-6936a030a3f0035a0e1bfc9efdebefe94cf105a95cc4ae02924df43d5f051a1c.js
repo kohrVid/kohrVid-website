@@ -11035,7 +11035,7 @@ return jQuery;
     if (window.innerWidth < 768) {
       if ($(this).scrollTop().valueOf() >= navbar.height()) {
         navbar.removeClass("position-relative");
-        logoText.addClass("centre");
+        logoText.addClass("center-block");
         navbar.addClass("position-fixed");
         return menu.addClass("hidden");
       } else if ($(this).scrollTop().valueOf() <= 3) {
