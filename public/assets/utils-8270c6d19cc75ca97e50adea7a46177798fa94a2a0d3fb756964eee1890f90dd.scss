@@ -17,6 +17,7 @@
 .diamond-list {
   li:before {
     content: "\2666 \0020";
+    top: 0.1rem;
     left: -10px;
     position: relative;
     color: $black !important;

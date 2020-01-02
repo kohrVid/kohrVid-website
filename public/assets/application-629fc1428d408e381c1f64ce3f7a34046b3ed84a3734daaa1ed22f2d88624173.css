@@ -2971,56 +2971,57 @@ article {
 /* line 18, app/assets/stylesheets/utils.scss */
 .diamond-list li:before {
   content: "\2666 \0020";
+  top: 0.1rem;
   left: -10px;
   position: relative;
   color: #010101 !important;
 }
 
-/* line 26, app/assets/stylesheets/utils.scss */
+/* line 27, app/assets/stylesheets/utils.scss */
 .padded-li {
   position: relative;
   top: -16px;
   padding: 0 0 0 10px;
 }
 
-/* line 32, app/assets/stylesheets/utils.scss */
+/* line 33, app/assets/stylesheets/utils.scss */
 .no-bullet li:before {
   content: none !important;
 }
 
-/* line 36, app/assets/stylesheets/utils.scss */
+/* line 37, app/assets/stylesheets/utils.scss */
 .no-wrap {
   white-space: nowrap;
 }
 
-/* line 41, app/assets/stylesheets/utils.scss */
+/* line 42, app/assets/stylesheets/utils.scss */
 .inline-list li {
   display: inline;
 }
 
-/* line 47, app/assets/stylesheets/utils.scss */
+/* line 48, app/assets/stylesheets/utils.scss */
 .divider-list li {
   display: inline;
 }
 
-/* line 49, app/assets/stylesheets/utils.scss */
+/* line 50, app/assets/stylesheets/utils.scss */
 .divider-list li:after {
   content: "|";
   margin-left: 3px;
   margin-right: 3px;
 }
 
-/* line 56, app/assets/stylesheets/utils.scss */
+/* line 57, app/assets/stylesheets/utils.scss */
 .divider-list li:last-child:after {
   content: none;
 }
 
-/* line 62, app/assets/stylesheets/utils.scss */
+/* line 63, app/assets/stylesheets/utils.scss */
 .fake-link:hover {
   cursor: pointer;
 }
 
-/* line 67, app/assets/stylesheets/utils.scss */
+/* line 68, app/assets/stylesheets/utils.scss */
 .plain-link:link, .plain-link:visited, .plain-link:hover, .plain-link:active {
   text-decoration: none !important;
   font-style: normal;
