@@ -13,7 +13,7 @@ RSpec.describe Tag, type: :model do
       Tag.create(FactoryBot.attributes_for(:tag))
     }.to change(Tag, :count).by(1)
   end
-  
+
   context "Name" do
     it "must be present" do
       expect{
@@ -25,23 +25,23 @@ RSpec.describe Tag, type: :model do
       t = Tag.new
       expect(t.errors[:name]).to_not be_nil
     end
-    
+
     it "must be no more than 15 characters long" do
       expect{
         Tag.create(FactoryBot.attributes_for(:tag, name: "m"*16))
       }.to_not change(Tag, :count)
     end
-    
+
     it "must be unique" do
       t = FactoryBot.create(:tag)
       expect{
         Tag.create(FactoryBot.attributes_for(:tag))
       }.to_not change(Tag, :count)
-      
+
     end
   end
-  
-  context "Posts" do
+
+  context "posts" do
     it "can have posts" do
       expect(Tag.new).to respond_to(:posts)
     end
@@ -59,8 +59,16 @@ RSpec.describe Tag, type: :model do
         [ "ruby", "scala", "go" ].each do |tag_name|
           expect(
             Tag.where(name: tag_name).to_a
-          ).to_not be_empty 
+          ).to_not be_empty
         end
+      end
+
+      it "should not add a new tag if a tag with the a swapped case already exists" do
+        tag_relationships
+        Tag.add_tag_relationships(object, ["RUBY"])
+
+        expect(Tag.where(name: "ruby").to_a.count).to eq 1
+        expect(Tag.where(name: "RUBY").to_a.count).to eq 0
       end
 
       it "should add new rows in the relevant through table" do
@@ -85,7 +93,7 @@ RSpec.describe Tag, type: :model do
 
       it "should delete any old relationships" do
         tag_id = Tag.where(name: "go").first.id
-    
+
         expect(
           PostTag.where(post_id: object.id, tag_id: tag_id).to_a
         ).to be_empty
@@ -128,18 +136,43 @@ RSpec.describe Tag, type: :model do
     end
 
     context ".clean_tag_names_list" do
-      it "should only return lower case tag names" do
-        ["ruby", "go", "scala"].each do |tag_name|
-          expect(
-            Tag.clean_tag_names_list("RUBY, gO, Scala")
-          ).to include(tag_name)
-        end
+      it "should not return blank tags" do
+        tags = Tag.clean_tag_names_list(" , Ruby,,")
+        expect(tags.count).to eq 1
+        expect(tags).to include("Ruby")
+      end
+    end
+
+    context ".case_insensitive_find_or_create_by" do
+      let(:tag_name) { "Magic" }
+      let(:tag) { FactoryBot.create(:tag, name: tag_name) }
+
+      it "should find tags even with the wrong case" do
+        tag
+
+        expect(
+          Tag.case_insensitive_find_or_create_by(tag_name.swapcase).name
+        ).to eq(tag_name)
       end
 
-      it "should not return blank tags" do
-        tags = Tag.clean_tag_names_list(" , RUBY,,")
-        expect(tags.count).to eq 1
-        expect(tags).to include("ruby")
+      it "should not create a new tag is one with the opposite case exists" do
+        tag
+
+        expect {
+          Tag.case_insensitive_find_or_create_by(tag_name.swapcase)
+        }.to_not change(Tag, :count)
+      end
+
+      it "should create a tag if one doesn't already exist" do
+        expect {
+          Tag.case_insensitive_find_or_create_by(tag_name.swapcase)
+        }.to change(Tag, :count).by 1
+      end
+
+      it "should create the tag with the case in the parameter" do
+        Tag.case_insensitive_find_or_create_by(tag_name.swapcase)
+
+        expect(Tag.first.name).to eq tag_name.swapcase
       end
     end
   end
