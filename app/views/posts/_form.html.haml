@@ -1,3 +1,4 @@
+= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 = form_for @post do |f|
   .general-form.container-fluid
     %fieldset.row
@@ -7,9 +8,9 @@
         = f.text_field :title
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
-        = f.label :body, "Body:"
+        = f.label :body, "Body"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
-        = f.text_area :body, rows: 10
+        = f.rich_text_area :rich_text_body, class: "text_area"
 
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12

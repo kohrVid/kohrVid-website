@@ -15,6 +15,8 @@ class Post < ActiveRecord::Base
   scope :drafts, proc { where(draft: true) }
   scope :published, proc { where(draft: false).order("published_at DESC") }
 
+  has_rich_text :rich_text_body
+
   def slug_candidates
     [
       :title,

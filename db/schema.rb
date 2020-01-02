@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_141801) do
     t.datetime "published_at"
     t.string "slug"
     t.string "tag_list"
+    t.text "rich_text_body"
   end
 
   create_table "projects", force: :cascade do |t|

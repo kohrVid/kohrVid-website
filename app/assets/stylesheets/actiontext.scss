@@ -37,13 +37,13 @@
 
 trix-toolbar {
   white-space: normal;
+  .trix-button-row {
+    flex-wrap: wrap !important;
+  }
 }
 
 .trix-button-group {
-  button {
-    width: unset;
-    font-weight: bold;    
-  }
+  word-wrap: break-word;
 }
 
 trix-editor {
