@@ -8,9 +8,12 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 50 }, uniqueness: true
-  validates :body, presence: true,
-    length: { minimum: 4, maximum: 20000 }, uniqueness: true
+  validates :body, length: { maximum: 20000 }
+  validates :rich_text_body, presence: true,
+    length: { minimum: 14, maximum: 20010 }, uniqueness: true
 #	validates :post_tags, presence: true, associated: true
+
+  #validate :rich_text_body_is_unique
 
   scope :drafts, proc { where(draft: true) }
   scope :published, proc { where(draft: false).order("published_at DESC") }
@@ -43,4 +46,16 @@ class Post < ActiveRecord::Base
   def tag_names
     tags.map(&:name)
   end
+
+=begin
+  def rich_text_body_is_unique
+    current_rich_text_body =
+      ActionText::Content.new(rich_text_body.try(:body).try(:to_html))
+
+    if ActionText::RichText.where(body: current_rich_text_body)
+      .where('id != ?', id).any?
+      errors[:rich_text_body] << "must be unique"
+    end
+  end
+=end
 end
