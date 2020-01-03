@@ -7,6 +7,7 @@
 // We need to override trix.css’s image gallery styles to accommodate the
 // <action-text-attachment> element we wrap around attachments. Otherwise,
 // images in galleries will be squished by the max-width: 33%; rule.
+
 .trix-content {
   width: 100%;
   .attachment-gallery {
@@ -33,6 +34,14 @@
       max-width: 100% !important;
     }
   }
+
+  ul:not(.divider-list) {
+    @extend .diamond-list;
+  }
+
+  pre {
+    @extend .CodeRay;
+  }
 }
 
 trix-toolbar {
@@ -54,5 +63,13 @@ trix-editor {
     width: 100%;
     overflow: scroll;
     resize: both;
+  }
+
+  ul:not(.divider-list) {
+    @extend .diamond-list;
+  }
+
+  pre {
+    @extend .CodeRay;
   }
 }

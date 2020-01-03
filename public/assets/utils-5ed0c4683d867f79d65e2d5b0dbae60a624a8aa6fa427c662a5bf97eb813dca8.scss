@@ -20,7 +20,8 @@
     top: 0.1rem;
     left: -10px;
     position: relative;
-    color: $black !important;
+    color: $black;
+    -webkit-text-fill-color: $black;
   }
 }
 
@@ -53,6 +54,7 @@
       margin-right: 3px;
     }
   }
+
   li:last-child {
     &:after {
       content: none;
