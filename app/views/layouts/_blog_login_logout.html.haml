@@ -8,14 +8,15 @@
         - if (params[:controller] == "posts") && (params[:action] != "new")
           %li
             = link_to "New Post", new_post_path
-          %li
-            - if yield(:title) == "Blog"
+          - if yield(:title) == "Blog"
+            %li
               = link_to "Drafts", drafts_path
-            - if yield(:title) == "Blog | Drafts"
+          - if yield(:title) == "Blog | Drafts"
+            %li
               = link_to "Published Posts", blog_path
         - if (params[:controller] == "tags") && (params[:action] != "new")
           %li
-            = link_to "New Tag", new_tag_path 
+            = link_to "New Tag", new_tag_path
       - unless user_signed_in?
         %li
           = link_to "Log In", login_path
