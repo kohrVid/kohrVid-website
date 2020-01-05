@@ -18,6 +18,7 @@ coverage
 # Rails generated files
 /db/structure.sql
 /db/schema.rb
+
 #/public/assets
 *.rbc
 capybara-*.html
@@ -31,12 +32,10 @@ capybara-*.html
 *.swo
 rerun.txt
 .sass-cache
-
-/db/seed_data/*
-
-#puma & nginx
-/lib/nginx
-/lib/puma
+/node_modules
+#/public/packs
+/public/packs-test
+storage
 
 #puma & nginx
 /lib/nginx
@@ -44,11 +43,9 @@ rerun.txt
 
 # Ignore application configuration
 /config/application.yml
-/node_modules
+
+# Seed data
+/db/seed_data/*
 
 # Ignore cucumber rubbish
 .cucumber.rerun
-
-/node_modules
-#/public/packs
-/public/packs-test

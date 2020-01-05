@@ -107,7 +107,9 @@
 //= require index
 __webpack_require__(/*! trix */ "./node_modules/trix/dist/trix.js");
 
-__webpack_require__(/*! @rails/actiontext */ "./node_modules/@rails/actiontext/app/javascript/actiontext/index.js"); //= require '../trix-editor-overrides'
+__webpack_require__(/*! @rails/actiontext */ "./node_modules/@rails/actiontext/app/javascript/actiontext/index.js");
+
+__webpack_require__(/*! @rails/activestorage */ "./node_modules/@rails/activestorage/app/assets/javascripts/activestorage.js").start(); //= require '../trix-editor-overrides'
 
 /***/ }),
 
@@ -9047,4 +9049,4 @@ module.exports = function (module) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=application-a800a2479d7daa5f0d8b.js.map
+//# sourceMappingURL=application-dddca1e4d7ce38ebb781.js.map

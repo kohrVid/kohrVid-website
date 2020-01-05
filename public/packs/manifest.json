@@ -1,8 +1,8 @@
 {
   "App.js": "/packs/js/App-b49b97e7b34549bf65d7.js",
   "App.js.map": "/packs/js/App-b49b97e7b34549bf65d7.js.map",
-  "application.js": "/packs/js/application-a800a2479d7daa5f0d8b.js",
-  "application.js.map": "/packs/js/application-a800a2479d7daa5f0d8b.js.map",
+  "application.js": "/packs/js/application-dddca1e4d7ce38ebb781.js",
+  "application.js.map": "/packs/js/application-dddca1e4d7ce38ebb781.js.map",
   "components/ClientsContainer.js": "/packs/js/components/ClientsContainer-934fca393ef98f0a4a5c.js",
   "components/ClientsContainer.js.map": "/packs/js/components/ClientsContainer-934fca393ef98f0a4a5c.js.map",
   "components/ProjectsContainer.js": "/packs/js/components/ProjectsContainer-333aa535abd3fff3e4e3.js",
@@ -18,10 +18,10 @@
     },
     "application": {
       "js": [
-        "/packs/js/application-a800a2479d7daa5f0d8b.js"
+        "/packs/js/application-dddca1e4d7ce38ebb781.js"
       ],
       "js.map": [
-        "/packs/js/application-a800a2479d7daa5f0d8b.js.map"
+        "/packs/js/application-dddca1e4d7ce38ebb781.js.map"
       ]
     },
     "components/ClientsContainer": {
