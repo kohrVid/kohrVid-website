@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rspec-html-matchers', '0.7.0'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'rubocop'
+  gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'timecop'
 end
