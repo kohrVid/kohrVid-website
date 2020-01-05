@@ -14,3 +14,5 @@
 
 require("trix")
 require("@rails/actiontext")
+
+//= require '../trix-editor-overrides'
