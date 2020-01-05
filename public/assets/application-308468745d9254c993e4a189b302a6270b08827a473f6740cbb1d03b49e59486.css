@@ -2949,79 +2949,75 @@ article {
   transition: flex-basis 0.3s linear;
 }
 
-/* line 1, app/assets/stylesheets/utils.scss */
+/* line 1, app/assets/stylesheets/utils.scss.haml */
 .display-inline {
   display: inline !important;
 }
 
-/* line 5, app/assets/stylesheets/utils.scss */
+/* line 5, app/assets/stylesheets/utils.scss.haml */
 .display-block {
   display: block;
 }
 
-/* line 9, app/assets/stylesheets/utils.scss */
+/* line 9, app/assets/stylesheets/utils.scss.haml */
 .hidden {
   display: none;
 }
 
-/* line 13, app/assets/stylesheets/utils.scss */
+/* line 13, app/assets/stylesheets/utils.scss.haml */
 .clear {
   clear: both;
 }
 
-/* line 18, app/assets/stylesheets/utils.scss */
-.diamond-list li:before, .trix-content ul:not(.divider-list) li:before, trix-editor ul:not(.divider-list) li:before {
-  content: "\2666 \0020";
-  top: 0.1rem;
-  left: -10px;
-  position: relative;
+/* line 17, app/assets/stylesheets/utils.scss.haml */
+.diamond-list, .trix-content ul:not(.divider-list), trix-editor ul:not(.divider-list) {
+  list-style-image: url(/assets/diamond-bullet-5e2c41944dfc3c8de213483a63df49f2d1770e998eb2af871e43e9cb4aa930a9.png);
 }
 
-/* line 28, app/assets/stylesheets/utils.scss */
+/* line 28, app/assets/stylesheets/utils.scss.haml */
 .padded-li {
   position: relative;
-  top: -16px;
   padding: 0 0 0 10px;
 }
 
-/* line 34, app/assets/stylesheets/utils.scss */
+/* line 33, app/assets/stylesheets/utils.scss.haml */
 .no-bullet li:before {
   content: none !important;
 }
 
-/* line 38, app/assets/stylesheets/utils.scss */
+/* line 37, app/assets/stylesheets/utils.scss.haml */
 .no-wrap {
   white-space: nowrap;
 }
 
-/* line 43, app/assets/stylesheets/utils.scss */
+/* line 42, app/assets/stylesheets/utils.scss.haml */
 .inline-list li {
   display: inline;
 }
 
-/* line 49, app/assets/stylesheets/utils.scss */
+/* line 48, app/assets/stylesheets/utils.scss.haml */
 .divider-list li {
   display: inline;
 }
 
-/* line 51, app/assets/stylesheets/utils.scss */
+/* line 50, app/assets/stylesheets/utils.scss.haml */
 .divider-list li:after {
   content: "|";
   margin-left: 3px;
   margin-right: 3px;
 }
 
-/* line 59, app/assets/stylesheets/utils.scss */
+/* line 58, app/assets/stylesheets/utils.scss.haml */
 .divider-list li:last-child:after {
   content: none;
 }
 
-/* line 65, app/assets/stylesheets/utils.scss */
+/* line 64, app/assets/stylesheets/utils.scss.haml */
 .fake-link:hover {
   cursor: pointer;
 }
 
-/* line 70, app/assets/stylesheets/utils.scss */
+/* line 69, app/assets/stylesheets/utils.scss.haml */
 .plain-link:link, .plain-link:visited, .plain-link:hover, .plain-link:active {
   text-decoration: none !important;
   font-style: normal;
