@@ -65,6 +65,8 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.require_master_key = true
+
   config.serve_static_files = true
 
 =begin
