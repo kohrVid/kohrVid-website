@@ -15,9 +15,9 @@
         Please use #{ link_to "Markdown", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" } to format your comments.
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
-        = f.label :body, "Comment:"
+        = f.label :body, "Comment"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
-        = f.text_area :body, rows: 10
+        = f.rich_text_area :body, class: "text_area"
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
       .col-lg-2.col-md-2.col-sm-12.col-xs-12

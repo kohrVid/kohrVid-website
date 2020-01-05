@@ -8,7 +8,7 @@
       %em
         = comment.updated_at.strftime("(last modified on %e#{comment.updated_at.day.ordinal} %B %Y at %H:%M:%S)")
     %blockquote
-      = markdown(comment.body)
+      = comment.body
 
   - from_reply_form ||= nil
   - unless from_reply_form
