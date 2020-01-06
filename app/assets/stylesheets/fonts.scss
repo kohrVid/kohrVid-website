@@ -58,7 +58,11 @@ a:link, a:visited, a:hover, a:active, .fake-link {
   }
 }
 
-.blog-post {
+.blog-post, .comment blockquote, #comment_body {
+  h1 {
+    font-size: 3.7rem;
+  }
+
   h1, h2, h3, h4, h5, h6, p {
     @include main-font();
   }

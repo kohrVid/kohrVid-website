@@ -1806,60 +1806,65 @@ a:link:hover, a:visited:hover, a:hover:hover, a:active:hover, .fake-link:hover {
 }
 
 /* line 62, app/assets/stylesheets/fonts.scss */
-.blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5, .blog-post h6, .blog-post p {
+.blog-post h1, .comment blockquote h1, #comment_body h1 {
+  font-size: 3.7rem;
+}
+
+/* line 66, app/assets/stylesheets/fonts.scss */
+.blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5, .blog-post h6, .blog-post p, .comment blockquote h1, .comment blockquote h2, .comment blockquote h3, .comment blockquote h4, .comment blockquote h5, .comment blockquote h6, .comment blockquote p, #comment_body h1, #comment_body h2, #comment_body h3, #comment_body h4, #comment_body h5, #comment_body h6, #comment_body p {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
 }
 
-/* line 66, app/assets/stylesheets/fonts.scss */
-.blog-post .blog-title {
+/* line 70, app/assets/stylesheets/fonts.scss */
+.blog-post .blog-title, .comment blockquote .blog-title, #comment_body .blog-title {
   line-height: 2.8rem;
 }
 
-/* line 70, app/assets/stylesheets/fonts.scss */
-.blog-post h2, .blog-post h3 {
+/* line 74, app/assets/stylesheets/fonts.scss */
+.blog-post h2, .blog-post h3, .comment blockquote h2, .comment blockquote h3, #comment_body h2, #comment_body h3 {
   font-size: 2.6rem;
   line-height: 2.1rem;
   margin: 0;
 }
 
-/* line 77, app/assets/stylesheets/fonts.scss */
+/* line 81, app/assets/stylesheets/fonts.scss */
 .blog-index-titles {
   font-size: 2.1rem;
 }
 
-/* line 79, app/assets/stylesheets/fonts.scss */
+/* line 83, app/assets/stylesheets/fonts.scss */
 .blog-index-titles a:hover {
   font-size: 2.3rem;
 }
 
-/* line 84, app/assets/stylesheets/fonts.scss */
+/* line 88, app/assets/stylesheets/fonts.scss */
 main {
   font-size: 1rem;
 }
 
-/* line 88, app/assets/stylesheets/fonts.scss */
+/* line 92, app/assets/stylesheets/fonts.scss */
 em {
   font-style: italic;
 }
 
-/* line 92, app/assets/stylesheets/fonts.scss */
+/* line 96, app/assets/stylesheets/fonts.scss */
 small {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
 }
 
-/* line 96, app/assets/stylesheets/fonts.scss */
+/* line 100, app/assets/stylesheets/fonts.scss */
 .smaller-text {
   font-size: 0.8rem;
 }
 
-/* line 100, app/assets/stylesheets/fonts.scss */
+/* line 104, app/assets/stylesheets/fonts.scss */
 .riesling {
   font-family: rieslingregular, Tahoma, sans-serif;
 }
 
-/* line 104, app/assets/stylesheets/fonts.scss */
+/* line 108, app/assets/stylesheets/fonts.scss */
 .main-font {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
