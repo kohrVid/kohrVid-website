@@ -8,7 +8,7 @@ require 'capybara/rails'
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 Capybara.default_driver = :selenium_headless
-#Capybara.default_driver = :selenium ##For Debugging purposes
+#Capybara.default_driver = :selenium ## For Debugging purposes
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

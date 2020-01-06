@@ -17,7 +17,6 @@ RSpec.describe "Comment", type: :request do
     sign_in(user)
   end
 
-  #@javascript
   it "must send a notification once a comment is posted" do
     visit post_path(blog_post)
     click_link "Post a comment"
