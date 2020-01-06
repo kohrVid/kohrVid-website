@@ -1,8 +1,8 @@
 {
   "App.js": "/packs/js/App-8ee5f47b82f7fefaff16.js",
   "App.js.map": "/packs/js/App-8ee5f47b82f7fefaff16.js.map",
-  "application.js": "/packs/js/application-6483fcfc4bfc177126ef.js",
-  "application.js.map": "/packs/js/application-6483fcfc4bfc177126ef.js.map",
+  "application.js": "/packs/js/application-b59d71df298843254089.js",
+  "application.js.map": "/packs/js/application-b59d71df298843254089.js.map",
   "components/ClientsContainer.js": "/packs/js/components/ClientsContainer-1f8af84d804a307108c2.js",
   "components/ClientsContainer.js.map": "/packs/js/components/ClientsContainer-1f8af84d804a307108c2.js.map",
   "components/ProjectsContainer.js": "/packs/js/components/ProjectsContainer-ca56abc6cd74ba51d58f.js",
@@ -18,10 +18,10 @@
     },
     "application": {
       "js": [
-        "/packs/js/application-6483fcfc4bfc177126ef.js"
+        "/packs/js/application-b59d71df298843254089.js"
       ],
       "js.map": [
-        "/packs/js/application-6483fcfc4bfc177126ef.js.map"
+        "/packs/js/application-b59d71df298843254089.js.map"
       ]
     },
     "components/ClientsContainer": {
