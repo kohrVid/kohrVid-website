@@ -22,11 +22,11 @@
           = f.label :message, "Message:"
         .col-lg-8.col-md-9.col-sm-12.col-xs-12
           = f.text_area :message, rows: 10
-      %fieldset.row.hidden
+      %fieldset.row
         .col-lg-2.col-md-2.col-sm-12.col-xs-12
-          = f.label :nickname
-        .col-lg-8.col-md-9.col-sm-12.col-xs-12
-          = f.text_field :nickname
+          = f.label :nickname, class: 'hidden'
+        .col-lg-8.col-md-9.col-sm-12.col-xs-12.hidden
+          = f.text_field :nickname, class: 'hidden'
       %fieldset.row
         .col-lg-2.col-md-2.col-sm-12.col-xs-12
         .col-lg-8.col-md-9.col-sm-12.col-xs-12

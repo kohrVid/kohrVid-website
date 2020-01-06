@@ -87,6 +87,7 @@ GEM
       image_processing (~> 1.1)
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
+    childprocess (3.0.0)
     closure_tree (7.0.0)
       activerecord (>= 4.2.10)
       with_advisory_lock (>= 4.0.0)
@@ -132,6 +133,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    digest-crc (0.4.1)
     docile (1.3.2)
     dotenv (2.7.5)
     erubi (1.9.0)
@@ -179,6 +181,15 @@ GEM
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
       signet (~> 0.9)
+    google-cloud-core (1.4.1)
+      google-cloud-env (~> 1.0)
+    google-cloud-env (1.3.0)
+      faraday (~> 0.11)
+    google-cloud-storage (1.16.0)
+      digest-crc (~> 0.4)
+      google-api-client (~> 0.23)
+      google-cloud-core (~> 1.2)
+      googleauth (>= 0.6.2, < 0.10.0)
     googleauth (0.6.7)
       faraday (~> 0.12)
       jwt (>= 1.4, < 3.0)
@@ -364,6 +375,7 @@ GEM
     ruby-progressbar (1.10.1)
     ruby-vips (2.0.16)
       ffi (~> 1.9)
+    rubyzip (2.0.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.2.1)
@@ -374,6 +386,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    selenium-webdriver (3.142.7)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
     shellany (0.0.1)
     signet (0.12.0)
       addressable (~> 2.3)
@@ -413,6 +428,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (4.2.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (>= 3.0, < 4.0)
     webpacker (4.2.2)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -448,10 +467,12 @@ DEPENDENCIES
   figaro
   fog-google
   friendly_id (~> 5.2.4)
+  google-cloud-storage (~> 1.11)
   guard-rspec
   guard-shell
   haml
   heroku-deflater
+  image_processing (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
   launchy
@@ -473,11 +494,13 @@ DEPENDENCIES
   rspec-rails (~> 4.0.0.beta2)
   rubocop
   sass-rails (= 6.0.0)
+  selenium-webdriver
   simplecov
   timecop
   turbolinks (~> 5)
   uglifier
   web-console (~> 3.0)
+  webdrivers
   webpacker (~> 4.x)
   will_paginate (~> 3.2.1)
 

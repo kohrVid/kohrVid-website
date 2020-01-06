@@ -6,7 +6,7 @@ class Tag < ActiveRecord::Base
 
 
   # Note, the class methods are quite generic as the `tags` table could
-  # theoretically be associated with other tables in the future 
+  # theoretically be associated with other tables in the future
   def self.tag_relationship(object)
     unless object.tag_list.blank?
       tag_list = clean_tag_names_list(object.tag_list)
@@ -20,12 +20,12 @@ class Tag < ActiveRecord::Base
     current_tag_relationships = []
 
     tag_list.each do |tag_name|
-      tag = Tag.find_or_create_by(name: tag_name)
-      
+      tag = case_insensitive_find_or_create_by(tag_name)
+
       tag_relationship = through_table.find_or_create_by(
         column => object.id, tag_id: tag.id
       )
-      
+
       current_tag_relationships << tag_relationship
     end
 
@@ -44,9 +44,14 @@ class Tag < ActiveRecord::Base
   end
 
   def self.clean_tag_names_list(tag_names)
-    tag_names.downcase.split(",")
+    tag_names.split(",")
       .collect { |i| i.gsub!(/^\s*/, "") }
       .reject(&:blank?)
       .map(&:to_s)
+  end
+
+  def self.case_insensitive_find_or_create_by(name)
+    where('lower(name) = ?', name.downcase)
+      .first_or_create(name: name)
   end
 end

@@ -10,6 +10,8 @@ Rails.application.configure do
     host: 'localhost:3000'
   }
 
+  config.active_storage.service = :local
+
   config.active_support.deprecation = :log
 
   config.active_record.migration_error = :page_load

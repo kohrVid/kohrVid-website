@@ -5,7 +5,8 @@ class Comment < ActiveRecord::Base
 
   validates :body, presence: true
   validates :post_id, presence: true
-          
+  has_rich_text :body
+
   def author
     if self.user_id.present?
       return User.find(self.user_id).name

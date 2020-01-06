@@ -5,7 +5,7 @@ RSpec.describe "Post", :type => :request do
   let(:admin) { FactoryBot.create(:user, :admin) }
 
   def sign_in(a_user)
-    visit new_user_session_url
+    visit login_path
     fill_in "Email", with: a_user.email
     fill_in "Password", with: a_user.password
     click_button "Log In"
