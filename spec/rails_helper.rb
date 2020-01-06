@@ -4,9 +4,13 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+require 'webdrivers'
+require 'selenium-webdriver'
+
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
+
 Capybara.default_driver = :selenium_headless
 #Capybara.default_driver = :selenium ## For Debugging purposes
 

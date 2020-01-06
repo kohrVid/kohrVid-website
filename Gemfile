@@ -57,6 +57,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'timecop'
+  gem 'webdrivers'
 end
 
 group :development do
