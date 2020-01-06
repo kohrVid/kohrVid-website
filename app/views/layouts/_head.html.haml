@@ -5,11 +5,14 @@
   %meta{ name: "keywords", content: meta_keywords  }
   %meta{ name: "google-site-verification",
     content: "" }
+  = csrf_meta_tags
+  = csp_meta_tag
   %title
     = content_for?(:title) ? "kohrVid | #{yield(:title)}" : "kohrVid"
-  = csrf_meta_tags
-  = stylesheet_link_tag 'application', media: 'all'
-  = javascript_include_tag 'application'
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  - if ['posts', 'comments'].include? controller_name
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   = favicon_link_tag 'favicon.ico'
   %script{ type: "application/ld+json" }
     { "@context" : "https://schema.org", "@type" : "Organization", "name" : "TODO insert description", "url" : "https://www.kohrVid.com", "sameAs" : [ "https://twitter.com/kohrVid", "https://github.com/kohrVid" ] }

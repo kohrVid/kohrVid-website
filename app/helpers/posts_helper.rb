@@ -33,4 +33,8 @@ module PostsHelper
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     return markdown_to_html.render(text).html_safe
   end
+
+  def truncate_body(rich_text_body)
+    rich_text_body.body.to_s.truncate(590).html_safe
+  end
 end

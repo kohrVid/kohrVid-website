@@ -18,6 +18,8 @@ Rails.application.configure do
     host: 'localhost:3000'
   }
 
+  config.active_storage.service = :local
+
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random
 

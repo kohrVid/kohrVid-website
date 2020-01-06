@@ -26,6 +26,8 @@ Rails.application.configure do
 
   config.active_record.dump_schema_after_migration = false
 
+  config.active_storage.service = :google
+
   config.active_support.deprecation = :notify
 
   # config.assets.css_compressor = :sass
@@ -62,6 +64,8 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.require_master_key = true
 
   config.serve_static_files = true
 

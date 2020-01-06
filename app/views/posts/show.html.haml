@@ -13,7 +13,7 @@
 
   - unless !@post.draft?
     This is a draft
-  = markdown(@post.body)
+  = @post.rich_text_body
 
   %section
     %ul.tags.p-l-0

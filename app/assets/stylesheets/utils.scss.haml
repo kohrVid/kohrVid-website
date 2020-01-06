@@ -1,0 +1,74 @@
+.display-inline {
+  display: inline !important;
+}
+
+.display-block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.diamond-list {
+  list-style-image: #{ asset_url('diamond-bullet.png') };
+
+  //li:before {
+    //content: "\2666 \0020";
+    //left: -10px;
+    //position: relative;
+    //color: $black !important;
+  //}
+}
+
+.padded-li {
+  position: relative;
+  padding: 0 0 0 10px;
+}
+
+.no-bullet li:before {
+  content: none !important;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.inline-list {
+  li {
+    display: inline;
+  }
+}
+
+.divider-list {
+  li {
+    display: inline;
+    &:after {
+      content: "|";
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+  }
+
+  li:last-child {
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.fake-link:hover {
+  cursor: pointer;
+}
+
+.plain-link {
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none !important;
+    font-style: normal;
+    color: inherit;
+  }
+}

@@ -59,7 +59,15 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :draft, :published_at, :tag_list)
+    params.require(:post)
+      .permit(
+        :title,
+        :body,
+        :rich_text_body,
+        :draft,
+        :published_at,
+        :tag_list
+      )
   end
 
   def friendly_finder

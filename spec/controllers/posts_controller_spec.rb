@@ -4,7 +4,14 @@ RSpec.describe PostsController, type: :controller do
   let(:valid_post) { FactoryBot.create(:post) }
 
   let(:draft_post) do
-    Post.create(title: "Rough", body: "copy", draft: true, published_at: nil)
+    Post.create(
+      FactoryBot.attributes_for(
+        :post,
+        title: "Rough",
+        body: "copy",
+        draft: true,
+        published_at: nil)
+    )
   end
 
   let(:admin) { FactoryBot.create(:user, :admin) }

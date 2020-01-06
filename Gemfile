@@ -14,6 +14,7 @@ gem 'devise'
 gem 'fog-google'
 gem 'friendly_id', '~> 5.2.4', require: 'friendly_id'
 gem 'haml'
+gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'mail_form'
@@ -53,8 +54,10 @@ group :development, :test do
   gem 'rspec-html-matchers', '0.7.0'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'rubocop'
+  gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'timecop'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -65,5 +68,6 @@ end
 group :production do
   gem 'dotenv'
   gem 'heroku-deflater'
+  gem "google-cloud-storage", "~> 1.11", require: false
 end
 

@@ -11,3 +11,9 @@
 //= require react_ujs
 //= require components
 //= require index
+
+require("trix")
+require("@rails/actiontext")
+require("@rails/activestorage").start()
+
+//= require '../trix-editor-overrides'
