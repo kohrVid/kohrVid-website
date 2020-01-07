@@ -15,7 +15,8 @@
   %h2.riesling
     Employment History
   %ul.no-bullet.p-l-0
-    = render partial: "nest/job"
+    - @jobs.each do |job|
+      = render partial: "nest/job", locals: { job: job }
   %p
     I'm actually on
     #{ link_to "LinkedIn", "https://uk.linkedin.com/pub/jessica-ete/61/21b/323", title: "¯\_(ツ)_/¯" }&nbsp;
