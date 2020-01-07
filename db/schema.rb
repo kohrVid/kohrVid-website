@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_141801) do
+ActiveRecord::Schema.define(version: 2020_01_06_221819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,17 @@ ActiveRecord::Schema.define(version: 2020_01_02_141801) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "company_name"
+    t.string "company_website"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "post_tags", id: :serial, force: :cascade do |t|
