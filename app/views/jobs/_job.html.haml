@@ -2,7 +2,7 @@
   .row
     .display-inline.col-lg-3.col-md-3.col-sm-3.col-xs-4
       %strong
-        = link_to job.title, job.company_website
+        #{job.title} at #{link_to job.company_name, job.company_website}
       %br
       #{job.start_date.strftime("%b %Y")} - #{job.end_date.strftime("%b %Y")}
     .display-inline.col-lg-6.col-md-7.col-sm-7.col-xs-6

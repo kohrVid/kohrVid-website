@@ -11,7 +11,7 @@
     = content_for?(:title) ? "kohrVid | #{yield(:title)}" : "kohrVid"
   = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  - if ['posts', 'comments'].include? controller_name
+  - if ['posts', 'comments', 'jobs'].include? controller_name
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   = favicon_link_tag 'favicon.ico'
   %script{ type: "application/ld+json" }

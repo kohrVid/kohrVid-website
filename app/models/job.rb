@@ -6,6 +6,8 @@ class Job < ApplicationRecord
   validates :description, presence: true
   validate :start_date_is_in_the_past
 
+  has_rich_text :description
+
   def start_date_is_in_the_past
     if self.start_date.present? && self.start_date > Time.now
       errors[:start_date] << "must be in the past"

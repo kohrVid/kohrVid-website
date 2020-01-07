@@ -38,7 +38,7 @@
     .col-md-2.col-sm-2.col-xs-12
       = f.label :description, t('jobs.form.description'), id: 'description'
     .col-md-10.col-sm-10.col-xs-12
-      = f.text_area :description, tabindex: 6, 'aria-labelledby': 'description',
+      = f.rich_text_area :description, tabindex: 6, 'aria-labelledby': 'description',
         class: 'width-100p glowing-border'
 
   %fieldset.row.field.m-10px-bottom
