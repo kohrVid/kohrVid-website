@@ -65,14 +65,14 @@ RSpec.describe PostsController, type: :controller do
       end
 
       context "Standard User" do
-        it "returns http success" do
+        it "should return a routing error" do
           sign_in user, scope: :user
           expect { get_post }.to raise_error(ActionController::RoutingError)
         end
       end
 
       context "Anonymous User" do
-        it "returns http success" do
+        it "should return a routing error" do
           expect { get_post }.to raise_error(ActionController::RoutingError)
         end
       end

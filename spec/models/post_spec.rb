@@ -26,7 +26,9 @@ RSpec.describe Post, type: :model do
 
     it "must produce an error if no title is given" do
       p = Post.new
+      p.save
       expect(p.errors[:title]).to_not be_nil
+      expect(p.errors[:title]).to_not be_empty
     end
 
     it "must be no more than 50 characters long" do
@@ -71,7 +73,9 @@ RSpec.describe Post, type: :model do
 
     it "must produce an error if no body is given" do
       p = Post.new
+      p.save
       expect(p.errors[:rich_text_body]).to_not be_nil
+      expect(p.errors[:rich_text_body]).to_not be_empty
     end
 
     # TODO sort out validation on ActionText columns
@@ -194,6 +198,7 @@ RSpec.describe Post, type: :model do
 
     xit "must have at least one tag" do
       p = Post.new
+      p.save
       expect(p).to_not be_valid
       expect(p.errors[:tags]).to be_present
     end

@@ -22,7 +22,9 @@ RSpec.describe User, type: :model do
 
     it "must produce an error if no name is given" do
       u = User.new
+      u.save
       expect(u.errors[:name]).to_not be_nil
+      expect(u.errors[:name]).to_not be_empty
     end
 
     it "must be no more than 50 characters long" do
@@ -55,7 +57,9 @@ RSpec.describe User, type: :model do
 
     it "must produce an error if no email is given" do
       u = User.new
+      u.save
       expect(u.errors[:email]).to_not be_nil
+      expect(u.errors[:email]).to_not be_empty
     end
 
     it "must be no more than 255 characters long" do
@@ -133,7 +137,9 @@ RSpec.describe User, type: :model do
 
     it "must produce an error if no password is given" do
       u = User.new
+      u.save
       expect(u.errors[:password]).to_not be_nil
+      expect(u.errors[:password]).to_not be_empty
     end
 
     it "must be at least six characters long" do

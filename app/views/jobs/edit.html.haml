@@ -1,0 +1,13 @@
+- provide(:title, 'Update Job: ' + @job.company_name.capitalize)
+
+%h1
+  Update #{ @job.company_name }
+
+= render 'jobs/form'
+
+%p
+  = link_to 'Back', @job
+  | 
+
+  = link_to 'Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' }
+

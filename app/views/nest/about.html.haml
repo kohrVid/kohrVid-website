@@ -15,7 +15,8 @@
   %h2.riesling
     Employment History
   %ul.no-bullet.p-l-0
-    = render partial: "nest/job"
+    - @jobs.each do |job|
+      = render partial: "nest/job", locals: { job: job }
   %p
     I'm actually on
     #{ link_to "LinkedIn", "https://uk.linkedin.com/pub/jessica-ete/61/21b/323", title: "¯\_(ツ)_/¯" }&nbsp;
@@ -43,29 +44,30 @@
         &nbsp;back when I was thirteen. Increasingly, I find I listen to far too many podcasts
     %li
       .padded-li
-        Last year I took up dance, specifically
-        &nbsp;#{ link_to "Zouk", "https://www.facebook.com/zouklambada.co.uk/?_fb_noscript=1" }
-        &nbsp;as I know a #{ link_to "great teacher", "https://deliveroo.engineering/authors/kriselda-rabino/" }.
-        &nbsp;I apparently no longer suck at it which, considering how rubbish I was at PE as a kid, is pretty good!
+        Back in late 2017 I took up dance, specifically
+        #{ link_to "Zouk", "https://www.facebook.com/zouklambada.co.uk/?_fb_noscript=1" }.
+        &nbsp;I apparently no longer suck at it which, considering how rubbish
+        I was at PE as a kid, is pretty good!
     %li
       .padded-li
         I know a mouse-hunter named #{ link_to "QT", image_path("QT.jpg") }.
-        &nbsp;Saying that I own him makes me feel guilty but, like, I did pay for him
-        once. I <em>think</em> he likes me
+        &nbsp;Saying that I own him makes me feel guilty but, like, I did pay for
+        him once. I <em>think</em> he likes me
     %li
       .padded-li
-        I have a laptop at home named #{ link_to "kandiStryp", image_path("meAndkandiStryp.jpg") }
-        &nbsp;and a custom desktop named medea. kandi's seen better days.
+        In 2015 I thought doing #{ link_to "this", image_path("meAndkandiStryp.jpg") }
+        &nbsp;to a laptop was a good idea
     %li
       .padded-li
         I #{ link_to "change my hair", image_path("white_hair.jpg") }.
         &nbsp;#{ link_to "A", image_path("purple_hair.jpg") } #{ link_to "lot", image_path("pink_hair.jpg")}.
     %li
       .padded-li
-        I have a #{ link_to "Twitter account", "https://twitter.com/kohrVid" } if you'd like to follow/tweet.
+        I have a #{ link_to "Twitter account", "https://twitter.com/kohrVid" }
+        &nbsp;if you'd like to follow/tweet.
     %li
       .padded-li
         Back when I was poor and in between jobs, I would occasionally follow
-        &nbsp;#{ link_to "corvids", image_path("corvid.jpg") } and take pictures of
-        &nbsp;them #{ link_to "running away", image_path("running.jpg") } on my smartphone.
-        &nbsp;I sort of miss it a little
+        #{ link_to "corvids", image_path("corvid.jpg") } and take pictures of
+        &nbsp;them #{ link_to "running away", image_path("running.jpg") } on my
+        &nbsp;smartphone. I sort of miss it a little

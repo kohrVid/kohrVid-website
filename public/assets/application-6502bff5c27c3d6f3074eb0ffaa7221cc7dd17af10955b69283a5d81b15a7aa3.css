@@ -2752,11 +2752,16 @@ footer {
 }
 
 /* line 5, app/assets/stylesheets/padding.scss */
+.p-t-1r {
+  padding-top: 1rem;
+}
+
+/* line 9, app/assets/stylesheets/padding.scss */
 .p-l-0 {
   padding-left: 0;
 }
 
-/* line 9, app/assets/stylesheets/padding.scss */
+/* line 13, app/assets/stylesheets/padding.scss */
 .p-l-1r {
   padding-left: 1rem;
 }
