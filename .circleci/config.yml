@@ -18,7 +18,7 @@ jobs:
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: circleci/postgres:9.6.2-alpine
+      - image: circleci/postgres:latest
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: kohrVid_test
@@ -44,15 +44,16 @@ jobs:
             bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs 4 --retry 3
 
       - save_cache:
-          key: rails-demo-{{ checksum "Gemfile.lock" }}
           paths:
             - ./vendor/bundle
+            - public/packs-test
+          key: rails-demo-{{ checksum "Gemfile.lock" }}
 
       # Database setup
       - run:
           name: Database Setup
           command: |
-            bundle exec rake db:create
+            #bundle exec rake db:create
             bundle exec rake db:schema:load
 
       # run tests!

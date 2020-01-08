@@ -151,7 +151,7 @@ RSpec.describe JobsController, type: :controller do
     end
   end
 
-  describe "POST create" do
+  describe "POST #create" do
     context "Admin user" do
       before(:each) do
         sign_in admin, scope: :user
@@ -221,17 +221,23 @@ RSpec.describe JobsController, type: :controller do
     end
   end
 
-  describe "PUT update" do
+  describe "PUT #update" do
     before(:each) do
       valid_job
       sign_in admin, scope: :user
     end
 
     context "with valid attributes" do
+      let(:html_content) { "<div>These are the services we provide.</div>" }
+      let(:content) { ActionText::Content.new(html_content) }
+      let(:rich_text_description) { ActionText::RichText.new(body: content) }
+
       subject(:put_attributes) do
         put :update, params: {
-          id: valid_job.id, job: FactoryBot.attributes_for(
-            :job, title: "Services", description: "These are the services we provide."
+          id: valid_job.id,
+          job: FactoryBot.attributes_for(
+            :job, title: "Services",
+            description: rich_text_description
           )
         }
       end
@@ -250,7 +256,8 @@ RSpec.describe JobsController, type: :controller do
       it "changes valid_job's description" do
         expect { put_attributes }
           .to change { Job.find(valid_job.id).description }
-          .from(valid_job.description).to('These are the services we provide.')
+          .from(valid_job.description.body.to_html)
+          .to('<div>These are the services we provide.</div>')
       end
 
       it "redirects to the updated job" do
@@ -293,7 +300,7 @@ RSpec.describe JobsController, type: :controller do
     end
   end
 
-  describe "DELETE destroy" do
+  describe "DELETE #destroy" do
     subject(:delete_job) do
       delete :destroy, params: { id: valid_job.id }
     end
