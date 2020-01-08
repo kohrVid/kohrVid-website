@@ -31,6 +31,10 @@
 article {
   padding-top: 10px;
   border-bottom: 1px $black solid;
+
+  pre {
+    @extend .CodeRay;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px){
