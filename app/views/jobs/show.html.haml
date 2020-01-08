@@ -1,0 +1,67 @@
+- provide(:title, @job.company_name)
+= render "layouts/blog_login_logout"
+
+%h1
+  = @job.company_name
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong ID:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.id
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Job Title:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.title
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Company Name:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.company_name
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Company Website:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.company_website
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Start Date:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.start_date
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong End Date:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.end_date
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Description:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.description
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Date Created:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.created_at
+
+.row.m-10px-bottom
+  .col-md-2.col-sm-2.col-xs-12
+    %strong Date Last Modified:
+  .col-md-10.col-sm-10.col-xs-12
+    = @job.updated_at
+
+%br
+%div
+  = link_to 'Back to Jobs', jobs_path
+  |
+  = link_to 'Edit', edit_job_path(@job)
+  |
+  = link_to 'Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' }

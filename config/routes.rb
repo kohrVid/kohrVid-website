@@ -37,4 +37,5 @@ Rails.application.routes.draw do
   get 'portfolio' => 'nest#portfolio'
   get 'projects/list' =>  'projects#list'
   resources 'projects'
+  resources 'jobs'
 end

@@ -43,7 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', require: false
   gem 'faker'
   gem 'figaro'
   gem 'guard-rspec'

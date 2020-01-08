@@ -17,7 +17,6 @@ coverage
 
 # Rails generated files
 /db/structure.sql
-/db/schema.rb
 
 #/public/assets
 *.rbc

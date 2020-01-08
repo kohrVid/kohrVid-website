@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'webdrivers'
 require 'selenium-webdriver'
+require 'factory_bot_rails'
 
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
