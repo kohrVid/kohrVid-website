@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   has_many :tags, -> { distinct }, through: :post_tags
   has_many :comments, dependent: :destroy
 
-  validates :title, presence: true, length: { maximum: 50 }, uniqueness: true
+  validates :title, presence: true, length: { maximum: 75 }, uniqueness: true
   validates :body, length: { maximum: 20000 }
   validates :rich_text_body, presence: true,
     length: { minimum: 14, maximum: 20010 }, uniqueness: true

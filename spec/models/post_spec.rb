@@ -31,10 +31,10 @@ RSpec.describe Post, type: :model do
       expect(p.errors[:title]).to_not be_empty
     end
 
-    it "must be no more than 50 characters long" do
+    it "must be no more than 75 characters long" do
       expect {
         Post.create(
-          FactoryBot.attributes_for(:post, title: "m"*51)
+          FactoryBot.attributes_for(:post, title: "m"*76)
         )
       }.to_not change(Post, :count)
     end
