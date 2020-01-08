@@ -115,6 +115,33 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  context 'date formatters' do
+    let(:time) { Time.new(2020,01,8,18,10) }
+
+    let(:post) do
+      FactoryBot.create(:post, published_at: time )
+    end
+
+    before(:each) do
+      post
+      Timecop.freeze(time + 1.day) do
+        post.update(title: "new title")
+      end
+    end
+
+    context '#published_format' do
+      it 'should format the date correctly' do
+        expect(post.published_format).to eq "Published  8th January 2020 at 06:10pm"
+      end
+    end
+
+    context '#updated_format' do
+      it 'should format the date correctly' do
+        expect(post.updated_format).to eq "(Last Updated  9th January 2020 at 06:10pm)"
+      end
+    end
+  end
+
   describe 'scopes' do
     let(:post1) { FactoryBot.create(:post, draft: true) }
     let(:post2) { FactoryBot.create(:post) }

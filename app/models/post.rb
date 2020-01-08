@@ -33,6 +33,18 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def published_format
+    published_at.strftime(
+      "Published %e#{published_at.day.ordinal} %B %Y at %I:%M%P"
+    ) if published_at.present?
+  end
+
+  def updated_format
+    updated_at.strftime(
+      "(Last Updated %e#{updated_at.day.ordinal} %B %Y at %I:%M%P)"
+    ) if published_at.present? && (published_at.to_date != updated_at.to_date)
+  end
+
   def self.post_date
     date = {}
 
