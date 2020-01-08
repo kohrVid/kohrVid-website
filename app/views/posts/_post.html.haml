@@ -5,8 +5,14 @@
     %small.smaller-text
       %em
         (#{ pluralize(post.comments.count, "comment") })
-  = truncate_body(post.rich_text_body)
-  = link_to "[Read more...]", post
+
+  %em
+    = post.published_format
+
+  .p-t-1r
+    = truncate_body(post.rich_text_body)
+    = link_to "[Read more...]", post
+
   %br
   - if admin_is_logged_in
     %ul.divider-list.p-l-0
