@@ -1,6 +1,6 @@
 class NestController < ApplicationController
   def about
-    @jobs = Job.all
+    @jobs = Job.order(start_date: :desc)
   end
 
   def csp_reports

@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   before_action :admin_user_404
 
   def index
-    @jobs = Job.all
+    @jobs = Job.order(start_date: :desc)
   end
 
   def show
