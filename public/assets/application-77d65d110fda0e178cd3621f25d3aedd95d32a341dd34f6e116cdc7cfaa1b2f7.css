@@ -1964,7 +1964,7 @@ small {
 }
 
 /* line 1, app/assets/stylesheets/coderay.scss */
-.CodeRay, .trix-content pre, trix-editor pre, code {
+.CodeRay, article pre, .trix-content pre, trix-editor pre, code {
   background-color: #d1d1d1;
   font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
   color: #000;
@@ -1972,7 +1972,7 @@ small {
 }
 
 /* line 8, app/assets/stylesheets/coderay.scss */
-.CodeRay pre, .trix-content pre pre, trix-editor pre pre {
+.CodeRay pre, article pre pre, .trix-content pre pre, trix-editor pre pre {
   margin: 0px;
   padding: 1em;
 }
@@ -1998,41 +1998,41 @@ table.CodeRay td {
 }
 
 /* line 22, app/assets/stylesheets/coderay.scss */
-.CodeRay .line-numbers, .trix-content pre .line-numbers, trix-editor pre .line-numbers, .CodeRay .no, .trix-content pre .no, trix-editor pre .no {
+.CodeRay .line-numbers, article pre .line-numbers, .trix-content pre .line-numbers, trix-editor pre .line-numbers, .CodeRay .no, article pre .no, .trix-content pre .no, trix-editor pre .no {
   background-color: #ECECEC;
   color: #AAA;
   text-align: right;
 }
 
 /* line 28, app/assets/stylesheets/coderay.scss */
-.CodeRay .line-numbers a, .trix-content pre .line-numbers a, trix-editor pre .line-numbers a {
+.CodeRay .line-numbers a, article pre .line-numbers a, .trix-content pre .line-numbers a, trix-editor pre .line-numbers a {
   color: #AAA;
 }
 
 /* line 32, app/assets/stylesheets/coderay.scss */
-.CodeRay .line-numbers tt, .trix-content pre .line-numbers tt, trix-editor pre .line-numbers tt {
+.CodeRay .line-numbers tt, article pre .line-numbers tt, .trix-content pre .line-numbers tt, trix-editor pre .line-numbers tt {
   font-weight: bold;
 }
 
 /* line 33, app/assets/stylesheets/coderay.scss */
-.CodeRay .line-numbers .highlighted, .trix-content pre .line-numbers .highlighted, trix-editor pre .line-numbers .highlighted {
+.CodeRay .line-numbers .highlighted, article pre .line-numbers .highlighted, .trix-content pre .line-numbers .highlighted, trix-editor pre .line-numbers .highlighted {
   color: red;
 }
 
 /* line 34, app/assets/stylesheets/coderay.scss */
-.CodeRay .line, .trix-content pre .line, trix-editor pre .line {
+.CodeRay .line, article pre .line, .trix-content pre .line, trix-editor pre .line {
   display: block;
   float: left;
   width: 100%;
 }
 
 /* line 35, app/assets/stylesheets/coderay.scss */
-.CodeRay span.line-numbers, .trix-content pre span.line-numbers, trix-editor pre span.line-numbers {
+.CodeRay span.line-numbers, article pre span.line-numbers, .trix-content pre span.line-numbers, trix-editor pre span.line-numbers {
   padding: 0px 4px;
 }
 
 /* line 36, app/assets/stylesheets/coderay.scss */
-.CodeRay .code, .trix-content pre .code, trix-editor pre .code {
+.CodeRay .code, article pre .code, .trix-content pre .code, trix-editor pre .code {
   width: 100%;
 }
 
@@ -2047,432 +2047,432 @@ ol.CodeRay li {
 }
 
 /* line 41, app/assets/stylesheets/coderay.scss */
-.CodeRay .code pre, .trix-content pre .code pre, trix-editor pre .code pre {
+.CodeRay .code pre, article pre .code pre, .trix-content pre .code pre, trix-editor pre .code pre {
   overflow: auto;
 }
 
 /* line 42, app/assets/stylesheets/coderay.scss */
-.CodeRay .debug, .trix-content pre .debug, trix-editor pre .debug {
+.CodeRay .debug, article pre .debug, .trix-content pre .debug, trix-editor pre .debug {
   color: white !important;
   background: blue !important;
 }
 
 /* line 44, app/assets/stylesheets/coderay.scss */
-.CodeRay .annotation, .trix-content pre .annotation, trix-editor pre .annotation {
+.CodeRay .annotation, article pre .annotation, .trix-content pre .annotation, trix-editor pre .annotation {
   color: #007;
 }
 
 /* line 45, app/assets/stylesheets/coderay.scss */
-.CodeRay .attribute-name, .trix-content pre .attribute-name, trix-editor pre .attribute-name {
+.CodeRay .attribute-name, article pre .attribute-name, .trix-content pre .attribute-name, trix-editor pre .attribute-name {
   color: #f08;
 }
 
 /* line 46, app/assets/stylesheets/coderay.scss */
-.CodeRay .attribute-value, .trix-content pre .attribute-value, trix-editor pre .attribute-value {
+.CodeRay .attribute-value, article pre .attribute-value, .trix-content pre .attribute-value, trix-editor pre .attribute-value {
   color: #700;
 }
 
 /* line 47, app/assets/stylesheets/coderay.scss */
-.CodeRay .binary, .trix-content pre .binary, trix-editor pre .binary {
+.CodeRay .binary, article pre .binary, .trix-content pre .binary, trix-editor pre .binary {
   color: #509;
   font-weight: bold;
 }
 
 /* line 48, app/assets/stylesheets/coderay.scss */
-.CodeRay .comment, .trix-content pre .comment, trix-editor pre .comment {
+.CodeRay .comment, article pre .comment, .trix-content pre .comment, trix-editor pre .comment {
   color: #998;
   font-style: italic;
 }
 
 /* line 49, app/assets/stylesheets/coderay.scss */
-.CodeRay .char, .trix-content pre .char, trix-editor pre .char {
+.CodeRay .char, article pre .char, .trix-content pre .char, trix-editor pre .char {
   color: #04D;
 }
 
 /* line 50, app/assets/stylesheets/coderay.scss */
-.CodeRay .char .content, .trix-content pre .char .content, trix-editor pre .char .content {
+.CodeRay .char .content, article pre .char .content, .trix-content pre .char .content, trix-editor pre .char .content {
   color: #04D;
 }
 
 /* line 51, app/assets/stylesheets/coderay.scss */
-.CodeRay .char .delimiter, .trix-content pre .char .delimiter, trix-editor pre .char .delimiter {
+.CodeRay .char .delimiter, article pre .char .delimiter, .trix-content pre .char .delimiter, trix-editor pre .char .delimiter {
   color: #039;
 }
 
 /* line 52, app/assets/stylesheets/coderay.scss */
-.CodeRay .class, .trix-content pre .class, trix-editor pre .class {
+.CodeRay .class, article pre .class, .trix-content pre .class, trix-editor pre .class {
   color: #458;
   font-weight: bold;
 }
 
 /* line 53, app/assets/stylesheets/coderay.scss */
-.CodeRay .complex, .trix-content pre .complex, trix-editor pre .complex {
+.CodeRay .complex, article pre .complex, .trix-content pre .complex, trix-editor pre .complex {
   color: #A08;
   font-weight: bold;
 }
 
 /* line 54, app/assets/stylesheets/coderay.scss */
-.CodeRay .constant, .trix-content pre .constant, trix-editor pre .constant {
+.CodeRay .constant, article pre .constant, .trix-content pre .constant, trix-editor pre .constant {
   color: teal;
 }
 
 /* line 55, app/assets/stylesheets/coderay.scss */
-.CodeRay .color, .trix-content pre .color, trix-editor pre .color {
+.CodeRay .color, article pre .color, .trix-content pre .color, trix-editor pre .color {
   color: #0A0;
 }
 
 /* line 56, app/assets/stylesheets/coderay.scss */
-.CodeRay .class-variable, .trix-content pre .class-variable, trix-editor pre .class-variable {
+.CodeRay .class-variable, article pre .class-variable, .trix-content pre .class-variable, trix-editor pre .class-variable {
   color: #369;
 }
 
 /* line 57, app/assets/stylesheets/coderay.scss */
-.CodeRay .decorator, .trix-content pre .decorator, trix-editor pre .decorator {
+.CodeRay .decorator, article pre .decorator, .trix-content pre .decorator, trix-editor pre .decorator {
   color: #B0B;
 }
 
 /* line 58, app/assets/stylesheets/coderay.scss */
-.CodeRay .definition, .trix-content pre .definition, trix-editor pre .definition {
+.CodeRay .definition, article pre .definition, .trix-content pre .definition, trix-editor pre .definition {
   color: #099;
   font-weight: bold;
 }
 
 /* line 59, app/assets/stylesheets/coderay.scss */
-.CodeRay .directive, .trix-content pre .directive, trix-editor pre .directive {
+.CodeRay .directive, article pre .directive, .trix-content pre .directive, trix-editor pre .directive {
   color: #088;
   font-weight: bold;
 }
 
 /* line 60, app/assets/stylesheets/coderay.scss */
-.CodeRay .delimiter, .trix-content pre .delimiter, trix-editor pre .delimiter {
+.CodeRay .delimiter, article pre .delimiter, .trix-content pre .delimiter, trix-editor pre .delimiter {
   color: black;
 }
 
 /* line 61, app/assets/stylesheets/coderay.scss */
-.CodeRay .doc, .trix-content pre .doc, trix-editor pre .doc {
+.CodeRay .doc, article pre .doc, .trix-content pre .doc, trix-editor pre .doc {
   color: #970;
 }
 
 /* line 62, app/assets/stylesheets/coderay.scss */
-.CodeRay .doctype, .trix-content pre .doctype, trix-editor pre .doctype {
+.CodeRay .doctype, article pre .doctype, .trix-content pre .doctype, trix-editor pre .doctype {
   color: #34b;
 }
 
 /* line 63, app/assets/stylesheets/coderay.scss */
-.CodeRay .doc-string, .trix-content pre .doc-string, trix-editor pre .doc-string {
+.CodeRay .doc-string, article pre .doc-string, .trix-content pre .doc-string, trix-editor pre .doc-string {
   color: #D42;
   font-weight: bold;
 }
 
 /* line 64, app/assets/stylesheets/coderay.scss */
-.CodeRay .escape, .trix-content pre .escape, trix-editor pre .escape {
+.CodeRay .escape, article pre .escape, .trix-content pre .escape, trix-editor pre .escape {
   color: #666;
   font-weight: bold;
 }
 
 /* line 65, app/assets/stylesheets/coderay.scss */
-.CodeRay .entity, .trix-content pre .entity, trix-editor pre .entity {
+.CodeRay .entity, article pre .entity, .trix-content pre .entity, trix-editor pre .entity {
   color: #800;
   font-weight: bold;
 }
 
 /* line 66, app/assets/stylesheets/coderay.scss */
-.CodeRay .error, .trix-content pre .error, trix-editor pre .error {
+.CodeRay .error, article pre .error, .trix-content pre .error, trix-editor pre .error {
   color: #F00;
   background-color: #FAA;
 }
 
 /* line 67, app/assets/stylesheets/coderay.scss */
-.CodeRay .exception, .trix-content pre .exception, trix-editor pre .exception {
+.CodeRay .exception, article pre .exception, .trix-content pre .exception, trix-editor pre .exception {
   color: #C00;
   font-weight: bold;
 }
 
 /* line 68, app/assets/stylesheets/coderay.scss */
-.CodeRay .filename, .trix-content pre .filename, trix-editor pre .filename {
+.CodeRay .filename, article pre .filename, .trix-content pre .filename, trix-editor pre .filename {
   color: #099;
 }
 
 /* line 69, app/assets/stylesheets/coderay.scss */
-.CodeRay .function, .trix-content pre .function, trix-editor pre .function {
+.CodeRay .function, article pre .function, .trix-content pre .function, trix-editor pre .function {
   color: #900;
   font-weight: bold;
 }
 
 /* line 70, app/assets/stylesheets/coderay.scss */
-.CodeRay .global-variable, .trix-content pre .global-variable, trix-editor pre .global-variable {
+.CodeRay .global-variable, article pre .global-variable, .trix-content pre .global-variable, trix-editor pre .global-variable {
   color: teal;
   font-weight: bold;
 }
 
 /* line 71, app/assets/stylesheets/coderay.scss */
-.CodeRay .hex, .trix-content pre .hex, trix-editor pre .hex {
+.CodeRay .hex, article pre .hex, .trix-content pre .hex, trix-editor pre .hex {
   color: #058;
   font-weight: bold;
 }
 
 /* line 72, app/assets/stylesheets/coderay.scss */
-.CodeRay .integer, .trix-content pre .integer, trix-editor pre .integer {
+.CodeRay .integer, article pre .integer, .trix-content pre .integer, trix-editor pre .integer {
   color: #099;
 }
 
 /* line 73, app/assets/stylesheets/coderay.scss */
-.CodeRay .include, .trix-content pre .include, trix-editor pre .include {
+.CodeRay .include, article pre .include, .trix-content pre .include, trix-editor pre .include {
   color: #B44;
   font-weight: bold;
 }
 
 /* line 74, app/assets/stylesheets/coderay.scss */
-.CodeRay .inline, .trix-content pre .inline, trix-editor pre .inline {
+.CodeRay .inline, article pre .inline, .trix-content pre .inline, trix-editor pre .inline {
   color: black;
 }
 
 /* line 75, app/assets/stylesheets/coderay.scss */
-.CodeRay .inline .inline, .trix-content pre .inline .inline, trix-editor pre .inline .inline {
+.CodeRay .inline .inline, article pre .inline .inline, .trix-content pre .inline .inline, trix-editor pre .inline .inline {
   background: #ccc;
 }
 
 /* line 76, app/assets/stylesheets/coderay.scss */
-.CodeRay .inline .inline .inline, .trix-content pre .inline .inline .inline, trix-editor pre .inline .inline .inline {
+.CodeRay .inline .inline .inline, article pre .inline .inline .inline, .trix-content pre .inline .inline .inline, trix-editor pre .inline .inline .inline {
   background: #bbb;
 }
 
 /* line 77, app/assets/stylesheets/coderay.scss */
-.CodeRay .inline .inline-delimiter, .trix-content pre .inline .inline-delimiter, trix-editor pre .inline .inline-delimiter {
+.CodeRay .inline .inline-delimiter, article pre .inline .inline-delimiter, .trix-content pre .inline .inline-delimiter, trix-editor pre .inline .inline-delimiter {
   color: #D14;
 }
 
 /* line 78, app/assets/stylesheets/coderay.scss */
-.CodeRay .inline-delimiter, .trix-content pre .inline-delimiter, trix-editor pre .inline-delimiter {
+.CodeRay .inline-delimiter, article pre .inline-delimiter, .trix-content pre .inline-delimiter, trix-editor pre .inline-delimiter {
   color: #D14;
 }
 
 /* line 79, app/assets/stylesheets/coderay.scss */
-.CodeRay .important, .trix-content pre .important, trix-editor pre .important {
+.CodeRay .important, article pre .important, .trix-content pre .important, trix-editor pre .important {
   color: #f00;
 }
 
 /* line 80, app/assets/stylesheets/coderay.scss */
-.CodeRay .interpreted, .trix-content pre .interpreted, trix-editor pre .interpreted {
+.CodeRay .interpreted, article pre .interpreted, .trix-content pre .interpreted, trix-editor pre .interpreted {
   color: #B2B;
   font-weight: bold;
 }
 
 /* line 81, app/assets/stylesheets/coderay.scss */
-.CodeRay .instance-variable, .trix-content pre .instance-variable, trix-editor pre .instance-variable {
+.CodeRay .instance-variable, article pre .instance-variable, .trix-content pre .instance-variable, trix-editor pre .instance-variable {
   color: teal;
 }
 
 /* line 82, app/assets/stylesheets/coderay.scss */
-.CodeRay .label, .trix-content pre .label, trix-editor pre .label {
+.CodeRay .label, article pre .label, .trix-content pre .label, trix-editor pre .label {
   color: #970;
   font-weight: bold;
 }
 
 /* line 83, app/assets/stylesheets/coderay.scss */
-.CodeRay .local-variable, .trix-content pre .local-variable, trix-editor pre .local-variable {
+.CodeRay .local-variable, article pre .local-variable, .trix-content pre .local-variable, trix-editor pre .local-variable {
   color: #963;
 }
 
 /* line 84, app/assets/stylesheets/coderay.scss */
-.CodeRay .octal, .trix-content pre .octal, trix-editor pre .octal {
+.CodeRay .octal, article pre .octal, .trix-content pre .octal, trix-editor pre .octal {
   color: #40E;
   font-weight: bold;
 }
 
 /* line 86, app/assets/stylesheets/coderay.scss */
-.CodeRay .predefined-constant, .trix-content pre .predefined-constant, trix-editor pre .predefined-constant {
+.CodeRay .predefined-constant, article pre .predefined-constant, .trix-content pre .predefined-constant, trix-editor pre .predefined-constant {
   font-weight: bold;
 }
 
 /* line 87, app/assets/stylesheets/coderay.scss */
-.CodeRay .predefined, .trix-content pre .predefined, trix-editor pre .predefined {
+.CodeRay .predefined, article pre .predefined, .trix-content pre .predefined, trix-editor pre .predefined {
   color: #369;
   font-weight: bold;
 }
 
 /* line 88, app/assets/stylesheets/coderay.scss */
-.CodeRay .preprocessor, .trix-content pre .preprocessor, trix-editor pre .preprocessor {
+.CodeRay .preprocessor, article pre .preprocessor, .trix-content pre .preprocessor, trix-editor pre .preprocessor {
   color: #579;
 }
 
 /* line 89, app/assets/stylesheets/coderay.scss */
-.CodeRay .pseudo-class, .trix-content pre .pseudo-class, trix-editor pre .pseudo-class {
+.CodeRay .pseudo-class, article pre .pseudo-class, .trix-content pre .pseudo-class, trix-editor pre .pseudo-class {
   color: #00C;
   font-weight: bold;
 }
 
 /* line 90, app/assets/stylesheets/coderay.scss */
-.CodeRay .predefined-type, .trix-content pre .predefined-type, trix-editor pre .predefined-type {
+.CodeRay .predefined-type, article pre .predefined-type, .trix-content pre .predefined-type, trix-editor pre .predefined-type {
   color: #074;
   font-weight: bold;
 }
 
 /* line 91, app/assets/stylesheets/coderay.scss */
-.CodeRay .reserved, .trix-content pre .reserved, trix-editor pre .reserved, .keyword {
+.CodeRay .reserved, article pre .reserved, .trix-content pre .reserved, trix-editor pre .reserved, .keyword {
   color: #000;
   font-weight: bold;
 }
 
 /* line 93, app/assets/stylesheets/coderay.scss */
-.CodeRay .key, .trix-content pre .key, trix-editor pre .key {
+.CodeRay .key, article pre .key, .trix-content pre .key, trix-editor pre .key {
   color: #808;
 }
 
 /* line 94, app/assets/stylesheets/coderay.scss */
-.CodeRay .key .delimiter, .trix-content pre .key .delimiter, trix-editor pre .key .delimiter {
+.CodeRay .key .delimiter, article pre .key .delimiter, .trix-content pre .key .delimiter, trix-editor pre .key .delimiter {
   color: #606;
 }
 
 /* line 95, app/assets/stylesheets/coderay.scss */
-.CodeRay .key .char, .trix-content pre .key .char, trix-editor pre .key .char {
+.CodeRay .key .char, article pre .key .char, .trix-content pre .key .char, trix-editor pre .key .char {
   color: #80f;
 }
 
 /* line 96, app/assets/stylesheets/coderay.scss */
-.CodeRay .value, .trix-content pre .value, trix-editor pre .value {
+.CodeRay .value, article pre .value, .trix-content pre .value, trix-editor pre .value {
   color: #088;
 }
 
 /* line 98, app/assets/stylesheets/coderay.scss */
-.CodeRay .regexp, .trix-content pre .regexp, trix-editor pre .regexp {
+.CodeRay .regexp, article pre .regexp, .trix-content pre .regexp, trix-editor pre .regexp {
   background-color: #fff0ff;
 }
 
 /* line 99, app/assets/stylesheets/coderay.scss */
-.CodeRay .regexp .content, .trix-content pre .regexp .content, trix-editor pre .regexp .content {
+.CodeRay .regexp .content, article pre .regexp .content, .trix-content pre .regexp .content, trix-editor pre .regexp .content {
   color: #808;
 }
 
 /* line 100, app/assets/stylesheets/coderay.scss */
-.CodeRay .regexp .delimiter, .trix-content pre .regexp .delimiter, trix-editor pre .regexp .delimiter {
+.CodeRay .regexp .delimiter, article pre .regexp .delimiter, .trix-content pre .regexp .delimiter, trix-editor pre .regexp .delimiter {
   color: #404;
 }
 
 /* line 101, app/assets/stylesheets/coderay.scss */
-.CodeRay .regexp .modifier, .trix-content pre .regexp .modifier, trix-editor pre .regexp .modifier {
+.CodeRay .regexp .modifier, article pre .regexp .modifier, .trix-content pre .regexp .modifier, trix-editor pre .regexp .modifier {
   color: #C2C;
 }
 
 /* line 102, app/assets/stylesheets/coderay.scss */
-.CodeRay .regexp .function, .trix-content pre .regexp .function, trix-editor pre .regexp .function {
+.CodeRay .regexp .function, article pre .regexp .function, .trix-content pre .regexp .function, trix-editor pre .regexp .function {
   color: #404;
   font-weight: bold;
 }
 
 /* line 104, app/assets/stylesheets/coderay.scss */
-.CodeRay .string, .trix-content pre .string, trix-editor pre .string {
+.CodeRay .string, article pre .string, .trix-content pre .string, trix-editor pre .string {
   color: #D20;
 }
 
 /* line 106, app/assets/stylesheets/coderay.scss */
-.CodeRay .string .string .string, .trix-content pre .string .string .string, trix-editor pre .string .string .string {
+.CodeRay .string .string .string, article pre .string .string .string, .trix-content pre .string .string .string, trix-editor pre .string .string .string {
   background-color: #ffd0d0;
 }
 
 /* line 107, app/assets/stylesheets/coderay.scss */
-.CodeRay .string .content, .trix-content pre .string .content, trix-editor pre .string .content {
+.CodeRay .string .content, article pre .string .content, .trix-content pre .string .content, trix-editor pre .string .content {
   color: #D14;
 }
 
 /* line 108, app/assets/stylesheets/coderay.scss */
-.CodeRay .string .char, .trix-content pre .string .char, trix-editor pre .string .char {
+.CodeRay .string .char, article pre .string .char, .trix-content pre .string .char, trix-editor pre .string .char {
   color: #D14;
 }
 
 /* line 109, app/assets/stylesheets/coderay.scss */
-.CodeRay .string .delimiter, .trix-content pre .string .delimiter, trix-editor pre .string .delimiter {
+.CodeRay .string .delimiter, article pre .string .delimiter, .trix-content pre .string .delimiter, trix-editor pre .string .delimiter {
   color: #D14;
 }
 
 /* line 111, app/assets/stylesheets/coderay.scss */
-.CodeRay .shell, .trix-content pre .shell, trix-editor pre .shell {
+.CodeRay .shell, article pre .shell, .trix-content pre .shell, trix-editor pre .shell {
   color: #D14;
 }
 
 /* line 113, app/assets/stylesheets/coderay.scss */
-.CodeRay .shell .delimiter, .trix-content pre .shell .delimiter, trix-editor pre .shell .delimiter {
+.CodeRay .shell .delimiter, article pre .shell .delimiter, .trix-content pre .shell .delimiter, trix-editor pre .shell .delimiter {
   color: #D14;
 }
 
 /* line 115, app/assets/stylesheets/coderay.scss */
-.CodeRay .symbol, .trix-content pre .symbol, trix-editor pre .symbol {
+.CodeRay .symbol, article pre .symbol, .trix-content pre .symbol, trix-editor pre .symbol {
   color: #990073;
 }
 
 /* line 116, app/assets/stylesheets/coderay.scss */
-.CodeRay .symbol .content, .trix-content pre .symbol .content, trix-editor pre .symbol .content {
+.CodeRay .symbol .content, article pre .symbol .content, .trix-content pre .symbol .content, trix-editor pre .symbol .content {
   color: #A60;
 }
 
 /* line 117, app/assets/stylesheets/coderay.scss */
-.CodeRay .symbol .delimiter, .trix-content pre .symbol .delimiter, trix-editor pre .symbol .delimiter {
+.CodeRay .symbol .delimiter, article pre .symbol .delimiter, .trix-content pre .symbol .delimiter, trix-editor pre .symbol .delimiter {
   color: #630;
 }
 
 /* line 119, app/assets/stylesheets/coderay.scss */
-.CodeRay .tag, .trix-content pre .tag, trix-editor pre .tag {
+.CodeRay .tag, article pre .tag, .trix-content pre .tag, trix-editor pre .tag {
   color: #070;
 }
 
 /* line 120, app/assets/stylesheets/coderay.scss */
-.CodeRay .tag-special, .trix-content pre .tag-special, trix-editor pre .tag-special {
+.CodeRay .tag-special, article pre .tag-special, .trix-content pre .tag-special, trix-editor pre .tag-special {
   color: #D70;
   font-weight: bold;
 }
 
 /* line 121, app/assets/stylesheets/coderay.scss */
-.CodeRay .type, .trix-content pre .type, trix-editor pre .type {
+.CodeRay .type, article pre .type, .trix-content pre .type, trix-editor pre .type {
   color: #339;
   font-weight: bold;
 }
 
 /* line 122, app/assets/stylesheets/coderay.scss */
-.CodeRay .variable, .trix-content pre .variable, trix-editor pre .variable {
+.CodeRay .variable, article pre .variable, .trix-content pre .variable, trix-editor pre .variable {
   color: #036;
 }
 
 /* line 124, app/assets/stylesheets/coderay.scss */
-.CodeRay .insert, .trix-content pre .insert, trix-editor pre .insert {
+.CodeRay .insert, article pre .insert, .trix-content pre .insert, trix-editor pre .insert {
   background: #afa;
 }
 
 /* line 125, app/assets/stylesheets/coderay.scss */
-.CodeRay .delete, .trix-content pre .delete, trix-editor pre .delete {
+.CodeRay .delete, article pre .delete, .trix-content pre .delete, trix-editor pre .delete {
   background: #faa;
 }
 
 /* line 126, app/assets/stylesheets/coderay.scss */
-.CodeRay .change, .trix-content pre .change, trix-editor pre .change {
+.CodeRay .change, article pre .change, .trix-content pre .change, trix-editor pre .change {
   color: #aaf;
   background: #007;
 }
 
 /* line 127, app/assets/stylesheets/coderay.scss */
-.CodeRay .head, .trix-content pre .head, trix-editor pre .head {
+.CodeRay .head, article pre .head, .trix-content pre .head, trix-editor pre .head {
   color: #f8f;
   background: #505;
 }
 
 /* line 129, app/assets/stylesheets/coderay.scss */
-.CodeRay .insert .insert, .trix-content pre .insert .insert, trix-editor pre .insert .insert {
+.CodeRay .insert .insert, article pre .insert .insert, .trix-content pre .insert .insert, trix-editor pre .insert .insert {
   color: #080;
   font-weight: bold;
 }
 
 /* line 130, app/assets/stylesheets/coderay.scss */
-.CodeRay .delete .delete, .trix-content pre .delete .delete, trix-editor pre .delete .delete {
+.CodeRay .delete .delete, article pre .delete .delete, .trix-content pre .delete .delete, trix-editor pre .delete .delete {
   color: #800;
   font-weight: bold;
 }
 
 /* line 131, app/assets/stylesheets/coderay.scss */
-.CodeRay .change .change, .trix-content pre .change .change, trix-editor pre .change .change {
+.CodeRay .change .change, article pre .change .change, .trix-content pre .change .change, trix-editor pre .change .change {
   color: #66f;
 }
 
 /* line 132, app/assets/stylesheets/coderay.scss */
-.CodeRay .head .head, .trix-content pre .head .head, trix-editor pre .head .head {
+.CodeRay .head .head, article pre .head .head, .trix-content pre .head .head, trix-editor pre .head .head {
   color: #f4f;
 }
 
@@ -2810,7 +2810,7 @@ article {
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
-  /* line 37, app/assets/stylesheets/posts.scss */
+  /* line 41, app/assets/stylesheets/posts.scss */
   .blog_archives {
     right: -104px;
     height: 58%;
@@ -2819,7 +2819,7 @@ article {
 }
 
 @media screen and (min-width: 501px) and (max-width: 840px) {
-  /* line 45, app/assets/stylesheets/posts.scss */
+  /* line 49, app/assets/stylesheets/posts.scss */
   .blog_archives {
     left: 72%;
     /* 500px;*/
@@ -2830,7 +2830,7 @@ article {
 }
 
 @media screen and (min-width: 841px) and (max-width: 950px) {
-  /* line 53, app/assets/stylesheets/posts.scss */
+  /* line 57, app/assets/stylesheets/posts.scss */
   .blog_archives {
     left: 530px;
     /*442px;*/
@@ -2840,7 +2840,7 @@ article {
 }
 
 @media screen and (min-width: 951px) {
-  /* line 61, app/assets/stylesheets/posts.scss */
+  /* line 65, app/assets/stylesheets/posts.scss */
   .blog_archives {
     left: 530px;
     /*487px;*/
@@ -2849,7 +2849,7 @@ article {
   }
 }
 
-/* line 68, app/assets/stylesheets/posts.scss */
+/* line 72, app/assets/stylesheets/posts.scss */
 .blog_archives {
   position: fixed;
   float: left;
@@ -2861,25 +2861,25 @@ article {
   flex-direction: column;
 }
 
-/* line 77, app/assets/stylesheets/posts.scss */
+/* line 81, app/assets/stylesheets/posts.scss */
 .blog_archives > * {
   flex: 0 0 25px;
   outline: 0;
   transition: flex-basis 0.3s linear;
 }
 
-/* line 84, app/assets/stylesheets/posts.scss */
+/* line 88, app/assets/stylesheets/posts.scss */
 .blog_archive_year {
   width: 100%;
   overflow: hidden !important;
 }
 
-/* line 87, app/assets/stylesheets/posts.scss */
+/* line 91, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list {
   width: 100%;
 }
 
-/* line 89, app/assets/stylesheets/posts.scss */
+/* line 93, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month {
   width: 100%;
   position: relative;
@@ -2888,19 +2888,19 @@ article {
   flex-direction: column;
 }
 
-/* line 94, app/assets/stylesheets/posts.scss */
+/* line 98, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month a {
   width: 78%;
 }
 
-/* line 98, app/assets/stylesheets/posts.scss */
+/* line 102, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month > * {
   flex: 0 0 50px;
   outline: 0;
   transition: flex-basis 0.3s linear;
 }
 
-/* line 103, app/assets/stylesheets/posts.scss */
+/* line 107, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list {
   height: 250%;
   width: 98%;
@@ -2910,23 +2910,23 @@ article {
   position: relative;
 }
 
-/* line 110, app/assets/stylesheets/posts.scss */
+/* line 114, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:link, .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:visited, .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:hover, .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:active {
   color: #6767D7 !important;
 }
 
-/* line 113, app/assets/stylesheets/posts.scss */
+/* line 117, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:hover {
   font-size: 1.1rem !important;
 }
 
-/* line 121, app/assets/stylesheets/posts.scss */
+/* line 125, app/assets/stylesheets/posts.scss */
 .blog_archive_draft {
   width: 100%;
   overflow: hidden !important;
 }
 
-/* line 124, app/assets/stylesheets/posts.scss */
+/* line 128, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list {
   height: 30%;
   width: 99%;
@@ -2936,23 +2936,23 @@ article {
   flex-direction: column;
 }
 
-/* line 130, app/assets/stylesheets/posts.scss */
+/* line 134, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list a {
   position: relative;
   left: -10px;
 }
 
-/* line 134, app/assets/stylesheets/posts.scss */
+/* line 138, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list a:link, .blog_archive_draft .blog_archive_draft_list a:visited, .blog_archive_draft .blog_archive_draft_list a:hover, .blog_archive_draft .blog_archive_draft_list a:active {
   color: #6767D7 !important;
 }
 
-/* line 137, app/assets/stylesheets/posts.scss */
+/* line 141, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list a:hover {
   font-size: 1.1rem !important;
 }
 
-/* line 141, app/assets/stylesheets/posts.scss */
+/* line 145, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list > * {
   flex: 0 0 25px;
   outline: 0;
