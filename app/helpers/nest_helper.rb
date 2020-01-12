@@ -6,11 +6,11 @@ module NestHelper
   def current_user?(user)
     user == current_user
   end
-  
+
   def current_user_id?(user_id)
     user_id == current_user.id
   end
-  
+
   def redirect_to_login
     unless user_signed_in?
       flash[:error] = "Please log in"
@@ -31,6 +31,15 @@ module NestHelper
 
     main_keywords.uniq(&:downcase).join(",")
   end
+
+  def list_current_errors
+    instance_variables.select do |ivar|
+      instance_variable_get(ivar).respond_to?(:errors)
+    end.map do |model|
+      instance_variable_get(model).errors.try(:full_messages)
+    end.flatten
+  end
+
 =begin
   def store_location
     session[:forwarding_url] = request.url if request.get?
