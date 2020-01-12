@@ -13,4 +13,12 @@ class Job < ApplicationRecord
       errors[:start_date] << "must be in the past"
     end
   end
+
+  def format_end_date
+    if end_date.present? && end_date.past?
+      end_date.strftime("%b %Y")
+    else
+      "Present"
+    end
+  end
 end

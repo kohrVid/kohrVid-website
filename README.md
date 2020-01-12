@@ -8,6 +8,7 @@ This is the repo for my site.
 * [Set up](#set-up)
 * [Run locally](#run-locally)
 * [Deploy to production](#deploy-to-production)
+* [Run test suite](#run-test-suite)
 
 <!-- vim-markdown-toc -->
 
@@ -51,3 +52,13 @@ This depends on the following buildpacks:
 
   * heroku/ruby
   * heroku/nodejs
+
+## Run test suite
+
+Test are written in RSpec
+
+    rspec
+
+Guard is configured to run when changes are made to specific tests:
+
+    guard

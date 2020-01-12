@@ -31,5 +31,25 @@ RSpec.describe NestHelper, type: :helper do
         is_expected.to eq("kohrVid,Jessica,Ete,Developer,Rubyist,Scala,Go,ruby")
       end
     end
+
+    context "list_current_errors" do
+      it "should return an empty list if there is no model" do
+        expect(list_current_errors).to be_empty
+      end
+
+      it "should return an empty list if there are no errors" do
+        @tag = FactoryBot.build(:tag)
+        @tag.errors
+
+        expect(list_current_errors).to be_empty
+      end
+
+      it "should list errors if a model with errors ispresent" do
+        @tag = Tag.new
+        @tag.save
+
+        expect(list_current_errors).to include "Name can't be blank"
+      end
+    end
   end
 end

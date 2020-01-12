@@ -6,12 +6,9 @@
           = value
         %a.close{ href: "#" }
           &times;
-        - [ @user, @contact, @client, @comment, @post, @tag ].each do |model|
-          - if model.present?
-            - @object = model
-        - if @object.present? && @object.errors.any?
-          The form contains #{ pluralize(@object.errors.count, "error") }.
+        - if list_current_errors.any?
+          The form contains #{ pluralize(list_current_errors.count, "error") }.
           %ul
-            - @object.errors.full_messages.each do |msg|
+            - list_current_errors.each do |msg|
               %li
                 = msg
