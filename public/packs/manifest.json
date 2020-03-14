@@ -1,95 +1,118 @@
 {
-  "App.js": "/packs/js/App-8ee5f47b82f7fefaff16.js",
-  "App.js.map": "/packs/js/App-8ee5f47b82f7fefaff16.js.map",
-  "application.js": "/packs/js/application-b59d71df298843254089.js",
-  "application.js.map": "/packs/js/application-b59d71df298843254089.js.map",
-  "components/ClientsContainer.js": "/packs/js/components/ClientsContainer-1f8af84d804a307108c2.js",
-  "components/ClientsContainer.js.map": "/packs/js/components/ClientsContainer-1f8af84d804a307108c2.js.map",
-  "components/ProjectsContainer.js": "/packs/js/components/ProjectsContainer-ca56abc6cd74ba51d58f.js",
-  "components/ProjectsContainer.js.map": "/packs/js/components/ProjectsContainer-ca56abc6cd74ba51d58f.js.map",
+  "App.js": "/packs/js/App-32d4ca8b14ce990ca70d.js",
+  "App.js.map": "/packs/js/App-32d4ca8b14ce990ca70d.js.map",
+  "application.js": "/packs/js/application-dbc1548b4d392c01d2d9.js",
+  "application.js.map": "/packs/js/application-dbc1548b4d392c01d2d9.js.map",
+  "components/ClientsContainer.js": "/packs/js/components/ClientsContainer-e8ce2634a58e9bb040d6.js",
+  "components/ClientsContainer.js.map": "/packs/js/components/ClientsContainer-e8ce2634a58e9bb040d6.js.map",
+  "components/ProjectsContainer.js": "/packs/js/components/ProjectsContainer-c57d1d3d711473ccf778.js",
+  "components/ProjectsContainer.js.map": "/packs/js/components/ProjectsContainer-c57d1d3d711473ccf778.js.map",
   "entrypoints": {
     "App": {
       "js": [
-        "/packs/js/App-8ee5f47b82f7fefaff16.js"
+        "/packs/js/App-32d4ca8b14ce990ca70d.js"
       ],
       "js.map": [
-        "/packs/js/App-8ee5f47b82f7fefaff16.js.map"
+        "/packs/js/App-32d4ca8b14ce990ca70d.js.map"
       ]
     },
     "application": {
       "js": [
-        "/packs/js/application-b59d71df298843254089.js"
+        "/packs/js/application-dbc1548b4d392c01d2d9.js"
       ],
       "js.map": [
-        "/packs/js/application-b59d71df298843254089.js.map"
+        "/packs/js/application-dbc1548b4d392c01d2d9.js.map"
       ]
     },
     "components/ClientsContainer": {
       "js": [
-        "/packs/js/components/ClientsContainer-1f8af84d804a307108c2.js"
+        "/packs/js/components/ClientsContainer-e8ce2634a58e9bb040d6.js"
       ],
       "js.map": [
-        "/packs/js/components/ClientsContainer-1f8af84d804a307108c2.js.map"
+        "/packs/js/components/ClientsContainer-e8ce2634a58e9bb040d6.js.map"
       ]
     },
     "components/ProjectsContainer": {
       "js": [
-        "/packs/js/components/ProjectsContainer-ca56abc6cd74ba51d58f.js"
+        "/packs/js/components/ProjectsContainer-c57d1d3d711473ccf778.js"
       ],
       "js.map": [
-        "/packs/js/components/ProjectsContainer-ca56abc6cd74ba51d58f.js.map"
-      ]
-    },
-    "index": {
-      "js": [
-        "/packs/js/index-eb342f098860386159e5.js"
-      ],
-      "js.map": [
-        "/packs/js/index-eb342f098860386159e5.js.map"
+        "/packs/js/components/ProjectsContainer-c57d1d3d711473ccf778.js.map"
       ]
     },
     "logo": {
       "js": [
-        "/packs/js/logo-d9bce14c172308b3faf0.js"
+        "/packs/js/logo-d37b02870a7137e8fe2d.js"
       ],
       "js.map": [
-        "/packs/js/logo-d9bce14c172308b3faf0.js.map"
+        "/packs/js/logo-d37b02870a7137e8fe2d.js.map"
       ]
     },
     "serviceWorker": {
       "js": [
-        "/packs/js/serviceWorker-7f87592e6bbe34de0b8e.js"
+        "/packs/js/serviceWorker-0ce28a5fcd1e32658d1e.js"
       ],
       "js.map": [
-        "/packs/js/serviceWorker-7f87592e6bbe34de0b8e.js.map"
+        "/packs/js/serviceWorker-0ce28a5fcd1e32658d1e.js.map"
       ]
     },
     "utils/StringUtils": {
       "js": [
-        "/packs/js/utils/StringUtils-8cca2d3f459d7ff5b4ff.js"
+        "/packs/js/utils/StringUtils-d8d02caa8fe3e630f0bc.js"
       ],
       "js.map": [
-        "/packs/js/utils/StringUtils-8cca2d3f459d7ff5b4ff.js.map"
+        "/packs/js/utils/StringUtils-d8d02caa8fe3e630f0bc.js.map"
       ]
     },
     "utils/ViewUtils": {
       "js": [
-        "/packs/js/utils/ViewUtils-1725cc09e445b789429f.js"
+        "/packs/js/utils/ViewUtils-ce790063983c43f946a8.js"
       ],
       "js.map": [
-        "/packs/js/utils/ViewUtils-1725cc09e445b789429f.js.map"
+        "/packs/js/utils/ViewUtils-ce790063983c43f946a8.js.map"
       ]
     }
   },
-  "index.js": "/packs/js/index-eb342f098860386159e5.js",
-  "index.js.map": "/packs/js/index-eb342f098860386159e5.js.map",
-  "logo.js": "/packs/js/logo-d9bce14c172308b3faf0.js",
-  "logo.js.map": "/packs/js/logo-d9bce14c172308b3faf0.js.map",
+  "logo.js": "/packs/js/logo-d37b02870a7137e8fe2d.js",
+  "logo.js.map": "/packs/js/logo-d37b02870a7137e8fe2d.js.map",
+  "media/icons/align-center.svg": "/packs/media/icons/align-center-5d401424.svg",
+  "media/icons/align-justify.svg": "/packs/media/icons/align-justify-0176a1a9.svg",
+  "media/icons/align-left.svg": "/packs/media/icons/align-left-a09f86f1.svg",
+  "media/icons/align-right.svg": "/packs/media/icons/align-right-b5ac91b1.svg",
+  "media/icons/background.svg": "/packs/media/icons/background-e477651e.svg",
+  "media/icons/blockquote.svg": "/packs/media/icons/blockquote-c2184610.svg",
+  "media/icons/bold.svg": "/packs/media/icons/bold-54d33dc3.svg",
+  "media/icons/clean.svg": "/packs/media/icons/clean-4f9f17ca.svg",
+  "media/icons/code.svg": "/packs/media/icons/code-6a3213a8.svg",
+  "media/icons/color.svg": "/packs/media/icons/color-10e37cf5.svg",
+  "media/icons/direction-ltr.svg": "/packs/media/icons/direction-ltr-041f56d6.svg",
+  "media/icons/direction-rtl.svg": "/packs/media/icons/direction-rtl-8c068bb2.svg",
+  "media/icons/dropdown.svg": "/packs/media/icons/dropdown-8bd433f1.svg",
+  "media/icons/float-center.svg": "/packs/media/icons/float-center-1d0bd3e6.svg",
+  "media/icons/float-full.svg": "/packs/media/icons/float-full-110f5173.svg",
+  "media/icons/float-left.svg": "/packs/media/icons/float-left-be89ac16.svg",
+  "media/icons/float-right.svg": "/packs/media/icons/float-right-b06480a9.svg",
+  "media/icons/formula.svg": "/packs/media/icons/formula-21323504.svg",
+  "media/icons/header-2.svg": "/packs/media/icons/header-2-3f9893c2.svg",
+  "media/icons/header.svg": "/packs/media/icons/header-35ab8838.svg",
+  "media/icons/image.svg": "/packs/media/icons/image-7396f7c5.svg",
+  "media/icons/indent.svg": "/packs/media/icons/indent-be731253.svg",
+  "media/icons/italic.svg": "/packs/media/icons/italic-511aa4bd.svg",
+  "media/icons/link.svg": "/packs/media/icons/link-9409cf33.svg",
+  "media/icons/list-bullet.svg": "/packs/media/icons/list-bullet-32a7480d.svg",
+  "media/icons/list-check.svg": "/packs/media/icons/list-check-25846f03.svg",
+  "media/icons/list-ordered.svg": "/packs/media/icons/list-ordered-d10abd47.svg",
+  "media/icons/outdent.svg": "/packs/media/icons/outdent-e61f76ea.svg",
+  "media/icons/strike.svg": "/packs/media/icons/strike-dd63b495.svg",
+  "media/icons/subscript.svg": "/packs/media/icons/subscript-8d0b080a.svg",
+  "media/icons/superscript.svg": "/packs/media/icons/superscript-759f4caf.svg",
+  "media/icons/underline.svg": "/packs/media/icons/underline-ae1cb7a6.svg",
+  "media/icons/video.svg": "/packs/media/icons/video-bb016841.svg",
   "media/packs/logo.svg": "/packs/media/packs/logo-5d5d9eefa31e5e13a6610d9fa7a283bb.svg",
-  "serviceWorker.js": "/packs/js/serviceWorker-7f87592e6bbe34de0b8e.js",
-  "serviceWorker.js.map": "/packs/js/serviceWorker-7f87592e6bbe34de0b8e.js.map",
-  "utils/StringUtils.js": "/packs/js/utils/StringUtils-8cca2d3f459d7ff5b4ff.js",
-  "utils/StringUtils.js.map": "/packs/js/utils/StringUtils-8cca2d3f459d7ff5b4ff.js.map",
-  "utils/ViewUtils.js": "/packs/js/utils/ViewUtils-1725cc09e445b789429f.js",
-  "utils/ViewUtils.js.map": "/packs/js/utils/ViewUtils-1725cc09e445b789429f.js.map"
+  "serviceWorker.js": "/packs/js/serviceWorker-0ce28a5fcd1e32658d1e.js",
+  "serviceWorker.js.map": "/packs/js/serviceWorker-0ce28a5fcd1e32658d1e.js.map",
+  "utils/StringUtils.js": "/packs/js/utils/StringUtils-d8d02caa8fe3e630f0bc.js",
+  "utils/StringUtils.js.map": "/packs/js/utils/StringUtils-d8d02caa8fe3e630f0bc.js.map",
+  "utils/ViewUtils.js": "/packs/js/utils/ViewUtils-ce790063983c43f946a8.js",
+  "utils/ViewUtils.js.map": "/packs/js/utils/ViewUtils-ce790063983c43f946a8.js.map"
 }

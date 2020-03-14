@@ -1,0 +1,11 @@
+.ql-snow .ql-picker.ql-header .ql-picker-label::before {
+  color: $black !important;
+}
+#editor-container {
+  border: 1px solid $grey;
+  height: 30rem;
+  width: 100%;
+  overflow: scroll;
+  border: 1px solid $grey;
+  resize: both;
+}

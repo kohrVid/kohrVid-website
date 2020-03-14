@@ -10,15 +10,13 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 75 }, uniqueness: true
   validates :body, length: { maximum: 20000 }
   validates :rich_text_body, presence: true,
-    length: { minimum: 14, maximum: 20010 }, uniqueness: true
+    length: { minimum: 14 }, uniqueness: true
 #	validates :post_tags, presence: true, associated: true
 
   #validate :rich_text_body_is_unique
 
   scope :drafts, proc { where(draft: true) }
   scope :published, proc { where(draft: false).order("published_at DESC") }
-
-  has_rich_text :rich_text_body
 
   def slug_candidates
     [

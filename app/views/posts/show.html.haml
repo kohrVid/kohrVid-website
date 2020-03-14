@@ -15,7 +15,7 @@
     #error_explanation.alerts
       %h4.alert
         This is a draft
-  = @post.rich_text_body
+  = raw(@post.rich_text_body)
 
   %section
     %ul.tags.p-l-0

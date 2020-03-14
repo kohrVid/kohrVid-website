@@ -37,7 +37,7 @@ module PostsHelper
   def truncate_body(rich_text_body, length = 590)
     if rich_text_body.present?
       Nokogiri::HTML(
-        rich_text_body.body.to_html.truncate(length+3)
+        rich_text_body.truncate(length+3)
       ).to_html.strip.html_safe
     end
   end

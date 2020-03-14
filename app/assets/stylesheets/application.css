@@ -12,5 +12,5 @@
  *
  *= require_self
  *= require nest
- *= require trix.css
+ *= require 'quill/dist/quill.snow.css'
  */
