@@ -1,14 +1,14 @@
 .comment
   %a{ id: comment.id }
   %p.smaller-text
-    Posted by 
+    Posted by
     <strong>#{ link_to_if(!comment.user_id.nil?, comment.author, { controller: "users", action: "show", id: comment.user_id }) }</strong> on&nbsp;
     = comment.created_at.strftime("%e#{comment.created_at.day.ordinal} %B %Y at %H:%M:%S")
     - unless comment.created_at == comment.updated_at
       %em
         = comment.updated_at.strftime("(last modified on %e#{comment.updated_at.day.ordinal} %B %Y at %H:%M:%S)")
     %blockquote
-      = comment.body
+      = raw(comment.body)
 
   - from_reply_form ||= nil
   - unless from_reply_form

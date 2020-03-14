@@ -21,8 +21,7 @@ RSpec.describe "Comment", type: :request do
     visit post_path(blog_post)
     click_link "Post a comment"
     expect(current_path).to eql(post_new_comment_path(blog_post))
-
-    editor = find(:xpath, '//trix-editor[@id="comment_body"]')
+    editor = find(:xpath, '//div[@contenteditable="true"]')
     editor.set("This is a new comment")
     editor.native.send_keys(:return)
     click_button "Submit"
