@@ -11,7 +11,7 @@ gem 'coderay'
 gem 'coffee-rails'
 #gem 'dawnscanner', '>= 1.4.2' #run 'dawn -r ./' to use
 gem 'devise'
-gem 'fog-google'
+gem 'fog-google', '>= 1.9.1'
 gem 'friendly_id', '~> 5.2.4', require: 'friendly_id'
 gem 'haml'
 gem 'image_processing', '~> 1.2'
