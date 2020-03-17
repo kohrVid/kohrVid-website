@@ -28,7 +28,7 @@ class ClientsContainer extends Component {
 
   toggleClientModal = () => {
     this.setState(state => ({
-      modalOpen: !state.modaleOpen
+      modalOpen: !state.modalOpen
     }));
   }
 
