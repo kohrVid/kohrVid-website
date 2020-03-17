@@ -4,9 +4,10 @@
       %strong
         #{job.title} at #{link_to job.company_name, job.company_website}
       %br
-      #{job.start_date.strftime("%b %Y")} - #{job.end_date.strftime("%b %Y")}
+      #{job.start_date.strftime("%b %Y")} - #{job.format_end_date}
     .display-inline.col-lg-6.col-md-7.col-sm-7.col-xs-6
-      = job.description
+      .ql-container
+        = job.description
     .display-inline.col-lg-3.col-md-2.col-sm-2.col-xs-2
       = link_to 'Show', job
       |
