@@ -10,7 +10,6 @@
         = f.label :body, "Body"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.hidden_field :rich_text_body, class: 'rich-text-content'
-        = javascript_pack_tag 'quill-icons-override'
         #editor-container
           = raw(@post.rich_text_body)
 

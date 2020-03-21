@@ -15,7 +15,6 @@
         = f.label :body, "Comment"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.hidden_field :body, class: 'rich-text-content'
-        = javascript_pack_tag 'quill-icons-override'
         #editor-container
           = raw(@comment.body)
     %fieldset.row

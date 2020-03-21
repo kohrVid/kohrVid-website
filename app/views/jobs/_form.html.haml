@@ -40,7 +40,6 @@
     .col-md-10.col-sm-10.col-xs-12
       = f.hidden_field :description, { class: 'rich-text-content' }
       .editor-container{ tabindex: 6, 'aria-labelledby': 'description', class: 'width-100p glowing-border'}
-        = javascript_pack_tag 'quill-icons-override'
         #editor-container
           = raw(@job.description)
 
