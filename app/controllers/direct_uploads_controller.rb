@@ -1,0 +1,16 @@
+class DirectUploadsController < ActiveStorage::DirectUploadsController
+  protect_from_forgery with: :null_session,
+    if: Proc.new { |c| c.request.format == 'application/json' }
+
+  private
+
+  def blob_args
+    params.require(:blob).permit(
+      :filename,
+      :byte_size,
+      :checksum,
+      :content_type,
+      :metadata
+    ).to_h.symbolize_keys
+  end
+end

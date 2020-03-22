@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get 'contact'	=>  'contacts#new'
   resources 'contacts', only: [ :new, :create ]
   post 'csp_reports' =>  'nest#csp_reports'
+  resources :direct_uploads, only: [:create]
   get 'portfolio' => 'nest#portfolio'
   get 'projects/list' =>  'projects#list'
   resources 'projects'
