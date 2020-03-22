@@ -33,7 +33,15 @@ article {
   border-bottom: 1px $black solid;
 
   pre {
-    @extend .CodeRay;
+    white-space: pre-wrap;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+    background-color: #23241f;
+    color: #f8f8f2;
+    overflow: visible;
   }
 }
 
