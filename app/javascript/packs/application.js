@@ -8,5 +8,4 @@
 // layout file, like app/views/layouts/application.html.erb
 
 require("@rails/activestorage").start()
-import "../css/application.css"
 import "./quill-editor.js"
