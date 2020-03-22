@@ -23,7 +23,7 @@
   "homepage": "https://github.com/kohrVid/kohrVid-website#readme",
   "dependencies": {
     "@babel/preset-react": "^7.7.4",
-    "@rails/actiontext": "^6.0.2-1",
+    "@rails/activestorage": "^6.0.2",
     "@rails/webpacker": "4.2.2",
     "@taoqf/quill-image-resize-module": "^3.0.1",
     "axios": "0.18.1",
