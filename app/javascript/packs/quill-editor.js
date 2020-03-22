@@ -7,6 +7,7 @@ export default Quill;
 
 Quill.register('modules/imageResize', ImageResize);
 
+const MAX_FILE_SIZE = 1000000
 
 document.addEventListener("DOMContentLoaded", function (event) {
   var quill = new Quill('#editor-container', {
@@ -58,9 +59,13 @@ var importImage = function (textEditor) {
 
     // Ensure only images are uploaded
     if (/^image\//.test(file.type)) {
+      if (file.size > MAX_FILE_SIZE) {
+        alert("Only support attachment files upto size 1MB!")
+        return
+      }
       uploadImage(textEditor, file);
     } else {
-      console.warn('Only images allowed');
+      alert('Only images allowed');
     }
   };
 };
