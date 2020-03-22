@@ -7,13 +7,5 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-//= require react
-//= require react_ujs
-//= require components
-//= require index
-
-require("trix")
-require("@rails/actiontext")
 require("@rails/activestorage").start()
-
-//= require '../trix-editor-overrides'
+import "./quill-editor.js"

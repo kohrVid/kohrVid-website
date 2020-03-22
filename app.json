@@ -6,5 +6,9 @@
     {
       "url": "https://github.com/heroku/heroku-buildpack-ruby"
     }
-  ]
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake assets:clobber; bundle exec rake assets:precompile; bundle exec rake webpacker:compile;",
+    "pr-predestroy": "bundle exec rake cleanup"
+  }
 }

@@ -28,7 +28,7 @@ class ProjectsContainer extends Component {
 
   toggleProjectModal = () => {
     this.setState(state => ({
-      modalOpen: !state.modaleOpen
+      modalOpen: !state.modalOpen
     }));
   }
 

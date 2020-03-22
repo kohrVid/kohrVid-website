@@ -18,7 +18,7 @@ coverage
 # Rails generated files
 /db/structure.sql
 
-#/public/assets
+/public/assets
 *.rbc
 capybara-*.html
 .rspec
@@ -32,7 +32,7 @@ capybara-*.html
 rerun.txt
 .sass-cache
 /node_modules
-#/public/packs
+/public/packs
 /public/packs-test
 storage
 
@@ -51,3 +51,10 @@ storage
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

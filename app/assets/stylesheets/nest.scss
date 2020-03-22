@@ -14,7 +14,7 @@ $rouge: #9F0000;
 
 @import "fonts.scss";
 @import "clients.scss";
-@import "coderay.scss";
+//@import "coderay.scss";
 @import "dividers.scss";
 @import "form.scss";
 @import "navigation.scss.haml";
@@ -24,4 +24,3 @@ $rouge: #9F0000;
 
 // This should override all other styles
 @import "position.scss";
-@import "actiontext.scss";

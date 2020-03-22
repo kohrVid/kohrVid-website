@@ -12,7 +12,7 @@ RSpec.describe NestHelper, type: :helper do
 
     context "blog posts" do
       before do
-        @post = FactoryBot.create(:post)
+        @post = FactoryBot.build(:post)
       end
 
       it "returns the correct string with blog post tags included" do

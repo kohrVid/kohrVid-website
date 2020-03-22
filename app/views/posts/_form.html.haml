@@ -1,3 +1,5 @@
+- provide(:quill_editor, true)
+
 = form_for @post do |f|
   .general-form.container-fluid
     %fieldset.row
@@ -9,7 +11,9 @@
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
         = f.label :body, "Body"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
-        = f.rich_text_area :rich_text_body, class: "text_area"
+        = f.hidden_field :rich_text_body, class: 'rich-text-content'
+        #editor-container
+          = raw(@post.rich_text_body)
 
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12

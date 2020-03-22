@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '>= 2.6.0'
+ruby '> 2.6.0'
 gem 'activerecord-session_store'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
@@ -11,7 +11,7 @@ gem 'coderay'
 gem 'coffee-rails'
 #gem 'dawnscanner', '>= 1.4.2' #run 'dawn -r ./' to use
 gem 'devise'
-gem 'fog-google'
+gem 'fog-google', '>= 1.9.1'
 gem 'friendly_id', '~> 5.2.4', require: 'friendly_id'
 gem 'haml'
 gem 'image_processing', '~> 1.2'

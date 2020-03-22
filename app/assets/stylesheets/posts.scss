@@ -28,16 +28,63 @@
   }
 }
 
+.ql-syntax {
+  white-space: pre-wrap;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+
 article {
   padding-top: 10px;
   border-bottom: 1px $black solid;
 
   pre {
-    @extend .CodeRay;
+    @extend .ql-syntax;
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 500px){
+.rich-text, #editor-container .ql-editor {
+  ul:not(.divider-list) {
+    @extend .no-bullet;
+    @extend .diamond-list;
+  }
+
+  blockquote {
+    ul:not(.divider-list) {
+      @extend .diamond-list;
+    }
+  }
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label::before {
+  color: $black !important;
+}
+
+#editor-container {
+  border: 1px solid $grey;
+  height: 30rem !important;
+  width: 100%;
+  overflow: visible !important;
+  resize: both;
+}
+
+#editor-container {
+  .ql-editor {
+    height: 30rem !important;
+    width: 100% !important;
+    overflow-x: scroll !important;
+    overflow-y: scroll !important;
+    resize: both;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
   .blog_archives {
     right: -104px;
     height: 58%;
@@ -45,7 +92,7 @@ article {
   }
 }
 
-@media screen and (min-width: 501px) and (max-width: 840px){
+@media screen and (min-width: 501px) and (max-width: 840px) {
   .blog_archives {
     left: 72%; /* 500px;*/ /*400px;79%*/
     height: 58%;
@@ -53,7 +100,7 @@ article {
   }
 }
 
-@media screen and (min-width: 841px) and	(max-width: 950px){
+@media screen and (min-width: 841px) and (max-width: 950px) {
   .blog_archives {
     left: 530px;/*442px;*/
     height: 60%;

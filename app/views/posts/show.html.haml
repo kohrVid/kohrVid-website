@@ -1,7 +1,7 @@
 - provide(:title, @post.title)
 = render partial: "layouts/blog_login_logout"
 
-%article.blog-post
+%article.rich-text
   %h1.blog-title
     = @post.title
   %p
@@ -15,7 +15,7 @@
     #error_explanation.alerts
       %h4.alert
         This is a draft
-  = @post.rich_text_body
+  = raw(@post.rich_text_body)
 
   %section
     %ul.tags.p-l-0

@@ -1,3 +1,5 @@
+- provide(:quill_editor, true)
+
 = form_for(@job) do |f|
   %fieldset.row.field.m-10px-bottom
     .col-md-2.col-sm-2.col-xs-12
@@ -38,10 +40,11 @@
     .col-md-2.col-sm-2.col-xs-12
       = f.label :description, t('jobs.form.description'), id: 'description'
     .col-md-10.col-sm-10.col-xs-12
-      = f.rich_text_area :description, tabindex: 6, 'aria-labelledby': 'description',
-        class: 'width-100p glowing-border'
+      = f.hidden_field :description, { class: 'rich-text-content' }
+      .editor-container{ tabindex: 6, 'aria-labelledby': 'description', class: 'width-100p glowing-border'}
+        #editor-container
+          = raw(@job.description)
 
   %fieldset.row.field.m-10px-bottom
     .col-md-10.col-md-offset-1.col-sm-10.col-sm-offset-2.col-xs-12
-      = f.submit "Save", class: "button"
-
+      = f.submit "Save", class: "button"#, tabindex: 7
