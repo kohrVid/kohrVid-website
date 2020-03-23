@@ -32,7 +32,7 @@ Rails.application.configure do
 
   # config.assets.css_compressor = :sass
 
-  config.assets.compile = true
+  config.assets.compile = false
 
   config.assets.digest = true
 
