@@ -20,7 +20,7 @@ export const renderTags = (tags) => {
 export const takeMeBack = () => {
   return (
     <div className="row">
-      <div className="col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-4 col-xs-offset-8 right-align">
+      <div className="col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-4 col-xs-offset-8 right-align position-relative">
         <a href="/portfolio">Back to Portfolio</a>
       </div>
     </div>

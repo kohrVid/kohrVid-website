@@ -6,9 +6,20 @@
   position: relative;
 }
 
-.right-align {
+.ql-align-left, .ql-align-center, .ql-align-right {
+  // Overflow needs to be set to ensure that div height stretches to the height
+  // of its contents.
+  overflow: auto;
+}
+
+.centre, .ql-align-center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-align, .ql-align-right img {
   float: right;
-  position: relative;
   right: 0;
 }
 
