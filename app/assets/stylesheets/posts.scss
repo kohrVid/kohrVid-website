@@ -10,7 +10,7 @@
   }
 }
 
-.replies .replies .replies .replies .replies { 
+.replies .replies .replies .replies .replies {
   margin-left: 0;
 }
 
@@ -68,19 +68,20 @@ article {
 
 #editor-container {
   border: 1px solid $grey;
-  height: 30rem !important;
-  width: 100%;
   overflow: visible !important;
   resize: both;
 }
 
 #editor-container {
   .ql-editor {
-    height: 30rem !important;
-    width: 100% !important;
-    overflow-x: scroll !important;
-    overflow-y: scroll !important;
+    //height: 30rem !important;
+    //width: 100% !important;
+    overflow: scroll !important;
     resize: both;
+
+    img {
+      cursor: nesw-resize;
+    }
   }
 }
 
