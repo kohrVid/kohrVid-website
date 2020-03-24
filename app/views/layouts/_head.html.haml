@@ -8,7 +8,7 @@
   = csrf_meta_tags
   = csp_meta_tag
   %title
-    = content_for?(:title) ? "kohrVid | #{yield(:title)}" : "kohrVid"
+    = content_for?(:title) ? "kohrVid-19 | #{yield(:title)}" : "kohrVid-19"
   = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   - if content_for?(:quill_editor)

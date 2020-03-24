@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         [{ 'indent': '-1'}, { 'indent': '+1' }]
       ],
       imageResize: {
+        displaySize: true,
         displayStyles: {
           backgroundColor: 'black',
           border: 'none',

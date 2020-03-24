@@ -12,7 +12,7 @@
         = f.label :body, "Body"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.hidden_field :rich_text_body, class: 'rich-text-content'
-        #editor-container
+        #editor-container{ style: 'height: 30rem; width: 100%;'}
           = raw(@post.rich_text_body)
 
     %fieldset.row
