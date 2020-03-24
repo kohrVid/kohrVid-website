@@ -1,64 +1,9 @@
-.replies {
-  border-left: 2px solid $lilac;
-  border-top: 1px solid rgba($black, 0.7);
-  margin-left: 5%;
-  padding-left: 15px;
-  padding-bottom: 1px;
-  .comment:not(:first-child) {
-    border-top: 1px solid rgba($black, 0.7);
-    margin-top: 15px;
-  }
-}
-
-.replies .replies .replies .replies .replies {
-  margin-left: 0;
-}
-
-.tags {
-  display: block;
-  li {
-    padding: 0 9px;
-    margin: 3px;
-    border-radius: 10px;
-    background-color: $black !important;
-    line-height: 37px !important;
-    color: $light-grey !important;
-    font-weight: bold;
-    display: inline-block;
-  }
-}
-
-.ql-syntax {
-  white-space: pre-wrap;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
-  background-color: #23241f;
-  color: #f8f8f2;
-  overflow: visible;
-}
-
 article {
   padding-top: 10px;
   border-bottom: 1px $black solid;
 
   pre {
     @extend .ql-syntax;
-  }
-}
-
-.rich-text, #editor-container .ql-editor {
-  ul:not(.divider-list) {
-    @extend .no-bullet;
-    @extend .diamond-list;
-  }
-
-  blockquote {
-    ul:not(.divider-list) {
-      @extend .diamond-list;
-    }
   }
 }
 
@@ -83,6 +28,61 @@ article {
       cursor: nesw-resize;
     }
   }
+}
+
+.rich-text, #editor-container .ql-editor {
+  ul:not(.divider-list) {
+    @extend .no-bullet;
+    @extend .diamond-list;
+  }
+
+  blockquote {
+    ul:not(.divider-list) {
+      @extend .diamond-list;
+    }
+  }
+}
+
+.ql-syntax {
+  white-space: pre-wrap;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+
+.tags {
+  display: block;
+  li {
+    padding: 0 9px;
+    margin: 3px;
+    border-radius: 10px;
+    background-color: $black !important;
+    line-height: 37px !important;
+    color: $light-grey !important;
+    font-weight: bold;
+    display: inline-block;
+  }
+}
+
+.replies {
+  border-left: 2px solid $lilac;
+  border-top: 1px solid rgba($black, 0.7);
+  margin-left: 5%;
+  padding-left: 15px;
+  padding-bottom: 1px;
+  .comment:not(:first-child) {
+    border-top: 1px solid rgba($black, 0.7);
+    margin-top: 15px;
+  }
+}
+
+.replies .replies .replies .replies .replies {
+  margin-left: 0;
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
