@@ -1,6 +1,4 @@
 import { DirectUpload } from "@rails/activestorage"
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
 import ImageResize from "@taoqf/quill-image-resize-module/image-resize.min";
 import Quill from 'quill/quill';
 export default Quill;
