@@ -3165,48 +3165,57 @@ a:link:hover, a:visited:hover, a:hover:hover, a:active:hover, .fake-link:hover {
 
 /* line 73, app/assets/stylesheets/fonts.scss */
 .rich-text h2, .rich-text h3, #editor-container h2, #editor-container h3 {
-  font-size: 2.6rem;
   line-height: 2.1rem;
   margin: 0;
 }
 
-/* line 80, app/assets/stylesheets/fonts.scss */
+/* line 78, app/assets/stylesheets/fonts.scss */
+.rich-text h2, #editor-container h2 {
+  font-size: 2.6rem;
+}
+
+/* line 82, app/assets/stylesheets/fonts.scss */
+.rich-text h3, #editor-container h3 {
+  font-size: 2.2rem;
+}
+
+/* line 87, app/assets/stylesheets/fonts.scss */
 .blog-index-titles {
   font-size: 2.1rem;
 }
 
-/* line 82, app/assets/stylesheets/fonts.scss */
+/* line 89, app/assets/stylesheets/fonts.scss */
 .blog-index-titles a:hover {
   font-size: 2.3rem;
 }
 
-/* line 88, app/assets/stylesheets/fonts.scss */
+/* line 95, app/assets/stylesheets/fonts.scss */
 main {
   font-size: 1rem;
 }
 
-/* line 92, app/assets/stylesheets/fonts.scss */
+/* line 99, app/assets/stylesheets/fonts.scss */
 em {
   font-style: italic;
 }
 
-/* line 96, app/assets/stylesheets/fonts.scss */
+/* line 103, app/assets/stylesheets/fonts.scss */
 small {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
 }
 
-/* line 100, app/assets/stylesheets/fonts.scss */
+/* line 107, app/assets/stylesheets/fonts.scss */
 .smaller-text {
   font-size: 0.8rem;
 }
 
-/* line 104, app/assets/stylesheets/fonts.scss */
+/* line 111, app/assets/stylesheets/fonts.scss */
 .riesling {
   font-family: rieslingregular, Tahoma, sans-serif;
 }
 
-/* line 108, app/assets/stylesheets/fonts.scss */
+/* line 115, app/assets/stylesheets/fonts.scss */
 .main-font {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
