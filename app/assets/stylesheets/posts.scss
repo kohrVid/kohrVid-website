@@ -5,6 +5,10 @@ article {
   pre, code {
     @extend .ql-syntax;
   }
+
+  .ql-align-center {
+    text-align: center;
+  }
 }
 
 .ql-snow .ql-picker.ql-header .ql-picker-label::before {
@@ -47,11 +51,16 @@ article {
   }
 }
 
+pre {
+  padding: 5px 10px;
+}
+
+code {
+  padding: 1.5px 3px;
+}
+
 .ql-syntax {
   white-space: pre-wrap;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 5px 10px;
   border-radius: 3px;
   counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
   background-color: $black;

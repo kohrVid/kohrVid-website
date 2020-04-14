@@ -3601,35 +3601,47 @@ article {
   border-bottom: 1px #010101 solid;
 }
 
-/* line 10, app/assets/stylesheets/posts.scss */
+/* line 9, app/assets/stylesheets/posts.scss */
+article .ql-align-center {
+  text-align: center;
+}
+
+/* line 14, app/assets/stylesheets/posts.scss */
 .ql-snow .ql-picker.ql-header .ql-picker-label::before {
   color: #010101 !important;
 }
 
-/* line 14, app/assets/stylesheets/posts.scss */
+/* line 18, app/assets/stylesheets/posts.scss */
 #editor-container {
   border: 1px solid #D7D7D7;
   overflow: visible !important;
   resize: both;
 }
 
-/* line 21, app/assets/stylesheets/posts.scss */
+/* line 25, app/assets/stylesheets/posts.scss */
 #editor-container .ql-editor {
   overflow: scroll !important;
   resize: both;
 }
 
-/* line 27, app/assets/stylesheets/posts.scss */
+/* line 31, app/assets/stylesheets/posts.scss */
 #editor-container .ql-editor img {
   cursor: nesw-resize;
 }
 
-/* line 50, app/assets/stylesheets/posts.scss */
+/* line 54, app/assets/stylesheets/posts.scss */
+pre {
+  padding: 5px 10px;
+}
+
+/* line 58, app/assets/stylesheets/posts.scss */
+code {
+  padding: 1.5px 3px;
+}
+
+/* line 62, app/assets/stylesheets/posts.scss */
 .ql-syntax, article pre, article code, #editor-container .ql-editor code {
   white-space: pre-wrap;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 5px 10px;
   border-radius: 3px;
   counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
   background-color: #010101;
@@ -3637,12 +3649,12 @@ article {
   overflow: visible;
 }
 
-/* line 62, app/assets/stylesheets/posts.scss */
+/* line 71, app/assets/stylesheets/posts.scss */
 .tags {
   display: block;
 }
 
-/* line 64, app/assets/stylesheets/posts.scss */
+/* line 73, app/assets/stylesheets/posts.scss */
 .tags li {
   padding: 0 9px;
   margin: 3px;
@@ -3654,7 +3666,7 @@ article {
   display: inline-block;
 }
 
-/* line 76, app/assets/stylesheets/posts.scss */
+/* line 85, app/assets/stylesheets/posts.scss */
 .replies {
   border-left: 2px solid #6767D7;
   border-top: 1px solid rgba(1, 1, 1, 0.7);
@@ -3663,19 +3675,19 @@ article {
   padding-bottom: 1px;
 }
 
-/* line 82, app/assets/stylesheets/posts.scss */
+/* line 91, app/assets/stylesheets/posts.scss */
 .replies .comment:not(:first-child) {
   border-top: 1px solid rgba(1, 1, 1, 0.7);
   margin-top: 15px;
 }
 
-/* line 88, app/assets/stylesheets/posts.scss */
+/* line 97, app/assets/stylesheets/posts.scss */
 .replies .replies .replies .replies .replies {
   margin-left: 0;
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
-  /* line 93, app/assets/stylesheets/posts.scss */
+  /* line 102, app/assets/stylesheets/posts.scss */
   .blog_archives {
     right: -104px;
     height: 58%;
@@ -3684,7 +3696,7 @@ article {
 }
 
 @media screen and (min-width: 501px) and (max-width: 840px) {
-  /* line 101, app/assets/stylesheets/posts.scss */
+  /* line 110, app/assets/stylesheets/posts.scss */
   .blog_archives {
     left: 72%;
     /* 500px;*/
@@ -3695,7 +3707,7 @@ article {
 }
 
 @media screen and (min-width: 841px) and (max-width: 950px) {
-  /* line 109, app/assets/stylesheets/posts.scss */
+  /* line 118, app/assets/stylesheets/posts.scss */
   .blog_archives {
     left: 530px;
     /*442px;*/
@@ -3705,7 +3717,7 @@ article {
 }
 
 @media screen and (min-width: 951px) {
-  /* line 117, app/assets/stylesheets/posts.scss */
+  /* line 126, app/assets/stylesheets/posts.scss */
   .blog_archives {
     left: 530px;
     /*487px;*/
@@ -3714,7 +3726,7 @@ article {
   }
 }
 
-/* line 124, app/assets/stylesheets/posts.scss */
+/* line 133, app/assets/stylesheets/posts.scss */
 .blog_archives {
   position: fixed;
   float: left;
@@ -3726,25 +3738,25 @@ article {
   flex-direction: column;
 }
 
-/* line 133, app/assets/stylesheets/posts.scss */
+/* line 142, app/assets/stylesheets/posts.scss */
 .blog_archives > * {
   flex: 0 0 25px;
   outline: 0;
   transition: flex-basis 0.3s linear;
 }
 
-/* line 140, app/assets/stylesheets/posts.scss */
+/* line 149, app/assets/stylesheets/posts.scss */
 .blog_archive_year {
   width: 100%;
   overflow: hidden !important;
 }
 
-/* line 143, app/assets/stylesheets/posts.scss */
+/* line 152, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list {
   width: 100%;
 }
 
-/* line 145, app/assets/stylesheets/posts.scss */
+/* line 154, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month {
   width: 100%;
   position: relative;
@@ -3753,19 +3765,19 @@ article {
   flex-direction: column;
 }
 
-/* line 150, app/assets/stylesheets/posts.scss */
+/* line 159, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month a {
   width: 78%;
 }
 
-/* line 154, app/assets/stylesheets/posts.scss */
+/* line 163, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month > * {
   flex: 0 0 50px;
   outline: 0;
   transition: flex-basis 0.3s linear;
 }
 
-/* line 159, app/assets/stylesheets/posts.scss */
+/* line 168, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list {
   height: 250%;
   width: 98%;
@@ -3775,23 +3787,23 @@ article {
   position: relative;
 }
 
-/* line 166, app/assets/stylesheets/posts.scss */
+/* line 175, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:link, .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:visited, .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:hover, .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:active {
   color: #6767D7 !important;
 }
 
-/* line 169, app/assets/stylesheets/posts.scss */
+/* line 178, app/assets/stylesheets/posts.scss */
 .blog_archive_year .blog_archive_year_list .blog_archive_month .blog_archive_month_list a:hover {
   font-size: 1.1rem !important;
 }
 
-/* line 177, app/assets/stylesheets/posts.scss */
+/* line 186, app/assets/stylesheets/posts.scss */
 .blog_archive_draft {
   width: 100%;
   overflow: hidden !important;
 }
 
-/* line 180, app/assets/stylesheets/posts.scss */
+/* line 189, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list {
   height: 30%;
   width: 99%;
@@ -3801,23 +3813,23 @@ article {
   flex-direction: column;
 }
 
-/* line 186, app/assets/stylesheets/posts.scss */
+/* line 195, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list a {
   position: relative;
   left: -10px;
 }
 
-/* line 190, app/assets/stylesheets/posts.scss */
+/* line 199, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list a:link, .blog_archive_draft .blog_archive_draft_list a:visited, .blog_archive_draft .blog_archive_draft_list a:hover, .blog_archive_draft .blog_archive_draft_list a:active {
   color: #6767D7 !important;
 }
 
-/* line 193, app/assets/stylesheets/posts.scss */
+/* line 202, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list a:hover {
   font-size: 1.1rem !important;
 }
 
-/* line 197, app/assets/stylesheets/posts.scss */
+/* line 206, app/assets/stylesheets/posts.scss */
 .blog_archive_draft .blog_archive_draft_list > * {
   flex: 0 0 25px;
   outline: 0;
