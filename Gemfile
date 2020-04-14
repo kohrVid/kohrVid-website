@@ -24,7 +24,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.12'
 gem 'rack-attack', '~> 6.2.2'
 gem 'rack-ssl-enforcer'
-gem 'rails', '~> 6.0.2.1'
+gem 'rails', '>= 6.0.2.2'
 gem 'railties'
 gem 'recaptcha'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
