@@ -11,7 +11,6 @@
  * file per style scope.
  *
  *= require_self
- *= require 'quill/dist/quill.core.css'
  *= require 'quill/dist/quill.snow.css'
  *= require nest
  */

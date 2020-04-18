@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     modules: {
       toolbar: [
         [{ header: [1, 2, 3, 4, 5, 6, false] }],
-        [{ 'color': [] }],
+        [{ color: [] }],
+        [{ size: [] }],
         [
           'bold', 'italic', 'underline', 'strike',
           { 'script': 'super'},
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         ['blockquote', 'code-block', 'image'],
         [{ list: 'ordered' }, { list: 'bullet' }],
         [{ align: ['center', 'right', 'justify', false] }],
-        [{ 'indent': '-1'}, { 'indent': '+1' }]
+        [{ indent: '-1'}, { indent: '+1' }]
       ],
       imageResize: {
         displaySize: true,
