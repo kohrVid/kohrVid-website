@@ -73,7 +73,7 @@ var uploadImage = function (textEditor, file) {
   var fd = new FormData();
   fd.append('blob', file);
 
-  var upload = new DirectUpload(file, '/direct_uploads')
+  var upload = new DirectUpload(file, '/rails/active_storage/direct_uploads')
   upload.create((error, blob) => {
     if (error) {
       console.log(error)

@@ -1,6 +1,7 @@
 <h1>Edit <%= resource_name.to_s.humanize %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+  html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <div class="general-form container-fluid">
     <fieldset class="row">
@@ -22,12 +23,16 @@
     </fieldset>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <div>
+        Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+      </div>
     <% end %>
 
     <fieldset class="row">
       <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.label :password %>
+        <i>(leave blank if you don't want to change it)</i>
+        <br />
       </div>
       <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
         <%= f.password_field :password, autocomplete: "off" %>
@@ -45,7 +50,8 @@
 
     <fieldset class="row">
       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+        <%= f.label :current_password %>
+        <i>(we need your current password to confirm your changes)</i>
       </div>
       <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
         <%= f.password_field :current_password, autocomplete: "off" %>
@@ -77,7 +83,8 @@
     Unhappy?
   </div>
   <div class="col-lg-5 col-md-5 col-sm-8 col-xs-8">
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %>
+    <%= button_to "Cancel my account", registration_path(resource_name),
+      data: { confirm: "Are you sure?" }, method: :delete, class: "button" %>
   </div>
 </div>
 
