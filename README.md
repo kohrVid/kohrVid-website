@@ -21,7 +21,11 @@ This is the repo for my site.
 
 ## Set up
 
-To install run:
+To install, first ensure that the assets version is set in your environment:
+
+    ASSETS_VERSION=1.1
+
+Then run:
 
     rails db:create
     rails db:migrate
