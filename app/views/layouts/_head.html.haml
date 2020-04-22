@@ -13,6 +13,8 @@
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   - if content_for?(:quill_editor)
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  - if content_for?(:blog_post)
+    = javascript_pack_tag 'post', 'data-turbolinks-track': 'reload'
 
   = favicon_link_tag 'favicon.ico'
   %script{ type: "application/ld+json" }

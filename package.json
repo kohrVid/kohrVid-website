@@ -36,6 +36,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-modal": "3.8.1",
+    "social-likes-next": "^1.1.0",
     "svg-inline-loader": "0.8.2"
   },
   "devDependencies": {
