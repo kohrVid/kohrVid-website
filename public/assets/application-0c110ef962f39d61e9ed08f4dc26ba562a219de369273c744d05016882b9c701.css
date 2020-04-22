@@ -2766,7 +2766,7 @@ a:link:hover, a:visited:hover, a:hover:hover, a:active:hover, .fake-link:hover {
 }
 
 /* line 73, app/assets/stylesheets/fonts.scss */
-.rich-text h2, .rich-text h3, #editor-container h2, #editor-container h3 {
+.rich-text h2, .rich-text h3, .rich-text h4:not(.alert), .rich-text h5, .rich-text h6, #editor-container h2, #editor-container h3, #editor-container h4:not(.alert), #editor-container h5, #editor-container h6 {
   line-height: 2.1rem;
   margin: 0;
 }
@@ -2782,16 +2782,31 @@ a:link:hover, a:visited:hover, a:hover:hover, a:active:hover, .fake-link:hover {
 }
 
 /* line 86, app/assets/stylesheets/fonts.scss */
-.rich-text .ql-size-small, #editor-container .ql-size-small {
-  font-size: 0.6rem;
+.rich-text h4:not(.alert), #editor-container h4:not(.alert) {
+  font-size: 1.75rem;
 }
 
 /* line 90, app/assets/stylesheets/fonts.scss */
-.rich-text .ql-size-large, #editor-container .ql-size-large {
+.rich-text h5, #editor-container h5 {
   font-size: 1.5rem;
 }
 
 /* line 94, app/assets/stylesheets/fonts.scss */
+.rich-text h6, #editor-container h6 {
+  font-size: 1.25rem;
+}
+
+/* line 98, app/assets/stylesheets/fonts.scss */
+.rich-text .ql-size-small, #editor-container .ql-size-small {
+  font-size: 0.6rem;
+}
+
+/* line 102, app/assets/stylesheets/fonts.scss */
+.rich-text .ql-size-large, #editor-container .ql-size-large {
+  font-size: 1.5rem;
+}
+
+/* line 106, app/assets/stylesheets/fonts.scss */
 .rich-text .ql-size-huge, #editor-container .ql-size-huge {
   font-size: 2.5rem;
 }
@@ -2813,7 +2828,7 @@ a:link:hover, a:visited:hover, a:hover:hover, a:active:hover, .fake-link:hover {
 }
 
 /* line 73, app/assets/stylesheets/fonts.scss */
-.rich-text blockquote h2, .rich-text blockquote h3, #editor-container blockquote h2, #editor-container blockquote h3 {
+.rich-text blockquote h2, .rich-text blockquote h3, .rich-text blockquote h4:not(.alert), .rich-text blockquote h5, .rich-text blockquote h6, #editor-container blockquote h2, #editor-container blockquote h3, #editor-container blockquote h4:not(.alert), #editor-container blockquote h5, #editor-container blockquote h6 {
   line-height: 2.1rem;
   margin: 0;
 }
@@ -2829,60 +2844,100 @@ a:link:hover, a:visited:hover, a:hover:hover, a:active:hover, .fake-link:hover {
 }
 
 /* line 86, app/assets/stylesheets/fonts.scss */
-.rich-text blockquote .ql-size-small, #editor-container blockquote .ql-size-small {
-  font-size: 0.6rem;
+.rich-text blockquote h4:not(.alert), #editor-container blockquote h4:not(.alert) {
+  font-size: 1.75rem;
 }
 
 /* line 90, app/assets/stylesheets/fonts.scss */
-.rich-text blockquote .ql-size-large, #editor-container blockquote .ql-size-large {
+.rich-text blockquote h5, #editor-container blockquote h5 {
   font-size: 1.5rem;
 }
 
 /* line 94, app/assets/stylesheets/fonts.scss */
+.rich-text blockquote h6, #editor-container blockquote h6 {
+  font-size: 1.25rem;
+}
+
+/* line 98, app/assets/stylesheets/fonts.scss */
+.rich-text blockquote .ql-size-small, #editor-container blockquote .ql-size-small {
+  font-size: 0.6rem;
+}
+
+/* line 102, app/assets/stylesheets/fonts.scss */
+.rich-text blockquote .ql-size-large, #editor-container blockquote .ql-size-large {
+  font-size: 1.5rem;
+}
+
+/* line 106, app/assets/stylesheets/fonts.scss */
 .rich-text blockquote .ql-size-huge, #editor-container blockquote .ql-size-huge {
   font-size: 2.5rem;
 }
 
-/* line 107, app/assets/stylesheets/fonts.scss */
+/* line 119, app/assets/stylesheets/fonts.scss */
 .blog-index-titles {
   font-size: 2.1rem;
 }
 
-/* line 109, app/assets/stylesheets/fonts.scss */
+/* line 121, app/assets/stylesheets/fonts.scss */
 .blog-index-titles a:hover {
   font-size: 2.3rem;
 }
 
-/* line 115, app/assets/stylesheets/fonts.scss */
+/* line 127, app/assets/stylesheets/fonts.scss */
 main {
   font-size: 1rem;
 }
 
-/* line 119, app/assets/stylesheets/fonts.scss */
+/* line 131, app/assets/stylesheets/fonts.scss */
 em {
   font-style: italic;
 }
 
-/* line 123, app/assets/stylesheets/fonts.scss */
+/* line 135, app/assets/stylesheets/fonts.scss */
 small {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
 }
 
-/* line 127, app/assets/stylesheets/fonts.scss */
+/* line 139, app/assets/stylesheets/fonts.scss */
 .smaller-text {
   font-size: 0.8rem;
 }
 
-/* line 131, app/assets/stylesheets/fonts.scss */
+/* line 143, app/assets/stylesheets/fonts.scss */
 .riesling {
   font-family: rieslingregular, Tahoma, sans-serif;
 }
 
-/* line 135, app/assets/stylesheets/fonts.scss */
+/* line 147, app/assets/stylesheets/fonts.scss */
 .main-font {
   font-family: Open Sans, Arial, Helvetica, sans-serif !important;
   color: #010101;
+}
+
+/* line 1, app/assets/stylesheets/padding.scss */
+.m-t-2r {
+  padding-top: 2rem;
+}
+
+/* line 5, app/assets/stylesheets/padding.scss */
+.p-t-1r {
+  padding-top: 1rem;
+}
+
+/* line 9, app/assets/stylesheets/padding.scss */
+.p-t-0-5r, .diamond-list li, .rich-text ul:not(.divider-list) li, #editor-container .ql-editor ul:not(.divider-list) li {
+  padding-top: 0.5rem;
+}
+
+/* line 13, app/assets/stylesheets/padding.scss */
+.p-l-0 {
+  padding-left: 0;
+}
+
+/* line 17, app/assets/stylesheets/padding.scss */
+.p-l-1r {
+  padding-left: 1rem;
 }
 
 /* line 2, app/assets/stylesheets/clients.scss */
@@ -3248,26 +3303,6 @@ footer {
   height: 12rem;
 }
 
-/* line 1, app/assets/stylesheets/padding.scss */
-.m-t-2r {
-  padding-top: 2rem;
-}
-
-/* line 5, app/assets/stylesheets/padding.scss */
-.p-t-1r {
-  padding-top: 1rem;
-}
-
-/* line 9, app/assets/stylesheets/padding.scss */
-.p-l-0 {
-  padding-left: 0;
-}
-
-/* line 13, app/assets/stylesheets/padding.scss */
-.p-l-1r {
-  padding-left: 1rem;
-}
-
 /* line 1, app/assets/stylesheets/posts.scss */
 article {
   padding-top: 10px;
@@ -3534,50 +3569,50 @@ code {
   list-style-image: url(/assets/diamond-bullet-5e2c41944dfc3c8de213483a63df49f2d1770e998eb2af871e43e9cb4aa930a9.png);
 }
 
-/* line 28, app/assets/stylesheets/utils.scss.haml */
+/* line 31, app/assets/stylesheets/utils.scss.haml */
 .padded-li {
   position: relative;
   padding: 0 0 0 10px;
 }
 
-/* line 33, app/assets/stylesheets/utils.scss.haml */
+/* line 36, app/assets/stylesheets/utils.scss.haml */
 .no-bullet li:before, .rich-text ul:not(.divider-list) li:before, #editor-container .ql-editor ul:not(.divider-list) li:before {
   content: none !important;
 }
 
-/* line 37, app/assets/stylesheets/utils.scss.haml */
+/* line 40, app/assets/stylesheets/utils.scss.haml */
 .no-wrap {
   white-space: nowrap;
 }
 
-/* line 42, app/assets/stylesheets/utils.scss.haml */
+/* line 45, app/assets/stylesheets/utils.scss.haml */
 .inline-list li {
   display: inline;
 }
 
-/* line 48, app/assets/stylesheets/utils.scss.haml */
+/* line 51, app/assets/stylesheets/utils.scss.haml */
 .divider-list li {
   display: inline;
 }
 
-/* line 50, app/assets/stylesheets/utils.scss.haml */
+/* line 53, app/assets/stylesheets/utils.scss.haml */
 .divider-list li:after {
   content: "|";
   margin-left: 3px;
   margin-right: 3px;
 }
 
-/* line 58, app/assets/stylesheets/utils.scss.haml */
+/* line 61, app/assets/stylesheets/utils.scss.haml */
 .divider-list li:last-child:after {
   content: none;
 }
 
-/* line 64, app/assets/stylesheets/utils.scss.haml */
+/* line 67, app/assets/stylesheets/utils.scss.haml */
 .fake-link:hover {
   cursor: pointer;
 }
 
-/* line 69, app/assets/stylesheets/utils.scss.haml */
+/* line 72, app/assets/stylesheets/utils.scss.haml */
 .plain-link:link, .plain-link:visited, .plain-link:hover, .plain-link:active {
   text-decoration: none !important;
   font-style: normal;
@@ -3600,20 +3635,25 @@ code {
 }
 
 /* line 15, app/assets/stylesheets/position.scss */
+.ql-editor .ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 3em;
+}
+
+/* line 19, app/assets/stylesheets/position.scss */
 .centre, .ql-align-center img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 21, app/assets/stylesheets/position.scss */
+/* line 25, app/assets/stylesheets/position.scss */
 .right-align, .ql-align-right img {
   float: right;
   right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 27, app/assets/stylesheets/position.scss */
+  /* line 31, app/assets/stylesheets/position.scss */
   .small-centre {
     display: block;
     margin-left: auto;

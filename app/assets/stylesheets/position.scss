@@ -12,6 +12,10 @@
   overflow: auto;
 }
 
+.ql-editor .ql-indent-1:not(.ql-direction-rtl) {
+ padding-left:3em
+}
+
 .centre, .ql-align-center img {
   display: block;
   margin-left: auto;
