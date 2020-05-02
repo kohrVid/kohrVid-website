@@ -1,4 +1,5 @@
 - provide(:title, @post.title)
+- provide(:blog_post, true)
 = render partial: "layouts/blog_login_logout"
 
 %article.rich-text
@@ -22,6 +23,8 @@
       - @post.tags.each do |tag|
         %li
           = link_to tag.name, tag
+
+  = render partial: "posts/social_media", locals: { post: @post }
 
   %ul.divider-list.p-l-0
     %li

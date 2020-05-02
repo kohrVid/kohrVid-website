@@ -16,6 +16,9 @@
 
 .diamond-list {
   list-style-image: #{ asset_url('diamond-bullet.png') };
+  li {
+    @extend .p-t-0-5r;
+  }
 
   //li:before {
     //content: "\2666 \0020";
@@ -47,16 +50,13 @@
 .divider-list {
   li {
     display: inline;
+  }
+
+  li:not(:last-child) {
     &:after {
       content: "|";
       margin-left: 3px;
       margin-right: 3px;
-    }
-  }
-
-  li:last-child {
-    &:after {
-      content: none;
     }
   }
 }

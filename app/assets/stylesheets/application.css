@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require_self
+ *= require 'social-likes-next/lib/social-likes_flat.css'
+ *= require 'social-likes-next/lib/social-likes_birman.css'
  *= require 'quill/dist/quill.snow.css'
  *= require nest
  */
