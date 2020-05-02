@@ -55,10 +55,10 @@ yarn-debug.log*
 .yarn-integrity
 
 ## Ignore all but the precompiled assets
-#*
+##*
 /public/assets/*
 /public/packs/*
-!*/public/assets/
-!*/public/packs/
-!/public/assets/application*
-!/public/packs/js/application*
+#!*/public/assets/
+#!*/public/packs/
+#!/public/assets/application*
+#!/public/packs/js/application*

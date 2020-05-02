@@ -98,6 +98,18 @@ code {
   margin-left: 0;
 }
 
+.social-likes__icon_hacker_news {
+  color: $black;
+}
+
+.social-likes__widget_hacker_news {
+  &:hover, &:active, &:focus {
+    background: $black;
+    border-color: $black;
+  }
+}
+
+
 @media screen and (min-width: 0px) and (max-width: 500px) {
   .blog_archives {
     right: -104px;

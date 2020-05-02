@@ -1,7 +1,3 @@
-import 'social-likes-next/lib/social-likes_flat.css';
-import 'social-likes-next/lib/social-likes_birman.css';
-import './css/posts.css';
-
 import socialLikes from 'social-likes-next';
 
 var socialLikesButtons = {
