@@ -14,12 +14,13 @@
       Name:
   .col-lg-8.col-md-9.col-sm-12.col-xs-12
     = @user.name
-.row
-  .col-lg-2.col-md-2.col-sm-12.col-xs-12
-    %strong
-      Email Address:
-  .col-lg-8.col-md-9.col-sm-12.col-xs-12
-    = @user.email
+- if admin_is_logged_in || current_user?(@user)
+  .row
+    .col-lg-2.col-md-2.col-sm-12.col-xs-12
+      %strong
+        Email Address:
+    .col-lg-8.col-md-9.col-sm-12.col-xs-12
+      = @user.email
 .row
   .col-lg-2.col-md-2.col-sm-12.col-xs-12
     %strong
@@ -35,10 +36,10 @@
       - @user.comments.each do |comment|
         %li
           %strong
-            = link_to Post.friendly.find(comment.post_id).title, { controller: "posts", action: "show", id: comment.post_id, anchor: comment.id }
-          %p
-            comment.body.truncate(25)
-            = link_to comment.body.truncate(25), { controller: "posts", action: "show", id: comment.post_id, anchor: comment.id }
+            = link_to "Posted under \"#{comment.post.title}\"",
+              { controller: "posts", action: "show", id: comment.post_id, anchor: comment.id }
+          .comment.rich-text
+            = truncate_body(comment.body, length = 25)
 
 %ul.divider-list.p-l-0
   %li

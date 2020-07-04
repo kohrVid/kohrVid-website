@@ -21,17 +21,29 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #show" do
-    before(:each) do
-      sign_in admin, scope: :user
-      get(:show, params: { id: user.id })
+    context "logged out user" do
+      subject do
+        get(:show, params: { id: user.id })
+      end
+
+      it "redirects to the new user" do
+        is_expected.to redirect_to login_path
+      end
     end
 
-    it "assigns requested user to @user" do
-      expect(assigns(:user)).to eq(user)
-    end
+    context "logged in user" do
+      before(:each) do
+        sign_in admin, scope: :user
+        get(:show, params: { id: user.id })
+      end
 
-    it "returns http success" do
-      expect(response).to have_http_status(:success)
+      it "assigns requested user to @user" do
+        expect(assigns(:user)).to eq(user)
+      end
+
+      it "returns http success" do
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
