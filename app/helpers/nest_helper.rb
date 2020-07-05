@@ -14,7 +14,7 @@ module NestHelper
   def redirect_to_login
     unless user_signed_in?
       flash[:error] = "Please log in"
-      redirect_to log_in_path
+      redirect_to login_path
     end
   end
 

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
     author { "MyString" }
-    body { "MyText" }
+    body { "<p>MyText</p>" }
 
     post do
       Post.where(title: attributes_for(:post)[:title])

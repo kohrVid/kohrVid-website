@@ -8,6 +8,7 @@ default: &default
 development:
   <<: *default
   database: kohrVid_development
+  user: postgres
 
 test: &test
   <<: *default
