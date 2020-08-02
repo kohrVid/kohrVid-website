@@ -9,7 +9,7 @@ FactoryBot.define do
     end
 
     user_id do
-      create(:user, :reader).id
+      create(:user, :reader_one).id
     end
   end
 end

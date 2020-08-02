@@ -2,16 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
   let(:admin) { FactoryBot.create(:user, :admin) }
-  let(:user1) { FactoryBot.create(:user, :reader) }
-
-  let(:user2) do
-    FactoryBot.create(
-      :user,
-      :reader,
-      name: "Antou",
-      email: "antou@premiergaou.ci"
-    )
-  end
+  let(:user1) { FactoryBot.create(:user, :reader_one) }
+  let(:user2) { FactoryBot.create(:user, :reader_two) }
 
   def sign_in(a_user)
     visit login_path

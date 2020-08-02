@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
   let(:admin) { FactoryBot.create(:user, :admin) }
 
   describe "GET #index" do
@@ -66,7 +66,7 @@ RSpec.describe UsersController, type: :controller do
     context "with valid attributes" do
       subject(:post_attributes) do
         post :create, params: {
-          user: FactoryBot.attributes_for(:user, :reader)
+          user: FactoryBot.attributes_for(:user, :reader_one)
         }
       end
 
@@ -87,7 +87,7 @@ RSpec.describe UsersController, type: :controller do
     context "with invalid attributes" do
       subject(:post_attributes) do
         post :create, params: {
-          user: FactoryBot.attributes_for(:user, :reader, name: "")
+          user: FactoryBot.attributes_for(:user, :reader_one, name: "")
         }
       end
 
@@ -134,7 +134,7 @@ RSpec.describe UsersController, type: :controller do
           id: user.id,
           user: FactoryBot.attributes_for(
             :user,
-            :reader,
+            :reader_one,
             name: 'Raine',
             bio: 'Raine is from Cote d\'Ivoire'
           )
@@ -169,7 +169,7 @@ RSpec.describe UsersController, type: :controller do
           id: user.id,
           user: FactoryBot.attributes_for(
             :user,
-            :reader,
+            :reader_one,
             name: "",
             bio: "r"
           )

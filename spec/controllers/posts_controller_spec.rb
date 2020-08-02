@@ -15,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   let(:admin) { FactoryBot.create(:user, :admin) }
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
 
   describe "GET #index" do
     before do

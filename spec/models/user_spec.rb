@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
 
   it "must have required fields or be invalid" do
     expect(User.new).to_not be_valid
@@ -9,14 +9,14 @@ RSpec.describe User, type: :model do
 
   it "creates a new user with valid attributes" do
     expect{
-      User.create(FactoryBot.attributes_for(:user, :reader))
+      User.create(FactoryBot.attributes_for(:user, :reader_one))
     }.to change(User, :count).by(1)
   end
 
   context "Name" do
     it "must be present" do
       expect{
-        User.create(FactoryBot.attributes_for(:user, :reader, name: ""))
+        User.create(FactoryBot.attributes_for(:user, :reader_one, name: ""))
       }.to_not change(User, :count)
     end
 
@@ -29,19 +29,19 @@ RSpec.describe User, type: :model do
 
     it "must be no more than 50 characters long" do
       expect{
-        User.create(FactoryBot.attributes_for(:user, :reader, name: "m"*51))
+        User.create(FactoryBot.attributes_for(:user, :reader_one, name: "m"*51))
       }.to_not change(User, :count)
     end
 
     it "should not be in the list of banned usernames" do
-      user = FactoryBot.build(:user, :reader, name: "anonymous")
+      user = FactoryBot.build(:user, :reader_one, name: "anonymous")
       expect(user).to_not be_valid
     end
 
     it "should not be case sensitive" do
       user
       new_user = FactoryBot.build(
-        :user, :reader, name: user.name.upcase, email: "test@something.com"
+        :user, :reader_one, name: user.name.upcase, email: "test@something.com"
       )
 
       expect(new_user).to_not be_valid
@@ -51,7 +51,7 @@ RSpec.describe User, type: :model do
   context "Email" do
     it "must be present" do
       expect{
-        User.create(FactoryBot.attributes_for(:user, :reader, email: ""))
+        User.create(FactoryBot.attributes_for(:user, :reader_one, email: ""))
       }.to_not change(User, :count)
     end
 
@@ -65,7 +65,7 @@ RSpec.describe User, type: :model do
     it "must be no more than 255 characters long" do
       expect{
         User.create(FactoryBot.attributes_for(
-          :user, :reader, email: "m"*241+"@premiergaou.ci"
+          :user, :reader_one, email: "m"*241+"@premiergaou.ci"
         ))
       }.to_not change(User, :count)
     end
@@ -76,7 +76,7 @@ RSpec.describe User, type: :model do
         expect{
           User.create(FactoryBot.attributes_for(
             :user,
-            :reader,
+            :reader_one,
             email: email_address,
             name: [*'A'...'z'].sample(3).join
           ))
@@ -90,7 +90,7 @@ RSpec.describe User, type: :model do
         expect{
           User.create(FactoryBot.attributes_for(
             :user,
-            :reader,
+            :reader_one,
             email: email_address,
             name: [*'A'...'z'].sample(3).join
           ))
@@ -103,7 +103,7 @@ RSpec.describe User, type: :model do
       expect {
         User.create(FactoryBot.attributes_for(
           :user,
-          :reader,
+          :reader_one,
           name: "Raine",
           password: "cest2nd",
           password_confirmation: "cest2nd",
@@ -131,7 +131,7 @@ RSpec.describe User, type: :model do
 
     it "must be present" do
       expect{
-        User.create(FactoryBot.attributes_for(:user, :reader, password: ""))
+        User.create(FactoryBot.attributes_for(:user, :reader_one, password: ""))
       }.to_not change(User, :count)
     end
 
@@ -145,7 +145,7 @@ RSpec.describe User, type: :model do
     it "must be at least six characters long" do
       expect(
         FactoryBot.build(
-          :user, :reader,
+          :user, :reader_one,
           password: short_password,
           password_confirmation: short_password
         )
