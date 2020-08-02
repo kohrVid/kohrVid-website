@@ -56,9 +56,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    flash[:success] = "User deleted."
-    redirect_to users_url
+    if current_user_or_admin?(@user)
+      @user.destroy
+      flash[:success] = "User deleted."
+      redirect_to users_url
+    else
+      flash[:error] = "Sorry, you do not have access to that part of the site."
+      render :show, status: :forbidden
+    end
   end
 
 
