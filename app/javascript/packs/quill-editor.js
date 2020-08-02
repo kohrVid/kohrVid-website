@@ -10,7 +10,7 @@ const MAX_FILE_SIZE = 1000000
 const basicToolbar = (document) => ({
   modules: {
     toolbar: [
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ header: [2, 3, 4, 5, 6, false] }],
       [{ color: [] }],
       [{ size: [] }],
       [
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 let renderExtendedEditor = function (basicToolbar) {
+  basicToolbar.modules.toolbar[0][0].header.unshift(1);
   basicToolbar.modules.toolbar[4].push('image');
   basicToolbar.formats.push('image');
 
