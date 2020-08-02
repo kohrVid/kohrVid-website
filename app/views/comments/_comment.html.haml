@@ -15,6 +15,6 @@
     %ul.divider-list.p-l-0
       %li
         = link_to "reply", post_new_comment_path(@post, comment.id)
-      - unless !user_signed_in? || !current_user_id?(comment.user_id)
+      - if admin_is_logged_in? || current_user_id?(comment.user_id)
         %li
           = link_to "edit", edit_post_comment_path(@post, comment)
