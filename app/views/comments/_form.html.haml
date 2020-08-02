@@ -17,8 +17,12 @@
         = f.label :body, "Comment"
       .col-lg-8.col-md-9.col-sm-12.col-xs-12
         = f.hidden_field :body, class: 'rich-text-content'
-        #editor-container{ style: 'height: 30rem; width: 100%;'}
-          = raw(@comment.body)
+        - if current_user
+          #editor-container{ style: 'height: 30rem; width: 100%;'}
+            = raw(@comment.body)
+        - else
+          #editor-container-strict{ style: 'height: 30rem; width: 100%;'}
+            = raw(@comment.body)
     %fieldset.row
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
       .col-lg-2.col-md-2.col-sm-12.col-xs-12
