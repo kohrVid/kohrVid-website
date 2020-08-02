@@ -14,7 +14,7 @@
     = link_to "[Read more...]", post
 
   %br
-  - if admin_is_logged_in
+  - if admin_is_logged_in?
     %ul.divider-list.p-l-0
       %li
         = link_to "Edit Post", edit_post_path(post)

@@ -1,6 +1,6 @@
 module NestHelper
-  def admin_is_logged_in
-    @admin_is_logged_in = current_user && current_user.admin?
+  def admin_is_logged_in?
+    current_user && current_user.admin?
   end
 
   def current_user?(user)

@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :redirect_to_login, except: [:new, :create]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_is_logged_in, only: :destroy
 
   def index
     @users = User.order(:id).paginate(page: params[:page])

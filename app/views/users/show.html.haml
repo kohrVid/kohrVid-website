@@ -14,7 +14,7 @@
       Name:
   .col-lg-8.col-md-9.col-sm-12.col-xs-12
     = @user.name
-- if admin_is_logged_in || current_user?(@user)
+- if admin_is_logged_in? || current_user?(@user)
   .row
     .col-lg-2.col-md-2.col-sm-12.col-xs-12
       %strong
@@ -45,7 +45,7 @@
   %li
     = link_to "Back to All Users", users_path
   - unless !user_signed_in?
-    - if admin_is_logged_in && current_user != @user
+    - if admin_is_logged_in? && current_user != @user
       %li
         = link_to "Update Account", edit_user_path(@user)
       %li

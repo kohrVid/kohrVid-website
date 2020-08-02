@@ -23,10 +23,10 @@
         %td
           = user.bio.to_s.truncate(50)
         %td
-          - if admin_is_logged_in || current_user?(user)
+          - if admin_is_logged_in? || current_user?(user)
             = link_to "Edit", edit_user_path(user)
         %td
-          - if admin_is_logged_in
+          - if admin_is_logged_in?
             = link_to "Delete", user, method: :delete,
               data: { cofirm: "Are you sure?" }  unless current_user?(user)
 

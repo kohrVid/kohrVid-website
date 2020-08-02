@@ -76,7 +76,7 @@
 
 %br
 %div
-  - if admin_is_logged_in
+  - if admin_is_logged_in?
     = link_to 'Edit', edit_project_path(@project)
     |
     = link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }
