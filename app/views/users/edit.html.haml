@@ -8,6 +8,6 @@
 %ul.divider-list.p-l-0
   %li
     = link_to "Back to All Users", users_path
-  - if current_user || admin_is_logged_in?
+  - if admin_is_logged_in?
     %li
       = link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' }
