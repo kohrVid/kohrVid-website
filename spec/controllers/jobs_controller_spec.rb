@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe JobsController, type: :controller do
   let(:valid_job) { FactoryBot.create(:job) }
   let(:admin) { FactoryBot.create(:user, :admin) }
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
 
   describe "GET #index" do
     let(:get_index) { get :index }

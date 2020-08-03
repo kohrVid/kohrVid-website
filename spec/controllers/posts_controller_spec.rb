@@ -15,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   let(:admin) { FactoryBot.create(:user, :admin) }
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
 
   describe "GET #index" do
     before do
@@ -80,146 +80,224 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET #new" do
-    before(:each) do
-      sign_in admin, scope: :user
-      get(:new)
+    subject { get(:new) }
+
+    context "as a signed-out user" do
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
     end
 
-    it "returns http success" do
-      expect(response).to have_http_status(:success)
+    context "as a non-admin user" do
+      before(:each) do
+        sign_in user, scope: :user
+      end
+
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
+    end
+
+    context "as an admin" do
+      before(:each) do
+        sign_in admin, scope: :user
+        subject
+      end
+
+      it "returns http success" do
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
   describe "POST create" do
-    before(:each) do
-      sign_in admin, scope: :user
+    subject(:post_attributes) do
+      post :create, params: { post: FactoryBot.attributes_for(:post) }
     end
 
-    context "with valid attributes" do
-      subject(:post_attributes) do
-        post :create, params: { post: FactoryBot.attributes_for(:post) }
-      end
-
-      it "creates a new post" do
-        expect { post_attributes }.to change(Post, :count).by(1)
-      end
-
-      it "redirects to the new post" do
-        is_expected.to redirect_to Post.last
-      end
-
-      it "displays the correct flash message on redirect" do
-        subject
-        expect(flash[:success]).to have_content("Post was created successfully.")
+    context "as a signed-out user" do
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
       end
     end
 
-    context "with invalid attributes" do
-      subject(:post_attributes) do
-        post :create, params: {
-          post: FactoryBot.attributes_for(:post, title: "")
-        }
+    context "as a non-admin user" do
+      before(:each) do
+        sign_in user, scope: :user
       end
 
-      it "doesn't save the new post" do
-        expect { post_attributes }.to_not change(Post, :count)
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
+    end
+
+    context "as an admin" do
+      before(:each) do
+        sign_in admin, scope: :user
       end
 
-      it "re-renders the new method" do
-        is_expected.to render_template :new
+      context "with valid attributes" do
+        it "creates a new post" do
+          expect { post_attributes }.to change(Post, :count).by(1)
+        end
+
+        it "redirects to the new post" do
+          is_expected.to redirect_to Post.last
+        end
+
+        it "displays the correct flash message on redirect" do
+          subject
+          expect(flash[:success]).to have_content("Post was created successfully.")
+        end
       end
 
-      it "displays the correct flash message on redirect" do
-        subject
-        expect(flash[:error]).to have_content(
-          "An error has prevented this post from being saved"
-        )
+      context "with invalid attributes" do
+        subject(:post_attributes) do
+          post :create, params: {
+            post: FactoryBot.attributes_for(:post, title: "")
+          }
+        end
+
+        it "doesn't save the new post" do
+          expect { post_attributes }.to_not change(Post, :count)
+        end
+
+        it "re-renders the new method" do
+          is_expected.to render_template :new
+        end
+
+        it "displays the correct flash message on redirect" do
+          subject
+          expect(flash[:error]).to have_content(
+            "An error has prevented this post from being saved"
+          )
+        end
       end
     end
   end
 
   describe "GET #edit" do
-    before(:each) do
-      sign_in admin, scope: :user
+    subject do
       get(:edit, params: { id: valid_post.id })
     end
 
-    it "assigns requested post to valid_post" do
-      expect(assigns(:post)).to eq(valid_post)
+    context "as a signed-out user" do
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
     end
 
-    it "returns http success" do
-      expect(response).to have_http_status(:success)
+    context "as a non-admin user" do
+      before(:each) do
+        sign_in user, scope: :user
+      end
+
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
+    end
+
+    context "as an admin" do
+      before(:each) do
+        sign_in admin, scope: :user
+        subject
+      end
+
+      it "assigns requested post to valid_post" do
+        expect(assigns(:post)).to eq(valid_post)
+      end
+
+      it "returns http success" do
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
   describe "PUT update" do
-    before(:each) do
-      sign_in admin, scope: :user
+    subject(:put_attributes) do
+      put :update, params: {
+        id: valid_post.id, post: FactoryBot.attributes_for(
+          :post, title: "Services", body: "These are the services we provide."
+        )
+      }
     end
 
-    context "with valid attributes" do
-      subject(:put_attributes) do
-        put :update, params: {
-          id: valid_post.id, post: FactoryBot.attributes_for(
-            :post, title: "Services", body: "These are the services we provide."
-          )
-        }
-      end
-
-      it "locates the requested valid_post" do
-        subject
-        expect(assigns(:post)).to eq(valid_post)
-      end
-
-      it "changes valid_post's title" do
-        expect { put_attributes }
-          .to change { Post.find(valid_post.id).title }
-          .from(valid_post.title).to('Services')
-      end
-
-      it "changes valid_post's body" do
-        expect { put_attributes }
-          .to change { Post.find(valid_post.id).body }
-          .from(valid_post.body).to('These are the services we provide.')
-      end
-
-      it "redirects to the updated post" do
-        is_expected.to redirect_to valid_post
-      end
-
-      it "displays the correct flash message on redirect" do
-        subject
-        expect(flash[:success]).to have_content("Post updated.")
+    context "as a signed-out user" do
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
       end
     end
 
-    context "with invalid attributes" do
-      subject(:put_attributes) do
-        put :update, params: {
-          id: valid_post.id, post: FactoryBot.attributes_for(
-            :post, title: "", body: "r"
-          )
-        }
+    context "as a non-admin user" do
+      before(:each) do
+        sign_in user, scope: :user
       end
 
-      it "shouldn't change valid_post's title" do
-        expect { put_attributes }
-          .to_not change { Post.find(valid_post.id).title }
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
+    end
+
+    context "as an admin" do
+      before(:each) do
+        sign_in admin, scope: :user
       end
 
-      it "shouldn't change valid_post's body" do
-        expect { put_attributes }
-          .to_not change { Post.find(valid_post.id).body }
+      context "with valid attributes" do
+        it "locates the requested valid_post" do
+          subject
+          expect(assigns(:post)).to eq(valid_post)
+        end
+
+        it "changes valid_post's title" do
+          expect { put_attributes }
+            .to change { Post.find(valid_post.id).title }
+            .from(valid_post.title).to('Services')
+        end
+
+        it "changes valid_post's body" do
+          expect { put_attributes }
+            .to change { Post.find(valid_post.id).body }
+            .from(valid_post.body).to('These are the services we provide.')
+        end
+
+        it "redirects to the updated post" do
+          is_expected.to redirect_to valid_post
+        end
+
+        it "displays the correct flash message on redirect" do
+          subject
+          expect(flash[:success]).to have_content("Post updated.")
+        end
       end
 
-      it "renders the edit post" do
-        is_expected.to render_template :edit
-      end
+      context "with invalid attributes" do
+        subject(:put_attributes) do
+          put :update, params: {
+            id: valid_post.id, post: FactoryBot.attributes_for(
+              :post, title: "", body: "r"
+            )
+          }
+        end
 
-      it "displays the correct flash message on redirect" do
-        subject
-        expect(flash[:error]).to have_content("Unable to update post.")
+        it "shouldn't change valid_post's title" do
+          expect { put_attributes }
+            .to_not change { Post.find(valid_post.id).title }
+        end
+
+        it "shouldn't change valid_post's body" do
+          expect { put_attributes }
+            .to_not change { Post.find(valid_post.id).body }
+        end
+
+        it "renders the edit post" do
+          is_expected.to render_template :edit
+        end
+
+        it "displays the correct flash message on redirect" do
+          subject
+          expect(flash[:error]).to have_content("Unable to update post.")
+        end
       end
     end
   end
@@ -229,22 +307,40 @@ RSpec.describe PostsController, type: :controller do
       delete :destroy, params: { id: valid_post.id }
     end
 
-    before do
-      sign_in admin, scope: :user
-      valid_post
+    context "as a signed-out user" do
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
     end
 
-    it "deletes the post" do
-      expect { delete_post }.to change(Post, :count).by(-1)
+    context "as a non-admin user" do
+      before(:each) do
+        sign_in user, scope: :user
+      end
+
+      it "redirects to the new tag" do
+        expect { subject }.to raise_error
+      end
     end
 
-    it "redirects to the posts#index" do
-      is_expected.to redirect_to posts_path
-    end
+    context "as an admin" do
+      before do
+        sign_in admin, scope: :user
+        valid_post
+      end
 
-    it "displays the correct flash message on redirect" do
-      subject
-      expect(flash[:success]).to have_content("Post deleted.")
+      it "deletes the post" do
+        expect { delete_post }.to change(Post, :count).by(-1)
+      end
+
+      it "redirects to the posts#index" do
+        is_expected.to redirect_to posts_path
+      end
+
+      it "displays the correct flash message on redirect" do
+        subject
+        expect(flash[:success]).to have_content("Post deleted.")
+      end
     end
   end
 end

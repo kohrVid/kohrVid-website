@@ -71,7 +71,7 @@
 
 %br
 %div
-  - if admin_is_logged_in
+  - if admin_is_logged_in?
     = link_to 'Edit', edit_client_path(@client)
     |
     = link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' }

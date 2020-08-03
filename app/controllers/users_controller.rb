@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :redirect_to_login, except: [:new, :create]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_is_logged_in, only: :destroy
 
   def index
     @users = User.order(:id).paginate(page: params[:page])
@@ -57,9 +56,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    flash[:success] = "User deleted."
-    redirect_to users_url
+    if current_user_or_admin?(@user)
+      @user.destroy
+      flash[:success] = "User deleted."
+      redirect_to users_url
+    else
+      flash[:error] = "Sorry, you do not have access to that part of the site."
+      render :show, status: :forbidden
+    end
   end
 
 

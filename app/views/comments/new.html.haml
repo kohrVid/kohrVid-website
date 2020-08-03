@@ -6,6 +6,8 @@
 
 - if @comment.parent
   = render partial: "comment", locals: { comment: @comment.parent }, from_reply_form: true
+- else
+  = render partial: 'posts/post', locals: { post: @post }
 
 = render partial: "comments/form"
 

@@ -9,7 +9,8 @@ FactoryBot.define do
     end
 
     user_id do
-      create(:user, :reader).id
+      User.where(name: attributes_for(:user, :reader_one)[:name])
+        .first_or_create(attributes_for(:user, :reader_one)).id
     end
   end
 end

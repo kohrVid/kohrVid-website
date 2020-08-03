@@ -9,7 +9,7 @@
               -#- post_record.each do |post|
                 -#= link_to "#{post.published_at.strftime("%d/%m/%y")} - #{post.title}", post_path(post)
 
--#- unless !admin_is_logged_in
+-#- unless !admin_is_logged_in?
   -#.blog_archive_draft
     -#%a{ href: "#" }
       -#Draft

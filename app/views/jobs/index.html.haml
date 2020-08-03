@@ -8,5 +8,5 @@
     = render partial: 'jobs/job', locals: { job: job }
 
 %br
-- if admin_is_logged_in
+- if admin_is_logged_in?
   = link_to 'New Job', new_job_path

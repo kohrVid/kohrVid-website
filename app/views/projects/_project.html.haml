@@ -21,8 +21,8 @@
       %div
         = project.languages.gsub(", ", "|")
   .desc
-    = link_to_if(admin_is_logged_in, "#{project.description}", project)
-  - if admin_is_logged_in
+    = link_to_if(admin_is_logged_in?, "#{project.description}", project)
+  - if admin_is_logged_in?
     %div
       = link_to 'Show', project
       |

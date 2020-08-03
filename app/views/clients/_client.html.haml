@@ -15,8 +15,8 @@
         = link_to "PDF", (client.try(:pdf).url.to_s)
         |
   .desc
-    = link_to_if(admin_is_logged_in, "#{client.description}", client)
-  - if admin_is_logged_in
+    = link_to_if(admin_is_logged_in?, "#{client.description}", client)
+  - if admin_is_logged_in?
     %div
       = link_to 'Show', client
       |

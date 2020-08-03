@@ -14,5 +14,5 @@
     = render partial: 'projects/project', locals: { project: project }
 
 %br
-- if admin_is_logged_in
+- if admin_is_logged_in?
   = link_to 'New Project', new_project_path

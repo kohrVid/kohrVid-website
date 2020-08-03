@@ -47,7 +47,7 @@ class CommentsController < ApplicationController
         flash[:success] =  "Your comment was updated successfully!"
         redirect_to post_path(@post)
       else
-        flash.now[:error] = "Unable to edit comment."
+        flash.now[:error] = "Unable to update comment."
         render :edit
       end
     else
@@ -75,7 +75,8 @@ class CommentsController < ApplicationController
 
   def correct_user
     @comment = Comment.find(params[:id])
-    unless current_user.id == @comment.user_id
+
+    unless admin_is_logged_in? || current_user_id?(@comment.user_id)
       flash[:error] = "Sorry, you do not have access to that part of the site."
       redirect_to(root_url)
     end

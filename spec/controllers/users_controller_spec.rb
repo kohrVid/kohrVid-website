@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
   let(:admin) { FactoryBot.create(:user, :admin) }
 
   describe "GET #index" do
@@ -66,7 +66,7 @@ RSpec.describe UsersController, type: :controller do
     context "with valid attributes" do
       subject(:post_attributes) do
         post :create, params: {
-          user: FactoryBot.attributes_for(:user, :reader)
+          user: FactoryBot.attributes_for(:user, :reader_one)
         }
       end
 
@@ -87,7 +87,7 @@ RSpec.describe UsersController, type: :controller do
     context "with invalid attributes" do
       subject(:post_attributes) do
         post :create, params: {
-          user: FactoryBot.attributes_for(:user, :reader, name: "")
+          user: FactoryBot.attributes_for(:user, :reader_one, name: "")
         }
       end
 
@@ -134,7 +134,7 @@ RSpec.describe UsersController, type: :controller do
           id: user.id,
           user: FactoryBot.attributes_for(
             :user,
-            :reader,
+            :reader_one,
             name: 'Raine',
             bio: 'Raine is from Cote d\'Ivoire'
           )
@@ -169,7 +169,7 @@ RSpec.describe UsersController, type: :controller do
           id: user.id,
           user: FactoryBot.attributes_for(
             :user,
-            :reader,
+            :reader_one,
             name: "",
             bio: "r"
           )
@@ -198,26 +198,104 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "DELETE destroy" do
-    subject(:delete_user) do
-      delete :destroy, params: { id: user.id }
+    context 'as a signed out user' do
+      subject(:delete_user) do
+        delete :destroy, params: { id: user.id }
+      end
+
+      before(:each) do
+        user
+      end
+
+      it "doesn't delete the user" do
+        expect { delete_user }.to_not change(User, :count)
+      end
+
+      it "redirects to the login page" do
+        is_expected.to redirect_to login_path
+      end
+
+      it "displays the correct flash message on redirect" do
+        subject
+        expect(flash[:error]).to have_content("Please log in")
+      end
     end
 
-    before(:each) do
-      sign_in admin, scope: :user
-      user
+    context 'as a different user' do
+      let(:user2) { FactoryBot.create(:user, :reader_two) }
+
+      subject(:delete_user) do
+        delete :destroy, params: { id: user.id }
+      end
+
+      before(:each) do
+        user
+        sign_in user2, scope: :user
+      end
+
+      it "doesn't delete the user" do
+        expect { delete_user }.to_not change(User, :count)
+      end
+
+      it "renders the #show page" do
+        is_expected.to render_template :show, :user
+      end
+
+      it "displays the correct flash message on redirect" do
+        subject
+
+        expect(flash[:error]).to have_content(
+          "Sorry, you do not have access to that part of the site."
+        )
+      end
     end
 
-    it "deletes the user" do
-      expect { delete_user }.to change(User, :count).by(-1)
+    context 'as the correct user' do
+      subject(:delete_user) do
+        delete :destroy, params: { id: user.id }
+      end
+
+      before(:each) do
+        sign_in user, scope: :user
+        user
+      end
+
+      it "deletes the user" do
+        expect { delete_user }.to change(User, :count).by(-1)
+      end
+
+      it "redirects to the users#index" do
+        is_expected.to redirect_to users_path
+      end
+
+      it "displays the correct flash message on redirect" do
+        subject
+        expect(flash[:success]).to have_content("User deleted.")
+      end
     end
 
-    it "redirects to the users#index" do
-      is_expected.to redirect_to users_path
-    end
+    context 'as an admin user' do
+      subject(:delete_user) do
+        delete :destroy, params: { id: user.id }
+      end
 
-    it "displays the correct flash message on redirect" do
-      subject
-      expect(flash[:success]).to have_content("User deleted.")
+      before(:each) do
+        sign_in admin, scope: :user
+        user
+      end
+
+      it "deletes the user" do
+        expect { delete_user }.to change(User, :count).by(-1)
+      end
+
+      it "redirects to the users#index" do
+        is_expected.to redirect_to users_path
+      end
+
+      it "displays the correct flash message on redirect" do
+        subject
+        expect(flash[:success]).to have_content("User deleted.")
+      end
     end
   end
 end

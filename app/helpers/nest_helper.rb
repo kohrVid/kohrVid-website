@@ -1,14 +1,18 @@
 module NestHelper
-  def admin_is_logged_in
-    @admin_is_logged_in = current_user && current_user.admin?
+  def admin_is_logged_in?
+    current_user && current_user.admin?
   end
 
   def current_user?(user)
-    user == current_user
+    current_user && (user == current_user)
   end
 
   def current_user_id?(user_id)
-    user_id == current_user.id
+    current_user && (user_id == current_user.id)
+  end
+
+  def current_user_or_admin?(user)
+    current_user?(user) || admin_is_logged_in?
   end
 
   def redirect_to_login

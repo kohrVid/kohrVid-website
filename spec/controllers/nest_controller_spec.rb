@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe NestController, type: :controller do
   let(:valid_job) { FactoryBot.create(:job) }
   let(:admin) { FactoryBot.create(:user, :admin) }
-  let(:user) { FactoryBot.create(:user, :reader) }
+  let(:user) { FactoryBot.create(:user, :reader_one) }
 
   describe "GET #about" do
     let(:get_about) { get :about, params: { id: valid_job.id } }

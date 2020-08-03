@@ -13,7 +13,7 @@
 %ul.divider-list
   %li
     = link_to "Back to All Tags", tags_path
-  - if current_user || admin_is_logged_in
+  - if admin_is_logged_in?
     %li
       = link_to "Edit Tag", edit_tag_path(@tag)
     %li

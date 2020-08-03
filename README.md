@@ -59,7 +59,7 @@ This depends on the following buildpacks:
 
 ## Run test suite
 
-Test are written in RSpec
+Tests are mostly written in RSpec
 
     rspec
 

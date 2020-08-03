@@ -11,5 +11,5 @@
     = render partial: 'clients/client', locals: { client: client }
 
 %br
-- if admin_is_logged_in
+- if admin_is_logged_in?
   = link_to 'New Client', new_client_path
