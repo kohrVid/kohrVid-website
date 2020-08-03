@@ -4,11 +4,11 @@ module NestHelper
   end
 
   def current_user?(user)
-    user == current_user
+    current_user && (user == current_user)
   end
 
   def current_user_id?(user_id)
-    user_id == current_user.id
+    current_user && (user_id == current_user.id)
   end
 
   def current_user_or_admin?(user)
