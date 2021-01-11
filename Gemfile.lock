@@ -353,7 +353,7 @@ GEM
       ffi (~> 1.0)
     recaptcha (5.5.0)
       json
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     regexp_parser (1.7.1)
     remotipart (1.4.4)
     representable (3.0.4)
