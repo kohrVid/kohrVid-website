@@ -5,7 +5,7 @@ gem 'activerecord-session_store'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
 #gem 'brakeman', '~> 3.1', '>= 3.1.2'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'closure_tree'
 gem 'coderay'
 gem 'coffee-rails'
