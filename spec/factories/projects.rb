@@ -1,4 +1,3 @@
-include ActionDispatch::TestProcess
 FactoryBot.define do
   factory :project do
     name { "inqbrd" }
@@ -9,7 +8,7 @@ FactoryBot.define do
 
     # This doesn't persist
     image {
-      fixture_file_upload(
+      Rack::Test::UploadedFile.new(
         File.join(
           Rails.root, "spec", "public", "uploads", "project", "image", "bg_image.jpg"
         )

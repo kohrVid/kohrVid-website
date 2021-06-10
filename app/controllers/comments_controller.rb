@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
       user_id = current_user.id unless !user_signed_in?
       post_id = @post.id
 
-      if @comment.update_attributes(user_id: user_id, post_id: post_id)
+      if @comment.update(user_id: user_id, post_id: post_id)
         flash[:success] =  "Your comment was added successfully!"
         Notification.new_comment_admin_notification(@comment).deliver
         redirect_to @post
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
 
   def update
     if verify_recaptcha(model: @comment)
-      if @comment.update_attributes(comment_params)
+      if @comment.update(comment_params)
         flash[:success] =  "Your comment was updated successfully!"
         redirect_to post_path(@post)
       else
