@@ -67,7 +67,6 @@ end
 
 group :production do
   gem 'dotenv'
-  gem 'heroku-deflater'
   gem "google-cloud-storage", "~> 1.11", require: false
 end
 
