@@ -24,7 +24,7 @@ gem 'pg', '~> 1.2.3'
 gem 'puma', '~> 3.12'
 gem 'rack-attack', '~> 6.2.2'
 gem 'rack-ssl-enforcer'
-gem 'rails', '>= 6.0.3.2'
+gem 'rails', '>= 6.0.3.7'
 gem 'railties'
 gem 'recaptcha'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
@@ -67,7 +67,6 @@ end
 
 group :production do
   gem 'dotenv'
-  gem 'heroku-deflater'
   gem "google-cloud-storage", "~> 1.11", require: false
 end
 
