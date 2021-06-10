@@ -272,8 +272,6 @@ GEM
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
-    heroku-deflater (0.6.3)
-      rack (>= 1.4.5)
     httpclient (2.8.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -543,7 +541,6 @@ DEPENDENCIES
   guard-rspec
   guard-shell
   haml
-  heroku-deflater
   image_processing (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
