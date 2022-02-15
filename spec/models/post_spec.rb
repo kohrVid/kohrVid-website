@@ -116,7 +116,10 @@ RSpec.describe Post, type: :model do
   end
 
   context 'date formatters' do
-    let(:time) { Time.new(2020,01,8,18,10) }
+    let(:time) do
+      DateTime.new.in_time_zone('UTC')
+        .change(year: 2020, month: 1, day: 8, hour: 18, min: 10, sec: 00)
+    end
 
     let(:post) do
       FactoryBot.create(:post, published_at: time )
@@ -131,13 +134,13 @@ RSpec.describe Post, type: :model do
 
     context '#published_format' do
       it 'should format the date correctly' do
-        expect(post.published_format).to eq "Published  8th January 2020 at 06:10pm"
+        expect(post.published_format).to eq "Published  8th January 2020 at 06:10pm UTC"
       end
     end
 
     context '#updated_format' do
       it 'should format the date correctly' do
-        expect(post.updated_format).to eq "(Last Updated  9th January 2020 at 06:10pm)"
+        expect(post.updated_format).to eq "(Last Updated  9th January 2020 at 06:10pm UTC)"
       end
     end
   end
