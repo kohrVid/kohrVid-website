@@ -1,6 +1,9 @@
 {
   "name": "kohrvid",
   "version": "2.1.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "The kohrVid website",
   "main": "app/assets/javascripts/application.js",
   "scripts": {
