@@ -30,7 +30,6 @@ gem 'railties'
 gem 'recaptcha'
 gem 'remotipart' #Allows for asynchronous file uploads in CarrierWave
 gem 'redcarpet'
-gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier'
 gem 'webpacker', '~> 4.x'
