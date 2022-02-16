@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '> 3.0.1'
+ruby '>= 2.7.4'
 gem 'activerecord-session_store'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
