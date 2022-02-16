@@ -2,7 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
+orbs:
+  node: circleci/node@4.7.0
+  browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
     working_directory: ~/kohrVid-website
@@ -25,6 +27,12 @@ jobs:
 
     steps:
       - checkout
+      - node/install:
+          install-yarn: true
+          install-npm: false
+          node-version: "14.15.3"
+      - browser-tools/install-chrome
+      - -browser-tools/install-chromedriver
       - run:
           command: mkdir -p /tmp/test-results
 
