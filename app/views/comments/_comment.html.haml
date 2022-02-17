@@ -3,10 +3,10 @@
   %p.smaller-text
     Posted by
     <strong>#{ link_to_if(!comment.user_id.nil?, comment.author, { controller: "users", action: "show", id: comment.user_id }) }</strong> on&nbsp;
-    = comment.created_at.strftime("%e#{comment.created_at.day.ordinal} %B %Y at %H:%M:%S")
+    = comment.created_at.strftime("%e#{comment.created_at.day.ordinal} %B %Y at %H:%M:%S %Z")
     - unless comment.created_at == comment.updated_at
       %em
-        = comment.updated_at.strftime("(last modified on %e#{comment.updated_at.day.ordinal} %B %Y at %H:%M:%S)")
+        = comment.updated_at.strftime("(last modified on %e#{comment.updated_at.day.ordinal} %B %Y at %H:%M:%S %Z)")
     %blockquote
       = raw(comment.body)
 
