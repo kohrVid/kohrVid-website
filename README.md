@@ -1,9 +1,10 @@
 # kohrVid.com
 
-This is the repo for my site.
+[![Free Palestine](https://img.shields.io/badge/%F0%9F%87%B5%F0%9F%87%B8_Ceasefire_Now-techforpalestine.org-000?labelColor=grey&color=D83838&link=https%3A%2F%2Ftechforpalestine.org%2Flearn-more)](https://www.techforpalestine.org)
 
 <!-- vim-markdown-toc GFM -->
 
+* [⚠️ Archive Notice](#-archive-notice)
 * [Prerequisites](#prerequisites)
 * [Set up](#set-up)
 * [Run locally](#run-locally)
@@ -11,6 +12,15 @@ This is the repo for my site.
 * [Run test suite](#run-test-suite)
 
 <!-- vim-markdown-toc -->
+
+## ⚠️ Archive Notice
+
+This is the repo for v2 of kohrVid.com. As of v3 (launched in July 2024), the
+project will be closed source.
+
+The site has also changed hosts as I've found Heroku quite frustrating to deal
+with over the years. The new version is dockerised and the backend and frontend
+have been split into separate repos.
 
 ## Prerequisites
 
