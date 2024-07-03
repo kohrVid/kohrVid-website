@@ -1,6 +1,13 @@
 # kohrVid.com
 
-This is the repo for my site.
+## ⚠️ Archive Notice
+
+This is the repo for v2 of kohrVid.com. As of v3 (launched in July 2024), the
+project will be closed source.
+
+The site has also changed hosts as I've found Heroku quite frustrating to deal
+with over the years. The new version is dockerised and the backend and frontend
+have been split into separate repos.
 
 <!-- vim-markdown-toc GFM -->
 
